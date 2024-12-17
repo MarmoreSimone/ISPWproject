@@ -3,6 +3,6 @@ module com.example.ispwproject {
     requires javafx.fxml;
 
 
-    opens com.example.ispwproject to javafx.fxml;
-    exports com.example.ispwproject;
+    opens starter to javafx.fxml;
+    exports starter;
 }
