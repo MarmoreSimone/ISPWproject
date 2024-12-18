@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryMemoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO_mem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/depositphotos_195872106-stock-illustration-cartoon-funny-coffee-bean-drinking.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/clientHome.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/placeOrder.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/test.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dummy.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/giftCouponGUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/placeOrderGUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ispwproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ispwproject/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ispwproject/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/clientHome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/placeOrder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -92,6 +85,7 @@
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\GUIview" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\images" />
@@ -139,7 +133,7 @@
       <updated>1734445958465</updated>
       <workItem from="1734445959614" duration="316000" />
       <workItem from="1734446290437" duration="302000" />
-      <workItem from="1734455079252" duration="13889000" />
+      <workItem from="1734455079252" duration="24722000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -157,7 +151,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734446476653</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test">
+      <option name="closed" value="true" />
+      <created>1734469505960</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734469505960</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test">
+      <option name="closed" value="true" />
+      <created>1734469520705</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734469520705</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
