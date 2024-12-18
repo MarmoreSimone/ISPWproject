@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dummy.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/giftCouponGUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/placeOrderGUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryMemoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryMemoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/starter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/clientHome.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/placeOrder.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/placeOrderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/placeOrderGUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,17 +29,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MarmoreSimone"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarmoreSimone&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/MarmoreSimone/ISPWproject.git&quot;,
-    &quot;accountId&quot;: &quot;6a2b7b44-eda5-4688-8a6e-4410b2cf78a5&quot;
+    &quot;accountId&quot;: &quot;a6c6b00a-be10-46fe-b603-4699dba0fa0e&quot;
   }
 }</component>
   <component name="MavenImportPreferences">
@@ -63,23 +61,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
@@ -118,8 +117,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -134,6 +133,13 @@
       <workItem from="1734445959614" duration="316000" />
       <workItem from="1734446290437" duration="302000" />
       <workItem from="1734455079252" duration="24722000" />
+      <workItem from="1734515323771" duration="613000" />
+      <workItem from="1734516304680" duration="186000" />
+      <workItem from="1734516732464" duration="2486000" />
+      <workItem from="1734520272279" duration="577000" />
+      <workItem from="1734534099413" duration="5430000" />
+      <workItem from="1734540543383" duration="734000" />
+      <workItem from="1734552155711" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />

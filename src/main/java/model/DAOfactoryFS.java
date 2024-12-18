@@ -7,6 +7,7 @@ public class DAOfactoryFS extends DAOfactory{
 
     public CafeteriaDAO createCafeteriaDAO(){
 
+        System.out.println("siamo in FS");
         return CafeteriaDAO_mem.getInstance(); //metti fs
     }
 

@@ -7,6 +7,7 @@ public class DAOfactoryMemoria extends DAOfactory {
 
     public CafeteriaDAO createCafeteriaDAO(){
 
+        System.out.println("siamo in memoria");
         return CafeteriaDAO_mem.getInstance();
     }
 }

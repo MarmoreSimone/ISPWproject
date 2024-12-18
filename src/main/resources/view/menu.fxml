@@ -11,32 +11,32 @@
    <children>
       <Pane prefHeight="720.0" prefWidth="195.0" style="-fx-background-color: grey; -fx-background-radius: 9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="placeOrderButton" layoutX="34.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#onButtonClickPlaceOrder" text="place order">
+            <Button fx:id="placeOrderButton" layoutX="34.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#onButtonClickPlaceOrder" text="place order" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="myOrdersButton" layoutX="39.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#onButtonClickMyOrder" text="my orders">
+            <Button fx:id="myOrdersButton" layoutX="39.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#onButtonClickMyOrder" text="my orders" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button layoutX="32.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonClickGift" text="gift coupon">
+            <Button layoutX="32.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonClickGift" text="gift coupon" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button layoutX="54.0" layoutY="457.0" mnemonicParsing="false" text="profile">
+            <Button layoutX="54.0" layoutY="457.0" mnemonicParsing="false" text="profile" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="testButton" layoutX="68.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#onButtonClickDummy" text="test">
+            <Button fx:id="testButton" layoutX="68.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#onButtonClickDummy" text="test" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button layoutX="61.0" layoutY="617.0" mnemonicParsing="false" text="login">
+            <Button layoutX="61.0" layoutY="617.0" mnemonicParsing="false" text="login" focusTraversable="false">
                <font>
                   <Font size="21.0" />
                </font>

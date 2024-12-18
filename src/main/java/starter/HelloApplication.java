@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.DAOfactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,6 +15,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/view/home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 720);
+
+        stage.resizableProperty().setValue(Boolean.FALSE);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -31,6 +34,14 @@ public class HelloApplication extends Application {
             System.out.println("Errore durante la lettura dell'input.");
         }
 
+        //imposto la DAOfactory
+        DAOfactory.setDAOfactory(Integer.parseInt(input));
+
+        //test per vedere se ha preso quella giusta
+        DAOfactory fabrica = DAOfactory.getDAOfactory();
+        fabrica.createCafeteriaDAO();
+
         launch();
     }
 }
+

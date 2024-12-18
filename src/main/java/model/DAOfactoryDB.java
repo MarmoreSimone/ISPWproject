@@ -7,6 +7,7 @@ public class DAOfactoryDB extends DAOfactory{
 
     public CafeteriaDAO createCafeteriaDAO(){
 
+        System.out.println("siamo in DATABASE");
         return CafeteriaDAO_mem.getInstance(); //metti db
     }
 }

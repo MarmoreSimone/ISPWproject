@@ -14,7 +14,7 @@ public abstract class DAOfactory {
     protected DAOfactory(){
     }
 
-    public static synchronized DAOfactory getWidgetFactory(int scelta){
+    public static synchronized DAOfactory setDAOfactory(int scelta){
         if ( me == null ){
 
             switch (scelta) {
@@ -32,6 +32,9 @@ public abstract class DAOfactory {
         return me;
     }
 
+    public static synchronized DAOfactory getDAOfactory(){
+        return me;
+    }
 
     public abstract CafeteriaDAO createCafeteriaDAO();
 
