@@ -20,7 +20,7 @@ public class MenuController {
     @FXML
     private void onButtonClickPlaceOrder() {
         try {
-            changeScene("/view/placeOrderGUI.fxml");  // Cambia scena a menu.fxml
+            changeScene("/view/searchCafeteriaGUI.fxml");  // Cambia scena a menu.fxml
         } catch (IOException e) {
             e.printStackTrace();
         }

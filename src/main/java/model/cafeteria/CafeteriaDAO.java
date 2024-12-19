@@ -3,6 +3,7 @@ package model.cafeteria;
 import java.util.List;
 
 public abstract class CafeteriaDAO {
+
     private static CafeteriaDAO_mem instance;
     private List<Cafeteria> memoria;
 
