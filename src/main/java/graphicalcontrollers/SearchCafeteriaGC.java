@@ -1,4 +1,4 @@
-package graphicalControllers;
+package graphicalcontrollers;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
@@ -10,7 +10,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +44,14 @@ public class SearchCafeteriaGC implements Initializable {
                 //fai il controllo se null
                 cafeterias.add(controllerAppl.getCafeteriaByName(bean));
                 break;
-
+            /*
             case "address":
                 //nella bean metto solo l'indirizzo
                 SearchCafeteriaBean bean2 = new SearchCafeteriaBean(null, searchCafChoiceBox.getValue());
                 controllerAppl.getCafeteriaByAddress(bean2);
                 break;
+
+            */
 
             case "get all":
                 cafeterias = controllerAppl.getAllCafeterias();

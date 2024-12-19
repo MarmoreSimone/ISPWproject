@@ -4,8 +4,7 @@ import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
-import model.cafeteria.CafeteriaDAO;
-import model.cafeteria.CafeteriaDAO_mem;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +22,12 @@ public class PlaceOrderController {
         return null;
     }
 
+    /*
     public CafeteriaBean getCafeteriaByAddress(SearchCafeteriaBean key){
+        //da implementare
 
-        return null;
     }
+    */
 
     public List<CafeteriaBean> getAllCafeterias(){
 

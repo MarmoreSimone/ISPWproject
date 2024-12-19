@@ -27,6 +27,7 @@ public abstract class DAOfactory {
                 case 3 :
                     me = new DAOfactoryFS();
                     break;
+                default:
             }
         }
         return me;

@@ -4,7 +4,7 @@ import java.util.List;
 
 public abstract class CafeteriaDAO {
 
-    private static CafeteriaDAO_mem instance;
+    private static CafeteriaDAOmem instance;
     private List<Cafeteria> memoria;
 
 

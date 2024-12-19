@@ -6,7 +6,7 @@ module com.example.ispwproject {
 
     opens starter to javafx.fxml;
     exports starter;
-    opens graphicalControllers to javafx.fxml;
-    exports graphicalControllers;
+    opens graphicalcontrollers to javafx.fxml;
+    exports graphicalcontrollers;
 
 }

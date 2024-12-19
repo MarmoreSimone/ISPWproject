@@ -3,11 +3,16 @@ package model.cafeteria;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CafeteriaDAO_mem extends CafeteriaDAO {
+public class CafeteriaDAOmem extends CafeteriaDAO {
 
-    private static CafeteriaDAO_mem instance = null;
+    private static CafeteriaDAOmem instance = null;
     private List<Cafeteria> memoria = new ArrayList<>();
 
+    public synchronized static CafeteriaDAOmem getInstance() {
+        if(CafeteriaDAOmem.instance == null)
+            CafeteriaDAOmem.instance = new CafeteriaDAOmem();
+        return CafeteriaDAOmem.instance;
+    }
 
     public void saveCafeteria(Cafeteria cafe) {
         memoria.add(cafe);
@@ -15,7 +20,7 @@ public class CafeteriaDAO_mem extends CafeteriaDAO {
 
     public Cafeteria getCafeteriaByName(String name) {
         for (Cafeteria cafe : memoria) {
-            if (cafe.getName() == name) {
+            if (cafe.getName().equals(name)) {
                 return cafe;
             }
         }
@@ -30,10 +35,6 @@ public class CafeteriaDAO_mem extends CafeteriaDAO {
         return memoria;
     }
 
-    public synchronized static CafeteriaDAO_mem getInstance() {
-        if(CafeteriaDAO_mem.instance == null)
-            CafeteriaDAO_mem.instance = new CafeteriaDAO_mem();
-        return CafeteriaDAO_mem.instance;
-    }
+
 
 }

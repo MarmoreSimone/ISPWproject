@@ -1,14 +1,14 @@
 package model;
 
 import model.cafeteria.CafeteriaDAO;
-import model.cafeteria.CafeteriaDAO_mem;
+import model.cafeteria.CafeteriaDAOmem;
 
 public class DAOfactoryFS extends DAOfactory{
 
     public CafeteriaDAO createCafeteriaDAO(){
 
         System.out.println("siamo in FS");
-        return CafeteriaDAO_mem.getInstance(); //metti fs
+        return CafeteriaDAOmem.getInstance(); //metti fs
     }
 
 }
