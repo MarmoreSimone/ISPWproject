@@ -63,7 +63,7 @@ public class MenuController {
     }
 
     @FXML
-    private void changeScene(String filepath) throws IOException {
+    public void changeScene(String filepath) throws IOException {
         // Carica il nuovo file FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource(filepath));
         Parent root = loader.load();  // Carica il contenuto del nuovo FXML
