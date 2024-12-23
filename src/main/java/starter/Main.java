@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.DAOfactory;
+import utils.SwitchPage;
+import viewCLI.MainMenuCLI;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,18 +20,26 @@ public class Main extends Application {
 
         stage.resizableProperty().setValue(Boolean.FALSE);
         stage.setTitle("Hello!");
+        SwitchPage curr = SwitchPage.getSwitchPageInstance();
+        curr.setStage(stage);
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        System.out.println("SCEGLI LA PERSISTENZA:");
-        System.out.println("1) DEMO\n2) DB\n3) FILE SYSTEM");
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = null;
+        String input2 = null;
+
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+            System.out.println("persistenza:\n1) demo\n2) db\n3) file system");
             input = reader.readLine();
+
+            System.out.println("scegli l'interfaccia:\n1) gui\n2) cli\n");
+            input2 = reader.readLine();
+
         } catch (IOException e) {
             System.out.println("Errore durante la lettura dell'input.");
         }
@@ -37,11 +47,14 @@ public class Main extends Application {
         //imposto la DAOfactory
         DAOfactory.setDAOfactory(Integer.parseInt(input));
 
-        //test per vedere se ha preso quella giusta
-        DAOfactory fabrica = DAOfactory.getDAOfactory();
-        fabrica.createCafeteriaDAO();
+        if(input2.equals("1")) {
+            launch();
+        }
+        else{
+            new MainMenuCLI().start();
+        }
 
-        launch();
+
     }
 }
 

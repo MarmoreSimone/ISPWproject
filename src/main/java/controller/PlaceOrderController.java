@@ -41,11 +41,11 @@ public class PlaceOrderController {
         return foundCafes;
     }
 
+    //ritorna la cafeteriaBean contenente tutti i dati della caffetteria da mostrare
     public CafeteriaBean loadSelectedCafeteria(SearchCafeteriaBean key){
 
         RetrieveCafeterias searcher = new RetrieveCafeterias();
         Cafeteria tempCafe = searcher.getCafeteriaByName(key.getName());
-
         return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription());
 
     }

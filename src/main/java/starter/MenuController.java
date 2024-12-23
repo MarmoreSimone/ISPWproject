@@ -1,13 +1,12 @@
 package starter;
 
+import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.searchCafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,11 +18,10 @@ public class MenuController {
 
     @FXML
     private void onButtonClickPlaceOrder() {
-        try {
-            changeScene("/view/searchCafeteriaGUI.fxml");  // Cambia scena a menu.fxml
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        GraphicalController controller = new SearchCafeteriaGUI();
+        controller.launch();
+
     }
 
     @FXML

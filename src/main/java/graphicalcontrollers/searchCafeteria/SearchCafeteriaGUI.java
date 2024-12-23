@@ -1,28 +1,28 @@
-package graphicalcontrollers.Gui;
+package graphicalcontrollers.searchCafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import graphicalcontrollers.GraphicalController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
-
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import utils.SwitchPage;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class SearchCafeteriaGC implements Initializable{
+public class SearchCafeteriaGUI implements GraphicalController, Initializable, SearchCafeteriaInterface {
 
     private PlaceOrderController controllerAppl;
+
+    private final String[] choices = {"name","city or address","get all"};
 
     //metto string per togliere il warning
     @FXML
@@ -33,8 +33,6 @@ public class SearchCafeteriaGC implements Initializable{
 
     @FXML
     private ListView<String> listCafeterias;
-
-    private final String[] choices = {"name","city or address","get all"};
 
     @FXML
     private Pane paneInfoCard;
@@ -55,15 +53,23 @@ public class SearchCafeteriaGC implements Initializable{
     private Label labelName;
 
     @FXML
-    public void initialize(URL location, ResourceBundle resources) {
+    private Button orderBtn;
+
+    @FXML
+    public void initialize(URL arg0, ResourceBundle arg1) {
 
         paneInfoCard.setVisible(false);
+        orderBtn.setVisible(false);
         //popolo la choicebox
         searchCafChoiceBox.getItems().addAll(choices);
         //istanzio un nuovo controllore applicativo da usare durante lo svolgimento del caso d'uso
         controllerAppl = new PlaceOrderController();
     }
 
+    public void launch(){
+        //si potrebbe anche fare passando allo switch page questa istanza di controller grafico cosi da non crearne un'altra
+        SwitchPage.getSwitchPageInstance().changePage("/view/searchCafeteriaGUI.fxml");
+    }
 
     public List<SearchCafeteriaBean> getCafeterias(){
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
@@ -78,13 +84,7 @@ public class SearchCafeteriaGC implements Initializable{
                 cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
                 break;
 
-            /*
-            case "address":
-                //nella bean metto solo l'indirizzo
-                SearchCafeteriaBean bean2 = new SearchCafeteriaBean(null, searchCafChoiceBox.getValue());
-                controllerAppl.getCafeteriaByAddress(bean2);
-                break;
-            */
+            //TODO caso in cui si vuole cercare per indirizzo/città
 
             case "get all":
                 bean = new SearchCafeteriaBean(null,null);
@@ -96,42 +96,18 @@ public class SearchCafeteriaGC implements Initializable{
         return cafeterias;
     }
 
-    /*
-    public void searchCafeBtn(){
+    //devo fare attenzione a non sovrapporre i listener a ogni click del bottone
+    private ChangeListener<String> listener;
+    public void searchCafe() {
 
         List<SearchCafeteriaBean> cafeterias = getCafeterias();
 
-        List<String> items = new ArrayList<>();
-
-
-        for(SearchCafeteriaBean cafeteria : cafeterias){
-            items.add(cafeteria.getName());
-        }
-
-        listCafeterias.getItems().clear();
-        listCafeterias.getItems().addAll(items);
-
-        //listener per poter cliccare direttamente sulla view
-        listCafeterias.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-
-                String selectedCafe = listCafeterias.getSelectionModel().getSelectedItem();
-                System.out.println(selectedCafe);
-                showSelectedCafeteria(new SearchCafeteriaBean(selectedCafe,null));
+        //caso in cui ho un solo elemento, faccio comparire la infocard appena si preme search
+        if(cafeterias.size() == 1){
+            showSelectedCafeteria(cafeterias.getFirst());
             }
-        });
 
-    }
-    */
-
-
-    private ChangeListener<String> listener; // Variabile membro per tracciare il listener
-
-    public void searchCafeBtn() {
-
-        List<SearchCafeteriaBean> cafeterias = getCafeterias();
-
+        //usata per popolare la listview
         List<String> items = new ArrayList<>();
 
         for (SearchCafeteriaBean cafeteria : cafeterias) {
@@ -152,6 +128,7 @@ public class SearchCafeteriaGC implements Initializable{
         listener = new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                orderBtn.setVisible(true);
                 int selectedCafe = listCafeterias.getSelectionModel().getSelectedIndex();
                 if(selectedCafe != -1)
                     showSelectedCafeteria(cafeterias.get(selectedCafe));
@@ -161,7 +138,6 @@ public class SearchCafeteriaGC implements Initializable{
         // Aggiungi il nuovo listener
         listCafeterias.getSelectionModel().selectedItemProperty().addListener(listener);
     }
-
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
         CafeteriaBean bean = controllerAppl.loadSelectedCafeteria(cafe);

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.Gui.SearchCafeteriaGC">
+<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.searchCafeteria.SearchCafeteriaGUI">
     <left>
         <fx:include source="menu.fxml" />
     </left>
@@ -40,7 +40,7 @@
                </font>
             </Text>
             <ChoiceBox fx:id="searchCafChoiceBox" layoutX="186.0" layoutY="96.0" prefHeight="25.0" prefWidth="118.0" />
-            <Button fx:id="searchBtn" layoutX="237.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#searchCafeBtn" prefHeight="27.0" prefWidth="71.0" text="search" />
+            <Button fx:id="searchBtn" layoutX="237.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#searchCafe" prefHeight="27.0" prefWidth="71.0" text="search" />
             <ListView fx:id="listCafeterias" layoutX="62.0" layoutY="191.0" prefHeight="497.0" prefWidth="247.0" />
             <Pane fx:id="paneInfoCard" layoutX="340.0" layoutY="96.0" prefHeight="517.0" prefWidth="437.0" style="-fx-background-color: olivedrab;">
                <children>
@@ -80,7 +80,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="339.0" layoutY="635.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="435.0" text="procede to order">
+            <Button fx:id="orderBtn" layoutX="339.0" layoutY="635.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="435.0" text="procede to order">
                <font>
                   <Font size="24.0" />
                </font>

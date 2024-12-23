@@ -7,11 +7,13 @@ module com.example.ispwproject {
     opens starter to javafx.fxml;
     exports starter;
 
-    opens graphicalcontrollers.Gui to javafx.fxml;
-    exports graphicalcontrollers.Gui;
+    opens graphicalcontrollers.searchCafeteria to javafx.fxml;
+    exports graphicalcontrollers.searchCafeteria;
 
     opens bean to javafx.fxml;
     exports bean;
+    exports graphicalcontrollers;
+    opens graphicalcontrollers to javafx.fxml;
 
     /*
     opens graphicalcontrollers.Cli to javafx.fxml;

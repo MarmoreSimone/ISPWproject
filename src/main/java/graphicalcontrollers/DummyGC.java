@@ -1,4 +1,4 @@
-package graphicalcontrollers.Gui;
+package graphicalcontrollers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,8 +7,6 @@ import model.cafeteria.Cafeteria;
 
 public class DummyGC {
 
-    @FXML
-    private Button addCafe;
 
     public void insertCafe(){
 
