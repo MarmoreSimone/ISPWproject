@@ -1,6 +1,5 @@
-package viewCLI;
+package viewcli;
 
-import java.io.IOException;
 import java.util.List;
 
 public class SearchCafeteriaViewCli extends UtilsCli{

@@ -1,4 +1,4 @@
-package graphicalcontrollers.searchCafeteria;
+package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;

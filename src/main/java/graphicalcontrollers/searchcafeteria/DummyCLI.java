@@ -1,14 +1,14 @@
-package graphicalcontrollers.searchCafeteria;
+package graphicalcontrollers.searchcafeteria;
 
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
-import viewCLI.MainMenuCLI;
+import viewcli.MainMenuCLI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DummyCLI extends viewCLI.UtilsCli{
+public class DummyCLI extends viewcli.UtilsCli{
 
     public void launch(){
 
@@ -23,6 +23,16 @@ public class DummyCLI extends viewCLI.UtilsCli{
                 DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(new Cafeteria("bar di medicina","via del signore","roma","2312412","Una caffetteria moderna che unisce tradizione e innovazione. Specializzata in miscele uniche di caffè, con un ambiente elegante e comodi posti a sedere. Perfetto per lavorare, studiare o godersi un momento di relax."));
                 DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(new Cafeteria("bar di lettere","via del cammino","ciampino","5685868","Caffetteria di quartiere che ti fa sentire a casa, con un’atmosfera calorosa e informale. Serviamo caffè di alta qualità, tè aromatizzati e snack deliziosi, accompagnati da un sorriso e un servizio rapido."));
                 break;
+
+                case "2":
+                    System.out.println("wdd");
+                    break;
+
+                    case "3":
+                        System.out.println("wdd");
+                        break;
+
+                        default:
         }
         new MainMenuCLI().start();
     }

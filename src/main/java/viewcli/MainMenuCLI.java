@@ -1,7 +1,7 @@
-package viewCLI;
+package viewcli;
 
-import graphicalcontrollers.searchCafeteria.DummyCLI;
-import graphicalcontrollers.searchCafeteria.SearchCafeteriaCLI;
+import graphicalcontrollers.searchcafeteria.DummyCLI;
+import graphicalcontrollers.searchcafeteria.SearchCafeteriaCLI;
 
 import java.util.ArrayList;
 import java.util.Arrays;

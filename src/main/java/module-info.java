@@ -7,8 +7,8 @@ module com.example.ispwproject {
     opens starter to javafx.fxml;
     exports starter;
 
-    opens graphicalcontrollers.searchCafeteria to javafx.fxml;
-    exports graphicalcontrollers.searchCafeteria;
+    opens graphicalcontrollers.searchcafeteria to javafx.fxml;
+    exports graphicalcontrollers.searchcafeteria;
 
     opens bean to javafx.fxml;
     exports bean;

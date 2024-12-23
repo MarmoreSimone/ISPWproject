@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.DAOfactory;
 import utils.SwitchPage;
-import viewCLI.MainMenuCLI;
+import viewcli.MainMenuCLI;
 
 import java.io.BufferedReader;
 import java.io.IOException;

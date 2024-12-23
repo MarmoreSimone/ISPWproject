@@ -1,10 +1,10 @@
-package graphicalcontrollers.searchCafeteria;
+package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
-import viewCLI.SearchCafeteriaViewCli;
+import viewcli.SearchCafeteriaViewCli;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ public class SearchCafeteriaCLI implements SearchCafeteriaInterface, GraphicalCo
             String input = view.getUserChoice(new ArrayList<>(Arrays.asList("try agin","continue order")));
 
             if(input.equals("2")) {
-                choice = "2";
+                choice.equals("2");
             }
 
         }
@@ -39,11 +39,11 @@ public class SearchCafeteriaCLI implements SearchCafeteriaInterface, GraphicalCo
     public List<SearchCafeteriaBean> getCafeterias(){
 
         List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city","get all"));
-        String Type = view.drawGetSearchType(searchTypes);
+        String type = view.drawGetSearchType(searchTypes);
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
         SearchCafeteriaBean bean;
 
-        switch (Type){
+        switch (type){
             case "1":
                 System.out.println("insert name: ");
                 bean = new SearchCafeteriaBean(view.getString(),null);

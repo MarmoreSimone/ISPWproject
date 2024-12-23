@@ -1,7 +1,7 @@
 package starter;
 
 import graphicalcontrollers.GraphicalController;
-import graphicalcontrollers.searchCafeteria.SearchCafeteriaGUI;
+import graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
