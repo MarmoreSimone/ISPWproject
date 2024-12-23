@@ -1,4 +1,4 @@
-package graphicalcontrollers.searchcafeteria;
+package graphicalcontrollers;
 
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;

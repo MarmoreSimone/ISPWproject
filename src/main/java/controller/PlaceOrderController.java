@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PlaceOrderController {
 
-    private Cafeteria myCafe;
+    private Cafeteria myCafeteria;
 
     //ritorna una lista di cafeteriaBean andando a filtrare la searchCafeteriaBean
     //uso la searchBean in questo passaggio in quanto non mi interessa mostrare tutte le informazioni della caffetteria nella ricerca
@@ -49,6 +49,16 @@ public class PlaceOrderController {
         return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription());
 
     }
+
+
+    public void setCafeteria(SearchCafeteriaBean key) {
+        this.myCafeteria = new RetrieveCafeterias().getCafeteriaByName(key.getName());
+    }
+
+    public String getCafeteriaName() {
+        return this.myCafeteria.getName();
+    }
+
 
 
 

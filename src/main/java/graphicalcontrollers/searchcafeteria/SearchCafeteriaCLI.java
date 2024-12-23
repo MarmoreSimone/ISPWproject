@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SearchCafeteriaCLI implements SearchCafeteriaInterface, GraphicalController {
+public class SearchCafeteriaCLI extends GraphicalController implements SearchCafeteriaInterface {
 
     private SearchCafeteriaViewCli view;
     private PlaceOrderController controllerAppl;
@@ -33,7 +33,6 @@ public class SearchCafeteriaCLI implements SearchCafeteriaInterface, GraphicalCo
 
         }
 
-        System.out.println("DIOOOOOOOOO");
     }
 
     public List<SearchCafeteriaBean> getCafeterias(){

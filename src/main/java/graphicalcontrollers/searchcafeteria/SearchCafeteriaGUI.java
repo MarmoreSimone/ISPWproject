@@ -4,21 +4,19 @@ import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import utils.SwitchPage;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class SearchCafeteriaGUI implements GraphicalController, Initializable, SearchCafeteriaInterface {
+public class SearchCafeteriaGUI extends GraphicalController implements SearchCafeteriaInterface {
 
     private PlaceOrderController controllerAppl;
 
@@ -55,8 +53,8 @@ public class SearchCafeteriaGUI implements GraphicalController, Initializable, S
     @FXML
     private Button orderBtn;
 
-    @FXML
-    public void initialize(URL arg0, ResourceBundle arg1) {
+
+    public void initialize2() {
 
         paneInfoCard.setVisible(false);
         orderBtn.setVisible(false);
@@ -70,6 +68,8 @@ public class SearchCafeteriaGUI implements GraphicalController, Initializable, S
         //si potrebbe anche fare passando allo switch page questa istanza di controller grafico cosi da non crearne un'altra
         SwitchPage.getSwitchPageInstance().changePage("/view/searchCafeteriaGUI.fxml");
     }
+
+
 
     public List<SearchCafeteriaBean> getCafeterias(){
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
@@ -148,5 +148,16 @@ public class SearchCafeteriaGUI implements GraphicalController, Initializable, S
         labelDescr.setText(bean.getDescription());
         paneInfoCard.setVisible(true);
     }
+
+    public void continueOrder(){
+
+        //imposto caffetteria nel controllore applicativo
+        controllerAppl.setCafeteria(new SearchCafeteriaBean(labelName.getText(),null));
+
+        //faccio partire il controllore grafico passandogli l'istanza del controllore applicativo
+        new OrderBuilderGUI().launch(controllerAppl);
+
+    }
+
 
 }

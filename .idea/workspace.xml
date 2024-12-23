@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="test sonar">
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchCafeteria/DummyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/DummyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchCafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchCafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchCafeteria/SearchCafeteriaInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/GraphicalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/GraphicalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/DummyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewCLI/MainMenuCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewCLI/MainMenuCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cafeteriaInfoGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cafeteriaInfoGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MainMenuCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/MainMenuCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/placeOrderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view",
+    "last_opened_file_path": "C:/Users/enrico/Desktop/NewISPW-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -139,6 +141,7 @@
       <workItem from="1734534099413" duration="5430000" />
       <workItem from="1734540543383" duration="734000" />
       <workItem from="1734552155711" duration="9000" />
+      <workItem from="1734953891773" duration="20008000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -204,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734916688249</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test sonar">
+      <option name="closed" value="true" />
+      <created>1734917121681</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734917121681</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

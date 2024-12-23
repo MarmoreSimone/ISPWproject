@@ -1,6 +1,6 @@
 package viewcli;
 
-import graphicalcontrollers.searchcafeteria.DummyCLI;
+import graphicalcontrollers.DummyCLI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaCLI;
 
 import java.util.ArrayList;

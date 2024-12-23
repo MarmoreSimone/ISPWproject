@@ -1,5 +1,23 @@
 package graphicalcontrollers;
 
-public interface GraphicalController {
-    public void launch();
+import controller.PlaceOrderController;
+
+public abstract class GraphicalController {
+
+    public void launch(){
+
+    }
+
+    public void initialize2(){
+
+    }
+
+    public void setControllerApplPlaceOrder(PlaceOrderController controller){
+
+    }
+
+
+
+
 }
+

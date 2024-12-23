@@ -10,14 +10,17 @@ module com.example.ispwproject {
     opens graphicalcontrollers.searchcafeteria to javafx.fxml;
     exports graphicalcontrollers.searchcafeteria;
 
+    opens graphicalcontrollers.orderbuilder to javafx.fxml;
+    exports graphicalcontrollers.orderbuilder;
+
+    opens controller to javafx.fxml;
+    exports controller;
+
     opens bean to javafx.fxml;
     exports bean;
     exports graphicalcontrollers;
     opens graphicalcontrollers to javafx.fxml;
 
-    /*
-    opens graphicalcontrollers.Cli to javafx.fxml;
-    exports graphicalcontrollers.Cli;
-     */
+
 
 }
