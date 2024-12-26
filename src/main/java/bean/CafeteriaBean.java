@@ -1,6 +1,6 @@
 package bean;
 
-import java.util.Map;
+import java.util.List;
 
 public class CafeteriaBean {
 
@@ -9,15 +9,18 @@ public class CafeteriaBean {
     private String city;
     private String number;
     private String description;
-    private Map<String, String> openingHours;
+    private List<String> openingHours;
+    private String photo;
 
 
-    public CafeteriaBean(String name, String address, String city, String number, String description) {
+    public CafeteriaBean(String name, String address, String city, String number, String description, List<String> openingHours, String photo) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.number = number;
         this.description = description;
+        this.openingHours = openingHours;
+        this.photo = photo;
     }
 
     public String getName() {
@@ -32,10 +35,6 @@ public class CafeteriaBean {
         return city;
     }
 
-    public Map<String, String> getOpeningHours() {
-        return openingHours;
-    }
-
     public String getNumber() {
         return number;
     }
@@ -43,4 +42,14 @@ public class CafeteriaBean {
     public String getDescription() {
         return description;
     }
+
+    public List<String> getOpeningHours() {
+        return openingHours;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+
 }

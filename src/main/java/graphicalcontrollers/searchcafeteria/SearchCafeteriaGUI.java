@@ -10,6 +10,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import utils.SwitchPage;
 
@@ -20,7 +22,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
     private PlaceOrderController controllerAppl;
 
-    private final String[] choices = {"name","city or address","get all"};
+    private final String[] choices = {"get all","name","city or address"};
 
     //metto string per togliere il warning
     @FXML
@@ -31,6 +33,9 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
     @FXML
     private ListView<String> listCafeterias;
+
+    @FXML
+    private ComboBox<String> openHour;
 
     @FXML
     private Pane paneInfoCard;
@@ -53,6 +58,9 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
     @FXML
     private Button orderBtn;
 
+    @FXML
+    private ImageView imageCafe;
+
 
     public void initialize2() {
 
@@ -60,6 +68,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         orderBtn.setVisible(false);
         //popolo la choicebox
         searchCafChoiceBox.getItems().addAll(choices);
+        searchCafChoiceBox.setValue(choices[0]);
         //istanzio un nuovo controllore applicativo da usare durante lo svolgimento del caso d'uso
         controllerAppl = new PlaceOrderController();
     }
@@ -104,6 +113,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
         //caso in cui ho un solo elemento, faccio comparire la infocard appena si preme search
         if(cafeterias.size() == 1){
+            orderBtn.setVisible(true);
             showSelectedCafeteria(cafeterias.getFirst());
             }
 
@@ -111,7 +121,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         List<String> items = new ArrayList<>();
 
         for (SearchCafeteriaBean cafeteria : cafeterias) {
-            items.add(cafeteria.getName() + "  |  " + cafeteria.getAddress());
+            items.add(cafeteria.getName());
         }
 
         // Aggiorno la vista con i nuovi elementi
@@ -140,12 +150,25 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
     }
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
+        //vado a prendere la bean completa della caffetteria
         CafeteriaBean bean = controllerAppl.loadSelectedCafeteria(cafe);
         labelName.setText(bean.getName());
         labelAddress.setText(bean.getAddress());
         labelCity.setText(bean.getCity());
         labelNumber.setText(bean.getNumber());
         labelDescr.setText(bean.getDescription());
+        imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
+        openHour.getItems().clear();
+        openHour.getItems().addAll(
+                "MONDAY: " + bean.getOpeningHours().get(0),
+                "TUESDAY:   " + bean.getOpeningHours().get(1),
+                "WEDNESDAY: " + bean.getOpeningHours().get(2),
+                "THURSDAY:  " + bean.getOpeningHours().get(3),
+                "FRIDAY:    " + bean.getOpeningHours().get(4),
+                "SATURDAY:  " + bean.getOpeningHours().get(5),
+                "SUNDAY:    " + bean.getOpeningHours().get(6)
+        );
+      
         paneInfoCard.setVisible(true);
     }
 

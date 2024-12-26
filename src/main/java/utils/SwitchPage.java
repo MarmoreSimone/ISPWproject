@@ -51,6 +51,7 @@ public class SwitchPage {
             throw new RuntimeException(e);
         }
 
+        System.out.println("test3");
         GraphicalController contr = loader.getController();
         contr.setControllerApplPlaceOrder(controller);
 

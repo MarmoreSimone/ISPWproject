@@ -1,5 +1,9 @@
 package model.cafeteria;
 
+import model.beverage.Beverage;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Cafeteria {
@@ -9,16 +13,19 @@ public class Cafeteria {
     private String city;
     private String number;
     private String description;
+    private List<String> openingHours;
+    private String photo;
+    private List<Beverage> beverages;
 
-    //la prima stringa è il giorno della settimana la seconda l'orario di apertura nel formato 07:00 - 20:00
-    private Map<String, String> openingHours;
-
-    public Cafeteria(String name, String address, String city, String number, String description) {
+    public Cafeteria(String name, String address, String city, String number, String description, String photo) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.number = number;
         this.description = description;
+        this.openingHours = new ArrayList<>();
+        this.beverages = new ArrayList<>();
+        this.photo = photo;
     }
 
    public String getName() {
@@ -41,10 +48,29 @@ public class Cafeteria {
         return description;
    }
 
-   public Map<String, String> getOpeningHours() {
+   public List<String> getOpeningHours() {
         return openingHours;
    }
 
+    public void setOpeningHours(String mon, String tue, String wed, String thu, String fri, String sat, String sun) {
+            this.openingHours.add(mon);
+            this.openingHours.add(tue);
+            this.openingHours.add(wed);
+            this.openingHours.add(thu);
+            this.openingHours.add(fri);
+            this.openingHours.add(sat);
+            this.openingHours.add(sun);
+ }
 
+ public void setBeverages(Beverage beverage) {
+        this.beverages.add(beverage);
+ }
 
+ public List<Beverage> getBeverages() {
+        return beverages;
+ }
+
+    public String getPhoto() {
+            return photo;
+    }
 }

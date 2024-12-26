@@ -2,17 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI">
+<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI">
     <left>
         <fx:include source="menu.fxml" />
     </left>
@@ -29,58 +31,78 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <TextField fx:id="choseSearch" layoutX="60.0" layoutY="139.0" prefHeight="30.0" prefWidth="165.0" promptText="search...">
+            <TextField fx:id="choseSearch" layoutX="60.0" layoutY="125.0" prefHeight="30.0" prefWidth="165.0" promptText="search...">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Text layoutX="62.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search by:">
+            <Text layoutX="60.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search by:">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <ChoiceBox fx:id="searchCafChoiceBox" layoutX="186.0" layoutY="96.0" prefHeight="25.0" prefWidth="118.0" />
-            <Button fx:id="searchBtn" layoutX="237.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#searchCafe" prefHeight="27.0" prefWidth="71.0" text="search" />
-            <ListView fx:id="listCafeterias" layoutX="62.0" layoutY="191.0" prefHeight="497.0" prefWidth="247.0" />
-            <Pane fx:id="paneInfoCard" layoutX="340.0" layoutY="96.0" prefHeight="517.0" prefWidth="437.0" style="-fx-background-color: olivedrab;">
+            <ChoiceBox fx:id="searchCafChoiceBox" layoutX="186.0" layoutY="84.0" prefHeight="25.0" prefWidth="118.0" />
+            <Button fx:id="searchBtn" layoutX="233.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#searchCafe" prefHeight="27.0" prefWidth="71.0" text="search" />
+            <ListView fx:id="listCafeterias" layoutX="62.0" layoutY="170.0" prefHeight="530.0" prefWidth="247.0" style="-fx-font-size: 24;" />
+            <Label fx:id="labelName" alignment="TOP_LEFT" layoutX="339.0" layoutY="69.0" prefHeight="49.0" prefWidth="473.0" text="bar di ingegnieria" textFill="#1b1616">
+               <font>
+                  <Font name="Eras Bold ITC" size="44.0" />
+               </font>
+            </Label>
+            <Pane fx:id="paneInfoCard" layoutX="339.0" layoutY="127.0" prefHeight="511.0" prefWidth="479.0" style="-fx-background-color: #7D451B;">
                <children>
-                  <Label fx:id="labelAddress" layoutX="17.0" layoutY="67.0" prefHeight="35.0" prefWidth="366.0" text="via vecchia di velletri, 39f">
+                  <Label fx:id="labelDescr" alignment="TOP_LEFT" layoutX="18.0" layoutY="430.0" prefHeight="67.0" prefWidth="456.0" text="Caffetteria di quartiere che ti fa sentire a casa, con un’atmosfera calorosa e informale. Serviamo caffè di alta qualità, tè aromatizzati e snack deliziosi, accompagnati da un sorriso e un servizio rapido." textFill="WHITE" wrapText="true">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelCity" layoutX="14.0" layoutY="102.0" prefHeight="35.0" prefWidth="365.0" text="Roma, 00040">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelNumber" layoutX="12.0" layoutY="137.0" prefHeight="35.0" prefWidth="367.0" text="06378569">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <MenuButton layoutX="14.0" layoutY="182.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="194.0" text="opening hours">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </MenuButton>
-                  <Label fx:id="labelDescr" alignment="TOP_LEFT" layoutX="14.0" layoutY="227.0" prefHeight="232.0" prefWidth="366.0" text="Caffetteria di quartiere che ti fa sentire a casa, con un’atmosfera calorosa e informale. Serviamo caffè di alta qualità, tè aromatizzati e snack deliziosi, accompagnati da un sorriso e un servizio rapido." wrapText="true">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelName" alignment="TOP_LEFT" layoutX="15.0" layoutY="14.0" prefHeight="53.0" prefWidth="473.0" text="bar di ingegnieria">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                  </Label>
+                  <ComboBox fx:id="openHour" layoutX="18.0" layoutY="385.0" prefWidth="150.0" promptText="opening hours" style="-fx-background-color: white;" />
+                  <ImageView fx:id="imageCafe" fitHeight="230.0" fitWidth="445.0" layoutX="18.0" layoutY="23.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/baring.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="18.0" layoutY="270.0" prefHeight="107.0" prefWidth="139.0" spacing="3.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="address:" wrappingWidth="121.94140625">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="city: " wrappingWidth="88.421875">
+                           <font>
+                              <Font name="System Bold Italic" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="number:" wrappingWidth="113.04296875">
+                           <font>
+                              <Font name="System Bold Italic" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="131.0" layoutY="270.0" prefHeight="108.0" prefWidth="302.0">
+                     <children>
+                        <Label fx:id="labelAddress" prefHeight="0.0" prefWidth="298.0" text="via vecchia di velletri, 39f" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelCity" prefHeight="0.0" prefWidth="302.0" text="Rome" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelNumber" prefHeight="35.0" prefWidth="124.0" text="06378569" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
             </Pane>
-            <Button fx:id="orderBtn" layoutX="339.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#continueOrder" prefHeight="51.0" prefWidth="435.0" text="procede to order">
+            <Button fx:id="orderBtn" layoutX="339.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#continueOrder" prefHeight="51.0" prefWidth="489.0" style="-fx-background-radius: 10;" text="procede to order">
                <font>
                   <Font size="24.0" />
                </font>

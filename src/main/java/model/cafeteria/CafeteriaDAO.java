@@ -4,9 +4,8 @@ import java.util.List;
 
 public abstract class CafeteriaDAO {
 
-    private static CafeteriaDAOmem instance;
-    private List<Cafeteria> memoria;
 
+    private List<Cafeteria> memoria;
 
     public abstract void saveCafeteria(Cafeteria cafe);
 

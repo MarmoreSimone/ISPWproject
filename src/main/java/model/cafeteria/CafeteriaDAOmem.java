@@ -8,6 +8,7 @@ public class CafeteriaDAOmem extends CafeteriaDAO {
     private static CafeteriaDAOmem instance = null;
     private List<Cafeteria> memoria = new ArrayList<>();
 
+
     public static synchronized CafeteriaDAOmem getInstance() {
         if(CafeteriaDAOmem.instance == null)
             CafeteriaDAOmem.instance = new CafeteriaDAOmem();

@@ -2,6 +2,7 @@ package controller;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
+import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
 import utils.RetrieveCafeterias;
 
@@ -12,6 +13,7 @@ import java.util.List;
 public class PlaceOrderController {
 
     private Cafeteria myCafeteria;
+    private List<Beverage> myBeverages;
 
     //ritorna una lista di cafeteriaBean andando a filtrare la searchCafeteriaBean
     //uso la searchBean in questo passaggio in quanto non mi interessa mostrare tutte le informazioni della caffetteria nella ricerca
@@ -46,10 +48,9 @@ public class PlaceOrderController {
 
         RetrieveCafeterias searcher = new RetrieveCafeterias();
         Cafeteria tempCafe = searcher.getCafeteriaByName(key.getName());
-        return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription());
+        return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription(), tempCafe.getOpeningHours(), tempCafe.getPhoto());
 
     }
-
 
     public void setCafeteria(SearchCafeteriaBean key) {
         this.myCafeteria = new RetrieveCafeterias().getCafeteriaByName(key.getName());
@@ -59,7 +60,9 @@ public class PlaceOrderController {
         return this.myCafeteria.getName();
     }
 
-
+    public List<Beverage> getCafeteriaBeverages() {
+        return myCafeteria.getBeverages();
+    }
 
 
 }
