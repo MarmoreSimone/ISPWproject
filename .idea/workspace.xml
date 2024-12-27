@@ -4,34 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="correzione sonar">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bean/beverageBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/MenuItemCellContr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/Beverage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/cell/menuItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2024_16_05_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2024_16_05__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_2024_10_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_2024_10_36__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2024_10_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2024_10_07__Changes_.xml" beforeDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="migliorie GUI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/beverageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/BeverageBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/MenuItemCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/MenuItemCellContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOmem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOmem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryMemoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOmem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/depositphotos_195872106-stock-illustration-cartoon-funny-coffee-bean-drinking.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/menuItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/menuItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +163,8 @@
       <workItem from="1735077535248" duration="10349000" />
       <workItem from="1735242248261" duration="267000" />
       <workItem from="1735243176346" duration="6578000" />
-      <workItem from="1735250976570" duration="5136000" />
+      <workItem from="1735250976570" duration="5338000" />
+      <workItem from="1735301834226" duration="11443000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -225,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734568330656</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="migliorie GUI">
+      <option name="closed" value="true" />
+      <created>1735257154990</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735257154990</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +243,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="aggiunto ricerca caffetteria" />
     <MESSAGE value="correzione sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="correzione sonar" />
+    <MESSAGE value="migliorie GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="migliorie GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

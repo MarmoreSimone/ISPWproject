@@ -1,13 +1,13 @@
 package model;
 
 import model.cafeteria.CafeteriaDAO;
-import model.cafeteria.CafeteriaDAOmem;
+import model.cafeteria.CafeteriaDAOdemo;
 
-public class DAOfactoryMemoria extends DAOfactory {
+public class DAOfactoryDemo extends DAOfactory {
 
     public CafeteriaDAO createCafeteriaDAO(){
 
         //System.out.println("siamo in memoria");
-        return CafeteriaDAOmem.getInstance();
+        return CafeteriaDAOdemo.getInstance();
     }
 }

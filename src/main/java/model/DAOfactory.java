@@ -19,7 +19,7 @@ public abstract class DAOfactory {
 
             switch (scelta) {
                 case 1 :
-                    me = new DAOfactoryMemoria();
+                    me = new DAOfactoryDemo();
                     break;
                 case 2 :
                     me = new DAOfactoryDB();

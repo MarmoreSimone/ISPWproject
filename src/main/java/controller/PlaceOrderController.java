@@ -1,5 +1,6 @@
 package controller;
 
+import bean.BeverageBean;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import model.beverage.Beverage;
@@ -12,8 +13,15 @@ import java.util.List;
 
 public class PlaceOrderController {
 
+    //caffetteria su cui si sta facendo l'ordine
     private Cafeteria myCafeteria;
+    //bevande aggiunte all'ordine
     private List<Beverage> myBeverages;
+
+
+    public PlaceOrderController() {
+        myBeverages = new ArrayList<>();
+    }
 
     //ritorna una lista di cafeteriaBean andando a filtrare la searchCafeteriaBean
     //uso la searchBean in questo passaggio in quanto non mi interessa mostrare tutte le informazioni della caffetteria nella ricerca
@@ -56,13 +64,54 @@ public class PlaceOrderController {
         this.myCafeteria = new RetrieveCafeterias().getCafeteriaByName(key.getName());
     }
 
+    //TODO rivedi se passare una bean, anche solo per il nome
     public String getCafeteriaName() {
         return this.myCafeteria.getName();
     }
 
-    public List<Beverage> getCafeteriaBeverages() {
-        return myCafeteria.getBeverages();
+    public List<BeverageBean> getCafeteriaBeverages() {
+
+        List<BeverageBean> retBeans = new ArrayList<>();
+
+        for(Beverage bev: myCafeteria.getBeverages()){
+            retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
+        }
+
+        return retBeans;
     }
 
+    public void addBeverageToOrder(BeverageBean bev){
+        //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
+        myBeverages.add(new Beverage(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage()));
+    }
 
+    public void removeBeverageFromOrder(BeverageBean bev){
+        for(Beverage b: myBeverages){
+            if(b.getName().equals(bev.getName())){
+                myBeverages.remove(b);
+                return;
+            }
+        }
+    }
+
+    public List<BeverageBean> getAddedBev(){
+
+        List<BeverageBean> retBeans = new ArrayList<>();
+
+        for(Beverage bev: myBeverages){
+            retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
+        }
+
+        return retBeans;
+
+    }
+
+    public Double totalPrice(){
+        double tot = 0;
+        for(Beverage bev: myBeverages){
+            tot = tot + bev.getPrice();
+        }
+
+        return tot;
+    }
 }

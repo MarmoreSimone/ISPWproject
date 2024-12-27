@@ -15,7 +15,7 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <Button fx:id="addToOrderButton" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="451.0" layoutY="25.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
+      <Button fx:id="addToOrderButton" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="451.0" layoutY="25.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addOrder" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>

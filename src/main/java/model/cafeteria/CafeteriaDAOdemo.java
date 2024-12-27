@@ -3,16 +3,16 @@ package model.cafeteria;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CafeteriaDAOmem extends CafeteriaDAO {
+public class CafeteriaDAOdemo extends CafeteriaDAO {
 
-    private static CafeteriaDAOmem instance = null;
+    private static CafeteriaDAOdemo instance = null;
     private List<Cafeteria> memoria = new ArrayList<>();
 
 
-    public static synchronized CafeteriaDAOmem getInstance() {
-        if(CafeteriaDAOmem.instance == null)
-            CafeteriaDAOmem.instance = new CafeteriaDAOmem();
-        return CafeteriaDAOmem.instance;
+    public static synchronized CafeteriaDAOdemo getInstance() {
+        if(CafeteriaDAOdemo.instance == null)
+            CafeteriaDAOdemo.instance = new CafeteriaDAOdemo();
+        return CafeteriaDAOdemo.instance;
     }
 
     public void saveCafeteria(Cafeteria cafe) {

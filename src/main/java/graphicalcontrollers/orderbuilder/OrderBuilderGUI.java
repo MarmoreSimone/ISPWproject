@@ -1,7 +1,9 @@
 package graphicalcontrollers.orderbuilder;
 
+import bean.BeverageBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.cell.AddedBevCellContr;
 import graphicalcontrollers.cell.MenuItemCellContr;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +28,16 @@ public class OrderBuilderGUI extends GraphicalController {
     @FXML
     private VBox beverageList;
 
+    @FXML
+    private VBox addedBevList;
+
+    @FXML
+    private Label totPrice;
+
+    //istanza del controller applicativo
     private PlaceOrderController controllerAppl;
+    //lista delle bevande della caffetteria
+    private List<BeverageBean> beverages;
 
     //overload dell'operazione launch()
     public void launch(PlaceOrderController controller) {
@@ -39,11 +50,16 @@ public class OrderBuilderGUI extends GraphicalController {
     }
 
     public void initialize2(){
+
+        //imposto il nome della caffetteria
         cafeName.setText(controllerAppl.getCafeteriaName());
-        showBevMenu(controllerAppl.getCafeteriaBeverages());
+        //imposto le bevande della caffetteria
+        beverages = controllerAppl.getCafeteriaBeverages();
+        //funzione per mostrare a schermo le bevande aggiungibili all'ordine
+        showBevMenu();
         }
 
-    public void showBevMenu(List<Beverage> beverages){
+    public void showBevMenu(){
 
         for(int i=0 ; i<beverages.size(); i++){
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/menuItem.fxml"));
@@ -60,17 +76,41 @@ public class OrderBuilderGUI extends GraphicalController {
 
     }
 
-    public void elimina(String nome){
-        for(int i=0 ; i<beverageList.getChildren().size(); i++) {
-            Pane pane = (Pane) beverageList.getChildren().get(i);
-            Label temp = (Label) pane.getChildren().getFirst();
+    public void showAddedBev(){
+        List<BeverageBean> beverages = controllerAppl.getAddedBev();
+        addedBevList.getChildren().clear();
 
-            if(temp.getText().equals(nome)) {
-                beverageList.getChildren().remove(i);
+        for(int i=0 ; i<beverages.size(); i++){
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/addedBev.fxml"));
+
+            try{
+                Pane pane = loader.load();
+                AddedBevCellContr contr = loader.getController();
+                contr.setData(beverages.get(i),this);
+                addedBevList.getChildren().add(pane);
+            } catch(IOException e){
+                e.printStackTrace();
             }
         }
 
     }
+
+    public void addToOrder(BeverageBean beverage){
+        controllerAppl.addBeverageToOrder(beverage);
+        showAddedBev();
+        totPrice.setText(String.valueOf(getTot())+"$");
+    }
+
+    public void removeFromOrder(BeverageBean beverage){
+        controllerAppl.removeBeverageFromOrder(beverage);
+        showAddedBev();
+        totPrice.setText(String.valueOf(getTot())+"$");
+    }
+
+    public double getTot(){
+        return controllerAppl.totalPrice();
+    }
+
 
 
 
