@@ -73,6 +73,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         controllerAppl = new PlaceOrderController();
     }
 
+    @Override
     public void launch(){
         //si potrebbe anche fare passando allo switch page questa istanza di controller grafico cosi da non crearne un'altra
         SwitchPage.getSwitchPageInstance().changePage("/view/searchCafeteriaGUI.fxml");

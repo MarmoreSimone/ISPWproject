@@ -15,6 +15,7 @@ public class SearchCafeteriaCLI extends GraphicalController implements SearchCaf
     private SearchCafeteriaViewCli view;
     private PlaceOrderController controllerAppl;
 
+    @Override
     public void launch(){
         view = new SearchCafeteriaViewCli();
         controllerAppl = new PlaceOrderController();

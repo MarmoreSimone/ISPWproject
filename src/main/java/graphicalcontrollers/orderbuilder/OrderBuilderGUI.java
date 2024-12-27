@@ -5,6 +5,7 @@ import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.cell.AddedBevCellContr;
 import graphicalcontrollers.cell.MenuItemCellContr;
+import graphicalcontrollers.customizeBeverage.CustomizeBeverageGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -49,6 +50,7 @@ public class OrderBuilderGUI extends GraphicalController {
         this.controllerAppl = controllerAppl;
     }
 
+    @Override
     public void initialize2(){
 
         //imposto il nome della caffetteria
@@ -57,7 +59,13 @@ public class OrderBuilderGUI extends GraphicalController {
         beverages = controllerAppl.getCafeteriaBeverages();
         //funzione per mostrare a schermo le bevande aggiungibili all'ordine
         showBevMenu();
+        showAddedBev();
+        totPrice.setText(String.valueOf(getTot())+"$");
         }
+
+    public PlaceOrderController getContrAppl(){
+        return controllerAppl;
+    }
 
     public void showBevMenu(){
 
@@ -77,16 +85,16 @@ public class OrderBuilderGUI extends GraphicalController {
     }
 
     public void showAddedBev(){
-        List<BeverageBean> beverages = controllerAppl.getAddedBev();
+        List<BeverageBean> addedBev = controllerAppl.getAddedBev();
         addedBevList.getChildren().clear();
 
-        for(int i=0 ; i<beverages.size(); i++){
+        for(int i=0 ; i<addedBev.size(); i++){
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/addedBev.fxml"));
 
             try{
                 Pane pane = loader.load();
                 AddedBevCellContr contr = loader.getController();
-                contr.setData(beverages.get(i),this);
+                contr.setData(addedBev.get(i),this);
                 addedBevList.getChildren().add(pane);
             } catch(IOException e){
                 e.printStackTrace();
@@ -111,7 +119,10 @@ public class OrderBuilderGUI extends GraphicalController {
         return controllerAppl.totalPrice();
     }
 
+    public void customizeBev(BeverageBean beverage){
+        new CustomizeBeverageGUI().launch(this,beverage);
 
+    }
 
 
     }

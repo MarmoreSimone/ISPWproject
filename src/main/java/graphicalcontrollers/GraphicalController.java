@@ -1,6 +1,8 @@
 package graphicalcontrollers;
 
+import bean.BeverageBean;
 import controller.PlaceOrderController;
+import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 
 public abstract class GraphicalController {
 
@@ -16,6 +18,14 @@ public abstract class GraphicalController {
 
     }
 
+    public void setContrOrderBuilder(OrderBuilderGUI controller){
+
+    }
+
+    public void setBeverage(BeverageBean bev){
+
+
+    }
 
 
 

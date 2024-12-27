@@ -1,6 +1,8 @@
 package utils;
+import bean.BeverageBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -54,6 +56,28 @@ public class SwitchPage {
 
         GraphicalController contr = loader.getController();
         contr.setControllerApplPlaceOrder(controller);
+
+        contr.initialize2();
+        this.stage.setScene(scene);
+        this.stage.show();
+    }
+
+    public void changePage(String sourcePath, OrderBuilderGUI controller, BeverageBean beverage){
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
+        Scene scene;
+
+
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        GraphicalController contr = loader.getController();
+        contr.setContrOrderBuilder(controller);
+        contr.setBeverage(beverage);
 
         contr.initialize2();
         this.stage.setScene(scene);

@@ -37,5 +37,9 @@ public class MenuItemCellContr {
         parent.addToOrder(beverage);
     }
 
+    public void custom(){
+        parent.customizeBev(beverage);
+    }
+
 
 }

@@ -29,4 +29,7 @@ module com.example.ispwproject {
     opens model to javafx.fxml;
 
     opens images to javafx.fxml;
+
+    exports graphicalcontrollers.customizeBeverage to javafx.fxml;
+    opens graphicalcontrollers.customizeBeverage to javafx.fxml;
 }
