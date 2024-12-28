@@ -1,6 +1,7 @@
 package starter;
 
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.myorders.MyOrdersGUI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,11 +54,8 @@ public class MenuController {
 
     @FXML
     private void onButtonClickMyOrder() {
-        try {
-            changeScene("/view/myOrdersGUI.fxml");  // Cambia scena a order.fxml
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            new MyOrdersGUI().launch();
+
     }
 
     @FXML

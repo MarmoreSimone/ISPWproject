@@ -1,11 +1,13 @@
 package model.order;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderDAOdemo extends OrderDAO {
 
     private static OrderDAOdemo instance = null;
-
+    private static List<Order> orders = new ArrayList<Order>();
 
     public static synchronized OrderDAOdemo getInstance() {
         if(OrderDAOdemo.instance == null)
@@ -17,9 +19,11 @@ public class OrderDAOdemo extends OrderDAO {
     public OrderDAOdemo() {}
 
     public void saveOrder(Order order) {
-        System.out.println("save order");
+        orders.add(order);
     }
 
-
+    public List<Order> getAllOrders() {
+        return orders;
+    }
 
 }

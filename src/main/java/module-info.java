@@ -39,4 +39,10 @@ module com.example.ispwproject {
     exports graphicalcontrollers.ordersummary to javafx.fxml;
     opens graphicalcontrollers.ordersummary to javafx.fxml;
 
-}
+    exports graphicalcontrollers.home to javafx.fxml;
+    opens graphicalcontrollers.home to javafx.fxml;
+
+    exports graphicalcontrollers.myorders to javafx.fxml;
+    opens graphicalcontrollers.myorders to javafx.fxml;
+
+    }

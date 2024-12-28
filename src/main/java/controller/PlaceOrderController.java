@@ -1,19 +1,17 @@
 package controller;
 
-import bean.BeverageBean;
-import bean.CafeteriaBean;
-import bean.OrderDetailBean;
-import bean.SearchCafeteriaBean;
-import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
+import bean.*;
 import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
 import model.order.Order;
 import utils.RetrieveCafeterias;
+import utils.enums.OrderStatus;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PlaceOrderController {
 
@@ -21,7 +19,7 @@ public class PlaceOrderController {
     private Cafeteria myCafeteria;
     //bevande aggiunte all'ordine
     private List<Beverage> myBeverages;
-
+    //entity dell'ordine costruita negli ultimi step
     private Order order;
 
     public PlaceOrderController() {
@@ -65,6 +63,7 @@ public class PlaceOrderController {
 
     }
 
+    //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
     public void setCafeteria(SearchCafeteriaBean key) {
         this.myCafeteria = new RetrieveCafeterias().getCafeteriaByName(key.getName());
     }
@@ -74,6 +73,7 @@ public class PlaceOrderController {
         return this.myCafeteria.getName();
     }
 
+    //ritorna una lista di BeverageBean della caffetteria settata nel contr. appl.
     public List<BeverageBean> getCafeteriaBeverages() {
 
         List<BeverageBean> retBeans = new ArrayList<>();
@@ -85,11 +85,13 @@ public class PlaceOrderController {
         return retBeans;
     }
 
+    //aggiunge una bevanda all'ordine
     public void addBeverageToOrder(BeverageBean bev){
         //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
         myBeverages.add(new Beverage(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage()));
     }
 
+    //rimuove una bevanda dall'ordine
     public void removeBeverageFromOrder(BeverageBean bev){
         for(Beverage b: myBeverages){
             if(b.getName().equals(bev.getName())){
@@ -99,6 +101,7 @@ public class PlaceOrderController {
         }
     }
 
+    //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
     public List<BeverageBean> getAddedBev(){
 
         List<BeverageBean> retBeans = new ArrayList<>();
@@ -111,6 +114,7 @@ public class PlaceOrderController {
 
     }
 
+    //ritorna il prezzo totale dell'ordine
     public Double totalPrice(){
         double tot = 0;
         for(Beverage bev: myBeverages){
@@ -120,6 +124,7 @@ public class PlaceOrderController {
         return tot;
     }
 
+    //costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
     public void buildOrder(OrderDetailBean details){
 
         this.order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
@@ -132,10 +137,28 @@ public class PlaceOrderController {
         this.order.setPayMethod(details.getPayMethod());
         this.order.setTotPrice(totalPrice());
 
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        Random random = new Random();
+        StringBuilder randomString = new StringBuilder();
+
+        for (int i = 0; i < 5; i++) {
+            int index = random.nextInt(characters.length());
+            randomString.append(characters.charAt(index));
+        }
+
+        this.order.setPickUpCode(randomString.toString());
     }
 
-    public Order getOrder(){
-        return this.order;
+    //ritorna una bean dell'ordine
+    public OrderBean getOrder(){
+        return new OrderBean(getAddedBev(),loadSelectedCafeteria(new SearchCafeteriaBean(myCafeteria.getName(), myCafeteria.getAddress())), totalPrice(), this.order.getPickUpCode(), this.order.getPayMethod(), this.order.getNote(), this.order.getDate(),this.order.getTime());
     }
+
+    public void sendOrder(){
+        this.order.setStatus("PENDING");
+        DAOfactory.getDAOfactory().createOrderDAO().saveOrder(this.order);
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package graphicalcontrollers.ordersummary;
 
+import bean.OrderBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
@@ -52,7 +53,8 @@ public class OrderSummaryGUI extends GraphicalController {
 
     @Override
     public void initialize2() {
-        Order order = controllerAppl.getOrder();
+
+        OrderBean order = controllerAppl.getOrder();
         address.setText(order.getCafeteria().getAddress());
         city.setText(order.getCafeteria().getCity());
         date.setText(order.getDate());
@@ -65,9 +67,17 @@ public class OrderSummaryGUI extends GraphicalController {
         for(int i=0;i<order.getBevs().size();i++){
             itemList.getItems().add(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
         }
+
     }
 
     public void goBackToFinalize() {
         new FinalizeOrderGUI().launch(controllerAppl);
     }
+
+    public void confirmOrder(){
+        controllerAppl.sendOrder();
+        SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
+    }
+
+
 }

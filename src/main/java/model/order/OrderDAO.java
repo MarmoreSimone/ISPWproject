@@ -1,5 +1,7 @@
 package model.order;
 
+import java.util.List;
+
 public abstract class OrderDAO {
 
     public Order createNewOrder(){
@@ -7,5 +9,8 @@ public abstract class OrderDAO {
     }
 
     public abstract void saveOrder(Order order);
+
+    public abstract List<Order> getAllOrders();
+
 
 }
