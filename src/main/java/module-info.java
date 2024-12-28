@@ -30,6 +30,13 @@ module com.example.ispwproject {
 
     opens images to javafx.fxml;
 
-    exports graphicalcontrollers.customizeBeverage to javafx.fxml;
-    opens graphicalcontrollers.customizeBeverage to javafx.fxml;
+    exports graphicalcontrollers.customizebeverage to javafx.fxml;
+    opens graphicalcontrollers.customizebeverage to javafx.fxml;
+
+    exports graphicalcontrollers.finalizeorder to javafx.fxml;
+    opens graphicalcontrollers.finalizeorder to javafx.fxml;
+
+    exports graphicalcontrollers.ordersummary to javafx.fxml;
+    opens graphicalcontrollers.ordersummary to javafx.fxml;
+
 }

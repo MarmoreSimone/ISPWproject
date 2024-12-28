@@ -1,7 +1,6 @@
-package graphicalcontrollers.customizeBeverage;
+package graphicalcontrollers.customizebeverage;
 
 import bean.BeverageBean;
-import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXML;

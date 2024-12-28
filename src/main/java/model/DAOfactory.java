@@ -1,6 +1,7 @@
 package model;
 
 import model.cafeteria.CafeteriaDAO;
+import model.order.OrderDAO;
 
 public abstract class DAOfactory {
 
@@ -38,5 +39,7 @@ public abstract class DAOfactory {
     }
 
     public abstract CafeteriaDAO createCafeteriaDAO();
+
+    public abstract OrderDAO createOrderDAO();
 
 }

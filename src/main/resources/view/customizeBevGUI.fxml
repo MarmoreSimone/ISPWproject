@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.customizeBeverage.CustomizeBeverageGUI">
+<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.customizebeverage.CustomizeBeverageGUI">
     <left>
         <fx:include minHeight="-Infinity" source="menu.fxml" />
     </left>
@@ -56,7 +56,7 @@
                               <Insets top="2.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="calories" prefHeight="40.0" prefWidth="115.0" text="30 kcal">
+                        <Label fx:id="calories" prefHeight="40.0" prefWidth="146.0" text="30 kcal">
                            <font>
                               <Font size="28.0" />
                            </font>

@@ -5,20 +5,18 @@ import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.cell.AddedBevCellContr;
 import graphicalcontrollers.cell.MenuItemCellContr;
-import graphicalcontrollers.customizeBeverage.CustomizeBeverageGUI;
+import graphicalcontrollers.customizebeverage.CustomizeBeverageGUI;
+import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import model.beverage.Beverage;
 import starter.Main;
 import utils.SwitchPage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class OrderBuilderGUI extends GraphicalController {
@@ -124,6 +122,9 @@ public class OrderBuilderGUI extends GraphicalController {
 
     }
 
+    public void continueOrder(){
+        new FinalizeOrderGUI().launch(controllerAppl);
+    }
 
     }
 

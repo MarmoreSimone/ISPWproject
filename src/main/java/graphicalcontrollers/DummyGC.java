@@ -12,7 +12,7 @@ public class DummyGC {
     public void insertCafe(){
         String orario1 = "08:00 - 16:00";
 
-        Cafeteria caf1 = new Cafeteria("bar di ingegnieria","via del cambridge","Tor vergata","12345677","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/baring.jpg");
+        Cafeteria caf1 = new Cafeteria("bar di ingegneria","via del cambridge","Tor vergata","12345677","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/baring.jpg");
         caf1.setOpeningHours(orario1,orario1,orario1,orario1,orario1,orario1,"closed");
         caf1.setBeverages(new Beverage("Americano","real american coffee", 2, 123, 60,"/images/americano.jpg"));
         caf1.setBeverages(new Beverage("Cappuccino","best cappuccio in town", 1.5, 123, 60,"/images/cappuccino.jpg"));

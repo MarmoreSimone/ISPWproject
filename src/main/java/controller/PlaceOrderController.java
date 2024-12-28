@@ -2,9 +2,13 @@ package controller;
 
 import bean.BeverageBean;
 import bean.CafeteriaBean;
+import bean.OrderDetailBean;
 import bean.SearchCafeteriaBean;
+import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
+import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
+import model.order.Order;
 import utils.RetrieveCafeterias;
 
 
@@ -18,6 +22,7 @@ public class PlaceOrderController {
     //bevande aggiunte all'ordine
     private List<Beverage> myBeverages;
 
+    private Order order;
 
     public PlaceOrderController() {
         myBeverages = new ArrayList<>();
@@ -114,4 +119,23 @@ public class PlaceOrderController {
 
         return tot;
     }
+
+    public void buildOrder(OrderDetailBean details){
+
+        this.order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
+
+        this.order.setCafeteria(myCafeteria);
+        this.order.setItems(myBeverages);
+        this.order.setDate(details.getDate());
+        this.order.setTime(details.getTime());
+        this.order.setNote(details.getNote());
+        this.order.setPayMethod(details.getPayMethod());
+        this.order.setTotPrice(totalPrice());
+
+    }
+
+    public Order getOrder(){
+        return this.order;
+    }
+
 }

@@ -2,6 +2,8 @@ package model;
 
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
+import model.order.OrderDAO;
+import model.order.OrderDAOdemo;
 
 public class DAOfactoryDB extends DAOfactory{
 
@@ -9,5 +11,10 @@ public class DAOfactoryDB extends DAOfactory{
 
         System.out.println("siamo in DATABASE");
         return CafeteriaDAOdemo.getInstance(); //metti db
+    }
+
+    public OrderDAO createOrderDAO(){
+        System.out.println("siamo in DATABASE");
+        return OrderDAOdemo.getInstance();
     }
 }
