@@ -101,17 +101,21 @@ public class PlaceOrderController {
         }
     }
 
-    //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
-    public List<BeverageBean> getAddedBev(){
-
+    //data una lista di beverages le converte in beveragesBean
+    public List<BeverageBean> getBeveragesBeanList(List<Beverage> beverages){
         List<BeverageBean> retBeans = new ArrayList<>();
 
-        for(Beverage bev: myBeverages){
+        for(Beverage bev: beverages){
             retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
         }
 
         return retBeans;
 
+    }
+
+    //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
+    public List<BeverageBean> getAddedBev(){
+        return getBeveragesBeanList(myBeverages);
     }
 
     //ritorna il prezzo totale dell'ordine

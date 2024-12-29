@@ -45,4 +45,7 @@ module com.example.ispwproject {
     exports graphicalcontrollers.myorders to javafx.fxml;
     opens graphicalcontrollers.myorders to javafx.fxml;
 
+    exports graphicalcontrollers.processOrders to javafx.fxml;
+    opens graphicalcontrollers.processOrders to javafx.fxml;
+
     }

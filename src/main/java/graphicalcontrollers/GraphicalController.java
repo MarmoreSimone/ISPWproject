@@ -4,6 +4,8 @@ import bean.BeverageBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 
+import java.util.List;
+
 public abstract class GraphicalController {
 
     public void launch(){
@@ -24,6 +26,9 @@ public abstract class GraphicalController {
 
     public void setBeverage(BeverageBean bev){
 
+    }
+
+    public void setData(Object obj, GraphicalController parent){
 
     }
 

@@ -2,6 +2,7 @@ package starter;
 
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.myorders.MyOrdersGUI;
+import graphicalcontrollers.processOrders.ProcessOrderGUI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,11 +37,7 @@ public class MenuController {
 
     @FXML
     private void onButtonClickGift() {
-        try {
-            changeScene("/view/giftCouponGUI.fxml");  // Cambia scena a order.fxml
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new ProcessOrderGUI().launch();
     }
 
     @FXML

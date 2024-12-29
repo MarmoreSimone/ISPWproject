@@ -67,6 +67,9 @@ public class OrderBuilderGUI extends GraphicalController {
 
     public void showBevMenu(){
 
+        List<Object> objectList = (List<Object>) (List<?>) beverages;
+        SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/menuItem.fxml",beverageList,this,objectList);
+        /*
         for(int i=0 ; i<beverages.size(); i++){
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/menuItem.fxml"));
 
@@ -79,13 +82,19 @@ public class OrderBuilderGUI extends GraphicalController {
                 e.printStackTrace();
             }
         }
+        */
 
     }
 
     public void showAddedBev(){
         List<BeverageBean> addedBev = controllerAppl.getAddedBev();
-        addedBevList.getChildren().clear();
 
+        //casto la lista di bevande ad una lista generica e dopo nel mini-controllore grafico la ricasto a Beverage Bean
+        List<Object> objectList = (List<Object>) (List<?>) addedBev;
+        SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/addedBev.fxml",addedBevList,this,objectList);
+
+        /*
+        addedBevList.getChildren().clear();
         for(int i=0 ; i<addedBev.size(); i++){
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/addedBev.fxml"));
 
@@ -98,6 +107,7 @@ public class OrderBuilderGUI extends GraphicalController {
                 e.printStackTrace();
             }
         }
+*/
 
     }
 
