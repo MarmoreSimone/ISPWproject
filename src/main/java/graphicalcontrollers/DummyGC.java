@@ -1,13 +1,23 @@
 package graphicalcontrollers;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
+import utils.SwitchPage;
 
-public class DummyGC {
+public class DummyGC extends GraphicalController {
 
+
+    public void launch(){
+        SwitchPage.getSwitchPageInstance().changePage("/view/dummy.fxml");
+    }
+
+    public void initialize2(){
+
+    }
 
     public void insertCafe(){
         String orario1 = "08:00 - 16:00";

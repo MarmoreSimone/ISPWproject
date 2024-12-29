@@ -48,4 +48,11 @@ module com.example.ispwproject {
     exports graphicalcontrollers.processorders to javafx.fxml;
     opens graphicalcontrollers.processorders to javafx.fxml;
 
+    exports graphicalcontrollers.login to javafx.fxml;
+    opens graphicalcontrollers.login to javafx.fxml;
+
+    exports graphicalcontrollers.homebarista to javafx.fxml;
+    opens graphicalcontrollers.homebarista to javafx.fxml;
+
+
     }

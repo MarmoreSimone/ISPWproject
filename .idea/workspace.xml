@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="separato il controller per cercare la caffetteria">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/UserLogged.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/OrderRequestCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/OrderRequestCellContr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="backup prima del login">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bean/CredentialsBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bean/UserBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/starter/MenuControllerBarista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/home/HomeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/home/HomeGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dummy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dummy.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +112,8 @@
       <recent name="java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="starter" />
+      <recent name="graphicalcontrollers.homebarista" />
       <recent name="graphicalcontrollers.cell" />
     </key>
   </component>
@@ -173,7 +181,7 @@
       <workItem from="1735435537402" duration="52000" />
       <workItem from="1735472948769" duration="1295000" />
       <workItem from="1735477390766" duration="1858000" />
-      <workItem from="1735483547066" duration="22641000" />
+      <workItem from="1735483547066" duration="29344000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -287,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735500569785</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="backup prima del login">
+      <option name="closed" value="true" />
+      <created>1735508180796</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735508180796</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +329,8 @@
     <MESSAGE value="&quot;finito ordine&quot; + myorders" />
     <MESSAGE value="aggiunta prima parte barista" />
     <MESSAGE value="separato il controller per cercare la caffetteria" />
-    <option name="LAST_COMMIT_MESSAGE" value="separato il controller per cercare la caffetteria" />
+    <MESSAGE value="backup prima del login" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup prima del login" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
