@@ -4,6 +4,7 @@ import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
 import model.order.OrderDAOdemo;
+import model.user.UserDAO;
 
 public class DAOfactoryDB extends DAOfactory{
 
@@ -16,5 +17,9 @@ public class DAOfactoryDB extends DAOfactory{
     public OrderDAO createOrderDAO(){
         System.out.println("siamo in DATABASE");
         return OrderDAOdemo.getInstance();
+    }
+
+    public UserDAO createUserDAO() {
+        return null;
     }
 }

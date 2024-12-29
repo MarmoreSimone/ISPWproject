@@ -16,7 +16,9 @@ public class OrderDAOdemo extends OrderDAO {
     }
 
 
-    public OrderDAOdemo() {}
+    protected OrderDAOdemo() {
+
+    }
 
     public void saveOrder(Order order) {
         orders.add(order);

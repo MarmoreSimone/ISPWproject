@@ -28,7 +28,6 @@ public class OrdersRequestController {
         for (Order order : orders) {
             if(order.getStatus().equals("PENDING")) {
                 ordersBean.add(placeOrderController.getOrder(order));
-                //ordersBean.add(new OrderBean(searchCafeteriaController.getBeveragesBeanList(order.getBevs()), searchCafeteriaController.loadSelectedCafeteria(new SearchCafeteriaBean(order.getCafeteria().getName(), order.getCafeteria().getAddress())), order.getTotPrice(), order.getPickUpCode(), order.getPayMethod(), order.getNote(), order.getDate(), order.getTime()));
             }
         }
 
@@ -56,7 +55,12 @@ public class OrdersRequestController {
 
     public void rejectRequest(OrderBean orderBean,String reason) {
         Order order = getOrderFromBean(orderBean);
-        order.setStatus("REJECTED"+": "+reason);
+        if(reason == null){
+            order.setStatus("REJECTED");
+        }
+        else {
+            order.setStatus("REJECTED: " + reason);
+        }
     }
 
 }
