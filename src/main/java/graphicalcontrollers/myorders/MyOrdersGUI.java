@@ -1,14 +1,18 @@
 package graphicalcontrollers.myorders;
 
+import bean.OrderBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
-import model.DAOfactory;
-import model.order.Order;
+import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import utils.SwitchPage;
 
 import java.util.List;
 
 public class MyOrdersGUI extends GraphicalController {
+
+    @FXML
+    private VBox ordList;
 
     public void launch() {
         SwitchPage.getSwitchPageInstance().changePage("/view/myOrdersGUI.fxml");
@@ -16,10 +20,16 @@ public class MyOrdersGUI extends GraphicalController {
 
     @Override
     public void initialize2(){
-        List<Order> ordini = DAOfactory.getDAOfactory().createOrderDAO().getAllOrders();
-        for (Order order : ordini) {
-            System.out.println(order.getCafeteria().getName() + "  " +order.getTotPrice()+"$  " + order.getStatus());
-        }
+        PlaceOrderController placeOrderController = new PlaceOrderController();
+        List<OrderBean> ordini = placeOrderController.getAllOrders();
+        loadMyOrders(ordini);
+
+    }
+
+    public void loadMyOrders(List<OrderBean> orders){
+        List<Object> objectList = (List<Object>) (List<?>) orders;
+        SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/myOrderCell.fxml",ordList,this,objectList);
+
 
     }
 

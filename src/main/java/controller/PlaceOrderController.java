@@ -154,7 +154,7 @@ public class PlaceOrderController {
         this.order.setPickUpCode(randomString.toString());
     }
 
-    //ritorna una bean dell'ordine
+    //ritorna una bean dell'ordine che si sta creando
     public OrderBean getOrder(){
         return new OrderBean(getAddedBev(),loadSelectedCafeteria(new SearchCafeteriaBean(myCafeteria.getName(), myCafeteria.getAddress())), totalPrice(), this.order.getPickUpCode(), this.order.getPayMethod(), this.order.getNote(), this.order.getDate(),this.order.getTime());
     }
@@ -162,6 +162,28 @@ public class PlaceOrderController {
     public void sendOrder(){
         this.order.setStatus("PENDING");
         DAOfactory.getDAOfactory().createOrderDAO().saveOrder(this.order);
+    }
+
+    public List<OrderBean> getAllOrders(){
+        List<OrderBean> retBeans = new ArrayList<>();
+        List<Order> orders = DAOfactory.getDAOfactory().createOrderDAO().getAllOrders();
+
+        for(Order o: orders){
+            OrderBean bean = new OrderBean();
+            bean.setBevs(getBeveragesBeanList(o.getBevs()));
+            bean.setStatus(o.getStatus());
+            bean.setDate(o.getDate());
+            bean.setTime(o.getTime());
+            bean.setNote(o.getNote());
+            bean.setTotPrice(o.getTotPrice());
+            bean.setPayMethod(o.getPayMethod());
+            bean.setPickUpCode(o.getPickUpCode());
+            bean.setCafeteria(loadSelectedCafeteria(new SearchCafeteriaBean(o.getCafeteria().getName(),o.getCafeteria().getAddress())));
+            retBeans.add(bean);
+        }
+
+        return retBeans;
+
     }
 
 

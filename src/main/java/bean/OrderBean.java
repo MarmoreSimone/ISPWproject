@@ -9,6 +9,12 @@ public class OrderBean extends OrderDetailBean {
     private CafeteriaBean cafeteria;
     private double totPrice;
     private String pickUpCode;
+    private String status;
+
+    public OrderBean() {
+
+    }
+
 
     public OrderBean(List<BeverageBean> items, CafeteriaBean cafeteria, double totPrice, String pickUpCode,String payMethod, String note, String date, String time) {
 
@@ -51,6 +57,20 @@ public class OrderBean extends OrderDetailBean {
     public void setPickUpCode(String pickUpCode) {
         this.pickUpCode = pickUpCode;
     }
+
+    public String getCafeName(){
+        return cafeteria.getName();
+    }
+
+    public void setStatus(String status){
+        this.status = status;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+
 
 
 

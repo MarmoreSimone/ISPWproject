@@ -1,16 +1,12 @@
-package graphicalcontrollers.processOrders;
+package graphicalcontrollers.processorders;
 
 import bean.OrderBean;
 import controller.OrdersRequestController;
-import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
-import model.DAOfactory;
-import model.order.Order;
 import utils.SwitchPage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProcessOrderGUI extends GraphicalController {
@@ -30,6 +26,8 @@ public class ProcessOrderGUI extends GraphicalController {
     public void initialize2(){
         this.contrAppl = new OrdersRequestController();
         showRequest();
+
+
         }
 
     public void showRequest(){

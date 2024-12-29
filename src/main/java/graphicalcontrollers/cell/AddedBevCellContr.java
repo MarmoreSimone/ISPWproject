@@ -32,9 +32,7 @@ public class AddedBevCellContr extends GraphicalController {
     //TODO vedi se può andare bene
     @Override
     public void setData(Object bev, GraphicalController contr){
-        System.out.println("uno");
         beverage = (BeverageBean) bev;
-        System.out.println("due");
         labelName.setText(beverage.getName());
         labelPrice.setText(String.valueOf(beverage.getPrice())+"$");
         parent = (OrderBuilderGUI) contr;

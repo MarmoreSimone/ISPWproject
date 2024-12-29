@@ -34,7 +34,7 @@
       </Button>
       <ScrollPane hbarPolicy="NEVER" layoutX="22.0" layoutY="75.0" prefHeight="181.0" prefWidth="169.0" vbarPolicy="ALWAYS">
          <content>
-            <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 16;" />
          </content>
       </ScrollPane>
       <Text layoutX="216.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="note:" wrappingWidth="58.01953125">

@@ -7,6 +7,8 @@ public class OrderDetailBean {
     private String date;
     private String time;
 
+    public OrderDetailBean() {}
+
     public OrderDetailBean(String payMethod, String note, String date, String time) {
         this.payMethod = payMethod;
         this.note = note;

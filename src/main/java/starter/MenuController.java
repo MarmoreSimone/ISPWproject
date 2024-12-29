@@ -2,7 +2,7 @@ package starter;
 
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.myorders.MyOrdersGUI;
-import graphicalcontrollers.processOrders.ProcessOrderGUI;
+import graphicalcontrollers.processorders.ProcessOrderGUI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -2,61 +2,51 @@ package graphicalcontrollers.cell;
 
 import bean.OrderBean;
 import graphicalcontrollers.GraphicalController;
-import graphicalcontrollers.processorders.ProcessOrderGUI;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
-public class OrderRequestCellContr extends GraphicalController {
+public class MyOrderCellContr extends GraphicalController {
 
+
+    @FXML
+    private Text cafeName;
+
+    @FXML
+    private Text code;
 
     @FXML
     private Text date;
 
     @FXML
-    private Label labelName;
+    private ListView<String> itemList;
 
     @FXML
-    private Text note;
-
-    @FXML
-    private TextArea rejReson;
+    private Text status;
 
     @FXML
     private Text time;
 
     @FXML
-    private ListView<String> itemList;
-
-    private ProcessOrderGUI parent;
+    private Text tot;
 
     private OrderBean order;
 
     @Override
     public void setData(Object ord, GraphicalController contr){
         order = (OrderBean) ord;
-        parent = (ProcessOrderGUI) contr;
 
-        time.setText(order.getTime());
+        cafeName.setText(order.getCafeName());
+        code.setText(order.getPickUpCode());
         date.setText(order.getDate());
-        note.setText(order.getNote());
-
+        time.setText(order.getTime());
+        tot.setText(String.valueOf(order.getTotPrice()) + "$");
+        status.setText(order.getStatus());
 
         for(int i=0;i<order.getBevs().size();i++){
             itemList.getItems().add(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
         }
-
-
     }
 
-    public void acceptClick(){
-        parent.accept(order);
-    }
-
-    public void rejectClick(){
-        parent.reject(order);
-    }
 
 }
