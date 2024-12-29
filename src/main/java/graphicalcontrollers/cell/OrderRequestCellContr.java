@@ -16,9 +16,6 @@ public class OrderRequestCellContr extends GraphicalController {
     private Text date;
 
     @FXML
-    private Label labelName;
-
-    @FXML
     private Text note;
 
     @FXML
@@ -56,7 +53,7 @@ public class OrderRequestCellContr extends GraphicalController {
     }
 
     public void rejectClick(){
-        parent.reject(order);
+        parent.reject(order,rejReson.getText());
     }
 
 }

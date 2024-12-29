@@ -3,6 +3,7 @@ package graphicalcontrollers.searchcafeteria;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import controller.SearchCafeteria;
 import graphicalcontrollers.GraphicalController;
 import viewcli.SearchCafeteriaViewCli;
 
@@ -13,12 +14,12 @@ import java.util.List;
 public class SearchCafeteriaCLI extends GraphicalController implements SearchCafeteriaInterface {
 
     private SearchCafeteriaViewCli view;
-    private PlaceOrderController controllerAppl;
+    private SearchCafeteria controllerAppl;
 
     @Override
     public void launch(){
         view = new SearchCafeteriaViewCli();
-        controllerAppl = new PlaceOrderController();
+        controllerAppl = new SearchCafeteria();
         String choice = "1";
 
         while(choice != "2") {

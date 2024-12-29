@@ -10,6 +10,8 @@ import javafx.scene.text.Text;
 import model.order.Order;
 import utils.SwitchPage;
 import javafx.fxml.FXML;
+
+
 public class OrderSummaryGUI extends GraphicalController {
 
     private PlaceOrderController controllerAppl;
@@ -54,7 +56,7 @@ public class OrderSummaryGUI extends GraphicalController {
     @Override
     public void initialize2() {
 
-        OrderBean order = controllerAppl.getOrder();
+        OrderBean order = controllerAppl.getMyOrder();
         address.setText(order.getCafeteria().getAddress());
         city.setText(order.getCafeteria().getCity());
         date.setText(order.getDate());

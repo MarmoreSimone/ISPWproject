@@ -21,8 +21,7 @@ public class MenuController {
     @FXML
     private void onButtonClickPlaceOrder() {
 
-        GraphicalController controller = new SearchCafeteriaGUI();
-        controller.launch();
+       new SearchCafeteriaGUI().launch();
 
     }
 

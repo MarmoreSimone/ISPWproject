@@ -11,10 +11,12 @@ import java.util.List;
 
 public class OrdersRequestController {
 
-    PlaceOrderController placeOrderController = new PlaceOrderController();
+    PlaceOrderController placeOrderController;
+    SearchCafeteria searchCafeteriaController;
 
     public OrdersRequestController() {
-
+        placeOrderController = new PlaceOrderController();
+        searchCafeteriaController = new SearchCafeteria();
     }
 
     public List<OrderBean> getAllRequest(){
@@ -25,7 +27,8 @@ public class OrdersRequestController {
 
         for (Order order : orders) {
             if(order.getStatus().equals("PENDING")) {
-                ordersBean.add(new OrderBean(placeOrderController.getBeveragesBeanList(order.getBevs()), placeOrderController.loadSelectedCafeteria(new SearchCafeteriaBean(order.getCafeteria().getName(), order.getCafeteria().getAddress())), order.getTotPrice(), order.getPickUpCode(), order.getPayMethod(), order.getNote(), order.getDate(), order.getTime()));
+                ordersBean.add(placeOrderController.getOrder(order));
+                //ordersBean.add(new OrderBean(searchCafeteriaController.getBeveragesBeanList(order.getBevs()), searchCafeteriaController.loadSelectedCafeteria(new SearchCafeteriaBean(order.getCafeteria().getName(), order.getCafeteria().getAddress())), order.getTotPrice(), order.getPickUpCode(), order.getPayMethod(), order.getNote(), order.getDate(), order.getTime()));
             }
         }
 
@@ -51,8 +54,9 @@ public class OrdersRequestController {
         order.setStatus("ACCEPTED");
     }
 
-    public void rejectRequest(OrderBean orderBean) {
+    public void rejectRequest(OrderBean orderBean,String reason) {
         Order order = getOrderFromBean(orderBean);
-        order.setStatus("REJECTED");
+        order.setStatus("REJECTED"+": "+reason);
     }
+
 }

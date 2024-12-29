@@ -3,10 +3,7 @@ package controller;
 import bean.*;
 import model.DAOfactory;
 import model.beverage.Beverage;
-import model.cafeteria.Cafeteria;
 import model.order.Order;
-import utils.RetrieveCafeterias;
-import utils.enums.OrderStatus;
 
 
 import java.util.ArrayList;
@@ -15,8 +12,6 @@ import java.util.Random;
 
 public class PlaceOrderController {
 
-    //caffetteria su cui si sta facendo l'ordine
-    private Cafeteria myCafeteria;
     //bevande aggiunte all'ordine
     private List<Beverage> myBeverages;
     //entity dell'ordine costruita negli ultimi step
@@ -24,53 +19,19 @@ public class PlaceOrderController {
 
     public PlaceOrderController() {
         myBeverages = new ArrayList<>();
-    }
-
-    //ritorna una lista di cafeteriaBean andando a filtrare la searchCafeteriaBean
-    //uso la searchBean in questo passaggio in quanto non mi interessa mostrare tutte le informazioni della caffetteria nella ricerca
-    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key){
-
-        RetrieveCafeterias searcher = new RetrieveCafeterias();
-
-        //lista di searchCafeteriaBean da tornare
-        List<SearchCafeteriaBean> foundCafes = new ArrayList<>();
-
-        //caso in cui si vuole cercare per nome
-        if(key.getName() != null){
-            Cafeteria temp = searcher.getCafeteriaByName(key.getName());
-            foundCafes.add(new SearchCafeteriaBean(temp.getName(), temp.getAddress()));
-        }
-
-        //caso in cui si vogliono cercare tutte le caffetterie disponibili
-        else if(key.getAddress() == null && key.getName() == null){
-            for(Cafeteria cafe: searcher.getAllCafeterias()){
-                foundCafes.add(new SearchCafeteriaBean(cafe.getName(), cafe.getAddress()));
-            }
-        }
-
-        //caso in cui si vuole cercare per indirizzo o città
-        //TODO ricerca con api google maps
-
-        return foundCafes;
-    }
-
-    //ritorna la cafeteriaBean contenente tutti i dati della caffetteria da mostrare
-    public CafeteriaBean loadSelectedCafeteria(SearchCafeteriaBean key){
-
-        RetrieveCafeterias searcher = new RetrieveCafeterias();
-        Cafeteria tempCafe = searcher.getCafeteriaByName(key.getName());
-        return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription(), tempCafe.getOpeningHours(), tempCafe.getPhoto());
-
+        order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
     }
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
     public void setCafeteria(SearchCafeteriaBean key) {
-        this.myCafeteria = new RetrieveCafeterias().getCafeteriaByName(key.getName());
+        SearchCafeteria search = new SearchCafeteria();
+        this.order.setCafeteria(search.getCafeteriaByName(key.getName()));
+        System.out.println(this.order.getCafeteria().getName());
     }
 
     //TODO rivedi se passare una bean, anche solo per il nome
     public String getCafeteriaName() {
-        return this.myCafeteria.getName();
+        return this.order.getCafeteria().getName();
     }
 
     //ritorna una lista di BeverageBean della caffetteria settata nel contr. appl.
@@ -78,7 +39,7 @@ public class PlaceOrderController {
 
         List<BeverageBean> retBeans = new ArrayList<>();
 
-        for(Beverage bev: myCafeteria.getBeverages()){
+        for(Beverage bev: this.order.getCafeteria().getBeverages()){
             retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
         }
 
@@ -131,9 +92,6 @@ public class PlaceOrderController {
     //costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
     public void buildOrder(OrderDetailBean details){
 
-        this.order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
-
-        this.order.setCafeteria(myCafeteria);
         this.order.setItems(myBeverages);
         this.order.setDate(details.getDate());
         this.order.setTime(details.getTime());
@@ -155,8 +113,25 @@ public class PlaceOrderController {
     }
 
     //ritorna una bean dell'ordine che si sta creando
-    public OrderBean getOrder(){
-        return new OrderBean(getAddedBev(),loadSelectedCafeteria(new SearchCafeteriaBean(myCafeteria.getName(), myCafeteria.getAddress())), totalPrice(), this.order.getPickUpCode(), this.order.getPayMethod(), this.order.getNote(), this.order.getDate(),this.order.getTime());
+    public OrderBean getMyOrder() {
+        return getOrder(this.order);
+    }
+
+    //dato un Order generico ritorna la Bean
+    public OrderBean getOrder(Order ord){
+        SearchCafeteria search = new SearchCafeteria();
+        OrderBean bean = new OrderBean();
+        bean.setBevs(getBeveragesBeanList(ord.getBevs()));
+        bean.setStatus(ord.getStatus());
+        bean.setDate(ord.getDate());
+        bean.setTime(ord.getTime());
+        bean.setNote(ord.getNote());
+        bean.setTotPrice(ord.getTotPrice());
+        bean.setPayMethod(ord.getPayMethod());
+        bean.setPickUpCode(ord.getPickUpCode());
+        bean.setCafeteria(search.loadSelectedCafeteria(new SearchCafeteriaBean(ord.getCafeteria().getName(),ord.getCafeteria().getAddress())));
+
+        return bean;
     }
 
     public void sendOrder(){
@@ -165,21 +140,14 @@ public class PlaceOrderController {
     }
 
     public List<OrderBean> getAllOrders(){
+
         List<OrderBean> retBeans = new ArrayList<>();
         List<Order> orders = DAOfactory.getDAOfactory().createOrderDAO().getAllOrders();
-
         for(Order o: orders){
-            OrderBean bean = new OrderBean();
-            bean.setBevs(getBeveragesBeanList(o.getBevs()));
-            bean.setStatus(o.getStatus());
-            bean.setDate(o.getDate());
-            bean.setTime(o.getTime());
-            bean.setNote(o.getNote());
-            bean.setTotPrice(o.getTotPrice());
-            bean.setPayMethod(o.getPayMethod());
-            bean.setPickUpCode(o.getPickUpCode());
-            bean.setCafeteria(loadSelectedCafeteria(new SearchCafeteriaBean(o.getCafeteria().getName(),o.getCafeteria().getAddress())));
+
+            OrderBean bean = getOrder(o);
             retBeans.add(bean);
+
         }
 
         return retBeans;

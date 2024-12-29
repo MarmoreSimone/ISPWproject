@@ -1,6 +1,7 @@
 package graphicalcontrollers.orderbuilder;
 
 import bean.BeverageBean;
+import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.cell.AddedBevCellContr;
@@ -39,13 +40,26 @@ public class OrderBuilderGUI extends GraphicalController {
     private List<BeverageBean> beverages;
 
     //overload dell'operazione launch()
+    public void launch(SearchCafeteriaBean bean) {
+        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", bean);
+    }
+
     public void launch(PlaceOrderController controller) {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", controller);
     }
 
+
     @Override
-    public void setControllerApplPlaceOrder(PlaceOrderController controllerAppl) {
-        this.controllerAppl = controllerAppl;
+    //usato la prima volta che parte il controllore grafico
+    public void setCafeteria(SearchCafeteriaBean bean) {
+        this.controllerAppl = new PlaceOrderController();
+        this.controllerAppl.setCafeteria(bean);
+    }
+
+    @Override
+    //usato quando dalla customization/info devo tornare indietro
+    public void setControllerApplPlaceOrder(PlaceOrderController controller){
+        this.controllerAppl = controller;
     }
 
     @Override

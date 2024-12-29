@@ -3,6 +3,7 @@ package graphicalcontrollers.searchcafeteria;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import controller.SearchCafeteria;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.beans.value.ChangeListener;
@@ -20,7 +21,9 @@ import java.util.List;
 
 public class SearchCafeteriaGUI extends GraphicalController implements SearchCafeteriaInterface {
 
-    private PlaceOrderController controllerAppl;
+    //private PlaceOrderController controllerAppl;
+
+    private SearchCafeteria controllerAppl;
 
     private final String[] choices = {"get all","name","city or address"};
 
@@ -69,8 +72,10 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         //popolo la choicebox
         searchCafChoiceBox.getItems().addAll(choices);
         searchCafChoiceBox.setValue(choices[0]);
-        //istanzio un nuovo controllore applicativo da usare durante lo svolgimento del caso d'uso
-        controllerAppl = new PlaceOrderController();
+
+        controllerAppl = new SearchCafeteria();
+
+        searchCafe();
     }
 
     @Override
@@ -175,11 +180,8 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
     public void continueOrder(){
 
-        //imposto caffetteria nel controllore applicativo
-        controllerAppl.setCafeteria(new SearchCafeteriaBean(labelName.getText(),null));
-
-        //faccio partire il controllore grafico passandogli l'istanza del controllore applicativo
-        new OrderBuilderGUI().launch(controllerAppl);
+        //faccio partire il controllore passandogli la caffetteria selezionata
+        new OrderBuilderGUI().launch(new SearchCafeteriaBean(labelName.getText(),null));
 
     }
 

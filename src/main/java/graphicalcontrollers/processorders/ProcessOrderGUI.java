@@ -41,8 +41,9 @@ public class ProcessOrderGUI extends GraphicalController {
         showRequest();
     }
 
-    public void reject(OrderBean bean){
-        contrAppl.rejectRequest(bean);
+    public void reject(OrderBean bean, String reason){
+        contrAppl.rejectRequest(bean,reason);
+
         showRequest();
     }
 

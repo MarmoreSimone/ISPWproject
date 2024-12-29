@@ -9,13 +9,13 @@
 
 <Pane prefHeight="210.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.MyOrderCellContr">
    <children>
-      <ListView fx:id="itemList" layoutX="31.0" layoutY="56.0" prefHeight="130.0" prefWidth="168.0" style="-fx-font-size: 16;" />
+      <ListView fx:id="itemList" layoutX="31.0" layoutY="56.0" prefHeight="130.0" prefWidth="179.0" style="-fx-font-size: 16;" />
       <Text fx:id="cafeName" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <VBox alignment="CENTER" layoutX="215.0" layoutY="57.0" prefHeight="109.0" prefWidth="491.0">
+      <VBox alignment="CENTER" layoutX="225.0" layoutY="57.0" prefHeight="109.0" prefWidth="491.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="223.0">
                <children>
