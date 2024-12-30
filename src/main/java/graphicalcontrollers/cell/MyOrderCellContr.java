@@ -32,9 +32,7 @@ public class MyOrderCellContr extends GraphicalController {
 
     private OrderRequestBean orderReq;
 
-    public void initialize2() {
 
-    }
 
     @Override
     public void setData(Object ord, GraphicalController contr){

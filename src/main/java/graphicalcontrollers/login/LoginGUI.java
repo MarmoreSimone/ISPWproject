@@ -19,6 +19,7 @@ public class LoginGUI extends GraphicalController {
     @FXML
     private TextField username;
 
+    @Override
     public void launch(){
         SwitchPage.getSwitchPageInstance().changePage("/view/login.fxml");
     }

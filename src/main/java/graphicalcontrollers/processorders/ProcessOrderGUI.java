@@ -1,6 +1,6 @@
 package graphicalcontrollers.processorders;
 
-import bean.OrderBean;
+
 import bean.OrderRequestBean;
 import controller.OrdersRequestController;
 import graphicalcontrollers.GraphicalController;
@@ -18,7 +18,8 @@ public class ProcessOrderGUI extends GraphicalController {
 
 
     private OrdersRequestController contrAppl;
-            ;
+
+    @Override
     public void launch() {
         SwitchPage.getSwitchPageInstance().changePage("/view/processOrders.fxml");
     }

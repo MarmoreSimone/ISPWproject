@@ -22,11 +22,13 @@ public class PlaceOrderController {
     private List<Beverage> myBeverages;
     //entity dell'ordine costruita negli ultimi step
     private Order order;
+    private Random random;
 
     public PlaceOrderController() {
         myBeverages = new ArrayList<>();
         order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
         user = UserLogged.getInstance().getUser();
+        random = new Random();
     }
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
@@ -125,6 +127,7 @@ public class PlaceOrderController {
         return bean;
     }
 
+
     public void sendOrderRequest(){
         OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrder();
         orderRequest.setStatus("PENDING");
@@ -134,7 +137,7 @@ public class PlaceOrderController {
 
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-        Random random = new Random();
+
         StringBuilder randomString = new StringBuilder();
 
         for (int i = 0; i < 5; i++) {

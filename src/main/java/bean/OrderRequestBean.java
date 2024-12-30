@@ -1,8 +1,5 @@
 package bean;
 
-import model.cafeteria.Cafeteria;
-import model.order.Order;
-
 public class OrderRequestBean {
 
     private String username;

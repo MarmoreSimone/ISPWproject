@@ -10,9 +10,7 @@ import java.util.List;
 
 public class UserAccess {
 
-        public UserAccess(){
 
-        }
 
         public UserBean login(CredentialsBean cred) {
             List<User> users = DAOfactory.getDAOfactory().createUserDAO().getAllUser();

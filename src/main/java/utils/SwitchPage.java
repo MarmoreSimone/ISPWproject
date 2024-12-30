@@ -1,17 +1,17 @@
 package utils;
 import bean.BeverageBean;
-import bean.CafeteriaBean;
+
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
-import graphicalcontrollers.cell.AddedBevCellContr;
+
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
-import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.cafeteria.Cafeteria;
+
 import starter.Main;
 import javafx.scene.layout.VBox;
 

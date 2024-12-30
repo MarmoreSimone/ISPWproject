@@ -2,7 +2,6 @@ package model.orderrequest;
 
 import model.cafeteria.Cafeteria;
 import model.order.Order;
-import model.user.User;
 
 public class OrderRequest {
 

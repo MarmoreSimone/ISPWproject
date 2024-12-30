@@ -11,9 +11,6 @@ import java.util.List;
 
 public class SearchCafeteria {
 
-    public SearchCafeteria() {
-
-    }
 
     public List<Cafeteria> getAllCafeterias(){
         return DAOfactory.getDAOfactory().createCafeteriaDAO().getAllCafeterias();

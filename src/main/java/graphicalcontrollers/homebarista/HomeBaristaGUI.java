@@ -9,8 +9,5 @@ public class HomeBaristaGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/homeBarista.fxml");
     }
 
-    @Override
-    public void initialize2() {
-    }
 
 }

@@ -25,17 +25,17 @@
                   <VBox fx:id="ordList" />
                </content>
             </ScrollPane>
-            <RadioButton fx:id="Raccept" layoutX="25.0" layoutY="82.0" mnemonicParsing="false" text="Accepted">
+            <RadioButton fx:id="accept" layoutX="25.0" layoutY="82.0" mnemonicParsing="false" text="Accepted">
                <font>
                   <Font size="17.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="Rreject" layoutX="165.0" layoutY="82.0" mnemonicParsing="false" text="Rejected">
+            <RadioButton fx:id="reject" layoutX="165.0" layoutY="82.0" mnemonicParsing="false" text="Rejected">
                <font>
                   <Font size="17.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="Rpending" layoutX="298.0" layoutY="82.0" mnemonicParsing="false" text="Pending">
+            <RadioButton fx:id="pending" layoutX="298.0" layoutY="82.0" mnemonicParsing="false" text="Pending">
                <font>
                   <Font size="17.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Font size="17.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="Rall" layoutX="558.0" layoutY="82.0" mnemonicParsing="false" text="All">
+            <RadioButton fx:id="all" layoutX="558.0" layoutY="82.0" mnemonicParsing="false" text="All">
                <font>
                   <Font size="17.0" />
                </font>

@@ -1,6 +1,5 @@
 package model.user;
 
-import model.order.Order;
 
 import java.util.List;
 

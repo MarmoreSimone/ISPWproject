@@ -1,7 +1,6 @@
 package model.order;
 
 import model.beverage.Beverage;
-import model.cafeteria.Cafeteria;
 
 import java.util.List;
 

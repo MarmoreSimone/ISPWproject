@@ -5,8 +5,6 @@ import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class AddedBevCellContr extends GraphicalController {
 
@@ -28,10 +26,6 @@ public class AddedBevCellContr extends GraphicalController {
         parent = contr;
     }
     */
-
-    public void initialize2() {
-
-    }
 
 
     //TODO vedi se può andare bene

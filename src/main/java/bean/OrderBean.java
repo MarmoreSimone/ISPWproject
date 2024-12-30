@@ -9,16 +9,10 @@ public class OrderBean extends OrderDetailBean {
     private double totPrice;
 
 
-
     public OrderBean() {
 
     }
 
-    public OrderBean(List<BeverageBean> items, CafeteriaBean cafeteria, double totPrice, String pickUpCode,String payMethod, String note, String date, String time) {
-        super(payMethod, note, date, time);
-        this.bevs = items;
-        this.totPrice = totPrice;
-    }
 
     public List<BeverageBean> getBevs() {
         return bevs;

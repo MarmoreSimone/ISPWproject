@@ -5,12 +5,10 @@ import utils.SwitchPage;
 
 public class HomeGUI extends GraphicalController {
 
+    @Override
     public void launch() {
         SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
     }
 
-    @Override
-    public void initialize2() {
-    }
 
 }

@@ -2,7 +2,6 @@ package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
-import controller.PlaceOrderController;
 import controller.SearchCafeteria;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;

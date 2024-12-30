@@ -22,20 +22,21 @@ public class MyOrdersGUI extends GraphicalController {
     private VBox ordList;
 
     @FXML
-    private RadioButton Raccept;
+    private RadioButton accept;
 
     @FXML
-    private RadioButton Rall;
+    private RadioButton all;
 
     @FXML
-    private RadioButton Rpending;
+    private RadioButton pending;
 
     @FXML
-    private RadioButton Rreject;
+    private RadioButton reject;
 
     @FXML
     private BorderPane mainBorderPane;
 
+    @Override
     public void launch() {
         SwitchPage.getSwitchPageInstance().changePage("/view/myOrdersGUI.fxml");
     }
@@ -49,30 +50,30 @@ public class MyOrdersGUI extends GraphicalController {
 
         ToggleGroup tg = new ToggleGroup();
 
-        Raccept.setToggleGroup(tg);
-        Rall.setToggleGroup(tg);
-        Rpending.setToggleGroup(tg);
-        Rreject.setToggleGroup(tg);
+        accept.setToggleGroup(tg);
+        all.setToggleGroup(tg);
+        pending.setToggleGroup(tg);
+        reject.setToggleGroup(tg);
 
-        Rall.setSelected(true);
+        all.setSelected(true);
 
         tg.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
                 if (newValue != null) {
                     RadioButton selectedRadioButton = (RadioButton) newValue;
-                    if(selectedRadioButton == Raccept){
+                    if(selectedRadioButton == accept){
                         loadMyOrders(ordini,"ACCEPTED");
                     }
-                    else if(selectedRadioButton == Rall){
+                    else if(selectedRadioButton == all){
                         loadMyOrders(ordini,"all");
                     }
 
-                    else if(selectedRadioButton == Rpending){
+                    else if(selectedRadioButton == pending){
                         loadMyOrders(ordini,"PENDING");
                     }
 
-                    else if(selectedRadioButton == Rreject){
+                    else if(selectedRadioButton == reject){
                         loadMyOrders(ordini,"REJECTED");
 
                     }

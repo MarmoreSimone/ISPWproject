@@ -1,6 +1,5 @@
 package graphicalcontrollers.cell;
 
-import bean.OrderBean;
 import bean.OrderRequestBean;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.processorders.ProcessOrderGUI;
@@ -35,9 +34,7 @@ public class OrderRequestCellContr extends GraphicalController {
 
     private OrderRequestBean order;
 
-    @Override
-    public void initialize2() {
-    }
+
 
     @Override
     public void setData(Object ord, GraphicalController contr){

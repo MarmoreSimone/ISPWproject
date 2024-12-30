@@ -7,7 +7,6 @@ import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import graphicalcontrollers.ordersummary.OrderSummaryGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.order.Order;
 import utils.SwitchPage;
 
 public class FinalizeOrderGUI extends GraphicalController {
