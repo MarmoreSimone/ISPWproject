@@ -4,6 +4,7 @@ import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
 import model.order.OrderDAOdemo;
+import model.orderrequest.OrderRequestDAO;
 import model.user.UserDAO;
 
 public class DAOfactoryFS extends DAOfactory{
@@ -22,4 +23,8 @@ public class DAOfactoryFS extends DAOfactory{
         return null;
     }
 
+    @Override
+    public OrderRequestDAO createOrderRequestDAO() {
+        return null;
+    }
 }

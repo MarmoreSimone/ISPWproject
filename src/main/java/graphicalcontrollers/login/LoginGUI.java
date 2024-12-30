@@ -42,6 +42,7 @@ public class LoginGUI extends GraphicalController {
         UserAccess contrAppl = new UserAccess();
 
         contrAppl.register(new UserBean("sim","1","client"));
+        contrAppl.register(new UserBean("sim2","11","client"));
         contrAppl.register(new UserBean("pal","2","barista"));
 
         System.out.println("aggiunti");

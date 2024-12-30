@@ -1,6 +1,6 @@
 package graphicalcontrollers.cell;
 
-import bean.OrderBean;
+import bean.OrderRequestBean;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -30,21 +30,25 @@ public class MyOrderCellContr extends GraphicalController {
     @FXML
     private Text tot;
 
-    private OrderBean order;
+    private OrderRequestBean orderReq;
+
+    public void initialize2() {
+
+    }
 
     @Override
     public void setData(Object ord, GraphicalController contr){
-        order = (OrderBean) ord;
+        orderReq = (OrderRequestBean) ord;
 
-        cafeName.setText(order.getCafeName());
-        code.setText(order.getPickUpCode());
-        date.setText(order.getDate());
-        time.setText(order.getTime());
-        tot.setText(String.valueOf(order.getTotPrice()) + "$");
-        status.setText(order.getStatus());
+        cafeName.setText(orderReq.getCafe());
+        code.setText(orderReq.getCode());
+        date.setText(orderReq.getOrder().getDate());
+        time.setText(orderReq.getOrder().getTime());
+        tot.setText(String.valueOf(orderReq.getOrder().getTotPrice()) + "$");
+        status.setText(orderReq.getState());
 
-        for(int i=0;i<order.getBevs().size();i++){
-            itemList.getItems().add(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
+        for(int i = 0; i< orderReq.getOrder().getBevs().size(); i++){
+            itemList.getItems().add(orderReq.getOrder().getBevs().get(i).getName() + "  " + orderReq.getOrder().getBevs().get(i).getPrice() + "$");
         }
     }
 

@@ -1,10 +1,8 @@
 package controller;
 
-
-import bean.OrderBean;
-import bean.SearchCafeteriaBean;
+import bean.OrderRequestBean;
 import model.DAOfactory;
-import model.order.Order;
+import model.orderrequest.OrderRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,42 +17,42 @@ public class OrdersRequestController {
         searchCafeteriaController = new SearchCafeteria();
     }
 
-    public List<OrderBean> getAllRequest(){
-        List<Order> orders;
-        List<OrderBean> ordersBean = new ArrayList<>();
+    public List<OrderRequestBean> getAllRequest(){
+        List<OrderRequest> orderReq;
+        List<OrderRequestBean> retBeans = new ArrayList<>();
 
-        orders = DAOfactory.getDAOfactory().createOrderDAO().getAllOrders();
+        orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
 
-        for (Order order : orders) {
-            if(order.getStatus().equals("PENDING")) {
-                ordersBean.add(placeOrderController.getOrder(order));
+        for(int i = 0; i < orderReq.size(); i++){
+            if(orderReq.get(i).getStatus().equals("PENDING")){
+                retBeans.add(placeOrderController.getOrdReqBean(orderReq.get(i)));
             }
         }
 
-        return ordersBean;
-
+        return retBeans;
     }
 
-    public Order getOrderFromBean(OrderBean bean) {
+    public OrderRequest getOrderReqFromBean(OrderRequestBean bean) {
 
-        List<Order> orders = DAOfactory.getDAOfactory().createOrderDAO().getAllOrders();
+        List<OrderRequest> orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
 
-        for (Order order : orders) {
-            //il pickUpCode è generato randomicamente la prob che ci siano più ordini con lo stesso pickUpCode più stesso orario e data è molto bassa TODO metti pure nome caff e vai sul sicuro
-            if(bean.getPickUpCode().equals(order.getPickUpCode()) && bean.getDate().equals(order.getDate()) && bean.getTime().equals(order.getTime())) {
-                return order;
+        for (int i = 0; i < orderReq.size(); i++) {
+            //il pickUpCode è generato randomicamente, la prob che ci siano più ordini con lo stesso pickUpCode appartenenti alla stessa caffetteria è praticamente zero
+            if(orderReq.get(i).getPickUpCode().equals(bean.getCode()) && orderReq.get(i).getCafeteria().getName().equals(bean.getCafe())) {
+                return orderReq.get(i);
             }
         }
+
         return null;
     }
 
-    public void acceptRequest(OrderBean orderBean) {
-        Order order = getOrderFromBean(orderBean);
+    public void acceptRequest(OrderRequestBean bean) {
+        OrderRequest order = getOrderReqFromBean(bean);
         order.setStatus("ACCEPTED");
     }
 
-    public void rejectRequest(OrderBean orderBean,String reason) {
-        Order order = getOrderFromBean(orderBean);
+    public void rejectRequest(OrderRequestBean bean,String reason) {
+        OrderRequest order = getOrderReqFromBean(bean);
         if(reason == null){
             order.setStatus("REJECTED");
         }

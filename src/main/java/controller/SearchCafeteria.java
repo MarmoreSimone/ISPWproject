@@ -58,7 +58,12 @@ public class SearchCafeteria {
     public CafeteriaBean loadSelectedCafeteria(SearchCafeteriaBean key){
 
         Cafeteria tempCafe = getCafeteriaByName(key.getName());
-        return new CafeteriaBean(tempCafe.getName(), tempCafe.getAddress(), tempCafe.getCity(), tempCafe.getNumber(), tempCafe.getDescription(), tempCafe.getOpeningHours(), tempCafe.getPhoto());
+        return getCafeBean(tempCafe);
+
+    }
+
+    public CafeteriaBean getCafeBean(Cafeteria cafe){
+        return new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getOpeningHours(), cafe.getPhoto());
 
     }
 

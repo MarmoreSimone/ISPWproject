@@ -18,6 +18,7 @@ public abstract class GraphicalController {
 
     }
 
+
     public void setControllerApplPlaceOrder(PlaceOrderController controller){
 
     }

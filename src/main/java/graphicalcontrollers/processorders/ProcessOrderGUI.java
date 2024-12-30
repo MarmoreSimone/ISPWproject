@@ -1,6 +1,7 @@
 package graphicalcontrollers.processorders;
 
 import bean.OrderBean;
+import bean.OrderRequestBean;
 import controller.OrdersRequestController;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
@@ -31,19 +32,18 @@ public class ProcessOrderGUI extends GraphicalController {
         }
 
     public void showRequest(){
-        List<OrderBean> orders = contrAppl.getAllRequest();
+        List<OrderRequestBean> orders = contrAppl.getAllRequest();
         List<Object> objectList = (List<Object>) (List<?>) orders;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/evaluateOrder.fxml",requestList,this,objectList);
     }
 
-    public void accept(OrderBean bean){
+    public void accept(OrderRequestBean bean){
         contrAppl.acceptRequest(bean);
         showRequest();
     }
 
-    public void reject(OrderBean bean, String reason){
+    public void reject(OrderRequestBean bean, String reason){
         contrAppl.rejectRequest(bean,reason);
-
         showRequest();
     }
 

@@ -2,6 +2,7 @@ package model;
 
 import model.cafeteria.CafeteriaDAO;
 import model.order.OrderDAO;
+import model.orderrequest.OrderRequestDAO;
 import model.user.UserDAO;
 
 public abstract class DAOfactory {
@@ -44,4 +45,6 @@ public abstract class DAOfactory {
     public abstract OrderDAO createOrderDAO();
 
     public abstract UserDAO createUserDAO();
+
+    public abstract OrderRequestDAO createOrderRequestDAO();
 }

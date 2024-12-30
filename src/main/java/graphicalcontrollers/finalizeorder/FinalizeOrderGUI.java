@@ -58,8 +58,6 @@ public class FinalizeOrderGUI extends GraphicalController {
 
         else payMeth = payLater.getText();
 
-        //System.out.println(note.getText()+"\n"+time.getText()+"\n"+day.getValue()+"\n"+payMeth);
-
         controllerAppl.buildOrder(new OrderDetailBean(payMeth,note.getText(),day.getValue().toString(), time.getText() ));
         new OrderSummaryGUI().launch(controllerAppl);
 

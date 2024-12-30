@@ -8,12 +8,9 @@ import java.util.List;
 public class Order {
 
         private List<Beverage> items;
-        private Cafeteria cafeteria;
         private double totPrice;
         private String payMethod;
         private String note;
-        private String status;
-        private String pickUpCode;
         private String date;
         private String time;
 
@@ -21,9 +18,8 @@ public class Order {
 
         }
 
-        public Order(List<Beverage> items, Cafeteria cafeteria, double totPrice, String payMethod, String note, String date, String time) {
+        public Order(List<Beverage> items, double totPrice, String payMethod, String note, String date, String time) {
                 this.items = items;
-                this.cafeteria = cafeteria;
                 this.totPrice = totPrice;
                 this.payMethod = payMethod;
                 this.note = note;
@@ -39,13 +35,6 @@ public class Order {
                 this.items = items;
         }
 
-        public Cafeteria getCafeteria() {
-                return cafeteria;
-        }
-
-        public void setCafeteria(Cafeteria cafeteria) {
-                this.cafeteria = cafeteria;
-        }
 
         public double getTotPrice() {
                 return totPrice;
@@ -89,21 +78,7 @@ public class Order {
                 this.time = time;
         }
 
-        public String getStatus() {
-                return status;
-        }
 
-        public void setStatus(String status) {
-                this.status = status;
-        }
-
-        public String getPickUpCode() {
-                return pickUpCode;
-        }
-
-        public void setPickUpCode(String pickUpCode) {
-                this.pickUpCode = pickUpCode;
-        }
 
 
 

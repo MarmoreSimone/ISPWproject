@@ -1,13 +1,15 @@
 package graphicalcontrollers.ordersummary;
 
+import bean.CafeteriaBean;
 import bean.OrderBean;
+import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import controller.SearchCafeteria;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
-import model.order.Order;
 import utils.SwitchPage;
 import javafx.fxml.FXML;
 
@@ -57,10 +59,14 @@ public class OrderSummaryGUI extends GraphicalController {
     public void initialize2() {
 
         OrderBean order = controllerAppl.getMyOrder();
-        address.setText(order.getCafeteria().getAddress());
-        city.setText(order.getCafeteria().getCity());
+        SearchCafeteria search = new SearchCafeteria();
+
+        CafeteriaBean cafe = search.loadSelectedCafeteria(new SearchCafeteriaBean(controllerAppl.getCafeteriaName(), null));
+
+        address.setText(cafe.getAddress());
+        city.setText(cafe.getCity());
         date.setText(order.getDate());
-        nameCafe.setText(order.getCafeteria().getName());
+        nameCafe.setText(cafe.getName());
         note.setText(order.getNote());
         tot.setText(String.valueOf(order.getTotPrice()) + "$");
         time.setText(String.valueOf(order.getTime()));
@@ -77,7 +83,7 @@ public class OrderSummaryGUI extends GraphicalController {
     }
 
     public void confirmOrder(){
-        controllerAppl.sendOrder();
+        controllerAppl.sendOrderRequest();
         SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
     }
 

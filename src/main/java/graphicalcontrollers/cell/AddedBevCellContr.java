@@ -29,6 +29,11 @@ public class AddedBevCellContr extends GraphicalController {
     }
     */
 
+    public void initialize2() {
+
+    }
+
+
     //TODO vedi se può andare bene
     @Override
     public void setData(Object bev, GraphicalController contr){

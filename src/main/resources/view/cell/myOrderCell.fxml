@@ -9,10 +9,10 @@
 
 <Pane prefHeight="210.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.MyOrderCellContr">
    <children>
-      <ListView fx:id="itemList" layoutX="31.0" layoutY="56.0" prefHeight="130.0" prefWidth="179.0" style="-fx-font-size: 16;" />
-      <Text fx:id="cafeName" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
+      <ListView fx:id="itemList" layoutX="31.0" layoutY="33.0" prefHeight="153.0" prefWidth="170.0" style="-fx-font-size: 16;" />
+      <Text fx:id="cafeName" layoutX="337.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <VBox alignment="CENTER" layoutX="225.0" layoutY="57.0" prefHeight="109.0" prefWidth="491.0">
@@ -80,5 +80,10 @@
             </HBox>
          </children>
       </VBox>
+      <Text layoutX="225.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cafeteria:" wrappingWidth="112.01953125">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
