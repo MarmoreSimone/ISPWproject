@@ -82,7 +82,7 @@ public class SearchCafeteriaCLI extends GraphicalController implements SearchCaf
     }
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
-        CafeteriaBean bean = controllerAppl.loadSelectedCafeteria(cafe);
+        CafeteriaBean bean = controllerAppl.getCafeBeanByName(cafe.getName());
         List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
         System.out.println("\nSELECTED CAFETERIA: ");
         view.showList(items);

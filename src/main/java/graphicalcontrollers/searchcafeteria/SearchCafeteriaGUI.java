@@ -156,7 +156,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
         //vado a prendere la bean completa della caffetteria
-        CafeteriaBean bean = controllerAppl.loadSelectedCafeteria(cafe);
+        CafeteriaBean bean = controllerAppl.getCafeBeanByName(cafe.getName());
         labelName.setText(bean.getName());
         labelAddress.setText(bean.getAddress());
         labelCity.setText(bean.getCity());

@@ -3,6 +3,8 @@ package controller;
 import bean.OrderRequestBean;
 import model.DAOfactory;
 import model.orderrequest.OrderRequest;
+import model.user.User;
+import utils.UserLogged;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +13,12 @@ public class OrdersRequestController {
 
     PlaceOrderController placeOrderController;
     SearchCafeteria searchCafeteriaController;
+    User user;
 
     public OrdersRequestController() {
         placeOrderController = new PlaceOrderController();
         searchCafeteriaController = new SearchCafeteria();
+        user = UserLogged.getInstance().getUser();
     }
 
     public List<OrderRequestBean> getAllRequest(){
@@ -24,7 +28,7 @@ public class OrdersRequestController {
         orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
 
         for(int i = 0; i < orderReq.size(); i++){
-            if(orderReq.get(i).getStatus().equals("PENDING")){
+            if(orderReq.get(i).getStatus().equals("PENDING") && orderReq.get(i).getCafeteria().getName().equals(user.getCafeteria())){
                 retBeans.add(placeOrderController.getOrdReqBean(orderReq.get(i)));
             }
         }

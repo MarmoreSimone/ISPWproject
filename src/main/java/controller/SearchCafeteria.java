@@ -52,9 +52,9 @@ public class SearchCafeteria {
         return foundCafes;
     }
 
-    public CafeteriaBean loadSelectedCafeteria(SearchCafeteriaBean key){
+    public CafeteriaBean getCafeBeanByName(String name){
 
-        Cafeteria tempCafe = getCafeteriaByName(key.getName());
+        Cafeteria tempCafe = getCafeteriaByName(name);
         return getCafeBean(tempCafe);
 
     }

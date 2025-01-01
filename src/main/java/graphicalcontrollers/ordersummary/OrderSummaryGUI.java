@@ -2,7 +2,6 @@ package graphicalcontrollers.ordersummary;
 
 import bean.CafeteriaBean;
 import bean.OrderBean;
-import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteria;
 import graphicalcontrollers.GraphicalController;
@@ -61,7 +60,7 @@ public class OrderSummaryGUI extends GraphicalController {
         OrderBean order = controllerAppl.getMyOrder();
         SearchCafeteria search = new SearchCafeteria();
 
-        CafeteriaBean cafe = search.loadSelectedCafeteria(new SearchCafeteriaBean(controllerAppl.getCafeteriaName(), null));
+        CafeteriaBean cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
 
         address.setText(cafe.getAddress());
         city.setText(cafe.getCity());

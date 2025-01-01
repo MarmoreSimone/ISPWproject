@@ -6,6 +6,8 @@ public class User {
         String password;
         String role;
 
+        //TODO vedi se fae una extends
+        String cafeteria;
         public User(){
 
         }
@@ -38,6 +40,14 @@ public class User {
 
         public void setRole(String role) {
             this.role = role;
+        }
+
+        public String getCafeteria() {
+            return cafeteria;
+        }
+
+        public void setCafeteria(String cafeteria) {
+            this.cafeteria = cafeteria;
         }
 
 
