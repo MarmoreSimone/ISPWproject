@@ -6,7 +6,7 @@ public class OrderBean extends OrderDetailBean {
 
     //più attributi presi da OrderDetailBean
     private List<BeverageBean> bevs;
-    private double totPrice;
+    private double totCost;
 
 
     public OrderBean() {
@@ -23,11 +23,11 @@ public class OrderBean extends OrderDetailBean {
     }
 
     public double getTotPrice() {
-        return totPrice;
+        return totCost;
     }
 
     public void setTotPrice(double totPrice) {
-        this.totPrice = totPrice;
+        this.totCost = totPrice;
     }
 
 

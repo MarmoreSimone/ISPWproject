@@ -4,51 +4,51 @@ import java.util.List;
 
 public class CafeteriaBean {
 
-    private String name;
-    private String address;
-    private String city;
-    private String number;
-    private String description;
-    private List<String> openingHours;
-    private String photo;
+    private String CafeteriaName;
+    private String StreetAddress;
+    private String town;
+    private String TelephoneNumber;
+    private String CafeDescription;
+    private List<String> openingHour;
+    private String picture;
 
 
     public CafeteriaBean(String name, String address, String city, String number, String description, List<String> openingHours, String photo) {
-        this.name = name;
-        this.address = address;
-        this.city = city;
-        this.number = number;
-        this.description = description;
-        this.openingHours = openingHours;
-        this.photo = photo;
+        this.CafeteriaName = name;
+        this.StreetAddress = address;
+        this.town = city;
+        this.TelephoneNumber = number;
+        this.CafeDescription = description;
+        this.openingHour = openingHours;
+        this.picture = photo;
     }
 
     public String getName() {
-        return name;
+        return CafeteriaName;
     }
 
     public String getAddress() {
-        return address;
+        return StreetAddress;
     }
 
     public String getCity() {
-        return city;
+        return town;
     }
 
     public String getNumber() {
-        return number;
+        return TelephoneNumber;
     }
 
     public String getDescription() {
-        return description;
+        return CafeDescription;
     }
 
     public List<String> getOpeningHours() {
-        return openingHours;
+        return openingHour;
     }
 
     public String getPhoto() {
-        return photo;
+        return picture;
     }
 
 
