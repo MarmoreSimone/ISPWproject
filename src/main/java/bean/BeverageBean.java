@@ -1,44 +1,44 @@
 package bean;
 
 public class BeverageBean {
-    private String name;
-    private String description;
-    private double price;
+    private String bevName;
+    private String descr;
+    private double cost;
     private double calories;
-    private double caffeine;
-    private String image;
+    private double caffeineValue;
+    private String pic;
 
     public BeverageBean(String name, String description, double price, double calories, double caffeine, String image) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
+        this.bevName = name;
+        this.descr = description;
+        this.cost = price;
         this.calories = calories;
-        this.caffeine = caffeine;
-        this.image = image;
+        this.caffeineValue = caffeine;
+        this.pic = image;
     }
 
     public String getName() {
-        return name;
+        return bevName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.bevName = name;
     }
 
     public String getDescription() {
-        return description;
+        return descr;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.descr = description;
     }
 
     public double getPrice() {
-        return price;
+        return cost;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.cost = price;
     }
 
     public double getCalories() {
@@ -50,19 +50,19 @@ public class BeverageBean {
     }
 
     public double getCaffeine() {
-        return caffeine;
+        return caffeineValue;
     }
 
     public void setCaffeine(double caffeine) {
-        this.caffeine = caffeine;
+        this.caffeineValue = caffeine;
     }
 
     public String getImage() {
-        return image;
+        return pic;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.pic = image;
     }
 
 }
