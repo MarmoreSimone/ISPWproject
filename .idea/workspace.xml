@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="duplication fix">
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="database implementation">
       <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" afterDir="false" />
@@ -217,7 +217,7 @@
       <workItem from="1735744677845" duration="20598000" />
       <workItem from="1735835526837" duration="4752000" />
       <workItem from="1735840313188" duration="14779000" />
-      <workItem from="1735919741090" duration="19818000" />
+      <workItem from="1735919741090" duration="20154000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -395,7 +395,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735759683781</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="database implementation">
+      <option name="closed" value="true" />
+      <created>1735944541623</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1735944541623</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +435,8 @@
     <MESSAGE value="cose mancanti" />
     <MESSAGE value="bu" />
     <MESSAGE value="duplication fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="duplication fix" />
+    <MESSAGE value="database implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="database implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
