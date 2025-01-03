@@ -28,4 +28,34 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
         return ordersRequest;
     }
 
+    public List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria) {
+        //evito di modificare gli elementi in orders request
+        List<OrderRequest> list = new ArrayList<>(ordersRequest);
+
+        for(int i=0;i<list.size();i++){
+            if(!list.get(i).getCafeteria().getName().equals(cafeteria)){
+                list.remove(i);
+            }
+        }
+        return list;
+    }
+
+    public  List<OrderRequest> getAllOrderRequestsByUsername(String user){
+        List<OrderRequest> list = new ArrayList<>(ordersRequest);
+
+        for(int i=0;i<list.size();i++){
+            if(!list.get(i).getUser().equals(user)){
+                list.remove(i);
+            }
+        }
+
+        return list;
+
+    }
+
+    public void changeStatus(OrderRequest order, String status){
+        order.setStatus(status);
+    }
+
+
 }

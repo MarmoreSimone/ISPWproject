@@ -4,6 +4,7 @@ package graphicalcontrollers;
 import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
+import model.cafeteria.CafeteriaDAOdb;
 import utils.SwitchPage;
 
 public class DummyGC extends GraphicalController {
@@ -31,6 +32,7 @@ public class DummyGC extends GraphicalController {
         caf1.setBeverages(new Beverage("Mocha coffee","non ti dimenticare", 2, 123, 60,"/images/mocha.jpg"));
 
         DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf1);
+
 
         String orario2 = " 12:00 - 16:00";
         Cafeteria caf2 = new Cafeteria("bar di medicina","via del signore","roma","2312412","Una caffetteria moderna che unisce tradizione e innovazione. Specializzata in miscele uniche di caffè, con un ambiente elegante e comodi posti a sedere. Perfetto per lavorare, studiare o godersi un momento di relax.","/images/cafe2.jpg");

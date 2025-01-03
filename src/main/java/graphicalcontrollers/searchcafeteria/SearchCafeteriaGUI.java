@@ -164,6 +164,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         labelDescr.setText(bean.getDescription());
         imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
         openHour.getItems().clear();
+        /*
         openHour.getItems().addAll(
                 "MONDAY: " + bean.getOpeningHours().get(0),
                 "TUESDAY:   " + bean.getOpeningHours().get(1),
@@ -173,7 +174,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
                 "SATURDAY:  " + bean.getOpeningHours().get(5),
                 "SUNDAY:    " + bean.getOpeningHours().get(6)
         );
-      
+      */
         paneInfoCard.setVisible(true);
     }
 

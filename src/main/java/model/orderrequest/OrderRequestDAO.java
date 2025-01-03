@@ -12,5 +12,9 @@ public abstract class OrderRequestDAO {
 
     public abstract List<OrderRequest> getAllOrderRequests();
 
+    public abstract List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria);
 
+    public abstract List<OrderRequest> getAllOrderRequestsByUsername(String user);
+
+    public abstract void changeStatus(OrderRequest order, String status);
 }

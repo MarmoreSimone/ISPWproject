@@ -62,9 +62,13 @@ public class Cafeteria {
             this.openingHours.add(sun);
  }
 
+ public void setAllBeverage(List<Beverage> beverages) {
+        this.beverages = beverages;
+ }
+
  public void setBeverages(Beverage beverage) {
         this.beverages.add(beverage);
- }
+    }
 
  public List<Beverage> getBeverages() {
         return beverages;

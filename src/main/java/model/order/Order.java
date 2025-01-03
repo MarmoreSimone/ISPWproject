@@ -17,8 +17,7 @@ public class Order {
 
         }
 
-        public Order(List<Beverage> items, double totPrice, String payMethod, String note, String date, String time) {
-                this.items = items;
+        public Order(double totPrice, String payMethod, String note, String date, String time) {
                 this.totPrice = totPrice;
                 this.payMethod = payMethod;
                 this.note = note;

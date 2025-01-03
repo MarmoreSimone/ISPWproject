@@ -1,5 +1,6 @@
 package model;
 
+import model.beverage.BeverageDAO;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
@@ -25,6 +26,10 @@ public class DAOfactoryFS extends DAOfactory{
 
     @Override
     public OrderRequestDAO createOrderRequestDAO() {
+        return null;
+    }
+
+    public BeverageDAO createBeverageDAO() {
         return null;
     }
 }

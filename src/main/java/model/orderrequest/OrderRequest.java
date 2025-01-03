@@ -14,10 +14,11 @@ public class OrderRequest {
         public OrderRequest() {
         }
 
-        public OrderRequest(String user, Cafeteria cafeteria, Order order, String status, String pickUpCode) {
+
+
+        public OrderRequest(String user, Cafeteria cafeteria, String status, String pickUpCode) {
             this.user = user;
             this.cafeteria = cafeteria;
-            this.order = order;
             this.status = status;
             this.pickUpCode = pickUpCode;
         }
@@ -25,6 +26,7 @@ public class OrderRequest {
         public String getUser() {
             return user;
         }
+
         public void setUser(String user) {
             this.user = user;
         }

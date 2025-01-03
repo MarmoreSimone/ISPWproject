@@ -19,12 +19,18 @@ public class OrderDAOdemo extends OrderDAO {
 
     }
 
-    public void saveOrder(Order order) {
+    public void saveOrder(Order order, String orderReq, String cafeteria) {
         orders.add(order);
     }
 
     public List<Order> getAllOrders() {
         return orders;
     }
+
+    public Order getOrderByOrderReq(String orderReq, String cafeteria){
+        return null;
+    }
+
+
 
 }

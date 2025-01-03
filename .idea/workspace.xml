@@ -4,19 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="cose mancanti">
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/LoginViewCli.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="duplication fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +102,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ricai/Desktop/ISPWproject/src/main/j_connector&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -91,10 +110,16 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\j_connector" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\cell" />
     </key>
@@ -189,7 +214,10 @@
       <workItem from="1735596120826" duration="682000" />
       <workItem from="1735596813214" duration="4865000" />
       <workItem from="1735646734123" duration="5033000" />
-      <workItem from="1735744677845" duration="5552000" />
+      <workItem from="1735744677845" duration="20598000" />
+      <workItem from="1735835526837" duration="4752000" />
+      <workItem from="1735840313188" duration="14779000" />
+      <workItem from="1735919741090" duration="19818000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -343,7 +371,31 @@
       <option name="project" value="LOCAL" />
       <updated>1735600409978</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="bu">
+      <option name="closed" value="true" />
+      <created>1735756399384</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1735756399384</updated>
+    </task>
+    <task id="LOCAL-00021" summary="bu">
+      <option name="closed" value="true" />
+      <created>1735759039532</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735759039532</updated>
+    </task>
+    <task id="LOCAL-00022" summary="duplication fix">
+      <option name="closed" value="true" />
+      <created>1735759683781</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1735759683781</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +425,9 @@
     <MESSAGE value="login user fatto" />
     <MESSAGE value="sonar" />
     <MESSAGE value="cose mancanti" />
-    <option name="LAST_COMMIT_MESSAGE" value="cose mancanti" />
+    <MESSAGE value="bu" />
+    <MESSAGE value="duplication fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="duplication fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

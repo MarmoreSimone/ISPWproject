@@ -25,10 +25,10 @@ public class OrdersRequestController {
         List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
 
-        orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
+        orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
 
         for(int i = 0; i < orderReq.size(); i++){
-            if(orderReq.get(i).getStatus().equals("PENDING") && orderReq.get(i).getCafeteria().getName().equals(user.getCafeteria())){
+            if(orderReq.get(i).getStatus().equals("PENDING")){
                 retBeans.add(placeOrderController.getOrdReqBean(orderReq.get(i)));
             }
         }
@@ -38,11 +38,11 @@ public class OrdersRequestController {
 
     public OrderRequest getOrderReqFromBean(OrderRequestBean bean) {
 
-        List<OrderRequest> orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
+        List<OrderRequest> orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
 
         for (int i = 0; i < orderReq.size(); i++) {
             //il pickUpCode è generato randomicamente, la prob che ci siano più ordini con lo stesso pickUpCode appartenenti alla stessa caffetteria è praticamente zero
-            if(orderReq.get(i).getPickUpCode().equals(bean.getCode()) && orderReq.get(i).getCafeteria().getName().equals(bean.getCafe())) {
+            if(orderReq.get(i).getPickUpCode().equals(bean.getCode())) {
                 return orderReq.get(i);
             }
         }
@@ -52,16 +52,16 @@ public class OrdersRequestController {
 
     public void acceptRequest(OrderRequestBean bean) {
         OrderRequest order = getOrderReqFromBean(bean);
-        order.setStatus("ACCEPTED");
+        DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "ACCEPTED");
     }
 
     public void rejectRequest(OrderRequestBean bean,String reason) {
         OrderRequest order = getOrderReqFromBean(bean);
         if(reason == null){
-            order.setStatus("REJECTED");
+            DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED");
         }
         else {
-            order.setStatus("REJECTED: " + reason);
+            DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED: " + reason);
         }
     }
 

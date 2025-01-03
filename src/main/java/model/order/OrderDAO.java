@@ -8,9 +8,10 @@ public abstract class OrderDAO {
         return new Order();
     }
 
-    public abstract void saveOrder(Order order);
+    public abstract void saveOrder(Order order, String orderReq, String cafeteria);
 
     public abstract List<Order> getAllOrders();
 
+    public abstract Order getOrderByOrderReq(String orderReq, String cafeteria);
 
 }

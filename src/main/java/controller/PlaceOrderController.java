@@ -155,19 +155,15 @@ public class PlaceOrderController {
     public List<OrderRequestBean> getAllMyOrderReq(){
 
         List<OrderRequestBean> retBeans = new ArrayList<>();
-        List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequests();
+        List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(user.getUsername());
 
         for(int i=0; i<ordReq.size(); i++){
-            if(ordReq.get(i).getUser().equals(user.getUsername())){
                 retBeans.add(getOrdReqBean(ordReq.get(i)));
-            }
-
         }
 
         return retBeans;
 
     }
-
 
     public OrderRequestBean getOrdReqBean(OrderRequest ord){
         OrderRequestBean bean = new OrderRequestBean();
