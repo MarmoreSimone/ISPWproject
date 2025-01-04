@@ -33,7 +33,7 @@ public class PlaceOrderController {
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
     public void setCafeteria(SearchCafeteriaBean key) {
-        SearchCafeteria search = new SearchCafeteria();
+        SearchCafeteriaController search = new SearchCafeteriaController();
         this.myCafeteria = search.getCafeteriaByName(key.getName());
     }
 

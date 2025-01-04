@@ -12,12 +12,12 @@ import java.util.List;
 public class OrdersRequestController {
 
     PlaceOrderController placeOrderController;
-    SearchCafeteria searchCafeteriaController;
+    SearchCafeteriaController searchCafeteriaController;
     User user;
 
     public OrdersRequestController() {
         placeOrderController = new PlaceOrderController();
-        searchCafeteriaController = new SearchCafeteria();
+        searchCafeteriaController = new SearchCafeteriaController();
         user = UserLogged.getInstance().getUser();
     }
 

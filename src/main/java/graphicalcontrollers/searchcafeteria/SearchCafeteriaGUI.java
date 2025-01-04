@@ -2,7 +2,7 @@ package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
-import controller.SearchCafeteria;
+import controller.SearchCafeteriaController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.beans.value.ChangeListener;
@@ -20,9 +20,7 @@ import java.util.List;
 
 public class SearchCafeteriaGUI extends GraphicalController implements SearchCafeteriaInterface {
 
-    //private PlaceOrderController controllerAppl;
-
-    private SearchCafeteria controllerAppl;
+    private SearchCafeteriaController controllerAppl;
 
     private final String[] choices = {"get all","name","city or address"};
 
@@ -63,7 +61,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
     @FXML
     private ImageView imageCafe;
 
-
+    @Override
     public void initialize2() {
 
         paneInfoCard.setVisible(false);
@@ -72,7 +70,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         searchCafChoiceBox.getItems().addAll(choices);
         searchCafChoiceBox.setValue(choices[0]);
 
-        controllerAppl = new SearchCafeteria();
+        controllerAppl = new SearchCafeteriaController();
 
         searchCafe();
     }
@@ -98,7 +96,7 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
                 cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
                 break;
 
-            //TODO caso in cui si vuole cercare per indirizzo/città
+            //case: caso in cui si vuole cercare per indirizzo/città
 
             case "get all":
                 bean = new SearchCafeteriaBean(null,null);

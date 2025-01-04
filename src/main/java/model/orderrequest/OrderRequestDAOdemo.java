@@ -24,15 +24,12 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
         ordersRequest.add(order);
     }
 
-    public List<OrderRequest> getAllOrderRequests() {
-        return ordersRequest;
-    }
-
     public List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria) {
         //evito di modificare gli elementi in orders request
         List<OrderRequest> list = new ArrayList<>(ordersRequest);
 
-        for(int i=0;i<list.size();i++){
+        //for(int i=0;i<list.size();i++){
+        for (int i = list.size() - 1; i >= 0; i--) {
             if(!list.get(i).getCafeteria().getName().equals(cafeteria)){
                 list.remove(i);
             }
@@ -43,7 +40,7 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
     public  List<OrderRequest> getAllOrderRequestsByUsername(String user){
         List<OrderRequest> list = new ArrayList<>(ordersRequest);
 
-        for(int i=0;i<list.size();i++){
+        for (int i = list.size() - 1; i >= 0; i--) {
             if(!list.get(i).getUser().equals(user)){
                 list.remove(i);
             }

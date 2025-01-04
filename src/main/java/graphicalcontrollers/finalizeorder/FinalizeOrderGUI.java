@@ -43,7 +43,7 @@ public class FinalizeOrderGUI extends GraphicalController {
         ToggleGroup tg = new ToggleGroup();
         payNow.setToggleGroup(tg);
         payLater.setToggleGroup(tg);
-        RadioButton selectedPayMeth = (RadioButton) tg.getSelectedToggle();
+        //RadioButton selectedPayMeth = (RadioButton) tg.getSelectedToggle();
 
     }
 

@@ -35,8 +35,8 @@ public class SwitchPage {
 
 
     public FXMLLoader getFXMLLoader(String sourcePath) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
-        return loader;
+        return new FXMLLoader(Main.class.getResource(sourcePath));
+
     }
 
     public Scene getScene(FXMLLoader loader) {
@@ -46,6 +46,7 @@ public class SwitchPage {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         return scene;
     }
 

@@ -1,24 +1,36 @@
 package utils;
 
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DbConnection {
-    private static final String url = "jdbc:mysql://localhost:3306/progetto";
-    private static final String user = "root";
-    private static final String password = "1234";
+
     private static DbConnection instance;
     private Connection conn;
 
     private DbConnection() {
-        try {
 
-            conn = DriverManager.getConnection(url, user, password);
-        } catch ( SQLException e) {
-            this.conn = null;
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream("src/main/java/utils/config.properties")) {
+            properties.load(fis);
+
+            // Estrai i parametri di connessione dal file
+            String URL = properties.getProperty("db.url");
+            String USER = properties.getProperty("db.username");
+            String PASSWORD = properties.getProperty("db.password");
+
+            // Crea la connessione al database
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Errore durante la connessione al database", e);
         }
+
 
     }
 

@@ -4,31 +4,31 @@ import java.util.List;
 
 public class CafeteriaBean {
 
-    private String CafeteriaName;
-    private String StreetAddress;
+    private String cafeteriaName;
+    private String streetAddress;
     private String town;
-    private String TelephoneNumber;
-    private String CafeDescription;
+    private String telephoneNumber;
+    private String cafeDescription;
     private List<String> openingHour;
     private String picture;
 
 
     public CafeteriaBean(String name, String address, String city, String number, String description, List<String> openingHours, String photo) {
-        this.CafeteriaName = name;
-        this.StreetAddress = address;
+        this.cafeteriaName = name;
+        this.streetAddress = address;
         this.town = city;
-        this.TelephoneNumber = number;
-        this.CafeDescription = description;
+        this.telephoneNumber = number;
+        this.cafeDescription = description;
         this.openingHour = openingHours;
         this.picture = photo;
     }
 
     public String getName() {
-        return CafeteriaName;
+        return cafeteriaName;
     }
 
     public String getAddress() {
-        return StreetAddress;
+        return streetAddress;
     }
 
     public String getCity() {
@@ -36,11 +36,11 @@ public class CafeteriaBean {
     }
 
     public String getNumber() {
-        return TelephoneNumber;
+        return telephoneNumber;
     }
 
     public String getDescription() {
-        return CafeDescription;
+        return cafeDescription;
     }
 
     public List<String> getOpeningHours() {

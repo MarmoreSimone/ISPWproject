@@ -18,14 +18,7 @@ public class AddedBevCellContr extends GraphicalController {
     @FXML
     private Label labelPrice;
 
-    /*
-    public void setData(BeverageBean bev, OrderBuilderGUI contr){
-        beverage = bev;
-        labelName.setText(bev.getName());
-        labelPrice.setText(String.valueOf(bev.getPrice())+"$");
-        parent = contr;
-    }
-    */
+
 
 
     //TODO vedi se può andare bene

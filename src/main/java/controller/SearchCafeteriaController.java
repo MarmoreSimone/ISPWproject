@@ -9,7 +9,7 @@ import model.cafeteria.Cafeteria;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchCafeteria {
+public class SearchCafeteriaController {
 
 
     public List<Cafeteria> getAllCafeterias(){
@@ -47,7 +47,7 @@ public class SearchCafeteria {
         }
 
         //caso in cui si vuole cercare per indirizzo o città
-        //TODO ricerca con api google maps
+        //ricerca con api google maps
 
         return foundCafes;
     }

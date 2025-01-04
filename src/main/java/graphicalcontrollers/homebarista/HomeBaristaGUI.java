@@ -11,10 +11,12 @@ public class HomeBaristaGUI extends GraphicalController {
     @FXML
     private Text name;
 
+    @Override
     public void launch() {
         SwitchPage.getSwitchPageInstance().changePage("/view/homeBarista.fxml");
     }
 
+    @Override
     public void initialize2() {
 
         name.setText(UserLogged.getInstance().getUser().getCafeteria());

@@ -25,19 +25,7 @@ public class MenuItemCellContr extends GraphicalController {
     @FXML
     private ImageView image;
 
-    /*
-    public void setData(BeverageBean bev, OrderBuilderGUI contr){
-        beverage = bev;
-        labelName.setText(bev.getName());
-        labelPrice.setText(String.valueOf(bev.getPrice())+"$");
-        image.setImage(new Image(getClass().getResourceAsStream(bev.getImage())));
-        parent = contr;
-    }
-     */
 
-
-
-    //TODO vedi se può andare bene
     @Override
     public void setData(Object bev, GraphicalController contr){
         beverage = (BeverageBean) bev;

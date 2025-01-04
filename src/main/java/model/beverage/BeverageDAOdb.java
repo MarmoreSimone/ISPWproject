@@ -1,6 +1,5 @@
 package model.beverage;
 
-import model.cafeteria.Cafeteria;
 import utils.DbConnection;
 
 import java.sql.Connection;
@@ -63,7 +62,7 @@ public class BeverageDAOdb extends BeverageDAO {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         return list;
@@ -88,36 +87,38 @@ public class BeverageDAOdb extends BeverageDAO {
         Connection conn = DbConnection.getInstance().getConnection();
         String query = "INSERT INTO bevlist (bev, quantity, cafe, `order`) VALUES (?, ?, ?, ?)";
 
-        int c;
-        while (!beverages.isEmpty()) {
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
 
-            c = 1;
-            Beverage currBeverage = beverages.get(0);
+            ps.setString(3, cafeteria);
+            ps.setString(4, orderReq);
+            int c;
+            while (!beverages.isEmpty()) {
 
-            for (int i=1; i<beverages.size(); i++) {
-                if(beverages.get(i).getName().equals(currBeverage.getName())) {
-                    c++;
-                    beverages.remove(i);
+                c = 1;
+                Beverage currBeverage = beverages.get(0);
+
+                for (int i = beverages.size() - 1; i > 0; i--) {
+                //for (int i=1; i<beverages.size(); i++) {
+                    if(beverages.get(i).getName().equals(currBeverage.getName())) {
+                        c++;
+                        beverages.remove(i);
+                    }
                 }
-            }
 
 
-            try (PreparedStatement ps = conn.prepareStatement(query)) {
+
 
                 ps.setString(1, currBeverage.getName());
                 ps.setInt(2, c);
-                ps.setString(3, cafeteria);
-                ps.setString(4, orderReq);
-
 
                 ps.executeUpdate();
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                beverages.remove(0);
 
-            beverages.remove(0);
+        }
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
@@ -127,7 +128,7 @@ public class BeverageDAOdb extends BeverageDAO {
 
         List<Beverage> list = new ArrayList<>();
 
-        String query = "SELECT * FROM bevlist WHERE `order` = ?";
+        String query = "SELECT bev,quantity,cafe FROM bevlist WHERE `order` = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -152,7 +153,7 @@ public class BeverageDAOdb extends BeverageDAO {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         return list;

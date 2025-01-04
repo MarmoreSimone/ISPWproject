@@ -21,6 +21,7 @@ public class CustomizeBeverageGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/customizeBevGUI.fxml", controller, beverage );
     }
 
+    @Override
     public void setContrOrderBuilder(OrderBuilderGUI controller) {
         parentContr = controller;
     }

@@ -82,20 +82,7 @@ public class OrderBuilderGUI extends GraphicalController {
 
         List<Object> objectList = (List<Object>) (List<?>) beverages;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/menuItem.fxml",beverageList,this,objectList);
-        /*
-        for(int i=0 ; i<beverages.size(); i++){
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/cell/menuItem.fxml"));
 
-            try{
-                Pane pane = loader.load();
-                MenuItemCellContr contr = loader.getController();
-                contr.setData(beverages.get(i),this);
-                beverageList.getChildren().add(pane);
-            } catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-        */
 
     }
 

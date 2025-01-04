@@ -59,7 +59,7 @@ public class UserDAOdb extends UserDAO{
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         return list;

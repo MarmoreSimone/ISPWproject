@@ -9,22 +9,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class OrderDAOdb extends OrderDAO{
 
-
-    public  List<Order> getAllOrders(){
-        return null;
-    }
 
 
     public Order getOrderByOrderReq(String orderReq, String cafeteria){
 
         Order order = null;
 
-        String query = "SELECT * FROM myorder WHERE orderreq = ?";
+        String query = "SELECT `date` , totprice , `time`, note, paymeth FROM myorder WHERE orderreq = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -46,7 +41,7 @@ public class OrderDAOdb extends OrderDAO{
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         //ora recupero le bevande

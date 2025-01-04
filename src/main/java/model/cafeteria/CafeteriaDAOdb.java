@@ -1,7 +1,6 @@
 package model.cafeteria;
 
 import model.DAOfactory;
-import model.beverage.Beverage;
 import utils.DbConnection;
 
 import java.sql.*;
@@ -42,7 +41,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
     public List <Cafeteria> getAllCafeterias() {
 
         List<Cafeteria> list = new ArrayList<>();
-        String query = "SELECT * FROM cafeteria";
+        String query = "SELECT name,city,address,number,description,photo FROM cafeteria";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -60,15 +59,13 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 Cafeteria caf = new Cafeteria(name, city, address, number, desc, image);
                 caf.setAllBeverage(DAOfactory.getDAOfactory().createBeverageDAO().getAllBevs(name));
 
-
                 list.add(caf);
-
 
             }
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         return list;

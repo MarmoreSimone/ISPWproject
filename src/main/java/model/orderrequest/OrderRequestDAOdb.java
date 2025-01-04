@@ -1,8 +1,7 @@
 package model.orderrequest;
 
-import controller.SearchCafeteria;
+import controller.SearchCafeteriaController;
 import model.DAOfactory;
-import model.order.Order;
 import utils.DbConnection;
 
 import java.sql.Connection;
@@ -37,9 +36,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
     }
 
-    public List<OrderRequest> getAllOrderRequests(){
-        return null;
-    }
+
 
     public List<OrderRequest> getAllOrderRequestsByUsername(String username){
         String query = "SELECT * FROM orderrequest WHERE user = ?";
@@ -56,15 +53,15 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
     }
 
-    private List<OrderRequest> getAllOrderRequestsByQuery(String MyQuery, String key){
+    private List<OrderRequest> getAllOrderRequestsByQuery(String myQuery, String key){
 
         List<OrderRequest> orderRequests = new ArrayList<OrderRequest>();
 
-        String query = MyQuery;
+        String query = myQuery;
 
         Connection connection = DbConnection.getInstance().getConnection();
 
-        SearchCafeteria search = new SearchCafeteria();
+        SearchCafeteriaController search = new SearchCafeteriaController();
 
         try (PreparedStatement ps = connection.prepareStatement(query)) {
 
@@ -88,7 +85,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
 
         return orderRequests;

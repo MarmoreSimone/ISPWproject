@@ -23,9 +23,6 @@ public class OrderDAOdemo extends OrderDAO {
         orders.add(order);
     }
 
-    public List<Order> getAllOrders() {
-        return orders;
-    }
 
     public Order getOrderByOrderReq(String orderReq, String cafeteria){
         return null;

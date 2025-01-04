@@ -6,7 +6,6 @@ public class User {
         String password;
         String role;
 
-        //TODO vedi se fare una extends/usare role come campo per mantenere la caffetteria, al get role controlla se != da client ed in caso torna barista, in getCafeteria torna direttamente role
         String cafeteria;
         public User(){
 

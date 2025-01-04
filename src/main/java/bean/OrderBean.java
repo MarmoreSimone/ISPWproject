@@ -9,11 +9,6 @@ public class OrderBean extends OrderDetailBean {
     private double totCost;
 
 
-    public OrderBean() {
-
-    }
-
-
     public List<BeverageBean> getBevs() {
         return bevs;
     }

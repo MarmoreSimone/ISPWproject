@@ -2,13 +2,10 @@ package model;
 
 import model.beverage.BeverageDAO;
 import model.beverage.BeverageDAOdb;
-import model.beverage.BeverageDAOdemo;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdb;
-import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
 import model.order.OrderDAOdb;
-import model.order.OrderDAOdemo;
 import model.orderrequest.OrderRequestDAO;
 import model.orderrequest.OrderRequestDAOdb;
 import model.user.UserDAO;

@@ -3,7 +3,7 @@ package graphicalcontrollers.ordersummary;
 import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
-import controller.SearchCafeteria;
+import controller.SearchCafeteriaController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.scene.control.Label;
@@ -58,7 +58,7 @@ public class OrderSummaryGUI extends GraphicalController {
     public void initialize2() {
 
         OrderBean order = controllerAppl.getMyOrder();
-        SearchCafeteria search = new SearchCafeteria();
+        SearchCafeteriaController search = new SearchCafeteriaController();
 
         CafeteriaBean cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
 

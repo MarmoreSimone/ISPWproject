@@ -5,37 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="database implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/OrderBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/OrderBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/MenuItemCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/MenuItemCellContr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/Cafeteria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +52,7 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -124,6 +129,7 @@
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\cell" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\java\utils" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\GUIview" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
@@ -217,7 +223,8 @@
       <workItem from="1735744677845" duration="20598000" />
       <workItem from="1735835526837" duration="4752000" />
       <workItem from="1735840313188" duration="14779000" />
-      <workItem from="1735919741090" duration="20154000" />
+      <workItem from="1735919741090" duration="20788000" />
+      <workItem from="1736023501853" duration="4571000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -403,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735944541623</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="database implementation">
+      <option name="closed" value="true" />
+      <created>1735944561963</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1735944561963</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,6 +452,17 @@
     <MESSAGE value="duplication fix" />
     <MESSAGE value="database implementation" />
     <option name="LAST_COMMIT_MESSAGE" value="database implementation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

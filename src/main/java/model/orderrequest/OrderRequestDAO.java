@@ -10,8 +10,6 @@ public abstract class OrderRequestDAO {
 
     public abstract void saveOrderRequest(OrderRequest order);
 
-    public abstract List<OrderRequest> getAllOrderRequests();
-
     public abstract List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria);
 
     public abstract List<OrderRequest> getAllOrderRequestsByUsername(String user);
