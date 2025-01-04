@@ -4,7 +4,6 @@ package graphicalcontrollers;
 import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
-import model.cafeteria.CafeteriaDAOdb;
 import utils.SwitchPage;
 
 public class DummyGC extends GraphicalController {

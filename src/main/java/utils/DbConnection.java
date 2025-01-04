@@ -20,12 +20,12 @@ public class DbConnection {
             properties.load(fis);
 
             // Estrai i parametri di connessione dal file
-            String URL = properties.getProperty("db.url");
-            String USER = properties.getProperty("db.username");
-            String PASSWORD = properties.getProperty("db.password");
+            String url = properties.getProperty("db.url");
+            String user = properties.getProperty("db.username");
+            String password = properties.getProperty("db.password");
 
             // Crea la connessione al database
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            conn = DriverManager.getConnection(url, user, password);
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("Errore durante la connessione al database", e);

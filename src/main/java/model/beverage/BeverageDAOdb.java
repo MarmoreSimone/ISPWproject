@@ -106,16 +106,15 @@ public class BeverageDAOdb extends BeverageDAO {
                 }
 
 
-
-
                 ps.setString(1, currBeverage.getName());
                 ps.setInt(2, c);
 
-                ps.executeUpdate();
+                ps.addBatch();
 
                 beverages.remove(0);
 
         }
+            ps.executeBatch();
 
         } catch (Exception e) {
             e.printStackTrace();
