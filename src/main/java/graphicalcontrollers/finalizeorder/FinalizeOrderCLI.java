@@ -4,7 +4,6 @@ import bean.OrderDetailBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import graphicalcontrollers.ordersummary.OrderSummaryCLI;
-import model.order.Order;
 import viewcli.FinalizeOrderViewCli;
 
 import java.util.ArrayList;

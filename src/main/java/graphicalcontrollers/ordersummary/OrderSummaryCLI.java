@@ -6,7 +6,6 @@ import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
-import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import viewcli.OrderSummaryViewCli;
 
 import java.util.ArrayList;

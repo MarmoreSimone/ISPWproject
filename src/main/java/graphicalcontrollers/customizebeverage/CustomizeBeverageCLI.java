@@ -1,11 +1,8 @@
 package graphicalcontrollers.customizebeverage;
 
 import bean.BeverageBean;
-import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
-import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import viewcli.CustomizeBeverageViewCli;
-import viewcli.OrdereBuildViewCli;
 
 import java.util.ArrayList;
 import java.util.Arrays;

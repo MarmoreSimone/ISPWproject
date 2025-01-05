@@ -2,7 +2,6 @@ package graphicalcontrollers.homebarista;
 
 import graphicalcontrollers.login.LoginCLI;
 import graphicalcontrollers.processorders.ProcessOrdersCLI;
-import graphicalcontrollers.searchcafeteria.SearchCafeteriaCLI;
 
 import java.util.ArrayList;
 import java.util.Arrays;

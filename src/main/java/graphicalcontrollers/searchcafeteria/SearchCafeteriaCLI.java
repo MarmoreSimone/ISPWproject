@@ -3,7 +3,6 @@ package graphicalcontrollers.searchcafeteria;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.SearchCafeteriaController;
-import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import viewcli.SearchCafeteriaViewCli;
 

@@ -2,7 +2,6 @@ package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
 import controller.OrdersRequestController;
-import model.orderrequest.OrderRequest;
 import viewcli.ProcessOrdersViewCli;
 
 import java.util.ArrayList;
