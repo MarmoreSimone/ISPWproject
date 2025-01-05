@@ -68,7 +68,7 @@ public class SwitchPage {
         start(contr,scene);
     }
 
-    //passa al nuovo controller l'stanza di un controller applicativo di tipo PlaceOrder
+    //passa al nuovo controller l'istanza di un controller applicativo di tipo PlaceOrder
     public void changePage(String sourcePath, PlaceOrderController controller){
 
         FXMLLoader loader = getFXMLLoader(sourcePath);

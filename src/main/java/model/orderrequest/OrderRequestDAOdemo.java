@@ -2,6 +2,7 @@ package model.orderrequest;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class OrderRequestDAOdemo extends OrderRequestDAO {
@@ -34,6 +35,9 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
                 list.remove(i);
             }
         }
+
+        //ordino lista in base alla data
+        list.sort((o1, o2) -> o2.getOrder().getDate().compareTo(o1.getOrder().getDate()));
         return list;
     }
 
@@ -46,6 +50,7 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
             }
         }
 
+        list.sort((o1, o2) -> o2.getOrder().getDate().compareTo(o1.getOrder().getDate()));
         return list;
 
     }

@@ -165,6 +165,30 @@ public class PlaceOrderController {
 
     }
 
+    public List<OrderRequestBean> getAllMyOrderReq(String filter){
+        List<OrderRequestBean> reqBeans = new ArrayList<>(getAllMyOrderReq());
+
+        if(filter.charAt(0) == 'R'){
+            System.out.println("sto cercando rejected");
+            for (int i = reqBeans.size() - 1; i >= 0; i--) {
+                if (reqBeans.get(i).getState().equals("PENDING") || reqBeans.get(i).getState().equals("ACCEPTED")) {
+                    reqBeans.remove(i);
+                }
+            }
+
+        }else {
+
+            for (int i = reqBeans.size() - 1; i >= 0; i--) {
+                if (!reqBeans.get(i).getState().equals(filter)) {
+                    reqBeans.remove(i);
+                }
+            }
+        }
+        return reqBeans;
+
+    }
+
+
     public OrderRequestBean getOrdReqBean(OrderRequest ord){
         OrderRequestBean bean = new OrderRequestBean();
 

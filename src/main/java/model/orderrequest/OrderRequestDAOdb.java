@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class OrderRequestDAOdb extends OrderRequestDAO{
@@ -88,6 +89,8 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             throw new IllegalArgumentException(e);
         }
 
+        //ordino la lista in base alla data usando funzione offerta da java8
+        orderRequests.sort((o1, o2) -> o2.getOrder().getDate().compareTo(o1.getOrder().getDate()));
         return orderRequests;
     }
 

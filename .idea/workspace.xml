@@ -5,9 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyGC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/home/HomeClientCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/CustomizeBeverageViewCli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyCLI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MainMenuCLI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/SearchCafeteriaViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/SearchCafeteriaViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +46,6 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -38,12 +63,12 @@
     &quot;assignee&quot;: &quot;MarmoreSimone&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/MarmoreSimone/ISPWproject.git&quot;,
-    &quot;accountId&quot;: &quot;6a2b7b44-eda5-4688-8a6e-4410b2cf78a5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MarmoreSimone/ISPWproject.git",
+    "accountId": "a6c6b00a-be10-46fe-b603-4699dba0fa0e"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -65,45 +90,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ricai/Desktop/ISPWproject/src/main/j_connector",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\j_connector" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\cell" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\java\utils" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view\GUIview" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\images" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="graphicalcontrollers.home" />
       <recent name="view" />
       <recent name="" />
       <recent name="java" />
@@ -140,8 +159,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -186,13 +205,8 @@
       <workItem from="1735564917238" duration="8825000" />
       <workItem from="1735577970757" duration="11264000" />
       <workItem from="1735596120826" duration="682000" />
-      <workItem from="1735596813214" duration="4865000" />
-      <workItem from="1735646734123" duration="5033000" />
-      <workItem from="1735744677845" duration="20598000" />
-      <workItem from="1735835526837" duration="4752000" />
-      <workItem from="1735840313188" duration="14779000" />
-      <workItem from="1735919741090" duration="20788000" />
-      <workItem from="1736023501853" duration="6128000" />
+      <workItem from="1735596813214" duration="3135000" />
+      <workItem from="1736087871505" duration="24872000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -338,63 +352,7 @@
       <option name="project" value="LOCAL" />
       <updated>1735595720394</updated>
     </task>
-    <task id="LOCAL-00019" summary="cose mancanti">
-      <option name="closed" value="true" />
-      <created>1735600409978</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1735600409978</updated>
-    </task>
-    <task id="LOCAL-00020" summary="bu">
-      <option name="closed" value="true" />
-      <created>1735756399384</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1735756399384</updated>
-    </task>
-    <task id="LOCAL-00021" summary="bu">
-      <option name="closed" value="true" />
-      <created>1735759039532</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1735759039532</updated>
-    </task>
-    <task id="LOCAL-00022" summary="duplication fix">
-      <option name="closed" value="true" />
-      <created>1735759683781</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1735759683781</updated>
-    </task>
-    <task id="LOCAL-00023" summary="database implementation">
-      <option name="closed" value="true" />
-      <created>1735944541623</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1735944541623</updated>
-    </task>
-    <task id="LOCAL-00024" summary="database implementation">
-      <option name="closed" value="true" />
-      <created>1735944561963</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1735944561963</updated>
-    </task>
-    <task id="LOCAL-00025" summary="sonar">
-      <option name="closed" value="true" />
-      <created>1736029121117</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1736029121117</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,23 +380,8 @@
     <MESSAGE value="backup prima del login" />
     <MESSAGE value="prima bozza login" />
     <MESSAGE value="login user fatto" />
-    <MESSAGE value="cose mancanti" />
-    <MESSAGE value="bu" />
-    <MESSAGE value="duplication fix" />
-    <MESSAGE value="database implementation" />
     <MESSAGE value="sonar" />
     <option name="LAST_COMMIT_MESSAGE" value="sonar" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

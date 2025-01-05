@@ -27,8 +27,9 @@ public class SearchCafeteriaController {
         return null;
     }
 
-    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key){
 
+    //usata quando non devo passare tutte le informazioni della caffetteria
+    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key){
 
         //lista di searchCafeteriaBean da tornare
         List<SearchCafeteriaBean> foundCafes = new ArrayList<>();

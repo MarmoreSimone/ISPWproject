@@ -38,18 +38,19 @@ public class OrderBuilderGUI extends GraphicalController {
     //lista delle bevande della caffetteria
     private List<BeverageBean> beverages;
 
-    //overload dell'operazione launch()
+    //usata la prima volta che carico la pagina
     public void launch(SearchCafeteriaBean bean) {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", bean);
     }
 
+    //usata quando torno indietro da customize beverage
     public void launch(PlaceOrderController controller) {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", controller);
     }
 
 
     @Override
-    //usato la prima volta che parte il controllore grafico
+    //usato la prima volta che parte il controllore grafico, il launch(SearchCafeteria)
     public void setCafeteria(SearchCafeteriaBean bean) {
         this.controllerAppl = new PlaceOrderController();
         this.controllerAppl.setCafeteria(bean);
@@ -83,13 +84,12 @@ public class OrderBuilderGUI extends GraphicalController {
         List<Object> objectList = (List<Object>) (List<?>) beverages;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/menuItem.fxml",beverageList,this,objectList);
 
-
     }
 
     public void showAddedBev(){
         List<BeverageBean> addedBev = controllerAppl.getAddedBev();
 
-        //casto la lista di bevande ad una lista generica e dopo nel mini-controllore grafico la ricasto a Beverage Bean
+        //casto la lista di bevande a una lista generica e dopo nel mini-controllore grafico la ricasto a Beverage Bean
         List<Object> objectList = (List<Object>) (List<?>) addedBev;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/addedBev.fxml",addedBevList,this,objectList);
 
