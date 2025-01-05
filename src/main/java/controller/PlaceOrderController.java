@@ -71,7 +71,7 @@ public class PlaceOrderController {
     }
 
     //data una lista di beverages le converte in beveragesBean
-    public List<BeverageBean> getBeveragesBeanList(List<Beverage> beverages){
+    private List<BeverageBean> getBeveragesBeanList(List<Beverage> beverages){
         List<BeverageBean> retBeans = new ArrayList<>();
 
         for(Beverage bev: beverages){
@@ -115,7 +115,7 @@ public class PlaceOrderController {
     }
 
     //dato un Order generico ritorna la Bean
-    public OrderBean getOrderBean(Order ord){
+    private OrderBean getOrderBean(Order ord){
 
         OrderBean bean = new OrderBean();
         bean.setBevs(getBeveragesBeanList(ord.getBevs()));
@@ -126,7 +126,6 @@ public class PlaceOrderController {
         bean.setPayMethod(ord.getPayMethod());
         return bean;
     }
-
 
     public void sendOrderRequest(){
         OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrder();
@@ -187,7 +186,6 @@ public class PlaceOrderController {
         return reqBeans;
 
     }
-
 
     public OrderRequestBean getOrdReqBean(OrderRequest ord){
         OrderRequestBean bean = new OrderRequestBean();

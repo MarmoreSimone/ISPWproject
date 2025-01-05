@@ -4,36 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/home/HomeClientCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/CustomizeBeverageViewCli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="added cli">
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/DummyCLI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MainMenuCLI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/SearchCafeteriaViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/SearchCafeteriaViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +185,7 @@
       <workItem from="1735577970757" duration="11264000" />
       <workItem from="1735596120826" duration="682000" />
       <workItem from="1735596813214" duration="3135000" />
-      <workItem from="1736087871505" duration="24872000" />
+      <workItem from="1736087871505" duration="29993000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -352,7 +331,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735595720394</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added cli">
+      <option name="closed" value="true" />
+      <created>1736113037525</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736113037525</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added cli">
+      <option name="closed" value="true" />
+      <created>1736113058143</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736113058143</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +376,8 @@
     <MESSAGE value="prima bozza login" />
     <MESSAGE value="login user fatto" />
     <MESSAGE value="sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
+    <MESSAGE value="added cli" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cli" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

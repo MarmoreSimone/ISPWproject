@@ -5,33 +5,37 @@ import bean.OrderRequestBean;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyOrdersViewCli extends viewcli.UtilsCli{
+public class ProcessOrdersViewCli extends viewcli.UtilsCli{
 
     public void drawTitle(){
-        System.out.println("===MY ORDERS===");
+        System.out.println("===PROCESS ORDERS===");
     }
 
-    public void drawOrders(List<OrderRequestBean> orders){
+    public int drawOrders(List<OrderRequestBean> orders){
 
         List<String> list = new ArrayList<String>();
+        System.out.println("chose an order: (0 to exit)");
 
         for(OrderRequestBean order : orders){
 
-            String string = order.getCafe() + "\n" + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\npickup code: " + order.getCode() + "\nstatus: " + order.getState() + "\n\n";
+            String string = order.getUsername() + "\n" + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\n" + "note:\n" + order.getOrder().getNote()+"\n";
 
             for (int i = 0; i < order.getOrder().getBevs().size(); i++) {
                 string = string.concat(order.getOrder().getBevs().get(i).getName() + "  " + order.getOrder().getBevs().get(i).getPrice() + "$\n");
             }
 
-            string = string.concat("Total: "+ order.getOrder().getTotPrice()+"$\n");
             string = string.concat("----------------------");
 
             list.add(string);
         }
 
 
-        showList(list);
+        showChoices(list);
+
+        return getUserChoice(list);
 
 
     }
+
+
 }

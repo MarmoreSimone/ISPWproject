@@ -1,6 +1,7 @@
 package graphicalcontrollers.homebarista;
 
 import graphicalcontrollers.login.LoginCLI;
+import graphicalcontrollers.processorders.ProcessOrdersCLI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaCLI;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class HomeBaristaCLI extends viewcli.UtilsCli{
 
         switch (choice) {
             case 0:
-                new SearchCafeteriaCLI().launch();
+                new ProcessOrdersCLI().launch();
                 break;
             case 1:
                 System.out.println("Hai scelto l'opzione 2.");
