@@ -17,14 +17,16 @@ public class MyOrdersViewCli extends viewcli.UtilsCli{
 
         for(OrderRequestBean order : orders){
 
-            String string = order.getCafe() + "\n" + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\npickup code: " + order.getCode() + "\nstatus: " + order.getState() + "\n\n";
+            String string = "*****************************\n" + "cafeteria: ".toUpperCase() + order.getCafe();
+            string = string.concat("\ndate: ".toUpperCase() + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\npickup code: ".toUpperCase() + order.getCode() + "\nstatus: ".toUpperCase() + order.getState() + "\n");
 
+            string = string.concat("\n");
             for (int i = 0; i < order.getOrder().getBevs().size(); i++) {
                 string = string.concat(order.getOrder().getBevs().get(i).getName() + "  " + order.getOrder().getBevs().get(i).getPrice() + "$\n");
             }
+            string = string.concat("\n");
+            string = string.concat("Total: ".toUpperCase()  + order.getOrder().getTotPrice()+"$");
 
-            string = string.concat("Total: "+ order.getOrder().getTotPrice()+"$\n");
-            string = string.concat("----------------------");
 
             list.add(string);
         }

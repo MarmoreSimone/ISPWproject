@@ -62,11 +62,33 @@ public class SwitchPage {
         FXMLLoader loader = getFXMLLoader(sourcePath);
         Scene scene = getScene(loader);
 
-
         GraphicalController contr = loader.getController();
 
         start(contr,scene);
     }
+
+    public void changePage(String sourcePath, Object gcontrInstance){
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
+
+        setContoller(loader,gcontrInstance);
+
+        Scene scene;
+
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        GraphicalController contr = loader.getController();
+        contr.initialize2();
+        this.stage.setScene(scene);
+        this.stage.show();
+
+    }
+
 
     //passa al nuovo controller l'istanza di un controller applicativo di tipo PlaceOrder
     public void changePage(String sourcePath, PlaceOrderController controller){
@@ -111,6 +133,10 @@ public class SwitchPage {
     }
 
 
+
+
+
+
     //usato per quando devo usare le Cell, il primo parametro è la stringa che contiene l'indirizzo dell'fxml della cella
     //il secondo è la Vbox a cui aggiungere le singole Cell
     //il terzo è l'istanza corrente del controllore da cui faccio "partire" le Cell e che contiene le operazioni principali richiamate dal mini controllore della Cell
@@ -141,6 +167,16 @@ public class SwitchPage {
     //usato all'inizio
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+
+    public void setContoller(FXMLLoader loader, Object contr) {
+
+        if(contr instanceof OrderBuilderGUI){
+            loader.setController((OrderBuilderGUI) contr);
+        }
+
+
     }
 
 }

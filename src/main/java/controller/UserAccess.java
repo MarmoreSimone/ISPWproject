@@ -2,6 +2,7 @@ package controller;
 
 import bean.CredentialsBean;
 import bean.UserBean;
+import exception.NoUserFoundException;
 import model.DAOfactory;
 import model.user.User;
 import utils.UserLogged;
@@ -12,7 +13,7 @@ public class UserAccess {
 
 
 
-        public UserBean login(CredentialsBean cred) {
+        public UserBean login(CredentialsBean cred) throws NoUserFoundException {
             List<User> users = DAOfactory.getDAOfactory().createUserDAO().getAllUser();
 
             for (User user : users) {
@@ -21,7 +22,7 @@ public class UserAccess {
                     return new UserBean(null,null,user.getRole());
                 }
             }
-            return null;
+            throw new NoUserFoundException();
         }
 
 

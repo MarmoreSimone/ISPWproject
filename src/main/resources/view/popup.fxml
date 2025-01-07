@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="370.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#close" prefHeight="45.0" prefWidth="55.0" style="-fx-background-color: #00704A;" text="ok" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <Text fx:id="text" layoutX="29.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A request was made of a page using a request method not supported by that page" wrappingWidth="396.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#bf0909" layoutX="29.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXCEPTION:" wrappingWidth="218.13671875">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

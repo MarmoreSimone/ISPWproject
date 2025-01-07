@@ -3,6 +3,7 @@ package graphicalcontrollers.login;
 import bean.CredentialsBean;
 import bean.UserBean;
 import controller.UserAccess;
+import exception.NoUserFoundException;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import model.DAOfactory;
@@ -23,29 +24,40 @@ public class LoginCLI extends UtilsCli {
         view = new LoginViewCli();
         userAccess = new UserAccess();
 
-        view.showChoices(new ArrayList<>(Arrays.asList("login","register")));
-        int choice = view.getUserChoice(new ArrayList<>(Arrays.asList("login","register")));
+        while(true) {
+            view.showChoices(new ArrayList<>(Arrays.asList("login", "register")));
+            int choice = view.getUserChoice(new ArrayList<>(Arrays.asList("login", "register")));
 
-        switch(choice){
-            case 0:
-                login();
-                break;
+            switch (choice) {
+                case 0:
+                    login();
+                    break;
 
-               case 1:
-                   register();
-                   launch();
-                   break;
+                case 1:
+                    register();
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
+
         }
 
     }
 
 
     public void login(){
-        CredentialsBean cred = view.drawGetCredentials();
-        UserBean user = userAccess.login(cred);
+
+        UserBean user = null;
+
+        try {
+            CredentialsBean cred = view.drawGetCredentials();
+            user = userAccess.login(cred);
+
+        }catch (NoUserFoundException e){
+            e.showException("user not found with this credentials");
+            return;
+        }
 
         if(user.getRole().equals("barista")) {
             new HomeBaristaCLI().launch();

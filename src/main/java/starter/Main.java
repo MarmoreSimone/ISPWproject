@@ -1,6 +1,7 @@
 package starter;
 
 import graphicalcontrollers.login.LoginCLI;
+import graphicalcontrollers.popup.PopupFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -49,9 +50,11 @@ public class Main extends Application {
         DAOfactory.setDAOfactory(Integer.parseInt(input));
 
         if(input2.equals("1")) {
+            PopupFactory.setfactory(1);
             launch();
         }
         else{
+            PopupFactory.setfactory(2);
             new LoginCLI().launch();
         }
 

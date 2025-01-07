@@ -9,6 +9,7 @@ import graphicalcontrollers.customizebeverage.CustomizeBeverageGUI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.fxml.FXML;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import javafx.scene.layout.VBox;
@@ -17,9 +18,11 @@ import javafx.scene.text.Text;
 import utils.SwitchPage;
 
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class OrderBuilderGUI extends GraphicalController {
+public class OrderBuilderGUI extends GraphicalController implements Initializable {
 
     @FXML
     private Text cafeName;
@@ -40,12 +43,15 @@ public class OrderBuilderGUI extends GraphicalController {
 
     //usata la prima volta che carico la pagina
     public void launch(SearchCafeteriaBean bean) {
-        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", bean);
+        setCafeteria(bean);
+        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", this);
+
     }
 
     //usata quando torno indietro da customize beverage
     public void launch(PlaceOrderController controller) {
-        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", controller);
+        this.controllerAppl = controller;
+        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", this);
     }
 
 
@@ -62,9 +68,9 @@ public class OrderBuilderGUI extends GraphicalController {
         this.controllerAppl = controller;
     }
 
-    @Override
-    public void initialize2(){
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         //imposto il nome della caffetteria
         cafeName.setText(controllerAppl.getCafeteriaName());
         //imposto le bevande della caffetteria
@@ -120,6 +126,9 @@ public class OrderBuilderGUI extends GraphicalController {
         new FinalizeOrderGUI().launch(controllerAppl);
     }
 
-    }
+
+
+
+}
 
 

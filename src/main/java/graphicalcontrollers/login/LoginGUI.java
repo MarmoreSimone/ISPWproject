@@ -3,6 +3,7 @@ package graphicalcontrollers.login;
 import bean.CredentialsBean;
 import bean.UserBean;
 import controller.UserAccess;
+import exception.NoUserFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.home.HomeGUI;
 import graphicalcontrollers.homebarista.HomeBaristaGUI;
@@ -32,9 +33,17 @@ public class LoginGUI extends GraphicalController {
 
     public void login() {
 
-        CredentialsBean cred = new CredentialsBean(username.getText(),password.getText());
-        UserAccess contrAppl = new UserAccess();
-        UserBean user = contrAppl.login(cred);
+        UserBean user=null;
+        try {
+
+            CredentialsBean cred = new CredentialsBean(username.getText(), password.getText());
+            UserAccess contrAppl = new UserAccess();
+            user = contrAppl.login(cred);
+
+        }catch(NoUserFoundException e) {
+            e.showException("user not found");
+            return;
+        }
 
         if(user.getRole().equals("barista")) {
             new HomeBaristaGUI().launch();

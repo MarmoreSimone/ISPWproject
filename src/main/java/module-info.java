@@ -55,5 +55,7 @@ module com.example.ispwproject {
     exports graphicalcontrollers.homebarista to javafx.fxml;
     opens graphicalcontrollers.homebarista to javafx.fxml;
 
+    exports graphicalcontrollers.popup to javafx.fxml;
+    opens graphicalcontrollers.popup to javafx.fxml;
 
     }

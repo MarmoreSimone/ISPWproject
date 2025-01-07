@@ -98,7 +98,7 @@ public class PlaceOrderController {
     }
 
     //costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
-    public void buildOrder(OrderDetailBean details){
+    public void buildOrder(OrderDetailBean details) {
 
         this.order.setItems(myBeverages);
         this.order.setDate(details.getDate());

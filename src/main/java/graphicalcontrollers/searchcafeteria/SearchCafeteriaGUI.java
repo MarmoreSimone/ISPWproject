@@ -5,6 +5,7 @@ import bean.SearchCafeteriaBean;
 import controller.SearchCafeteriaController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
+import graphicalcontrollers.popup.PopupGUI;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
