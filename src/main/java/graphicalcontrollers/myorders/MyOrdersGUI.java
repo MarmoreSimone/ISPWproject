@@ -2,6 +2,7 @@ package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
 import controller.PlaceOrderController;
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -41,11 +42,20 @@ public class MyOrdersGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/myOrdersGUI.fxml");
     }
 
+    List<OrderRequestBean> ordini;
+
     @Override
     public void initialize2(){
 
         PlaceOrderController placeOrderController = new PlaceOrderController();
-        List<OrderRequestBean> ordini = placeOrderController.getAllMyOrderReq();
+
+
+        try {
+            ordini = placeOrderController.getAllMyOrderReq();
+        } catch (SystemErrorException e) {
+            e.showException();
+        }
+
         loadMyOrders(ordini,"all");
 
         ToggleGroup tg = new ToggleGroup();

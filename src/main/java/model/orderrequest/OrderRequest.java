@@ -15,7 +15,6 @@ public class OrderRequest {
         }
 
 
-
         public OrderRequest(String user, Cafeteria cafeteria, String status, String pickUpCode) {
             this.user = user;
             this.cafeteria = cafeteria;

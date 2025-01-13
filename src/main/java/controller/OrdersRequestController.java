@@ -1,6 +1,7 @@
 package controller;
 
 import bean.OrderRequestBean;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.orderrequest.OrderRequest;
 import model.user.User;
@@ -9,7 +10,7 @@ import utils.UserLogged;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrdersRequestController {
+public class OrdersRequestController{
 
     PlaceOrderController placeOrderController;
     SearchCafeteriaController searchCafeteriaController;
@@ -21,7 +22,7 @@ public class OrdersRequestController {
         user = UserLogged.getInstance().getUser();
     }
 
-    public List<OrderRequestBean> getAllRequest(){
+    public List<OrderRequestBean> getAllRequest() throws SystemErrorException {
         List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
 
@@ -36,7 +37,7 @@ public class OrdersRequestController {
         return retBeans;
     }
 
-    public OrderRequest getOrderReqFromBean(OrderRequestBean bean) {
+    public OrderRequest getOrderReqFromBean(OrderRequestBean bean) throws SystemErrorException{
 
         List<OrderRequest> orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
 
@@ -50,12 +51,12 @@ public class OrdersRequestController {
         return null;
     }
 
-    public void acceptRequest(OrderRequestBean bean) {
+    public void acceptRequest(OrderRequestBean bean) throws SystemErrorException{
         OrderRequest order = getOrderReqFromBean(bean);
         DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "ACCEPTED");
     }
 
-    public void rejectRequest(OrderRequestBean bean,String reason) {
+    public void rejectRequest(OrderRequestBean bean,String reason) throws SystemErrorException{
         OrderRequest order = getOrderReqFromBean(bean);
         if(reason == null){
             DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED");

@@ -1,6 +1,9 @@
 package controller;
 
 import bean.*;
+import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
+import exception.WrongFormatException;
 import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
@@ -10,6 +13,8 @@ import model.user.User;
 import utils.UserLogged;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -32,7 +37,7 @@ public class PlaceOrderController {
     }
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
-    public void setCafeteria(SearchCafeteriaBean key) {
+    public void setCafeteria(SearchCafeteriaBean key) throws NoCafeteriasFoundException {
         SearchCafeteriaController search = new SearchCafeteriaController();
         this.myCafeteria = search.getCafeteriaByName(key.getName());
     }
@@ -98,14 +103,43 @@ public class PlaceOrderController {
     }
 
     //costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
-    public void buildOrder(OrderDetailBean details) {
+    public void buildOrder(OrderDetailBean details) throws WrongFormatException {
 
-        this.order.setItems(myBeverages);
-        this.order.setDate(details.getDate());
-        this.order.setTime(details.getTime());
-        this.order.setNote(details.getNote());
-        this.order.setPayMethod(details.getPayMethod());
-        this.order.setTotPrice(totalPrice());
+        LocalDate date;
+        LocalDate today;
+
+            date = LocalDate.parse(details.getDate());
+            today = LocalDate.now();
+
+            if(details.getDate().isEmpty()){
+                throw new WrongFormatException(": select a date");
+            }
+
+            if(details.getTime().isEmpty()){
+                throw new WrongFormatException(": select the time");
+            }
+
+            if(date.isBefore(today)){
+                throw new WrongFormatException(": cannot place an order in the past");
+            }
+
+            if(!details.getTime().matches("^[0-2]?[0-9]:[0-5][0-9]$")){
+                throw new WrongFormatException(": wrong time format, should be 12:00");
+            }
+
+            if(details.getPayMethod().isEmpty()){
+                throw new WrongFormatException(": select a payment method method");
+            }
+
+
+            this.order.setItems(myBeverages);
+            this.order.setDate(details.getDate());
+            this.order.setTime(details.getTime());
+            this.order.setNote(details.getNote());
+            this.order.setPayMethod(details.getPayMethod());
+            this.order.setTotPrice(totalPrice());
+
+
 
     }
 
@@ -151,7 +185,7 @@ public class PlaceOrderController {
     }
 
     //ritorna tutti gli ordini piazzati dall'utente
-    public List<OrderRequestBean> getAllMyOrderReq(){
+    public List<OrderRequestBean> getAllMyOrderReq() throws SystemErrorException {
 
         List<OrderRequestBean> retBeans = new ArrayList<>();
         List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(user.getUsername());
@@ -164,7 +198,7 @@ public class PlaceOrderController {
 
     }
 
-    public List<OrderRequestBean> getAllMyOrderReq(String filter){
+    public List<OrderRequestBean> getAllMyOrderReq(String filter) throws SystemErrorException{
         List<OrderRequestBean> reqBeans = new ArrayList<>(getAllMyOrderReq());
 
         if(filter.charAt(0) == 'R'){

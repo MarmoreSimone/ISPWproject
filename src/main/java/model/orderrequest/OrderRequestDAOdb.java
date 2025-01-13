@@ -1,6 +1,8 @@
 package model.orderrequest;
 
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import utils.DbConnection;
 
@@ -9,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class OrderRequestDAOdb extends OrderRequestDAO{
@@ -39,14 +40,14 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
 
 
-    public List<OrderRequest> getAllOrderRequestsByUsername(String username){
+    public List<OrderRequest> getAllOrderRequestsByUsername(String username) throws SystemErrorException{
         String query = "SELECT * FROM orderrequest WHERE user = ?";
         String user = username;
 
         return getAllOrderRequestsByQuery(query,user);
     }
 
-    public List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria){
+    public List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria) throws SystemErrorException{
         String query = "SELECT * FROM orderrequest WHERE cafeteria = ?";
         String cafe = cafeteria;
 
@@ -54,7 +55,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
     }
 
-    private List<OrderRequest> getAllOrderRequestsByQuery(String myQuery, String key){
+    private List<OrderRequest> getAllOrderRequestsByQuery(String myQuery, String key) throws SystemErrorException{
 
         List<OrderRequest> orderRequests = new ArrayList<OrderRequest>();
 
@@ -76,8 +77,14 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
                 String cafe = rs.getString("cafeteria");
                 String status = rs.getString("status");
 
+                OrderRequest ord;
 
-                OrderRequest ord = new OrderRequest(user, search.getCafeteriaByName(cafe),status,pickupcode);
+                try {
+                    ord = new OrderRequest(user, search.getCafeteriaByName(cafe), status, pickupcode);
+                }catch(NoCafeteriasFoundException e) {
+                    throw new SystemErrorException(e);
+                }
+
                 ord.setOrder(DAOfactory.getDAOfactory().createOrderDAO().getOrderByOrderReq(pickupcode,cafe));
 
                 orderRequests.add(ord);

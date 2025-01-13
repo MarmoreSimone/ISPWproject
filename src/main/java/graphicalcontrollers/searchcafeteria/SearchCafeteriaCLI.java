@@ -3,6 +3,7 @@ package graphicalcontrollers.searchcafeteria;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import viewcli.SearchCafeteriaViewCli;
 
@@ -33,18 +34,24 @@ public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
         SearchCafeteriaBean bean;
 
-        switch (type){
-            case 0:
-                System.out.println("insert name: ");
-                bean = new SearchCafeteriaBean(view.getString(),null);
-                cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
-                break;
+        try {
 
-            case 2:
-                bean = new SearchCafeteriaBean(null,null);
-                cafeterias = controllerAppl.searchCafeterias(bean);
-                break;
-            default:
+            switch (type) {
+                case 0:
+                    System.out.println("insert name: ");
+                    bean = new SearchCafeteriaBean(view.getString(), null);
+                    cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
+                    break;
+
+                case 2:
+                    bean = new SearchCafeteriaBean(null, null);
+                    cafeterias = controllerAppl.searchCafeterias(bean);
+                    break;
+                default:
+            }
+
+        } catch (NoCafeteriasFoundException e){
+            e.showException();
         }
 
         return cafeterias;
@@ -74,7 +81,12 @@ public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
     }
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
-        CafeteriaBean bean = controllerAppl.getCafeBeanByName(cafe.getName());
+        CafeteriaBean bean = null;
+        try {
+            bean = controllerAppl.getCafeBeanByName(cafe.getName());
+        } catch (NoCafeteriasFoundException e) {
+            throw new RuntimeException(e);
+        }
         List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
 
         view.drawSelectedCafeteria(items);

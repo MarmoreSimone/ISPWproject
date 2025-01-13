@@ -2,6 +2,7 @@ package graphicalcontrollers.finalizeorder;
 
 import bean.OrderDetailBean;
 import controller.PlaceOrderController;
+import exception.WrongFormatException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import graphicalcontrollers.ordersummary.OrderSummaryGUI;
@@ -51,12 +52,20 @@ public class FinalizeOrderGUI extends GraphicalController {
     }
 
     public void goToSummary(){
-        String payMeth;
-        if(payNow.isSelected()) payMeth = payNow.getText();
 
+        String payMeth;
+
+        if(payNow.isSelected()) payMeth = payNow.getText();
         else payMeth = payLater.getText();
 
-        controllerAppl.buildOrder(new OrderDetailBean(payMeth,note.getText(),day.getValue().toString(), time.getText() ));
+        try {
+            controllerAppl.buildOrder(new OrderDetailBean(payMeth,note.getText(),day.getValue().toString(), time.getText() ));
+        }catch (WrongFormatException e){
+            e.showException();
+            return;
+        }
+
+
         new OrderSummaryGUI().launch(controllerAppl);
 
     }

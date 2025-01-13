@@ -3,9 +3,9 @@ package graphicalcontrollers.searchcafeteria;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
-import graphicalcontrollers.popup.PopupGUI;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -88,22 +88,29 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
         SearchCafeteriaBean bean;
 
-        switch (searchCafChoiceBox.getValue()){
-            case "name":
-                //nella bean metto solo il nome
-                bean = new SearchCafeteriaBean(choseSearch.getText(),null);
-                //fai il controllo se null
-                //siccome mi ritorna sempre una lista prendo solo il primo elemento
-                cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
-                break;
+        try {
 
-            //case: caso in cui si vuole cercare per indirizzo/città
 
-            case "get all":
-                bean = new SearchCafeteriaBean(null,null);
-                cafeterias = controllerAppl.searchCafeterias(bean);
-                break;
-            default:
+            switch (searchCafChoiceBox.getValue()) {
+                case "name":
+                    //nella bean metto solo il nome
+                    bean = new SearchCafeteriaBean(choseSearch.getText(), null);
+                    //fai il controllo se null
+                    //siccome mi ritorna sempre una lista prendo solo il primo elemento
+                    cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
+                    break;
+
+                //case: caso in cui si vuole cercare per indirizzo/città
+
+                case "get all":
+                    bean = new SearchCafeteriaBean(null, null);
+                    cafeterias = controllerAppl.searchCafeterias(bean);
+                    break;
+                default:
+            }
+
+        } catch (NoCafeteriasFoundException e){
+            e.showException();
         }
 
         return cafeterias;
@@ -154,8 +161,15 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
     }
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
+
+        CafeteriaBean bean = null;
         //vado a prendere la bean completa della caffetteria
-        CafeteriaBean bean = controllerAppl.getCafeBeanByName(cafe.getName());
+        try {
+            bean = controllerAppl.getCafeBeanByName(cafe.getName());
+        }
+        catch (NoCafeteriasFoundException e){
+            e.showException();
+        }
         labelName.setText(bean.getName());
         labelAddress.setText(bean.getAddress());
         labelCity.setText(bean.getCity());

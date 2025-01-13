@@ -3,6 +3,7 @@ package graphicalcontrollers.login;
 import bean.CredentialsBean;
 import bean.UserBean;
 import controller.UserAccess;
+import exception.NoCafeteriasFoundException;
 import exception.NoUserFoundException;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
@@ -55,7 +56,7 @@ public class LoginCLI extends UtilsCli {
             user = userAccess.login(cred);
 
         }catch (NoUserFoundException e){
-            e.showException("user not found with this credentials");
+            e.showException();
             return;
         }
 
@@ -84,17 +85,21 @@ public class LoginCLI extends UtilsCli {
             caf1.setOpeningHours(orario1,orario1,orario1,orario1,orario1,orario1,closed);
             DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf1);
 
+            try {
 
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Americano","real american coffee", 2, 123, 60,"/images/americano.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Cappuccino","best cappuccio in town", 1.5, 123, 60,"/images/cappuccino.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Hot chocolate","siuuum", 3, 123, 60,"/images/cioccolatacalda.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Creamy latte","astuccio", 1, 123, 60,"/images/creamyLatte.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Espresso","w il siiff", 1, 123, 60,"/images/espresso.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Frappuccino","tottallu", 5, 123, 60,"/images/frappuccino.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Iced coffee","aggiusta", 2, 123, 60,"/images/icedcoffee.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Irish coffee","scrivi bene", 3.5, 123, 60,"/images/irishcoffee.jpg"), caf1.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Mocha coffee","non ti dimenticare", 2, 123, 60,"/images/mocha.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Americano", "real american coffee", 2, 123, 60, "/images/americano.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Cappuccino", "best cappuccio in town", 1.5, 123, 60, "/images/cappuccino.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Hot chocolate", "siuuum", 3, 123, 60, "/images/cioccolatacalda.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Creamy latte", "astuccio", 1, 123, 60, "/images/creamyLatte.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Espresso", "w il siiff", 1, 123, 60, "/images/espresso.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Frappuccino", "tottallu", 5, 123, 60, "/images/frappuccino.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Iced coffee", "aggiusta", 2, 123, 60, "/images/icedcoffee.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Irish coffee", "scrivi bene", 3.5, 123, 60, "/images/irishcoffee.jpg"), caf1.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("Mocha coffee", "non ti dimenticare", 2, 123, 60, "/images/mocha.jpg"), caf1.getName());
 
+            } catch (NoCafeteriasFoundException e) {
+                e.showException();
+            }
 
 
 
@@ -103,9 +108,14 @@ public class LoginCLI extends UtilsCli {
 
             DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf2);
 
+            try {
 
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("cafuuuuu","siuuum", 3, 123, 60,"/images/americano.jpg"), caf2.getName());
-            DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("loooooool","best cappuccio in town", 1.5, 123, 60,"/images/mocha.jpg"), caf2.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("cafuuuuu", "siuuum", 3, 123, 60, "/images/americano.jpg"), caf2.getName());
+                DAOfactory.getDAOfactory().createBeverageDAO().saveBev(new Beverage("loooooool", "best cappuccio in town", 1.5, 123, 60, "/images/mocha.jpg"), caf2.getName());
+
+            }catch (NoCafeteriasFoundException e) {
+                e.showException();
+            }
 
             System.out.println("aggiunti");
         }

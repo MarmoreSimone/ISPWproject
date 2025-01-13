@@ -6,7 +6,6 @@ import java.util.List;
 public class OrderDAOdemo extends OrderDAO {
 
     private static OrderDAOdemo instance = null;
-    private static List<Order> orders = new ArrayList<Order>();
 
     public static synchronized OrderDAOdemo getInstance() {
         if(OrderDAOdemo.instance == null)
@@ -19,12 +18,14 @@ public class OrderDAOdemo extends OrderDAO {
 
     }
 
+    //nel caso DEMO il riferimento all'istanza viene salvato nella entity order
     public void saveOrder(Order order, String orderReq, String cafeteria) {
-        orders.add(order);
+        System.out.println("there might be a problem");
     }
 
 
     public Order getOrderByOrderReq(String orderReq, String cafeteria){
+        System.out.println("there might be a problem");
         return null;
     }
 

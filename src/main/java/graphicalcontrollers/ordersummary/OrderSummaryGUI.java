@@ -4,6 +4,7 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.scene.control.Label;
@@ -60,7 +61,12 @@ public class OrderSummaryGUI extends GraphicalController {
         OrderBean order = controllerAppl.getMyOrder();
         SearchCafeteriaController search = new SearchCafeteriaController();
 
-        CafeteriaBean cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
+        CafeteriaBean cafe = null;
+        try {
+            cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
+        } catch (NoCafeteriasFoundException e) {
+            e.showException();
+        }
 
         address.setText(cafe.getAddress());
         city.setText(cafe.getCity());

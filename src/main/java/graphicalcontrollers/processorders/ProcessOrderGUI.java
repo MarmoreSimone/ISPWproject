@@ -3,6 +3,7 @@ package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
 import controller.OrdersRequestController;
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
@@ -33,18 +34,38 @@ public class ProcessOrderGUI extends GraphicalController {
         }
 
     public void showRequest(){
-        List<OrderRequestBean> orders = contrAppl.getAllRequest();
-        List<Object> objectList = (List<Object>) (List<?>) orders;
+        List<Object> objectList;
+        List<OrderRequestBean> orders = null;
+
+        try {
+            orders = contrAppl.getAllRequest();
+        }
+        catch(SystemErrorException e){
+            e.showException();
+            SwitchPage.getSwitchPageInstance().changePage("/view/homeBarista.fxml");
+            }
+
+        objectList = (List<Object>) (List<?>) orders;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/evaluateOrder.fxml",requestList,this,objectList);
     }
 
     public void accept(OrderRequestBean bean){
-        contrAppl.acceptRequest(bean);
+        try {
+            contrAppl.acceptRequest(bean);
+        } catch(SystemErrorException e ){
+            e.showException();
+        }
+
         showRequest();
     }
 
     public void reject(OrderRequestBean bean, String reason){
-        contrAppl.rejectRequest(bean,reason);
+        try {
+            contrAppl.rejectRequest(bean,reason);
+        } catch (SystemErrorException e) {
+            e.showException();
+        }
+
         showRequest();
     }
 

@@ -2,6 +2,7 @@ package controller;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
+import exception.NoCafeteriasFoundException;
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
 
@@ -11,25 +12,24 @@ import java.util.List;
 
 public class SearchCafeteriaController {
 
+    public List<Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
 
-    public List<Cafeteria> getAllCafeterias(){
-        return DAOfactory.getDAOfactory().createCafeteriaDAO().getAllCafeterias();
+        List cafeterias;
+        cafeterias = DAOfactory.getDAOfactory().createCafeteriaDAO().getAllCafeterias();
+
+        return cafeterias;
     }
 
-    public Cafeteria getCafeteriaByName(String name){
+    public Cafeteria getCafeteriaByName(String name) throws NoCafeteriasFoundException {
 
-        List<Cafeteria> cafeteriasInMem = getAllCafeterias();
-        for (Cafeteria cafe : cafeteriasInMem) {
-            if (cafe.getName().equals(name)) {
-                return cafe;
-            }
-        }
-        return null;
+        Cafeteria cafeteria = DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name);
+        return cafeteria;
+
     }
 
 
     //usata quando non devo passare tutte le informazioni della caffetteria
-    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key){
+    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key) throws NoCafeteriasFoundException {
 
         //lista di searchCafeteriaBean da tornare
         List<SearchCafeteriaBean> foundCafes = new ArrayList<>();
@@ -50,12 +50,15 @@ public class SearchCafeteriaController {
         //caso in cui si vuole cercare per indirizzo o città
         //ricerca con api google maps
 
+        //non cè bisogno di fare il throw new in quanto in caso di problemi vengono lanciati quelli nelle funzioni getCafeteriaByName e getAllcafeterias
+        //if(foundCafes.isEmpty()) throw new NoCafeteriasFound();
         return foundCafes;
     }
 
-    public CafeteriaBean getCafeBeanByName(String name){
+    public CafeteriaBean getCafeBeanByName(String name) throws NoCafeteriasFoundException {
 
         Cafeteria tempCafe = getCafeteriaByName(name);
+
         return getCafeBean(tempCafe);
 
     }

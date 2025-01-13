@@ -8,7 +8,16 @@ public class GenericException extends Exception{
             super(msg);
         }
 
-        public void showException(String msg){
-            PopupFactory.getPopup().show(msg);
+        public GenericException(String msg, Throwable cause){
+            super(msg);
         }
+
+        public void showException(){
+            PopupFactory.getPopup().show(this.getMessage());
+        }
+
+        public void showException(Throwable cause){
+            PopupFactory.getPopup().show(this.getMessage() + cause.getMessage());
+        }
+
 }

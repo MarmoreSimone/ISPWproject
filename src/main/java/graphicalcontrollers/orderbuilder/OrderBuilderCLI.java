@@ -3,6 +3,7 @@ package graphicalcontrollers.orderbuilder;
 import bean.BeverageBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.customizebeverage.CustomizeBeverageCLI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import viewcli.OrdereBuildViewCli;
@@ -29,7 +30,11 @@ public class OrderBuilderCLI {
             //creo il nuovo controllore applicativo che sarà uasto per tutto questo ordine
             placeOrderController = new PlaceOrderController();
             //imposto caffetteria nel contr appl
-            placeOrderController.setCafeteria(new SearchCafeteriaBean(cafeteria, null));
+            try {
+                placeOrderController.setCafeteria(new SearchCafeteriaBean(cafeteria, null));
+            } catch (NoCafeteriasFoundException e) {
+                e.showException();
+            }
         }
 
         view = new OrdereBuildViewCli();

@@ -1,12 +1,14 @@
 package model.cafeteria;
 
+import exception.NoCafeteriasFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CafeteriaDAOdemo extends CafeteriaDAO {
 
     private static CafeteriaDAOdemo instance = null;
-    private List<Cafeteria> memoria = new ArrayList<>();
+    private List<Cafeteria> memory = new ArrayList<>();
 
 
     public static synchronized CafeteriaDAOdemo getInstance() {
@@ -16,24 +18,28 @@ public class CafeteriaDAOdemo extends CafeteriaDAO {
     }
 
     public void saveCafeteria(Cafeteria cafe) {
-        memoria.add(cafe);
+        memory.add(cafe);
     }
 
-    public Cafeteria getCafeteriaByName(String name) {
-        for (Cafeteria cafe : memoria) {
+    public Cafeteria getCafeteriaByName(String name) throws NoCafeteriasFoundException {
+        for (Cafeteria cafe : memory) {
             if (cafe.getName().equals(name)) {
                 return cafe;
             }
         }
-        return null; //gestisci caso in cui non trova niente
+
+        throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
     }
 
     public Cafeteria getCafeteriasByAddress(String address) {
         return null;
     }
 
-    public List <Cafeteria> getAllCafeterias() {
-        return memoria;
+    public List <Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
+        if(memory.isEmpty()) {
+            throw new NoCafeteriasFoundException(": no cafeterias registered in the system");
+        }
+        return memory;
     }
 
 

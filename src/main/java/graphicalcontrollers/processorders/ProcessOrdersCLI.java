@@ -2,6 +2,8 @@ package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
 import controller.OrdersRequestController;
+import exception.SystemErrorException;
+import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import viewcli.ProcessOrdersViewCli;
 
 import java.util.ArrayList;
@@ -19,31 +21,36 @@ public class ProcessOrdersCLI {
 
         view.drawTitle();
 
-        do {
+        try {
 
-            List<OrderRequestBean> request = controller.getAllRequest();
-            choice = view.drawOrders(request);
-            List<String> choices = new ArrayList<>(Arrays.asList("accept", "reject", "reject with reason"));
-            view.showChoices(choices);
-            choice2 = view.getUserChoice(choices);
+            do {
 
-            switch (choice2) {
-                case 0:
-                    controller.acceptRequest(request.get(choice));
-                    break;
+                List<OrderRequestBean> request = controller.getAllRequest();
+                choice = view.drawOrders(request);
+                List<String> choices = new ArrayList<>(Arrays.asList("accept", "reject", "reject with reason"));
+                view.showChoices(choices);
+                choice2 = view.getUserChoice(choices);
 
-                case 1:
-                    controller.rejectRequest(request.get(choice), null);
-                    break;
+                switch (choice2) {
+                    case 0:
+                        controller.acceptRequest(request.get(choice));
+                        break;
 
-                case 2:
-                    controller.rejectRequest(request.get(choice), view.getString());
-                    break;
-            }
+                    case 1:
+                        controller.rejectRequest(request.get(choice), null);
+                        break;
 
-        }while(true);
+                    case 2:
+                        controller.rejectRequest(request.get(choice), view.getString());
+                        break;
+                }
 
+            } while (true);
 
+        }catch (SystemErrorException e){
+            e.showException();
+            new HomeBaristaCLI().launch();
+        }
 
 
     }

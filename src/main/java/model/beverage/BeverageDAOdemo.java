@@ -1,6 +1,7 @@
 package model.beverage;
 
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ public class BeverageDAOdemo extends BeverageDAO {
     //non la faccio singlenton in quanto è la entity della caffetteria che si occupa di mantenere i riferimenti alle bevande
 
     @Override
-    public void saveBev(Beverage bev, String cafeteria) {
+    public void saveBev(Beverage bev, String cafeteria) throws NoCafeteriasFoundException {
         //uso il controller applicativo che si occupa della parte di ricerca di una caffetteria per recuperare l'istanza della caffetteria
         SearchCafeteriaController search = new SearchCafeteriaController();
 
@@ -17,7 +18,7 @@ public class BeverageDAOdemo extends BeverageDAO {
     }
 
     @Override
-    public List<Beverage> getAllBevs(String cafeteria) {
+    public List<Beverage> getAllBevs(String cafeteria) throws NoCafeteriasFoundException {
             SearchCafeteriaController search = new SearchCafeteriaController();
             return search.getCafeteriaByName(cafeteria).getBeverages();
 

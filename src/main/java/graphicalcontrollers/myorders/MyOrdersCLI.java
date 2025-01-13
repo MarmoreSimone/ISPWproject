@@ -2,6 +2,7 @@ package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
 import controller.PlaceOrderController;
+import exception.SystemErrorException;
 import graphicalcontrollers.home.HomeClientCLI;
 import viewcli.MyOrdersViewCli;
 
@@ -15,43 +16,50 @@ public class MyOrdersCLI {
 
         MyOrdersViewCli view = new MyOrdersViewCli();
         PlaceOrderController controller = new PlaceOrderController();
+        List<OrderRequestBean> list;
 
         view.drawTitle();
         int choice;
         List<String> choices = new ArrayList<>(Arrays.asList("get all", "accepted", "rejected", "pending", "exit"));
-        List<OrderRequestBean> list = controller.getAllMyOrderReq();
-        int i=0;
-        do {
 
-            view.showChoices(choices);
-            view.drawOrders(list);
-            choice = view.getUserChoice(choices);
+        try {
+            list = controller.getAllMyOrderReq();
+            int i = 0;
+            do {
 
-            switch (choice) {
-                case 0:
-                    list = controller.getAllMyOrderReq();
-                    break;
+                view.showChoices(choices);
+                view.drawOrders(list);
+                choice = view.getUserChoice(choices);
 
-                case 1:
-                    list = controller.getAllMyOrderReq("ACCEPTED");
-                    break;
+                switch (choice) {
+                    case 0:
+                        list = controller.getAllMyOrderReq();
+                        break;
 
-                case 2:
-                    list = controller.getAllMyOrderReq("REJECTED");
-                    break;
+                    case 1:
+                        list = controller.getAllMyOrderReq("ACCEPTED");
+                        break;
 
-                case 3:
-                    list = controller.getAllMyOrderReq("PENDING");
-                    break;
+                    case 2:
+                        list = controller.getAllMyOrderReq("REJECTED");
+                        break;
 
-                case 4:
-                    new HomeClientCLI().launch();
-                    i=1;
-                    break;
-            }
+                    case 3:
+                        list = controller.getAllMyOrderReq("PENDING");
+                        break;
 
-        }while(i !=1);
+                    case 4:
+                        new HomeClientCLI().launch();
+                        i = 1;
+                        break;
+                }
 
+            } while (i != 1);
+
+        }catch (SystemErrorException e){
+            e.printStackTrace();
+            new HomeClientCLI().launch();
+        }
 
     }
 }

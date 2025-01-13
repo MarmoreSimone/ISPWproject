@@ -1,5 +1,6 @@
 package model.cafeteria;
 
+import exception.NoCafeteriasFoundException;
 import model.DAOfactory;
 import utils.DbConnection;
 
@@ -8,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CafeteriaDAOdb extends CafeteriaDAO{
-
-    private List<Cafeteria> cafes = new ArrayList<>();
 
     public void saveCafeteria(Cafeteria cafe) {
 
@@ -33,12 +32,39 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
 
     }
 
+    public Cafeteria getCafeteriaByName(String cafeName) throws NoCafeteriasFoundException {
 
-    public Cafeteria getCafeteriasByAddress(String address) {
-        return null;
+
+        Cafeteria cafe;
+        String query = "SELECT name,city,address,number,description,photo FROM cafeteria WHERE name = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setString(1, cafeName);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+
+                String name = rs.getString("name");
+                String city = rs.getString("city");
+                String address = rs.getString("address");
+                String number = rs.getString("number");
+                String desc = rs.getString("description");
+                String image = rs.getString("photo");
+                cafe = new Cafeteria(name, city, address, number, desc, image);
+                cafe.setAllBeverage(DAOfactory.getDAOfactory().createBeverageDAO().getAllBevs(name));
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system",e);
+        }
+
+        return cafe;
     }
 
-    public List <Cafeteria> getAllCafeterias() {
+    public List <Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
 
         List<Cafeteria> list = new ArrayList<>();
         String query = "SELECT name,city,address,number,description,photo FROM cafeteria";
@@ -65,7 +91,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
 
 
         } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
+            throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
         }
 
         return list;

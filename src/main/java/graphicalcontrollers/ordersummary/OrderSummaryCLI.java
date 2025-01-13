@@ -4,6 +4,7 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
 import viewcli.OrderSummaryViewCli;
@@ -24,7 +25,12 @@ public class OrderSummaryCLI {
 
         OrderBean order = contrAppl.getMyOrder();
         SearchCafeteriaController search = new SearchCafeteriaController();
-        CafeteriaBean cafe = search.getCafeBeanByName(contrAppl.getCafeteriaName());
+        CafeteriaBean cafe = null;
+        try {
+            cafe = search.getCafeBeanByName(contrAppl.getCafeteriaName());
+        } catch (NoCafeteriasFoundException e) {
+            e.showException();
+        }
 
         view.drawOrderSummary(order,cafe);
 

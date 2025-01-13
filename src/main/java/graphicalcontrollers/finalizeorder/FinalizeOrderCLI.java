@@ -2,6 +2,7 @@ package graphicalcontrollers.finalizeorder;
 
 import bean.OrderDetailBean;
 import controller.PlaceOrderController;
+import exception.WrongFormatException;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import graphicalcontrollers.ordersummary.OrderSummaryCLI;
 import viewcli.FinalizeOrderViewCli;
@@ -31,7 +32,11 @@ public class FinalizeOrderCLI {
 
             switch (choice) {
                 case 0:
-                    contrAppl.buildOrder(bean);
+                    try {
+                        contrAppl.buildOrder(bean);
+                    } catch (WrongFormatException e) {
+                        break;
+                    }
                     new OrderSummaryCLI().launch(contrAppl);
                     i = -1;
                     break;

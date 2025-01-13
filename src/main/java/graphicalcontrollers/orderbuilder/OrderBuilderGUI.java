@@ -3,6 +3,7 @@ package graphicalcontrollers.orderbuilder;
 import bean.BeverageBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 
 import graphicalcontrollers.customizebeverage.CustomizeBeverageGUI;
@@ -59,7 +60,11 @@ public class OrderBuilderGUI extends GraphicalController implements Initializabl
     //usato la prima volta che parte il controllore grafico, il launch(SearchCafeteria)
     public void setCafeteria(SearchCafeteriaBean bean) {
         this.controllerAppl = new PlaceOrderController();
-        this.controllerAppl.setCafeteria(bean);
+        try {
+            this.controllerAppl.setCafeteria(bean);
+        } catch (NoCafeteriasFoundException e) {
+            e.showException();
+        }
     }
 
     @Override
