@@ -1,11 +1,5 @@
 package graphicalcontrollers;
 
-import bean.BeverageBean;
-
-import bean.SearchCafeteriaBean;
-import controller.PlaceOrderController;
-import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
-
 
 
 public abstract class GraphicalController {

@@ -20,7 +20,7 @@ public class OrderSummaryViewCli extends viewcli.UtilsCli{
         System.out.println("Note: " + order.getNote());
         System.out.println("Payment method: " + order.getPayMethod());
         System.out.println("");
-        System.out.println("Total: " + String.valueOf(order.getTotPrice()) + "$");
+        System.out.println("Total: " + order.getTotPrice() + "$");
         System.out.println("");
 
         for(int i=0;i<order.getBevs().size();i++){

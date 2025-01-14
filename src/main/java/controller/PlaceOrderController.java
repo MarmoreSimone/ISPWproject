@@ -37,7 +37,7 @@ public class PlaceOrderController {
         }
     }
 
-    //TODO rivedi se passare una bean, anche solo per il nome
+    // rivedi se passare una bean, anche solo per il nome
     public String getCafeteriaName() {
         return session.getMyCafeteria().getName();
     }
