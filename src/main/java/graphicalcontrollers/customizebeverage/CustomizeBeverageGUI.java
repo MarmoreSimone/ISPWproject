@@ -45,13 +45,13 @@ public class CustomizeBeverageGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/customizeBevGUI.fxml", session);
     }
 
+    @Override
     public void setSession(String session){
         controllerAppl = new PlaceOrderController(session);
         this.session = session;
     }
 
 
-    @Override
     public void setBeverage(BeverageBean beverage) {
         this.beverage = beverage;
     }

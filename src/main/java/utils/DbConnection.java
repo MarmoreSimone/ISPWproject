@@ -1,6 +1,8 @@
 package utils;
 
 
+import exception.SystemErrorException;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -28,7 +30,7 @@ public class DbConnection {
             conn = DriverManager.getConnection(url, user, password);
         } catch (IOException | SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException("Errore durante la connessione al database", e);
+            new SystemErrorException(e).showException();
         }
 
 

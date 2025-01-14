@@ -1,7 +1,6 @@
 package model.order;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class OrderDAOdemo extends OrderDAO {
 

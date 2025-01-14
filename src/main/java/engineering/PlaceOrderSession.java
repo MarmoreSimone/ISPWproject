@@ -4,12 +4,9 @@ import model.DAOfactory;
 import model.beverage.Beverage;
 import model.cafeteria.Cafeteria;
 import model.order.Order;
-import model.user.User;
-import utils.UserLogged;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 public class PlaceOrderSession {
 

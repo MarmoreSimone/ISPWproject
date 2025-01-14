@@ -1,5 +1,6 @@
 package graphicalcontrollers.popup;
 
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,7 @@ public class PopupGUI implements Initializable, Popup {
     String message;
     Stage stage;
 
-    public void show(String msg){
+    public void show(String msg) throws SystemErrorException{
 
         this.message = msg;
 
@@ -33,8 +34,9 @@ public class PopupGUI implements Initializable, Popup {
         try {
             scene = new Scene(fxmlLoader.load());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new SystemErrorException();
         }
+
 
         stage = new Stage();
 

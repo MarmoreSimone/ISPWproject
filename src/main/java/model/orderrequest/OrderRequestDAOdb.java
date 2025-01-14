@@ -79,11 +79,8 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
                 OrderRequest ord;
 
-                try {
-                    ord = new OrderRequest(user, search.getCafeteriaByName(cafe), status, pickupcode);
-                }catch(NoCafeteriasFoundException e) {
-                    throw new SystemErrorException(e);
-                }
+                ord = new OrderRequest(user, search.getCafeteriaByName(cafe), status, pickupcode);
+
 
                 ord.setOrder(DAOfactory.getDAOfactory().createOrderDAO().getOrderByOrderReq(pickupcode,cafe));
 
@@ -94,6 +91,9 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
+
+        } catch(NoCafeteriasFoundException e) {
+            throw new SystemErrorException(e);
         }
 
         //ordino la lista in base alla data usando funzione offerta da java8

@@ -35,12 +35,14 @@ public class FinalizeOrderGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/finalizeOrder.fxml", session);
     }
 
+    @Override
     public void setSession(String session){
         controllerAppl = new PlaceOrderController(session);
         this.session = session;
     }
 
 
+    @Override
     public void initialize2() {
 
         ToggleGroup tg = new ToggleGroup();

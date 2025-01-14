@@ -31,10 +31,10 @@ public class ControllerSessionManager {
 
     public String newPlaceOrderSession() {
         PlaceOrderSession session = new PlaceOrderSession();
-        String key = getNewKey();
-        userSessions.get(UserLogged.getInstance().getUser().getUsername()).add(key);
-        placeOrderSessions.put(key, session);
-        return key;
+        String myKey = getNewKey();
+        userSessions.get(UserLogged.getInstance().getUser().getUsername()).add(myKey);
+        placeOrderSessions.put(myKey, session);
+        return myKey;
     }
 
 
@@ -64,7 +64,7 @@ public class ControllerSessionManager {
     }
 
 
-    public synchronized static ControllerSessionManager getInstance() {
+    public static synchronized  ControllerSessionManager getInstance() {
         if (ControllerSessionManager.instance == null)
             ControllerSessionManager.instance = new ControllerSessionManager();
         return instance;

@@ -49,6 +49,9 @@ public class FinalizeOrderCLI {
                     new OrderBuilderCLI().launch(session);
                     i = -1;
                     break;
+
+                default:
+                    break;
             }
 
 

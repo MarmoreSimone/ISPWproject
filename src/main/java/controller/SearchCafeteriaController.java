@@ -14,7 +14,8 @@ public class SearchCafeteriaController {
 
     public List<Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
 
-        List cafeterias;
+        List<Cafeteria> cafeterias ;
+
         cafeterias = DAOfactory.getDAOfactory().createCafeteriaDAO().getAllCafeterias();
 
         return cafeterias;
@@ -22,8 +23,8 @@ public class SearchCafeteriaController {
 
     public Cafeteria getCafeteriaByName(String name) throws NoCafeteriasFoundException {
 
-        Cafeteria cafeteria = DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name);
-        return cafeteria;
+         return DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name);
+
 
     }
 
@@ -51,7 +52,6 @@ public class SearchCafeteriaController {
         //ricerca con api google maps
 
         //non cè bisogno di fare il throw new in quanto in caso di problemi vengono lanciati quelli nelle funzioni getCafeteriaByName e getAllcafeterias
-        //if(foundCafes.isEmpty()) throw new NoCafeteriasFound();
         return foundCafes;
     }
 

@@ -2,7 +2,6 @@ package model.orderrequest;
 
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class OrderRequestDAOdemo extends OrderRequestDAO {
@@ -29,7 +28,6 @@ public class OrderRequestDAOdemo extends OrderRequestDAO {
         //evito di modificare gli elementi in orders request
         List<OrderRequest> list = new ArrayList<>(ordersRequest);
 
-        //for(int i=0;i<list.size();i++){
         for (int i = list.size() - 1; i >= 0; i--) {
             if(!list.get(i).getCafeteria().getName().equals(cafeteria)){
                 list.remove(i);

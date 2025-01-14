@@ -1,7 +1,6 @@
 package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
-import controller.PlaceOrderController;
 import controller.UserOrdersController;
 import exception.SystemErrorException;
 import graphicalcontrollers.home.HomeClientCLI;
@@ -52,6 +51,9 @@ public class MyOrdersCLI {
                     case 4:
                         new HomeClientCLI().launch();
                         i = 1;
+                        break;
+
+                    default:
                         break;
                 }
 

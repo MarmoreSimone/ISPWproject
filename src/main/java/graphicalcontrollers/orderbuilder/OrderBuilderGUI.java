@@ -49,25 +49,12 @@ public class OrderBuilderGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", session);
     }
 
+    @Override
     public void setSession(String session){
         controllerAppl = new PlaceOrderController(session);
         this.session = session;
     }
 
-
-/*
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //imposto il nome della caffetteria
-        cafeName.setText(controllerAppl.getCafeteriaName());
-        //imposto le bevande della caffetteria
-        beverages = controllerAppl.getCafeteriaBeverages();
-        //funzione per mostrare a schermo le bevande aggiungibili all'ordine
-        showBevMenu();
-        showAddedBev();
-        totPrice.setText(String.valueOf(getTot())+"$");
-        }
-*/
 
     @Override
     public void initialize2() {

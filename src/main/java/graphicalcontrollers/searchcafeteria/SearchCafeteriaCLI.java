@@ -88,7 +88,7 @@ public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
         try {
             bean = controllerAppl.getCafeBeanByName(cafe.getName());
         } catch (NoCafeteriasFoundException e) {
-            throw new RuntimeException(e);
+            e.showException();
         }
         List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
 

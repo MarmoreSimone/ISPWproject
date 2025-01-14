@@ -26,13 +26,12 @@ public class CustomizeBeverageCLI {
         view.showChoices(choices);
         int choice = view.getUserChoice(choices);
 
-        switch (choice) {
-            case 0:
-                break;
+        if(choice == 1) {
+            System.out.println("not available");
 
-            case 1:
-                System.out.println("not available");
-                break;
         }
+
+        //fai parte custom beverage
+
     }
 }

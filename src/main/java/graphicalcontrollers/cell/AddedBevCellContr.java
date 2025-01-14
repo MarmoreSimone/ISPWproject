@@ -19,9 +19,6 @@ public class AddedBevCellContr extends GraphicalController {
     private Label labelPrice;
 
 
-
-
-    //TODO vedi se può andare bene
     @Override
     public void setData(Object bev, GraphicalController contr){
         beverage = (BeverageBean) bev;

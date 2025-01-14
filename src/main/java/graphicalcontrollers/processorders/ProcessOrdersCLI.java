@@ -16,7 +16,8 @@ public class ProcessOrdersCLI {
 
         OrdersRequestController controller = new OrdersRequestController();
         ProcessOrdersViewCli view = new ProcessOrdersViewCli();
-        int choice, choice2;
+        int choice;
+        int choice2;
 
 
         view.drawTitle();
@@ -42,6 +43,9 @@ public class ProcessOrdersCLI {
 
                     case 2:
                         controller.rejectRequest(request.get(choice), view.getString());
+                        break;
+
+                    default:
                         break;
                 }
 

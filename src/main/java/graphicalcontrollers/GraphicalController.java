@@ -19,22 +19,6 @@ public abstract class GraphicalController {
     }
 
 
-    public void setControllerApplPlaceOrder(PlaceOrderController controller){
-
-    }
-
-    public void setContrOrderBuilder(OrderBuilderGUI controller){
-
-    }
-
-    public void setBeverage(BeverageBean bev){
-
-    }
-
-    public void setCafeteria(SearchCafeteriaBean caf){
-
-    }
-
     public void setData(Object obj, GraphicalController parent){
 
     }

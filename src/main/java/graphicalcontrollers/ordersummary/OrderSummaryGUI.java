@@ -53,6 +53,7 @@ public class OrderSummaryGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderSummary.fxml", session);
     }
 
+    @Override
     public void setSession(String session){
         controllerAppl = new PlaceOrderController(session);
         this.session = session;

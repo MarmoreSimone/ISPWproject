@@ -98,7 +98,6 @@ public class BeverageDAOdb extends BeverageDAO {
                 Beverage currBeverage = beverages.get(0);
 
                 for (int i = beverages.size() - 1; i > 0; i--) {
-                //for (int i=1; i<beverages.size(); i++) {
                     if(beverages.get(i).getName().equals(currBeverage.getName())) {
                         c++;
                         beverages.remove(i);

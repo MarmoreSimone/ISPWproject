@@ -1,9 +1,7 @@
 package viewcli;
 
 import bean.BeverageBean;
-import model.beverage.Beverage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class OrdereBuildViewCli extends UtilsCli{

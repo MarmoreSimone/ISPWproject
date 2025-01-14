@@ -31,9 +31,6 @@ public class CafeteriaDAOdemo extends CafeteriaDAO {
         throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
     }
 
-    public Cafeteria getCafeteriasByAddress(String address) {
-        return null;
-    }
 
     public List <Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
         if(memory.isEmpty()) {

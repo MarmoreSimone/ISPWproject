@@ -1,10 +1,7 @@
 package graphicalcontrollers.orderbuilder;
 
 import bean.BeverageBean;
-import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
-import engineering.ControllerSessionManager;
-import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.customizebeverage.CustomizeBeverageCLI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import viewcli.OrdereBuildViewCli;
@@ -50,6 +47,10 @@ public class OrderBuilderCLI {
                     new FinalizeOrderCLI().launch(session);
                     choice = -1;
                     break;
+
+                default:
+                    break;
+
             }
 
         }while(choice != -1);
