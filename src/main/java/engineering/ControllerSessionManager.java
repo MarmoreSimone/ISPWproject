@@ -1,0 +1,57 @@
+package engineering;
+
+import utils.UserLogged;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class ControllerSessionManager {
+
+    private static ControllerSessionManager instance = null;
+    private int key;
+    HashMap<String, PlaceOrderSession> placeOrderSessions = new HashMap<>();
+
+    //la uso se dovessi realizzare un caso d'uso che possa essere interrotto a metà per poi essere ripreso(faccio logout e poi rientro), così da mantenere il riferimento
+    //alla sessione di uno specifico utente, normalmente invece all'inizio del caso d'uso creo la sessione prendo la chiave e la passo fino alla fine del caso d'uso
+    HashMap<String, List<String>> userSessions = new HashMap<>();
+
+
+    protected ControllerSessionManager() {
+        key = 1;
+        userSessions.putIfAbsent(UserLogged.getInstance().getUser().getUsername(), new ArrayList<>());
+    }
+
+    public String getNewKey(){
+        String id = String.valueOf(key);
+        key++;
+        return id;
+    }
+
+
+    public String newPlaceOrderSession() {
+        PlaceOrderSession session = new PlaceOrderSession();
+        String key = getNewKey();
+        userSessions.get(UserLogged.getInstance().getUser().getUsername()).add(key);
+        placeOrderSessions.put(key, session);
+        return key;
+    }
+
+
+    public PlaceOrderSession getPlaceOrderSession(String key) {
+        return placeOrderSessions.get(key);
+    }
+
+
+    public void delPlaceOrderSession(String key) {
+        placeOrderSessions.remove(key);
+
+    }
+
+    public synchronized static ControllerSessionManager getInstance() {
+        if (ControllerSessionManager.instance == null)
+            ControllerSessionManager.instance = new ControllerSessionManager();
+        return instance;
+    }
+
+}

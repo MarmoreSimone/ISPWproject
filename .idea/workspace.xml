@@ -4,42 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="exception">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/NoCafeteriasFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/SystemErrorException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/WrongFormatException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_01_2025_15_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_01_2025_15_36__Changes_.xml" beforeDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="exception2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/OrderDetailBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/OrderDetailBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrdersRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/GenericException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/GenericException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +214,8 @@
       <workItem from="1736713895117" duration="9886000" />
       <workItem from="1736759251818" duration="517000" />
       <workItem from="1736782593792" duration="10000" />
-      <workItem from="1736786828452" duration="1978000" />
+      <workItem from="1736786828452" duration="4354000" />
+      <workItem from="1736803566091" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -458,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736284023447</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="exception2">
+      <option name="closed" value="true" />
+      <created>1736792239798</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1736792239798</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +467,8 @@
     <MESSAGE value="database implementation" />
     <MESSAGE value="sonar" />
     <MESSAGE value="exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception" />
+    <MESSAGE value="exception2" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
