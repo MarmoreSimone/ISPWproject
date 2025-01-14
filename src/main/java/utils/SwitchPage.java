@@ -34,45 +34,11 @@ public class SwitchPage {
     }
 
 
-    public FXMLLoader getFXMLLoader(String sourcePath) {
-        return new FXMLLoader(Main.class.getResource(sourcePath));
-
-    }
-
-    public Scene getScene(FXMLLoader loader) {
-        Scene scene;
-        try {
-            scene = new Scene(loader.load());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return scene;
-    }
-
-    public void start(GraphicalController contr, Scene scene) {
-        contr.initialize2();
-        this.stage.setScene(scene);
-        this.stage.show();
-    }
 
     //cambia semplicemente la scena
     public void changePage(String sourcePath){
 
-        FXMLLoader loader = getFXMLLoader(sourcePath);
-        Scene scene = getScene(loader);
-
-        GraphicalController contr = loader.getController();
-
-        start(contr,scene);
-    }
-
-    public void changePage(String sourcePath, Object gcontrInstance){
-
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
-
-        setContoller(loader,gcontrInstance);
-
         Scene scene;
 
         try {
@@ -83,32 +49,23 @@ public class SwitchPage {
 
 
         GraphicalController contr = loader.getController();
+
         contr.initialize2();
         this.stage.setScene(scene);
         this.stage.show();
-
     }
 
-
-
-    //passa al nuovo controller l'istanza di un controller applicativo di tipo PlaceOrder
-    public void changePage(String sourcePath, PlaceOrderController controller){
-
-        FXMLLoader loader = getFXMLLoader(sourcePath);
-        Scene scene = getScene(loader);
-
-        //qui uso il generico GraphicalController dato che non posso sapere a priori il tipo di controller associato all'fxml, in questo modo basta che il controller associato definisca l'operazione
-        //setControllerApplPlaceOrder() e si può impostare il controllore applicativo
-        GraphicalController contr = loader.getController();
-        contr.setControllerApplPlaceOrder(controller);
-
-        start(contr,scene);
-    }
 
     public void changePage(String sourcePath, String session){
 
-        FXMLLoader loader = getFXMLLoader(sourcePath);
-        Scene scene = getScene(loader);
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
+        Scene scene;
+
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         //qui uso il generico GraphicalController dato che non posso sapere a priori il tipo di controller associato all'fxml, in questo modo basta che il controller associato definisca l'operazione
         //setControllerApplPlaceOrder() e si può impostare il controllore applicativo
@@ -119,35 +76,6 @@ public class SwitchPage {
         this.stage.setScene(scene);
         this.stage.show();
     }
-
-    //permette di passare una SearchCafeteriaBean
-    //usata quando passo dalla ricerca della caffetteria alla costruzione dell'ordine per specificare
-    //la caffetteria sulla quale fare l'ordine
-    public void changePage(String sourcePath, SearchCafeteriaBean cafe){
-
-        FXMLLoader loader = getFXMLLoader(sourcePath);
-        Scene scene = getScene(loader);
-        GraphicalController contr = loader.getController();
-
-
-        contr.setCafeteria(cafe);
-
-        start(contr,scene);
-    }
-
-    //usata quando devo passare alla customization/info della specifica bevanda e tornare indietro
-    public void changePage(String sourcePath, OrderBuilderGUI controller, BeverageBean beverage){
-
-        FXMLLoader loader = getFXMLLoader(sourcePath);
-        Scene scene = getScene(loader);
-        GraphicalController contr = loader.getController();
-
-        contr.setContrOrderBuilder(controller);
-        contr.setBeverage(beverage);
-
-        start(contr,scene);
-    }
-
 
 
 
@@ -185,13 +113,5 @@ public class SwitchPage {
     }
 
 
-    public void setContoller(FXMLLoader loader, Object contr) {
-
-        if(contr instanceof OrderBuilderGUI){
-            loader.setController((OrderBuilderGUI) contr);
-        }
-
-
-    }
 
 }
