@@ -22,7 +22,7 @@ public class ControllerSessionManager {
         userSessions.putIfAbsent(UserLogged.getInstance().getUser().getUsername(), new ArrayList<>());
     }
 
-    public String getNewKey(){
+    private String getNewKey(){
         String id = String.valueOf(key);
         key++;
         return id;
@@ -47,6 +47,22 @@ public class ControllerSessionManager {
         placeOrderSessions.remove(key);
 
     }
+
+    //usato quando mi sposto con il menu e termino prima della fine il caso d'uso
+    public void closeAllUserSessions() {
+
+        //prendo tutte le sessioni associate ad un utente
+        List<String> sessions = userSessions.get(UserLogged.getInstance().getUser().getUsername());
+
+        if(!sessions.isEmpty()) {
+
+            //fare attenzione nel caso si aggiungessero casi d'uso che possono essere lasciati a metà
+            placeOrderSessions.remove(sessions.getFirst());
+        }
+
+        userSessions.put(UserLogged.getInstance().getUser().getUsername(), new ArrayList<>());
+    }
+
 
     public synchronized static ControllerSessionManager getInstance() {
         if (ControllerSessionManager.instance == null)

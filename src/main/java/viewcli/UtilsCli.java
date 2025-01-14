@@ -1,5 +1,6 @@
 package viewcli;
 
+import engineering.ControllerSessionManager;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import utils.UserLogged;
@@ -41,6 +42,7 @@ public class UtilsCli {
             }
 
             if(choice == 0){
+                ControllerSessionManager.getInstance().closeAllUserSessions();
                 if(UserLogged.getInstance().getUser().getRole().equals("barista")) new HomeBaristaCLI().launch();
                 new HomeClientCLI().launch();
 

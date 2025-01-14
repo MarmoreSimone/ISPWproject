@@ -4,6 +4,7 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
@@ -18,8 +19,8 @@ public class OrderSummaryCLI {
     private PlaceOrderController contrAppl;
 
 
-    public void launch(PlaceOrderController contrAppl) {
-        this.contrAppl = contrAppl;
+    public void launch(String session) {
+        this.contrAppl = new PlaceOrderController(session);
         OrderSummaryViewCli view = new OrderSummaryViewCli();
         view.drawTitle();
 
@@ -40,10 +41,11 @@ public class OrderSummaryCLI {
 
         if(choice == 0) {
             contrAppl.sendOrderRequest();
+            ControllerSessionManager.getInstance().delPlaceOrderSession(session);
             new HomeClientCLI().launch();
         }
         else {
-            new FinalizeOrderCLI().launch(contrAppl);
+            new FinalizeOrderCLI().launch(session);
         }
 
     }

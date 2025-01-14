@@ -90,6 +90,7 @@ public class SwitchPage {
     }
 
 
+
     //passa al nuovo controller l'istanza di un controller applicativo di tipo PlaceOrder
     public void changePage(String sourcePath, PlaceOrderController controller){
 
@@ -102,6 +103,21 @@ public class SwitchPage {
         contr.setControllerApplPlaceOrder(controller);
 
         start(contr,scene);
+    }
+
+    public void changePage(String sourcePath, String session){
+
+        FXMLLoader loader = getFXMLLoader(sourcePath);
+        Scene scene = getScene(loader);
+
+        //qui uso il generico GraphicalController dato che non posso sapere a priori il tipo di controller associato all'fxml, in questo modo basta che il controller associato definisca l'operazione
+        //setControllerApplPlaceOrder() e si può impostare il controllore applicativo
+        GraphicalController contr = loader.getController();
+        contr.setSession(session);
+
+        contr.initialize2();
+        this.stage.setScene(scene);
+        this.stage.show();
     }
 
     //permette di passare una SearchCafeteriaBean
@@ -131,7 +147,6 @@ public class SwitchPage {
 
         start(contr,scene);
     }
-
 
 
 

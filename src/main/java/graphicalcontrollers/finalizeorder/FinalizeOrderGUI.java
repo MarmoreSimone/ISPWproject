@@ -29,16 +29,18 @@ public class FinalizeOrderGUI extends GraphicalController {
     @FXML
     private RadioButton payLater;
 
-    public void launch(PlaceOrderController controller) {
-        SwitchPage.getSwitchPageInstance().changePage("/view/finalizeOrder.fxml", controller);
+    private String session;
+
+    public void launch(String session) {
+        SwitchPage.getSwitchPageInstance().changePage("/view/finalizeOrder.fxml", session);
     }
 
-    @Override
-    public void setControllerApplPlaceOrder(PlaceOrderController controllerAppl) {
-        this.controllerAppl = controllerAppl;
+    public void setSession(String session){
+        controllerAppl = new PlaceOrderController(session);
+        this.session = session;
     }
 
-    @Override
+
     public void initialize2() {
 
         ToggleGroup tg = new ToggleGroup();
@@ -48,7 +50,7 @@ public class FinalizeOrderGUI extends GraphicalController {
     }
 
     public void goBackToBuild(){
-        new OrderBuilderGUI().launch(controllerAppl);
+        new OrderBuilderGUI().launch(this.session);
     }
 
     public void goToSummary(){
@@ -66,7 +68,7 @@ public class FinalizeOrderGUI extends GraphicalController {
         }
 
 
-        new OrderSummaryGUI().launch(controllerAppl);
+        new OrderSummaryGUI().launch(this.session);
 
     }
 

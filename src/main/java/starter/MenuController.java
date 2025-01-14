@@ -1,5 +1,6 @@
 package starter;
 
+import engineering.ControllerSessionManager;
 import graphicalcontrollers.DummyGC;
 import graphicalcontrollers.login.LoginGUI;
 import graphicalcontrollers.myorders.MyOrdersGUI;
@@ -12,11 +13,13 @@ public class MenuController {
 
     @FXML
     private void onButtonClickPlaceOrder() {
-       new SearchCafeteriaGUI().launch();
+        ControllerSessionManager.getInstance().closeAllUserSessions();
+        new SearchCafeteriaGUI().launch();
     }
 
     @FXML
     private void clickLogout() {
+        ControllerSessionManager.getInstance().closeAllUserSessions();
         new LoginGUI().launch();
     }
 
@@ -27,12 +30,14 @@ public class MenuController {
 
     @FXML
     private void onButtonClickGift() {
+        ControllerSessionManager.getInstance().closeAllUserSessions();
         new ProcessOrderGUI().launch();
     }
 
     @FXML
     private void onButtonClickMyOrder() {
-            new MyOrdersGUI().launch();
+        ControllerSessionManager.getInstance().closeAllUserSessions();
+        new MyOrdersGUI().launch();
     }
 
 

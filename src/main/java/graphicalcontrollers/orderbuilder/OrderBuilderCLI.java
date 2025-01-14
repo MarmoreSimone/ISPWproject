@@ -3,6 +3,7 @@ package graphicalcontrollers.orderbuilder;
 import bean.BeverageBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.customizebeverage.CustomizeBeverageCLI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
@@ -14,28 +15,14 @@ import java.util.List;
 
 public class OrderBuilderCLI {
 
-    PlaceOrderController placeOrderController;
-    OrdereBuildViewCli view;
+    private PlaceOrderController placeOrderController;
+    private OrdereBuildViewCli view;
+    private String session;
 
+    public void launch(String session){
 
-    //usato quando torno indietro da finalize
-    public void launch(PlaceOrderController contr){
-        this.placeOrderController = contr;
-        launch(contr.getCafeteriaName());
-    }
-
-
-    public void launch(String cafeteria){
-        if(placeOrderController == null) {
-            //creo il nuovo controllore applicativo che sarà uasto per tutto questo ordine
-            placeOrderController = new PlaceOrderController();
-            //imposto caffetteria nel contr appl
-            try {
-                placeOrderController.setCafeteria(new SearchCafeteriaBean(cafeteria, null));
-            } catch (NoCafeteriasFoundException e) {
-                e.showException();
-            }
-        }
+        placeOrderController = new PlaceOrderController(session);
+        this.session = session;
 
         view = new OrdereBuildViewCli();
         view.drawTitle();
@@ -60,7 +47,7 @@ public class OrderBuilderCLI {
                     break;
 
                 case 2:
-                    new FinalizeOrderCLI().launch(placeOrderController);
+                    new FinalizeOrderCLI().launch(session);
                     choice = -1;
                     break;
             }
@@ -95,8 +82,8 @@ public class OrderBuilderCLI {
                 break;
 
             case 1:
-                new CustomizeBeverageCLI().launch(this.placeOrderController,bev.get(choice-1));
-                System.out.println("TORNATO QUI");
+                placeOrderController.setCustomBev(bev.get(choice-1));
+                new CustomizeBeverageCLI().launch(session);
                 break;
 
             case 2:

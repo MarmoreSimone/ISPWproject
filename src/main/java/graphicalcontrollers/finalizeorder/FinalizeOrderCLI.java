@@ -16,8 +16,9 @@ public class FinalizeOrderCLI {
     private PlaceOrderController contrAppl;
     private FinalizeOrderViewCli view;
 
-    public void launch(PlaceOrderController contrAppl) {
-        this.contrAppl = contrAppl;
+    public void launch(String session) {
+
+        this.contrAppl = new PlaceOrderController(session);
         view = new FinalizeOrderViewCli();
         view.drawTitle();
         int choice;
@@ -37,7 +38,7 @@ public class FinalizeOrderCLI {
                     } catch (WrongFormatException e) {
                         break;
                     }
-                    new OrderSummaryCLI().launch(contrAppl);
+                    new OrderSummaryCLI().launch(session);
                     i = -1;
                     break;
 
@@ -45,7 +46,7 @@ public class FinalizeOrderCLI {
                     break;
 
                 case 2:
-                    new OrderBuilderCLI().launch(contrAppl);
+                    new OrderBuilderCLI().launch(session);
                     i = -1;
                     break;
             }

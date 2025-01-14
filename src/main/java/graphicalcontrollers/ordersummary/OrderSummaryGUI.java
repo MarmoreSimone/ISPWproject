@@ -4,6 +4,7 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
@@ -46,13 +47,15 @@ public class OrderSummaryGUI extends GraphicalController {
     @FXML
     private ListView<String> itemList;
 
-    public void launch(PlaceOrderController controller) {
-        SwitchPage.getSwitchPageInstance().changePage("/view/orderSummary.fxml", controller);
+    private String session;
+
+    public void launch(String session) {
+        SwitchPage.getSwitchPageInstance().changePage("/view/orderSummary.fxml", session);
     }
 
-    @Override
-    public void setControllerApplPlaceOrder(PlaceOrderController controllerAppl) {
-        this.controllerAppl = controllerAppl;
+    public void setSession(String session){
+        controllerAppl = new PlaceOrderController(session);
+        this.session = session;
     }
 
     @Override
@@ -84,11 +87,12 @@ public class OrderSummaryGUI extends GraphicalController {
     }
 
     public void goBackToFinalize() {
-        new FinalizeOrderGUI().launch(controllerAppl);
+        new FinalizeOrderGUI().launch(this.session);
     }
 
     public void confirmOrder(){
         controllerAppl.sendOrderRequest();
+        ControllerSessionManager.getInstance().delPlaceOrderSession(this.session);
         SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
     }
 

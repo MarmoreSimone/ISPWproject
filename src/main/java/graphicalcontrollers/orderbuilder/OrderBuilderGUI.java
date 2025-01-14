@@ -3,6 +3,7 @@ package graphicalcontrollers.orderbuilder;
 import bean.BeverageBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
+import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 
@@ -23,7 +24,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class OrderBuilderGUI extends GraphicalController implements Initializable {
+public class OrderBuilderGUI extends GraphicalController {
 
     @FXML
     private Text cafeName;
@@ -37,43 +38,24 @@ public class OrderBuilderGUI extends GraphicalController implements Initializabl
     @FXML
     private Label totPrice;
 
-    //istanza del controller applicativo
+    private String session;
+
+
     private PlaceOrderController controllerAppl;
     //lista delle bevande della caffetteria
     private List<BeverageBean> beverages;
 
-    //usata la prima volta che carico la pagina
-    public void launch(SearchCafeteriaBean bean) {
-        setCafeteria(bean);
-        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", this);
-
+    public void launch(String session) {
+        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", session);
     }
 
-    //usata quando torno indietro da customize beverage
-    public void launch(PlaceOrderController controller) {
-        this.controllerAppl = controller;
-        SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", this);
+    public void setSession(String session){
+        controllerAppl = new PlaceOrderController(session);
+        this.session = session;
     }
 
 
-    @Override
-    //usato la prima volta che parte il controllore grafico, il launch(SearchCafeteria)
-    public void setCafeteria(SearchCafeteriaBean bean) {
-        this.controllerAppl = new PlaceOrderController();
-        try {
-            this.controllerAppl.setCafeteria(bean);
-        } catch (NoCafeteriasFoundException e) {
-            e.showException();
-        }
-    }
-
-    @Override
-    //usato quando dalla customization/info devo tornare indietro
-    public void setControllerApplPlaceOrder(PlaceOrderController controller){
-        this.controllerAppl = controller;
-    }
-
-
+/*
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //imposto il nome della caffetteria
@@ -85,10 +67,20 @@ public class OrderBuilderGUI extends GraphicalController implements Initializabl
         showAddedBev();
         totPrice.setText(String.valueOf(getTot())+"$");
         }
+*/
 
-    public PlaceOrderController getContrAppl(){
-        return controllerAppl;
+    @Override
+    public void initialize2() {
+        //imposto il nome della caffetteria
+        cafeName.setText(controllerAppl.getCafeteriaName());
+        //imposto le bevande della caffetteria
+        beverages = controllerAppl.getCafeteriaBeverages();
+        //funzione per mostrare a schermo le bevande aggiungibili all'ordine
+        showBevMenu();
+        showAddedBev();
+        totPrice.setText(String.valueOf(getTot())+"$");
     }
+
 
     public void showBevMenu(){
 
@@ -123,12 +115,14 @@ public class OrderBuilderGUI extends GraphicalController implements Initializabl
     }
 
     public void customizeBev(BeverageBean beverage){
-        new CustomizeBeverageGUI().launch(this,beverage);
+
+        controllerAppl.setCustomBev(beverage);
+        new CustomizeBeverageGUI().launch(this.session);
 
     }
 
     public void continueOrder(){
-        new FinalizeOrderGUI().launch(controllerAppl);
+        new FinalizeOrderGUI().launch(this.session);
     }
 
 

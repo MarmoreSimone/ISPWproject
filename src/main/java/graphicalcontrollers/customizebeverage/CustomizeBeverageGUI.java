@@ -1,6 +1,7 @@
 package graphicalcontrollers.customizebeverage;
 
 import bean.BeverageBean;
+import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXML;
@@ -12,27 +13,6 @@ import javafx.scene.text.Text;
 import utils.SwitchPage;
 
 public class CustomizeBeverageGUI extends GraphicalController {
-
-    private OrderBuilderGUI parentContr;
-
-    private BeverageBean beverage;
-
-    public void launch(OrderBuilderGUI controller , BeverageBean beverage) {
-        SwitchPage.getSwitchPageInstance().changePage("/view/customizeBevGUI.fxml", controller, beverage );
-    }
-
-    @Override
-    public void setContrOrderBuilder(OrderBuilderGUI controller) {
-        parentContr = controller;
-    }
-
-    @Override
-    public void setBeverage(BeverageBean beverage) {
-        this.beverage = beverage;
-    }
-
-    @FXML
-    private Button addToOrder;
 
     @FXML
     private Label caffeine;
@@ -55,8 +35,31 @@ public class CustomizeBeverageGUI extends GraphicalController {
     @FXML
     private Label name;
 
+    private PlaceOrderController controllerAppl;
+
+    private BeverageBean beverage;
+
+    private String session;
+
+    public void launch(String session) {
+        SwitchPage.getSwitchPageInstance().changePage("/view/customizeBevGUI.fxml", session);
+    }
+
+    public void setSession(String session){
+        controllerAppl = new PlaceOrderController(session);
+        this.session = session;
+    }
+
+
+    @Override
+    public void setBeverage(BeverageBean beverage) {
+        this.beverage = beverage;
+    }
+
+
     @Override
     public void initialize2() {
+        setBeverage(controllerAppl.getCustomBev());
         name.setText(beverage.getName());
         caffeine.setText(String.valueOf(beverage.getCaffeine()) + "mg");
         calories.setText(String.valueOf(beverage.getCalories())+ "Kcal");
@@ -66,7 +69,7 @@ public class CustomizeBeverageGUI extends GraphicalController {
     }
 
     public void goBack() {
-        new OrderBuilderGUI().launch(parentContr.getContrAppl());
+        new OrderBuilderGUI().launch(session);
     }
 
 

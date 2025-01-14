@@ -2,8 +2,12 @@ package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
+import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import engineering.ControllerSessionManager;
+import engineering.PlaceOrderSession;
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.beans.value.ChangeListener;
@@ -193,8 +197,16 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
 
     public void continueOrder(){
 
-        //faccio partire il controllore passandogli la caffetteria selezionata
-        new OrderBuilderGUI().launch(new SearchCafeteriaBean(labelName.getText(),null));
+        //creo la sessione del controll appl.
+        String session = ControllerSessionManager.getInstance().newPlaceOrderSession();
+        PlaceOrderController contr = new PlaceOrderController(session);
+        try {
+            contr.setCafeteria(labelName.getText());
+        } catch (SystemErrorException e) {
+            e.showException();
+        }
+
+        new OrderBuilderGUI().launch(session);
 
     }
 

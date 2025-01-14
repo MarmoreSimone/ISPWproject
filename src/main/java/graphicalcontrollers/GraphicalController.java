@@ -39,7 +39,9 @@ public abstract class GraphicalController {
 
     }
 
+    public void setSession(String session){
 
+    }
 
 }
 

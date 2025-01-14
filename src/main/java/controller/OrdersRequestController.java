@@ -1,5 +1,6 @@
 package controller;
 
+import bean.BeanUtils;
 import bean.OrderRequestBean;
 import exception.SystemErrorException;
 import model.DAOfactory;
@@ -12,12 +13,10 @@ import java.util.List;
 
 public class OrdersRequestController{
 
-    PlaceOrderController placeOrderController;
     SearchCafeteriaController searchCafeteriaController;
     User user;
 
     public OrdersRequestController() {
-        placeOrderController = new PlaceOrderController();
         searchCafeteriaController = new SearchCafeteriaController();
         user = UserLogged.getInstance().getUser();
     }
@@ -25,12 +24,13 @@ public class OrdersRequestController{
     public List<OrderRequestBean> getAllRequest() throws SystemErrorException {
         List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
+        BeanUtils beanUtils = new BeanUtils();
 
         orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
 
         for(int i = 0; i < orderReq.size(); i++){
             if(orderReq.get(i).getStatus().equals("PENDING")){
-                retBeans.add(placeOrderController.getOrdReqBean(orderReq.get(i)));
+                retBeans.add(beanUtils.getOrdReqBean(orderReq.get(i)));
             }
         }
 

@@ -2,8 +2,11 @@ package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
+import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
+import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
 import viewcli.SearchCafeteriaViewCli;
 
@@ -96,7 +99,16 @@ public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
         int input = view.getUserChoice(list);
 
         if(input == 0) {
-           new OrderBuilderCLI().launch(cafe.getName());
+            String session = ControllerSessionManager.getInstance().newPlaceOrderSession();
+            PlaceOrderController contr = new PlaceOrderController(session);
+
+            try {
+                contr.setCafeteria(cafe.getName());
+            } catch (SystemErrorException e) {
+                e.showException();
+            }
+
+            new OrderBuilderCLI().launch(session);
         }
         else{
             launch();

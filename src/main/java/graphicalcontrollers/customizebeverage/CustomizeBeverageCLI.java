@@ -13,10 +13,12 @@ public class CustomizeBeverageCLI {
     private PlaceOrderController placeOrderController;
     private CustomizeBeverageViewCli view;
 
-    public void launch(PlaceOrderController placeOrderController, BeverageBean bev) {
-        this.placeOrderController = placeOrderController;
+    public void launch(String session) {
+
+        placeOrderController = new PlaceOrderController(session);
         view = new CustomizeBeverageViewCli();
 
+        BeverageBean bev = placeOrderController.getCustomBev();
         view.drawTitle();
         view.drawBevInfo(bev);
 

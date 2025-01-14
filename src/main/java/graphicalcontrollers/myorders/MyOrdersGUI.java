@@ -2,6 +2,7 @@ package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
 import controller.PlaceOrderController;
+import controller.UserOrdersController;
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.beans.value.ChangeListener;
@@ -47,11 +48,11 @@ public class MyOrdersGUI extends GraphicalController {
     @Override
     public void initialize2(){
 
-        PlaceOrderController placeOrderController = new PlaceOrderController();
+        UserOrdersController controller = new UserOrdersController();
 
 
         try {
-            ordini = placeOrderController.getAllMyOrderReq();
+            ordini = controller.getAllMyOrderReq();
         } catch (SystemErrorException e) {
             e.showException();
         }

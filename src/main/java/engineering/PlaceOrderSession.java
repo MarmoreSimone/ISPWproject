@@ -17,15 +17,15 @@ public class PlaceOrderSession {
 
         myBeverages = new ArrayList<>();
         order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
-        user = UserLogged.getInstance().getUser();
 
     }
 
-    private User user;
+
     private Cafeteria myCafeteria;
     private List<Beverage> myBeverages;
     private Order order;
-    private Random random;
+    private Beverage customBev;
+
 
     public Cafeteria getMyCafeteria() {
         return myCafeteria;
@@ -50,6 +50,15 @@ public class PlaceOrderSession {
     public void setOrder(Order order) {
         this.order = order;
     }
+
+    public Beverage getCustomBev() {
+        return customBev;
+    }
+
+    public void setCustomBev(Beverage customBev) {
+        this.customBev = customBev;
+    }
+
 
 
 }

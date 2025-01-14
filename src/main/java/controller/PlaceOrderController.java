@@ -1,50 +1,45 @@
 package controller;
 
 import bean.*;
+import engineering.ControllerSessionManager;
+import engineering.PlaceOrderSession;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import exception.WrongFormatException;
 import model.DAOfactory;
 import model.beverage.Beverage;
-import model.cafeteria.Cafeteria;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
-import model.user.User;
 import utils.UserLogged;
 
-
 import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class PlaceOrderController {
 
-    private User user;
-    private Cafeteria myCafeteria;
-    //bevande aggiunte all'ordine
-    private List<Beverage> myBeverages;
-    //entity dell'ordine costruita negli ultimi step
-    private Order order;
     private Random random;
+    private PlaceOrderSession session;
 
-    public PlaceOrderController() {
-        myBeverages = new ArrayList<>();
-        order = DAOfactory.getDAOfactory().createOrderDAO().createNewOrder();
-        user = UserLogged.getInstance().getUser();
+    public PlaceOrderController(String key) {
+        this.session = ControllerSessionManager.getInstance().getPlaceOrderSession(key);
         random = new Random();
     }
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
-    public void setCafeteria(SearchCafeteriaBean key) throws NoCafeteriasFoundException {
+    public void setCafeteria(String name)  throws SystemErrorException{
         SearchCafeteriaController search = new SearchCafeteriaController();
-        this.myCafeteria = search.getCafeteriaByName(key.getName());
+        try {
+            session.setMyCafeteria(search.getCafeteriaByName(name));
+        } catch (NoCafeteriasFoundException e) {
+            throw new SystemErrorException(e);
+        }
     }
 
     //TODO rivedi se passare una bean, anche solo per il nome
     public String getCafeteriaName() {
-        return myCafeteria.getName();
+        return session.getMyCafeteria().getName();
     }
 
     //ritorna una lista di BeverageBean della caffetteria settata nel contr. appl.
@@ -52,7 +47,7 @@ public class PlaceOrderController {
 
         List<BeverageBean> retBeans = new ArrayList<>();
 
-        for(Beverage bev: this.myCafeteria.getBeverages()){
+        for(Beverage bev: session.getMyCafeteria().getBeverages()){
             retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
         }
 
@@ -62,40 +57,36 @@ public class PlaceOrderController {
     //aggiunge una bevanda all'ordine
     public void addBeverageToOrder(BeverageBean bev){
         //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
-        myBeverages.add(new Beverage(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage()));
+        List<Beverage> listBev = session.getMyBeverages();
+        listBev.add(new Beverage(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage()));
+        session.setMyBeverages(listBev);
     }
 
     //rimuove una bevanda dall'ordine
     public void removeBeverageFromOrder(BeverageBean bev){
-        for(Beverage b: myBeverages){
+        List<Beverage> listBev = session.getMyBeverages();
+        for(Beverage b: listBev){
             if(b.getName().equals(bev.getName())){
-                myBeverages.remove(b);
+                listBev.remove(b);
+                session.setMyBeverages(listBev);
                 return;
             }
         }
     }
 
-    //data una lista di beverages le converte in beveragesBean
-    private List<BeverageBean> getBeveragesBeanList(List<Beverage> beverages){
-        List<BeverageBean> retBeans = new ArrayList<>();
-
-        for(Beverage bev: beverages){
-            retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
-        }
-
-        return retBeans;
-
-    }
-
     //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
     public List<BeverageBean> getAddedBev(){
-        return getBeveragesBeanList(myBeverages);
+
+        BeanUtils beanUtils = new BeanUtils();
+        return beanUtils.getBeveragesBeanList(session.getMyBeverages());
+
     }
 
     //ritorna il prezzo totale dell'ordine
     public Double totalPrice(){
         double tot = 0;
-        for(Beverage bev: myBeverages){
+        List<Beverage> bevList = session.getMyBeverages();
+        for(Beverage bev: bevList){
             tot = tot + bev.getPrice();
         }
 
@@ -131,43 +122,34 @@ public class PlaceOrderController {
                 throw new WrongFormatException(": select a payment method method");
             }
 
+            Order order = session.getOrder();
 
-            this.order.setItems(myBeverages);
-            this.order.setDate(details.getDate());
-            this.order.setTime(details.getTime());
-            this.order.setNote(details.getNote());
-            this.order.setPayMethod(details.getPayMethod());
-            this.order.setTotPrice(totalPrice());
+            order.setItems(session.getMyBeverages());
+            order.setDate(details.getDate());
+            order.setTime(details.getTime());
+            order.setNote(details.getNote());
+            order.setPayMethod(details.getPayMethod());
+            order.setTotPrice(totalPrice());
 
-
+            session.setOrder(order);
 
     }
 
     //ritorna una bean dell'ordine che si sta creando
     public OrderBean getMyOrder() {
-        return getOrderBean(this.order);
-    }
 
-    //dato un Order generico ritorna la Bean
-    private OrderBean getOrderBean(Order ord){
+        BeanUtils beanUtils = new BeanUtils();
+        return beanUtils.getOrderBean(session.getOrder());
 
-        OrderBean bean = new OrderBean();
-        bean.setBevs(getBeveragesBeanList(ord.getBevs()));
-        bean.setDate(ord.getDate());
-        bean.setTime(ord.getTime());
-        bean.setNote(ord.getNote());
-        bean.setTotPrice(ord.getTotPrice());
-        bean.setPayMethod(ord.getPayMethod());
-        return bean;
     }
 
     public void sendOrderRequest(){
+
         OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrder();
         orderRequest.setStatus("PENDING");
-        orderRequest.setCafeteria(this.myCafeteria);
-        orderRequest.setOrder(this.order);
-        orderRequest.setUser(user.getUsername());
-
+        orderRequest.setCafeteria(session.getMyCafeteria());
+        orderRequest.setOrder(session.getOrder());
+        orderRequest.setUser(UserLogged.getInstance().getUser().getUsername());
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 
@@ -188,10 +170,13 @@ public class PlaceOrderController {
     public List<OrderRequestBean> getAllMyOrderReq() throws SystemErrorException {
 
         List<OrderRequestBean> retBeans = new ArrayList<>();
-        List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(user.getUsername());
+        List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(UserLogged.getInstance().getUser().getUsername());
+
+        BeanUtils beanUtils = new BeanUtils();
 
         for(int i=0; i<ordReq.size(); i++){
-                retBeans.add(getOrdReqBean(ordReq.get(i)));
+
+                retBeans.add(beanUtils.getOrdReqBean(ordReq.get(i)));
         }
 
         return retBeans;
@@ -221,18 +206,24 @@ public class PlaceOrderController {
 
     }
 
-    public OrderRequestBean getOrdReqBean(OrderRequest ord){
-        OrderRequestBean bean = new OrderRequestBean();
+    public void setCustomBev(BeverageBean bev){
 
-        bean.setCafe(ord.getCafeteria().getName());
-        bean.setCode(ord.getPickUpCode());
-        bean.setState(ord.getStatus());
-        bean.setOrder(getOrderBean(ord.getOrder()));
-        bean.setUser(ord.getUser());
+        List<Beverage> bevList = session.getMyCafeteria().getBeverages();
 
-        return bean;
+        for (Beverage beverage : bevList) {
+            if (bev.getName().equals(beverage.getName())) {
+                //non gli paso direttamente l'istanza ma faccio una copia così da poter modificare la bevanda senza problemi
+                this.session.setCustomBev(new Beverage(beverage.getName(), beverage.getDescription(), beverage.getPrice(), beverage.getCalories(), beverage.getCaffeine(), beverage.getImage()));
+            }
+        }
+
+
 
     }
 
+    public BeverageBean getCustomBev(){
+        Beverage bev = this.session.getCustomBev();
+        return new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage());
+    }
 
 }

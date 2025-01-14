@@ -2,6 +2,7 @@ package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
 import controller.PlaceOrderController;
+import controller.UserOrdersController;
 import exception.SystemErrorException;
 import graphicalcontrollers.home.HomeClientCLI;
 import viewcli.MyOrdersViewCli;
@@ -15,7 +16,7 @@ public class MyOrdersCLI {
     public void launch(){
 
         MyOrdersViewCli view = new MyOrdersViewCli();
-        PlaceOrderController controller = new PlaceOrderController();
+        UserOrdersController controller = new UserOrdersController();
         List<OrderRequestBean> list;
 
         view.drawTitle();
