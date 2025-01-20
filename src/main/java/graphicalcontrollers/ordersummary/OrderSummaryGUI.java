@@ -8,8 +8,12 @@ import engineering.ControllerSessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import utils.SwitchPage;
 import javafx.fxml.FXML;
@@ -28,7 +32,6 @@ public class OrderSummaryGUI extends GraphicalController {
     @FXML
     private Label date;
 
-
     @FXML
     private Label nameCafe;
 
@@ -43,6 +46,9 @@ public class OrderSummaryGUI extends GraphicalController {
 
     @FXML
     private Label tot;
+
+    @FXML
+    private VBox vBox;
 
     @FXML
     private ListView<String> itemList;
@@ -81,8 +87,32 @@ public class OrderSummaryGUI extends GraphicalController {
         time.setText(String.valueOf(order.getTime()));
         payMet.setText(order.getPayMethod());
 
+        /*
         for(int i=0;i<order.getBevs().size();i++){
             itemList.getItems().add(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
+        }
+
+         */
+        for(int i=0;i<order.getBevs().size();i++){
+            Label nameLabel = new Label(order.getBevs().get(i).getName());
+            nameLabel.setStyle("-fx-font-size: 18px;");
+
+
+            // Creazione dell'HBox per nome e personalizzazioni
+            HBox hBox = new HBox(nameLabel);
+            hBox.setSpacing(2);
+
+            // Creazione della Label per il prezzo
+            Label priceLabel = new Label(order.getBevs().get(i).getPrice() + "$");
+            priceLabel.setStyle("-fx-font-size: 18px;");
+
+            // Aggiungi il prezzo all'HBox
+            HBox hBoxFinal = new HBox(hBox, priceLabel);
+            hBoxFinal.setSpacing(10);
+
+            HBox.setMargin(nameLabel, new Insets(0, 10, 0, 10));
+            // Aggiungi l'HBox alla VBox
+            vBox.getChildren().add(hBoxFinal);
         }
 
     }

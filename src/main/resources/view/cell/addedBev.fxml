@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="33.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.AddedBevCellContr">
+<Pane minHeight="33.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.AddedBevCellContr">
    <children>
-      <Label fx:id="labelName" layoutX="8.0" prefHeight="30.0" prefWidth="119.0" text="Creamy Latte">
+      <Label fx:id="labelName" layoutX="8.0" prefWidth="119.0" text="cafe" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="addToOrderButton" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="185.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#remove" prefHeight="22.0" prefWidth="23.0" style="-fx-background-radius: 100; -fx-background-color: red; -fx-text-fill: white;" text="-" textAlignment="CENTER">
+      <Button fx:id="addToOrderButton" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="191.0" layoutY="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#remove" prefHeight="22.0" prefWidth="23.0" style="-fx-background-radius: 100; -fx-background-color: red; -fx-text-fill: white;" text="-" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>

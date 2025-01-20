@@ -67,6 +67,7 @@ public class PlaceOrderController {
         List<Beverage> listBev = session.getMyBeverages();
         for(Beverage b: listBev){
             if(b.getName().equals(bev.getName())){
+                System.out.println("rimuovo " + b.getName());
                 listBev.remove(b);
                 session.setMyBeverages(listBev);
                 return;

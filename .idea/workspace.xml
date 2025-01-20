@@ -4,34 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="session added">
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/CaffeineProcessingTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/ItemDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/RunToBurn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engineering/ControllerSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/ControllerSessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engineering/PlaceOrderSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/PlaceOrderSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/GenericException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/GenericException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/GraphicalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/GraphicalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/customizebeverage/CustomizeBeverageGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/Popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/Popup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/BeverageDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/CustomizeBeverageViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/CustomizeBeverageViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/Beverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/Beverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +81,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -106,7 +94,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -134,6 +122,7 @@
       <recent name="java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="engineering.decorator" />
       <recent name="exception" />
       <recent name="starter" />
       <recent name="graphicalcontrollers.homebarista" />
@@ -243,7 +232,13 @@
       <workItem from="1736786828452" duration="4354000" />
       <workItem from="1736803566091" duration="600000" />
       <workItem from="1736877780434" duration="13421000" />
-      <workItem from="1736892335281" duration="5095000" />
+      <workItem from="1736892335281" duration="5477000" />
+      <workItem from="1736942832781" duration="14000" />
+      <workItem from="1736942930719" duration="1324000" />
+      <workItem from="1736976984526" duration="724000" />
+      <workItem from="1736977999787" duration="9000" />
+      <workItem from="1736978545306" duration="7937000" />
+      <workItem from="1737292760458" duration="27518000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -485,7 +480,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736896168073</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1736898072726</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1736898072726</updated>
+    </task>
+    <task id="LOCAL-00032" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1736898303656</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1736898303656</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,12 +528,12 @@
     <MESSAGE value="bu" />
     <MESSAGE value="duplication fix" />
     <MESSAGE value="database implementation" />
-    <MESSAGE value="sonar" />
     <MESSAGE value="exception" />
     <MESSAGE value="exception2" />
     <MESSAGE value="session" />
     <MESSAGE value="session added" />
-    <option name="LAST_COMMIT_MESSAGE" value="session added" />
+    <MESSAGE value="sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

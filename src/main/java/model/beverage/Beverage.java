@@ -1,6 +1,8 @@
 package model.beverage;
 
-public class Beverage {
+import engineering.decorator.MenuItem;
+
+public class Beverage extends MenuItem {
 
     private String name;
     private String description;
