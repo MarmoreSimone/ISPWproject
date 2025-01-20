@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/CaffeineProcessingTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/ItemDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/RunToBurn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/Size.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/beverage/Beverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/beverage/Beverage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="decorator">
+      <change beforePath="$PROJECT_DIR$/src/main/java/engineering/decorator/RunToBurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/RunToBurn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +225,7 @@
       <workItem from="1736976984526" duration="724000" />
       <workItem from="1736977999787" duration="9000" />
       <workItem from="1736978545306" duration="7937000" />
-      <workItem from="1737292760458" duration="27518000" />
+      <workItem from="1737292760458" duration="27870000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -496,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736898303656</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="decorator">
+      <option name="closed" value="true" />
+      <created>1737334419810</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737334419810</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +528,8 @@
     <MESSAGE value="session" />
     <MESSAGE value="session added" />
     <MESSAGE value="sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
+    <MESSAGE value="decorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="decorator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

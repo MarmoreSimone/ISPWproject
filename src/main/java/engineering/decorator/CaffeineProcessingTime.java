@@ -48,31 +48,7 @@ public class CaffeineProcessingTime extends ItemDecorator{
             return descr;
         }
 
-        @Override
-        public String getName(){
-            return super.getName();
-        }
 
-        @Override
-        public double getPrice(){
-            return super.getPrice();
-        }
-
-        @Override
-        public double getCalories(){
-            return super.getCalories();
-        }
-
-        @Override
-        public double getCaffeine(){
-            return super.getCaffeine();
-        }
-
-        @Override
-        public String getImage(){
-            return super.getImage();
-
-        }
 
 
 

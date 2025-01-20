@@ -36,15 +36,6 @@ public class Size extends ItemDecorator{
             return caffeine;
         }
 
-        @Override
-        public String getImage(){
-            return super.getImage();
 
-        }
-
-        @Override
-        public String getDescription(){
-            return super.getDescription();
-        }
 
 }
