@@ -1,4 +1,4 @@
-package model.beverage;
+package model.item;
 
 import controller.SearchCafeteriaController;
 import exception.NoCafeteriasFoundException;

@@ -8,7 +8,7 @@ import exception.NoUserFoundException;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import model.DAOfactory;
-import model.beverage.Beverage;
+import model.item.Beverage;
 import model.cafeteria.Cafeteria;
 import viewcli.LoginViewCli;
 import viewcli.UtilsCli;

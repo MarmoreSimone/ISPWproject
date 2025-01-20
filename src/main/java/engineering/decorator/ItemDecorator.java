@@ -1,7 +1,7 @@
 package engineering.decorator;
 
 //decorator
-public abstract class ItemDecorator extends MenuItem{
+public abstract class ItemDecorator extends MenuItem {
 
     //aggregazione
     private MenuItem item;

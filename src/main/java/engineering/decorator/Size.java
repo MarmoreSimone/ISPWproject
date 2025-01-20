@@ -4,6 +4,7 @@ package engineering.decorator;
 public class Size extends ItemDecorator{
 
 
+
         public Size(MenuItem item) {
             super(item);
         }

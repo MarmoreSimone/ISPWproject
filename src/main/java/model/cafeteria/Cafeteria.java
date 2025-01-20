@@ -1,6 +1,7 @@
 package model.cafeteria;
 
-import model.beverage.Beverage;
+import model.item.Beverage;
+import model.topping.Toppings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public class Cafeteria {
     private List<String> openingHours;
     private String photo;
     private List<Beverage> beverages;
+    private List<Toppings> toppings;
 
     public Cafeteria(String name, String address, String city, String number, String description, String photo) {
         this.name = name;

@@ -1,7 +1,7 @@
 package model;
 
-import model.beverage.BeverageDAO;
-import model.beverage.BeverageDAOdb;
+import model.item.BeverageDAO;
+import model.item.BeverageDAOdb;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdb;
 import model.order.OrderDAO;

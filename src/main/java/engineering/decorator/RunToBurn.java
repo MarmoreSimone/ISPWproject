@@ -13,7 +13,7 @@ public class RunToBurn extends ItemDecorator{
             this.weight = weight;
         }
 
-        private double computeRunningTime(double calories) {
+        private double computeRunningTime() {
             // Usando la formula: Calorie(Kcal) Bruciate = Peso x Distanza x 0.9
             double distanceInKm = super.getCalories() / (weight * 0.9);
             double speed = 7;
@@ -23,7 +23,7 @@ public class RunToBurn extends ItemDecorator{
         @Override
         public String getDescription(){
             String descr = super.getDescription();
-            descr = descr + "\n + To burn off this beverage, you need to run for: " + computeRunningTime(weight) + " minutes";
+            descr = descr + "\n TIPS: To burn off this beverage, you need to run for: " + computeRunningTime() + " minutes";
             return descr;
         }
 

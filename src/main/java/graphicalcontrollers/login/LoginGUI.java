@@ -11,7 +11,7 @@ import graphicalcontrollers.homebarista.HomeBaristaGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.DAOfactory;
-import model.beverage.Beverage;
+import model.item.Beverage;
 import model.cafeteria.Cafeteria;
 import utils.SwitchPage;
 

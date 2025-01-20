@@ -1,7 +1,7 @@
 package engineering.decorator;
 
 
-import model.beverage.Beverage;
+import model.item.Beverage;
 
 public class test {
 
@@ -14,9 +14,6 @@ public class test {
         CaffeineProcessingTime caff = new CaffeineProcessingTime(run);
         caff.setWeight(60.0);
         System.out.println(caff.getDescription());
-
-
-
 
     }
 }

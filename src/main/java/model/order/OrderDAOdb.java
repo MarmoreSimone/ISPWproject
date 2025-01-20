@@ -1,7 +1,7 @@
 package model.order;
 
 import model.DAOfactory;
-import model.beverage.Beverage;
+import model.item.Beverage;
 import utils.DbConnection;
 
 import java.sql.Connection;

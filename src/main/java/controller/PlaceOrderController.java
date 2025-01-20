@@ -7,7 +7,7 @@ import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import exception.WrongFormatException;
 import model.DAOfactory;
-import model.beverage.Beverage;
+import model.item.Beverage;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
 import utils.UserLogged;

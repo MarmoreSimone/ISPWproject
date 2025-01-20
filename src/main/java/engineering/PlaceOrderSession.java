@@ -1,7 +1,7 @@
 package engineering;
 
 import model.DAOfactory;
-import model.beverage.Beverage;
+import model.item.Beverage;
 import model.cafeteria.Cafeteria;
 import model.order.Order;
 import java.util.ArrayList;

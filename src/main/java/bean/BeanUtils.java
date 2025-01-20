@@ -1,6 +1,6 @@
 package bean;
 
-import model.beverage.Beverage;
+import model.item.Beverage;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
 

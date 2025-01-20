@@ -1,6 +1,6 @@
 package model.order;
 
-import model.beverage.Beverage;
+import model.item.Beverage;
 
 import java.util.List;
 
