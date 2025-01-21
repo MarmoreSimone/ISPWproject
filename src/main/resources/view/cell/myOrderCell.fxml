@@ -9,13 +9,13 @@
 
 <Pane prefHeight="210.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.MyOrderCellContr">
    <children>
-      <ListView fx:id="itemList" layoutX="31.0" layoutY="33.0" prefHeight="153.0" prefWidth="170.0" style="-fx-font-size: 16;" />
-      <Text fx:id="cafeName" layoutX="337.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
+      <ListView fx:id="itemList" layoutX="31.0" layoutY="33.0" prefHeight="153.0" prefWidth="225.0" style="-fx-font-size: 16;" />
+      <Text fx:id="cafeName" layoutX="394.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <VBox alignment="CENTER" layoutX="225.0" layoutY="57.0" prefHeight="109.0" prefWidth="491.0">
+      <VBox alignment="CENTER" layoutX="282.0" layoutY="58.0" prefHeight="109.0" prefWidth="491.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="223.0">
                <children>
@@ -80,7 +80,7 @@
             </HBox>
          </children>
       </VBox>
-      <Text layoutX="225.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cafeteria:" wrappingWidth="112.01953125">
+      <Text layoutX="282.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cafeteria:" wrappingWidth="112.01953125">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

@@ -48,10 +48,8 @@ public class OrderSummaryGUI extends GraphicalController {
     private Label tot;
 
     @FXML
-    private VBox vBox;
+    private ListView list;
 
-    @FXML
-    private ListView<String> itemList;
 
     private String session;
 
@@ -87,32 +85,15 @@ public class OrderSummaryGUI extends GraphicalController {
         time.setText(String.valueOf(order.getTime()));
         payMet.setText(order.getPayMethod());
 
-        /*
+
         for(int i=0;i<order.getBevs().size();i++){
-            itemList.getItems().add(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
-        }
 
-         */
-        for(int i=0;i<order.getBevs().size();i++){
-            Label nameLabel = new Label(order.getBevs().get(i).getName());
-            nameLabel.setStyle("-fx-font-size: 18px;");
+            String[] parts = order.getBevs().get(i).getName().split("\n", 2);
+            String firstWord = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
 
+            list.getItems().add(firstWord + " " + order.getBevs().get(i).getPrice() + "$\n" + rest);
 
-            // Creazione dell'HBox per nome e personalizzazioni
-            HBox hBox = new HBox(nameLabel);
-            hBox.setSpacing(2);
-
-            // Creazione della Label per il prezzo
-            Label priceLabel = new Label(order.getBevs().get(i).getPrice() + "$");
-            priceLabel.setStyle("-fx-font-size: 18px;");
-
-            // Aggiungi il prezzo all'HBox
-            HBox hBoxFinal = new HBox(hBox, priceLabel);
-            hBoxFinal.setSpacing(10);
-
-            HBox.setMargin(nameLabel, new Insets(0, 10, 0, 10));
-            // Aggiungi l'HBox alla VBox
-            vBox.getChildren().add(hBoxFinal);
         }
 
     }

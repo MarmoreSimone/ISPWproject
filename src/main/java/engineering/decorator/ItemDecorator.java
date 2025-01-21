@@ -1,12 +1,12 @@
 package engineering.decorator;
 
 //decorator
-public abstract class ItemDecorator extends MenuItem {
+public abstract class ItemDecorator extends MenuItemComponent {
 
     //aggregazione
-    private MenuItem item;
+    private MenuItemComponent item;
 
-    protected ItemDecorator(MenuItem item){
+    protected ItemDecorator(MenuItemComponent item){
         this.item = item;
     }
 

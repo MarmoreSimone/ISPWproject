@@ -1,7 +1,7 @@
 package engineering.decorator;
 
 //component
-public abstract class MenuItem {
+public abstract class MenuItemComponent {
 
     public abstract String getName();
     public abstract double getPrice();

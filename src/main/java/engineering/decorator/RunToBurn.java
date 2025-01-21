@@ -5,7 +5,7 @@ public class RunToBurn extends ItemDecorator{
 
         Double weight;
 
-        public RunToBurn(MenuItem item) {
+        public RunToBurn(MenuItemComponent item) {
             super(item);
         }
 
@@ -23,7 +23,7 @@ public class RunToBurn extends ItemDecorator{
         @Override
         public String getDescription(){
             String descr = super.getDescription();
-            descr = descr + "\n TIPS: To burn off this beverage, you need to run for: " + computeRunningTime() + " minutes";
+            descr = descr + "\n+ To burn off this beverage, you need to run for: " + computeRunningTime() + " minutes";
             return descr;
         }
 

@@ -1,6 +1,6 @@
 package graphicalcontrollers.customizebeverage;
 
-import bean.BeverageBean;
+import bean.MenuItemBean;
 import controller.PlaceOrderController;
 import viewcli.CustomizeBeverageViewCli;
 
@@ -18,7 +18,7 @@ public class CustomizeBeverageCLI {
         placeOrderController = new PlaceOrderController(session);
         view = new CustomizeBeverageViewCli();
 
-        BeverageBean bev = placeOrderController.getCustomBev();
+        MenuItemBean bev = placeOrderController.getCustomBev();
         view.drawTitle();
         view.drawBevInfo(bev);
 

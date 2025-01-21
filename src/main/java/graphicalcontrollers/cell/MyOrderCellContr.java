@@ -46,7 +46,13 @@ public class MyOrderCellContr extends GraphicalController {
         status.setText(orderReq.getState());
 
         for(int i = 0; i< orderReq.getOrder().getBevs().size(); i++){
-            itemList.getItems().add(orderReq.getOrder().getBevs().get(i).getName() + "  " + orderReq.getOrder().getBevs().get(i).getPrice() + "$");
+
+            String[] parts = orderReq.getOrder().getBevs().get(i).getName().split("\n", 2);
+            String firstWord = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
+
+            itemList.getItems().add(firstWord + " " + orderReq.getOrder().getBevs().get(i).getPrice() + "$\n" + rest);
+
         }
     }
 

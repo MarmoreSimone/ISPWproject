@@ -1,6 +1,6 @@
 package graphicalcontrollers.orderbuilder;
 
-import bean.BeverageBean;
+import bean.MenuItemBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.customizebeverage.CustomizeBeverageCLI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
@@ -28,7 +28,7 @@ public class OrderBuilderCLI {
 
         do {
             view.drawTotal(placeOrderController.totalPrice());
-            view.drawCurrentBev(placeOrderController.getAddedBev());
+            view.drawCurrentBev(placeOrderController.getAddedItems());
 
             List<String> choices = new ArrayList<>(Arrays.asList("add beverage", "remove beverage", "continue"));
             view.showChoices(choices);
@@ -58,7 +58,7 @@ public class OrderBuilderCLI {
     }
 
     public void addBev(){
-        List<BeverageBean> bev = placeOrderController.getCafeteriaBeverages();
+        List<MenuItemBean> bev = placeOrderController.getCafeteriaItems();
 
         List<String> list = new ArrayList<String>();
         for(int i = 0; i<bev.size(); i++){
@@ -79,7 +79,7 @@ public class OrderBuilderCLI {
 
             case 0:
                 //-1 in quanto all'indice 0 c'è il go back
-                placeOrderController.addBeverageToOrder(bev.get(choice-1));
+                placeOrderController.addItemToOrder(bev.get(choice-1));
                 break;
 
             case 1:
@@ -88,7 +88,7 @@ public class OrderBuilderCLI {
                 break;
 
             case 2:
-                placeOrderController.addBeverageToOrder(bev.get(choice-1));
+                placeOrderController.addItemToOrder(bev.get(choice-1));
                 addBev();
                 break;
 
@@ -100,10 +100,10 @@ public class OrderBuilderCLI {
 
     public void delBev(){
 
-        List<BeverageBean> bevs = placeOrderController.getAddedBev();
+        List<MenuItemBean> bevs = placeOrderController.getAddedItems();
         List<String> list = new ArrayList<>();
 
-        for(BeverageBean bev : bevs){
+        for(MenuItemBean bev : bevs){
             list.add(bev.getName() + " " + bev.getPrice() + "$");
         }
         int choice = view.drawDelBev(list);
@@ -112,7 +112,7 @@ public class OrderBuilderCLI {
         }
 
         System.out.println("rimossa");
-        placeOrderController.removeBeverageFromOrder(bevs.get(choice-1));
+        placeOrderController.removeItemFromOrder(bevs.get(choice-1));
 
     }
 

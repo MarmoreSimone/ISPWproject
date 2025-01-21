@@ -1,11 +1,6 @@
 package utils;
-import bean.BeverageBean;
 
-import bean.SearchCafeteriaBean;
-import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
-
-import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

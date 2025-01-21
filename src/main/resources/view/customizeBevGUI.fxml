@@ -3,6 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -25,7 +28,7 @@
                   <Font name="System Bold" size="34.0" />
                </font>
             </Label>
-            <HBox layoutX="202.0" layoutY="125.0" prefHeight="142.0" prefWidth="296.0">
+            <HBox layoutX="202.0" layoutY="125.0" prefHeight="159.0" prefWidth="296.0">
                <children>
                   <VBox prefHeight="142.0" prefWidth="133.0">
                      <children>
@@ -80,32 +83,27 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button fx:id="goBack" graphicTextGap="1.0" layoutX="630.0" layoutY="641.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="51.0" prefWidth="127.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="go back" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="goBack" graphicTextGap="1.0" layoutX="635.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="51.0" prefWidth="127.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="go back" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Button>
-            <Text layoutX="33.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customize:">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Text>
             <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/cioccolatacalda.jpg" />
                </image>
             </ImageView>
-            <Text fontSmoothingType="LCD" layoutX="526.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description:">
+            <Text fontSmoothingType="LCD" layoutX="486.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description:">
                <font>
                   <Font name="System Italic" size="34.0" />
                </font>
             </Text>
-            <Text fx:id="description" layoutX="526.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="best coffee in the town" wrappingWidth="208.2666015625">
+            <Text fx:id="description" layoutX="486.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="best coffee in the town" wrappingWidth="357.2666015625">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button fx:id="addToOrder" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="782.0" layoutY="644.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
+            <Button alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="785.0" layoutY="639.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addToOrder" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="48.0" />
                </font>
@@ -113,7 +111,43 @@
                   <Insets top="-15.0" />
                </padding>
             </Button>
-            <Line endX="695.0" layoutX="134.0" layoutY="306.0" startX="-100.0" strokeWidth="2.0" />
+            <Line endX="695.0" layoutX="134.0" layoutY="313.0" startX="-100.0" strokeWidth="2.0" />
+            <Button graphicTextGap="1.0" layoutX="464.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#customize" prefHeight="51.0" prefWidth="151.0" style="-fx-background-radius: 10; -fx-background-color: grey;" text="customize" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="caffInfo" layoutX="487.0" layoutY="343.0" mnemonicParsing="false" text="more caffeine info">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="calInfo" layoutX="488.0" layoutY="398.0" mnemonicParsing="false" text="more calories info">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <TextField fx:id="weight" layoutX="485.0" layoutY="456.0" prefHeight="45.0" prefWidth="260.0" promptText="weight">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="45.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="extra coffee shots (0.30 $):">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="shots" layoutX="333.0" layoutY="343.0" prefHeight="35.0" prefWidth="67.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ListView fx:id="toppList" layoutX="41.0" layoutY="441.0" prefHeight="246.0" prefWidth="358.0" style="-fx-font-size: 20;" />
+            <Text layoutX="41.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="toppings:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </center>

@@ -2,6 +2,7 @@ package model.cafeteria;
 
 import exception.NoCafeteriasFoundException;
 import model.DAOfactory;
+import model.MenuItem.MenuItem;
 import utils.DbConnection;
 
 import java.sql.*;
@@ -34,7 +35,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
 
     public Cafeteria getCafeteriaByName(String cafeName) throws NoCafeteriasFoundException {
 
-
+        List<MenuItem> items;
         Cafeteria cafe;
         String query = "SELECT name,city,address,number,description,photo FROM cafeteria WHERE name = ?";
 
@@ -53,7 +54,13 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 String desc = rs.getString("description");
                 String image = rs.getString("photo");
                 cafe = new Cafeteria(name, city, address, number, desc, image);
-                cafe.setAllBeverage(DAOfactory.getDAOfactory().createBeverageDAO().getAllBevs(name));
+
+                items = DAOfactory.getDAOfactory().createMenuItemDAO().getAllItems(cafe);
+
+                for (MenuItem item : items) {
+                    if (item.getType().equals("beverage")) cafe.setBeverages(item);
+                    else cafe.setTopping(item);
+                }
 
 
         } catch (SQLException e) {
@@ -65,6 +72,8 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
     }
 
     public List <Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
+
+        List<MenuItem> items;
 
         List<Cafeteria> list = new ArrayList<>();
         String query = "SELECT name,city,address,number,description,photo FROM cafeteria";
@@ -83,7 +92,13 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 String desc = rs.getString("description");
                 String image = rs.getString("photo");
                 Cafeteria caf = new Cafeteria(name, city, address, number, desc, image);
-                caf.setAllBeverage(DAOfactory.getDAOfactory().createBeverageDAO().getAllBevs(name));
+
+                items = DAOfactory.getDAOfactory().createMenuItemDAO().getAllItems(caf);
+
+                for (MenuItem item : items) {
+                    if (item.getType().equals("beverage")) caf.setBeverages(item);
+                    else caf.setTopping(item);
+                }
 
                 list.add(caf);
 

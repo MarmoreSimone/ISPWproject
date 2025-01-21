@@ -1,6 +1,6 @@
 package viewcli;
 
-import bean.BeverageBean;
+import bean.MenuItemBean;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ public class OrdereBuildViewCli extends UtilsCli{
         System.out.println("");
     }
 
-    public void drawCurrentBev(List<BeverageBean> bevList){
+    public void drawCurrentBev(List<MenuItemBean> bevList){
 
         System.out.println("added beverages:");
-        for(BeverageBean bev : bevList){
+        for(MenuItemBean bev : bevList){
             System.out.println(bev.getName() + " " + bev.getPrice() + "$");
         }
         System.out.println("");

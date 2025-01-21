@@ -1,12 +1,12 @@
 package model.order;
 
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 
 import java.util.List;
 
 public class Order {
 
-        private List<Beverage> items;
+        private List<MenuItem> items;
         private double totPrice;
         private String payMethod;
         private String note;
@@ -25,11 +25,11 @@ public class Order {
                 this.time = time;
         }
 
-        public List<Beverage> getBevs() {
+        public List<MenuItem> getBevs() {
                 return items;
         }
 
-        public void setItems(List<Beverage> items) {
+        public void setItems(List<MenuItem> items) {
                 this.items = items;
         }
 

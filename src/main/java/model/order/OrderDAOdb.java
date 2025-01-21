@@ -1,7 +1,7 @@
 package model.order;
 
 import model.DAOfactory;
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 import utils.DbConnection;
 
 import java.sql.Connection;
@@ -45,7 +45,7 @@ public class OrderDAOdb extends OrderDAO{
         }
 
         //ora recupero le bevande
-        order.setItems(DAOfactory.getDAOfactory().createBeverageDAO().getBevOrderList(orderReq));
+        order.setItems(DAOfactory.getDAOfactory().createMenuItemDAO().getItemOrderList(orderReq));
 
 
         return order;
@@ -74,9 +74,9 @@ public class OrderDAOdb extends OrderDAO{
         }
 
         //salvo la lista di bevande
-        List<Beverage> beverages = new ArrayList<>(order.getBevs());
+        List<MenuItem> beverages = new ArrayList<>(order.getBevs());
 
-        DAOfactory.getDAOfactory().createBeverageDAO().saveBevOrderList(beverages, cafeteria, orderReq);
+        DAOfactory.getDAOfactory().createMenuItemDAO().saveItemOrderList(beverages, cafeteria, orderReq);
 
         }
     }

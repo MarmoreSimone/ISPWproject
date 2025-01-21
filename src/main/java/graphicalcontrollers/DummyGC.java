@@ -2,7 +2,7 @@ package graphicalcontrollers;
 
 
 import model.DAOfactory;
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 import model.cafeteria.Cafeteria;
 import utils.SwitchPage;
 
@@ -17,18 +17,19 @@ public class DummyGC extends GraphicalController {
     public void insertCafe(){
         String orario1 = "08:00 - 16:00";
         String closed = "closed";
+        String beverage = "beverage";
 
         Cafeteria caf1 = new Cafeteria("bar di ingegneria","via del cambridge","Tor vergata","12345677","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/baring.jpg");
         caf1.setOpeningHours(orario1,orario1,orario1,orario1,orario1,orario1,closed);
-        caf1.setBeverages(new Beverage("Americano","real american coffee", 2, 123, 60,"/images/americano.jpg"));
-        caf1.setBeverages(new Beverage("Cappuccino","best cappuccio in town", 1.5, 123, 60,"/images/cappuccino.jpg"));
-        caf1.setBeverages(new Beverage("Hot chocolate","siuuum", 3, 123, 60,"/images/cioccolatacalda.jpg"));
-        caf1.setBeverages(new Beverage("Creamy latte","astuccio", 1, 123, 60,"/images/creamyLatte.jpg"));
-        caf1.setBeverages(new Beverage("Espresso","w il siiff", 1, 123, 60,"/images/espresso.jpg"));
-        caf1.setBeverages(new Beverage("Frappuccino","tottallu", 5, 123, 60,"/images/frappuccino.jpg"));
-        caf1.setBeverages(new Beverage("Iced coffee","aggiusta", 2, 123, 60,"/images/icedcoffee.jpg"));
-        caf1.setBeverages(new Beverage("Irish coffee","scrivi bene", 3.5, 123, 60,"/images/irishcoffee.jpg"));
-        caf1.setBeverages(new Beverage("Mocha coffee","non ti dimenticare", 2, 123, 60,"/images/mocha.jpg"));
+        caf1.setBeverages(new MenuItem("Americano","real american coffee", 2, 123, 60,"/images/americano.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Cappuccino","best cappuccio in town", 1.5, 123, 60,"/images/cappuccino.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Hot chocolate","siuuum", 3, 123, 60,"/images/cioccolatacalda.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Creamy latte","astuccio", 1, 123, 60,"/images/creamyLatte.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Espresso","w il siiff", 1, 123, 60,"/images/espresso.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Frappuccino","tottallu", 5, 123, 60,"/images/frappuccino.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Iced coffee","aggiusta", 2, 123, 60,"/images/icedcoffee.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Irish coffee","scrivi bene", 3.5, 123, 60,"/images/irishcoffee.jpg",beverage));
+        caf1.setBeverages(new MenuItem("Mocha coffee","non ti dimenticare", 2, 123, 60,"/images/mocha.jpg",beverage));
 
         DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf1);
 

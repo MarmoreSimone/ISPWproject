@@ -5,15 +5,15 @@ import java.util.List;
 public class OrderBean extends OrderDetailBean {
 
     //più attributi presi da OrderDetailBean
-    private List<BeverageBean> bevs;
+    private List<MenuItemBean> bevs;
     private double totCost;
 
 
-    public List<BeverageBean> getBevs() {
+    public List<MenuItemBean> getBevs() {
         return bevs;
     }
 
-    public void setBevs(List<BeverageBean> bevs) {
+    public void setBevs(List<MenuItemBean> bevs) {
         this.bevs = bevs;
     }
 

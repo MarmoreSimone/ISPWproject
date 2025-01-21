@@ -1,23 +1,25 @@
-package model.item;
+package model.MenuItem;
 
-import engineering.decorator.MenuItem;
+import engineering.decorator.MenuItemComponent;
 
-public class Beverage extends MenuItem {
+public class MenuItem extends MenuItemComponent {
 
     private String name;
+    private String type;
     private String description;
     private double price;
     private double calories;
     private double caffeine;
     private String image;
 
-    public Beverage(String name, String description, double price, double calories, double caffeine, String image) {
+    public MenuItem(String name, String description, double price, double calories, double caffeine, String image, String type) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.calories = calories;
         this.caffeine = caffeine;
         this.image = image;
+        this.type = type;
     }
 
     public String getName() {
@@ -67,6 +69,15 @@ public class Beverage extends MenuItem {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 
 
 

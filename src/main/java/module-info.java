@@ -26,7 +26,7 @@ module com.example.ispwproject {
     exports graphicalcontrollers;
     opens graphicalcontrollers to javafx.fxml;
 
-    exports model.item to javafx.fxml;
+    exports model.MenuItem to javafx.fxml;
     opens model to javafx.fxml;
 
     opens images to javafx.fxml;

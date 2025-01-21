@@ -1,7 +1,6 @@
 package model.cafeteria;
 
-import model.item.Beverage;
-import model.topping.Toppings;
+import model.MenuItem.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,8 @@ public class Cafeteria {
     private String description;
     private List<String> openingHours;
     private String photo;
-    private List<Beverage> beverages;
-    private List<Toppings> toppings;
+    private List<MenuItem> beverages;
+    private List<MenuItem> toppings;
 
     public Cafeteria(String name, String address, String city, String number, String description, String photo) {
         this.name = name;
@@ -27,6 +26,7 @@ public class Cafeteria {
         this.description = description;
         this.openingHours = new ArrayList<>();
         this.beverages = new ArrayList<>();
+        this.toppings = new ArrayList<>();
         this.photo = photo;
     }
 
@@ -54,7 +54,7 @@ public class Cafeteria {
         return openingHours;
    }
 
-    public void setOpeningHours(String mon, String tue, String wed, String thu, String fri, String sat, String sun) {
+   public void setOpeningHours(String mon, String tue, String wed, String thu, String fri, String sat, String sun) {
             this.openingHours.add(mon);
             this.openingHours.add(tue);
             this.openingHours.add(wed);
@@ -64,19 +64,32 @@ public class Cafeteria {
             this.openingHours.add(sun);
  }
 
- public void setAllBeverage(List<Beverage> beverages) {
+    public void setAllBeverage(List<MenuItem> beverages) {
         this.beverages = beverages;
  }
 
- public void setBeverages(Beverage beverage) {
+    public void setBeverages(MenuItem beverage) {
         this.beverages.add(beverage);
     }
 
- public List<Beverage> getBeverages() {
+    public List<MenuItem> getBeverages() {
         return beverages;
  }
 
     public String getPhoto() {
             return photo;
     }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public void setTopping(MenuItem toppings) {
+        this.toppings.add(toppings);
+    }
+
+    public List<MenuItem> getToppings() {
+        return toppings;
+    }
+
 }

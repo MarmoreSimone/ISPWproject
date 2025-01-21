@@ -1,6 +1,6 @@
 package model;
 
-import model.item.BeverageDAO;
+import model.MenuItem.MenuItemDAO;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
@@ -29,7 +29,7 @@ public class DAOfactoryFS extends DAOfactory{
         return null;
     }
 
-    public BeverageDAO createBeverageDAO() {
+    public MenuItemDAO createMenuItemDAO() {
         return null;
     }
 }

@@ -1,5 +1,7 @@
-package model.item;
+package model.MenuItem;
 
+import model.DAOfactory;
+import model.cafeteria.Cafeteria;
 import utils.DbConnection;
 
 import java.sql.Connection;
@@ -9,12 +11,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeverageDAOdb extends BeverageDAO {
+public class MenuItemDAOdb extends MenuItemDAO {
 
     @Override
-    public void saveBev(Beverage bev, String cafeteria) {
+    public void saveItem(MenuItem bev, Cafeteria cafeteria) {
 
-        String query = "INSERT INTO beverage (name, description, price, calories, caffeine, image, cafeteria) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO menuitem (name, description, price, calories, caffeine, image, cafeteria,type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
         try (PreparedStatement ps = conn.prepareStatement(query)) {
 
@@ -24,7 +26,8 @@ public class BeverageDAOdb extends BeverageDAO {
             ps.setDouble(4, bev.getCalories());
             ps.setDouble(5, bev.getCaffeine());
             ps.setString(6, bev.getImage());
-            ps.setString(7, cafeteria);
+            ps.setString(7, cafeteria.getName());
+            ps.setString(8, bev.getType());
 
             // Esegui la query
             ps.executeUpdate();
@@ -36,15 +39,15 @@ public class BeverageDAOdb extends BeverageDAO {
 
     }
 
-    public List<Beverage> getAllBevs(String cafeteria) {
-        List<Beverage> list = new ArrayList<>();
-        String query = "SELECT name, description, price, calories, caffeine, image FROM beverage WHERE cafeteria = ?";
+    public List<MenuItem> getAllItems(Cafeteria cafeteria) {
+        List<MenuItem> list = new ArrayList<>();
+        String query = "SELECT name, description, price, calories, caffeine, image, type FROM menuitem WHERE cafeteria = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
         try (PreparedStatement ps = connection.prepareStatement(query)) {
 
-            ps.setString(1, cafeteria);
+            ps.setString(1, cafeteria.getName());
 
             ResultSet rs = ps.executeQuery();
 
@@ -55,7 +58,8 @@ public class BeverageDAOdb extends BeverageDAO {
                 Double calories = rs.getDouble("calories");
                 Double caffeine = rs.getDouble("caffeine");
                 String image = rs.getString("image");
-                Beverage bev = new Beverage(name, descr, price, calories, caffeine, image);
+                String type = rs.getString("type");
+                MenuItem bev = new MenuItem(name, descr, price, calories, caffeine, image, type);
                 list.add(bev);
 
             }
@@ -69,11 +73,12 @@ public class BeverageDAOdb extends BeverageDAO {
 
     }
 
-    public Beverage getBevFromNameAndCafe(String name, String cafeteria) {
+    private MenuItem getItemFromNameAndCafe(String name, String cafeteria) {
 
-        List<Beverage> list = getAllBevs(cafeteria);
+        Cafeteria cafe = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria(cafeteria,null,null,null,null,null);
+        List<MenuItem> list = getAllItems(cafe);
 
-        for (Beverage bev : list) {
+        for (MenuItem bev : list) {
             if (bev.getName().equals(name)) {
                 return bev;
             }
@@ -82,10 +87,10 @@ public class BeverageDAOdb extends BeverageDAO {
         return null;
     }
 
-    public void saveBevOrderList(List<Beverage> beverages, String cafeteria, String orderReq) {
+    public void saveItemOrderList(List<MenuItem> beverages, String cafeteria, String orderReq) {
 
         Connection conn = DbConnection.getInstance().getConnection();
-        String query = "INSERT INTO bevlist (bev, quantity, cafe, `order`) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO itemlist (bev, quantity, cafe, `order`) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(query)) {
 
@@ -95,7 +100,7 @@ public class BeverageDAOdb extends BeverageDAO {
             while (!beverages.isEmpty()) {
 
                 c = 1;
-                Beverage currBeverage = beverages.get(0);
+                MenuItem currBeverage = beverages.get(0);
 
                 for (int i = beverages.size() - 1; i > 0; i--) {
                     if(beverages.get(i).getName().equals(currBeverage.getName())) {
@@ -122,11 +127,11 @@ public class BeverageDAOdb extends BeverageDAO {
 
     }
 
-    public List<Beverage> getBevOrderList(String orderReq) {
+    public List<MenuItem> getItemOrderList(String orderReq) {
 
-        List<Beverage> list = new ArrayList<>();
+        List<MenuItem> list = new ArrayList<>();
 
-        String query = "SELECT bev,quantity,cafe FROM bevlist WHERE `order` = ?";
+        String query = "SELECT bev,quantity,cafe FROM itemlist WHERE `order` = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -141,7 +146,7 @@ public class BeverageDAOdb extends BeverageDAO {
                 String cafe = rs.getString("cafe");
                 int quantity = rs.getInt("quantity");
 
-                Beverage bev = getBevFromNameAndCafe(name, cafe);
+                MenuItem bev = getItemFromNameAndCafe(name, cafe);
 
                 for(int i=0; i<quantity; i++){
                     list.add(bev);

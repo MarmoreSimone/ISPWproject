@@ -1,6 +1,6 @@
 package graphicalcontrollers.cell;
 
-import bean.BeverageBean;
+import bean.MenuItemBean;
 
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
@@ -14,7 +14,7 @@ public class MenuItemCellContr extends GraphicalController {
 
     private OrderBuilderGUI parent;
 
-    private BeverageBean beverage;
+    private MenuItemBean beverage;
 
     @FXML
     private Label labelName;
@@ -28,7 +28,7 @@ public class MenuItemCellContr extends GraphicalController {
 
     @Override
     public void setData(Object bev, GraphicalController contr){
-        beverage = (BeverageBean) bev;
+        beverage = (MenuItemBean) bev;
         labelName.setText(beverage.getName());
         labelPrice.setText(String.valueOf(beverage.getPrice())+"$");
         image.setImage(new Image(getClass().getResourceAsStream(beverage.getImage())));

@@ -1,20 +1,22 @@
 package bean;
 
-public class BeverageBean {
+public class MenuItemBean {
     private String bevName;
     private String descr;
     private double cost;
     private double calories;
     private double caffeineValue;
     private String pic;
+    private String types;
 
-    public BeverageBean(String name, String description, double price, double calories, double caffeine, String image) {
+    public MenuItemBean(String name, String description, double price, double calories, double caffeine, String image, String types) {
         this.bevName = name;
         this.descr = description;
         this.cost = price;
         this.calories = calories;
         this.caffeineValue = caffeine;
         this.pic = image;
+        this.types = types;
     }
 
     public String getName() {
@@ -65,4 +67,11 @@ public class BeverageBean {
         this.pic = image;
     }
 
+    public String getTypes() {
+        return types;
+    }
+
+    public void setTypes(String types) {
+        this.types = types;
+    }
 }

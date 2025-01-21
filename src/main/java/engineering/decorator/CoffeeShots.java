@@ -1,39 +1,43 @@
 package engineering.decorator;
 
 
-public class Size extends ItemDecorator{
+public class CoffeeShots extends ItemDecorator{
 
+        private int shots;
 
-
-        public Size(MenuItem item) {
+        public CoffeeShots(MenuItemComponent item) {
             super(item);
+        }
+
+        public void setShots(int shots) {
+            this.shots = shots;
         }
 
         @Override
         public String getName(){
             String name = super.getName();
-            name = name + "\n   +EXTRA LARGE";
+            name = name + "\n   +" + shots + " coffee shots" ;
             return name;
         }
 
         @Override
         public double getPrice(){
             Double price = super.getPrice();
-            price = price*2;
+            price = price + shots*0.4;
             return price;
         }
 
         @Override
         public double getCalories(){
             Double calories = super.getCalories();
-            calories = calories*2;
+            calories = calories + shots*3;
             return calories;
         }
 
         @Override
         public double getCaffeine(){
             Double caffeine = super.getCaffeine();
-            caffeine = caffeine*2;
+            caffeine = caffeine + shots*50;
             return caffeine;
         }
 

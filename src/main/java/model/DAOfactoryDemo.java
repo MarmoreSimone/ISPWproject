@@ -1,7 +1,7 @@
 package model;
 
-import model.item.BeverageDAO;
-import model.item.BeverageDAOdemo;
+import model.MenuItem.MenuItemDAO;
+import model.MenuItem.MenuItemDAOdemo;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;
@@ -29,8 +29,8 @@ public class DAOfactoryDemo extends DAOfactory {
         return OrderRequestDAOdemo.getInstance();
     }
 
-    public BeverageDAO createBeverageDAO() {
-        return new BeverageDAOdemo();
+    public MenuItemDAO createMenuItemDAO() {
+        return new MenuItemDAOdemo();
 
     }
 }

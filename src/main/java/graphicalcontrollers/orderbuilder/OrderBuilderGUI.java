@@ -1,17 +1,13 @@
 package graphicalcontrollers.orderbuilder;
 
-import bean.BeverageBean;
-import bean.SearchCafeteriaBean;
+import bean.MenuItemBean;
 import controller.PlaceOrderController;
-import engineering.ControllerSessionManager;
-import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 
 import graphicalcontrollers.customizebeverage.CustomizeBeverageGUI;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.fxml.FXML;
 
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import javafx.scene.layout.VBox;
@@ -20,9 +16,7 @@ import javafx.scene.text.Text;
 import utils.SwitchPage;
 
 
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class OrderBuilderGUI extends GraphicalController {
 
@@ -43,7 +37,7 @@ public class OrderBuilderGUI extends GraphicalController {
 
     private PlaceOrderController controllerAppl;
     //lista delle bevande della caffetteria
-    private List<BeverageBean> beverages;
+    private List<MenuItemBean> beverages;
 
     public void launch(String session) {
         SwitchPage.getSwitchPageInstance().changePage("/view/orderBuilderGUI.fxml", session);
@@ -61,7 +55,7 @@ public class OrderBuilderGUI extends GraphicalController {
         //imposto il nome della caffetteria
         cafeName.setText(controllerAppl.getCafeteriaName());
         //imposto le bevande della caffetteria
-        beverages = controllerAppl.getCafeteriaBeverages();
+        beverages = controllerAppl.getCafeteriaItems();
         //funzione per mostrare a schermo le bevande aggiungibili all'ordine
         showBevMenu();
         showAddedBev();
@@ -77,7 +71,7 @@ public class OrderBuilderGUI extends GraphicalController {
     }
 
     public void showAddedBev(){
-        List<BeverageBean> addedBev = controllerAppl.getAddedBev();
+        List<MenuItemBean> addedBev = controllerAppl.getAddedItems();
 
         //casto la lista di bevande a una lista generica e dopo nel mini-controllore grafico la ricasto a Beverage Bean
         List<Object> objectList = (List<Object>) (List<?>) addedBev;
@@ -85,14 +79,14 @@ public class OrderBuilderGUI extends GraphicalController {
 
     }
 
-    public void addToOrder(BeverageBean beverage){
-        controllerAppl.addBeverageToOrder(beverage);
+    public void addToOrder(MenuItemBean beverage){
+        controllerAppl.addItemToOrder(beverage);
         showAddedBev();
         totPrice.setText(String.valueOf(getTot())+"$");
     }
 
-    public void removeFromOrder(BeverageBean beverage){
-        controllerAppl.removeBeverageFromOrder(beverage);
+    public void removeFromOrder(MenuItemBean beverage){
+        controllerAppl.removeItemFromOrder(beverage);
         showAddedBev();
         totPrice.setText(String.valueOf(getTot())+"$");
     }
@@ -101,7 +95,7 @@ public class OrderBuilderGUI extends GraphicalController {
         return controllerAppl.totalPrice();
     }
 
-    public void customizeBev(BeverageBean beverage){
+    public void customizeBev(MenuItemBean beverage){
 
         controllerAppl.setCustomBev(beverage);
         new CustomizeBeverageGUI().launch(this.session);

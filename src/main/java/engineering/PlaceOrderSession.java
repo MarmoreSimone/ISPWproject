@@ -1,7 +1,7 @@
 package engineering;
 
 import model.DAOfactory;
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 import model.cafeteria.Cafeteria;
 import model.order.Order;
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ public class PlaceOrderSession {
 
 
     private Cafeteria myCafeteria;
-    private List<Beverage> myBeverages;
+    private List<MenuItem> myBeverages;
     private Order order;
-    private Beverage customBev;
+    private MenuItem customBev;
 
 
     public Cafeteria getMyCafeteria() {
@@ -32,11 +32,11 @@ public class PlaceOrderSession {
         this.myCafeteria = myCafeteria;
     }
 
-    public List<Beverage> getMyBeverages() {
+    public List<MenuItem> getMyBeverages() {
         return myBeverages;
     }
 
-    public void setMyBeverages(List<Beverage> myBeverages) {
+    public void setMyBeverages(List<MenuItem> myBeverages) {
         this.myBeverages = myBeverages;
     }
 
@@ -48,11 +48,11 @@ public class PlaceOrderSession {
         this.order = order;
     }
 
-    public Beverage getCustomBev() {
+    public MenuItem getCustomBev() {
         return customBev;
     }
 
-    public void setCustomBev(Beverage customBev) {
+    public void setCustomBev(MenuItem customBev) {
         this.customBev = customBev;
     }
 

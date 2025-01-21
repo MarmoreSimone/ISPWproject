@@ -5,7 +5,7 @@ public class CaffeineProcessingTime extends ItemDecorator{
 
         Double weight;
 
-        public CaffeineProcessingTime(MenuItem item) {
+        public CaffeineProcessingTime(MenuItemComponent item) {
             super(item);
         }
 
@@ -44,7 +44,7 @@ public class CaffeineProcessingTime extends ItemDecorator{
         @Override
         public String getDescription(){
             String descr = super.getDescription();
-            descr = descr + "\n TIPS: It will take approximately: " + calculateMetabolismTime(super.getCaffeine()) +" hours for your body to metabolize the caffeine";
+            descr = descr + "\n+ It will take approximately: " + calculateMetabolismTime(super.getCaffeine()) +" hours for your body to metabolize the caffeine";
             return descr;
         }
 

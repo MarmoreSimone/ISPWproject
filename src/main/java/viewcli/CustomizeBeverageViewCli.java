@@ -1,6 +1,6 @@
 package viewcli;
 
-import bean.BeverageBean;
+import bean.MenuItemBean;
 
 public class CustomizeBeverageViewCli extends viewcli.UtilsCli{
 
@@ -8,7 +8,7 @@ public class CustomizeBeverageViewCli extends viewcli.UtilsCli{
 
         System.out.println("===CUSTOMIZE BEVERAGE====");
     }
-    public void drawBevInfo(BeverageBean bev) {
+    public void drawBevInfo(MenuItemBean bev) {
         System.out.println("name: " + bev.getName());
         System.out.println("price: " + bev.getPrice() +"$");
         System.out.println("description: " + bev.getDescription());

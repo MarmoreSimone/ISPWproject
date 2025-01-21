@@ -3,11 +3,12 @@ package controller;
 import bean.*;
 import engineering.ControllerSessionManager;
 import engineering.PlaceOrderSession;
+import engineering.decorator.*;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import exception.WrongFormatException;
 import model.DAOfactory;
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
 import utils.UserLogged;
@@ -43,29 +44,29 @@ public class PlaceOrderController {
     }
 
     //ritorna una lista di BeverageBean della caffetteria settata nel contr. appl.
-    public List<BeverageBean> getCafeteriaBeverages() {
+    public List<MenuItemBean> getCafeteriaItems() {
 
-        List<BeverageBean> retBeans = new ArrayList<>();
+        List<MenuItemBean> retBeans = new ArrayList<>();
 
-        for(Beverage bev: session.getMyCafeteria().getBeverages()){
-            retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
+        for(MenuItem bev: session.getMyCafeteria().getBeverages()){
+            if(!bev.getType().equals("toppings")) retBeans.add(new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType()));
         }
 
         return retBeans;
     }
 
     //aggiunge una bevanda all'ordine
-    public void addBeverageToOrder(BeverageBean bev){
+    public void addItemToOrder(MenuItemBean bev){
         //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
-        List<Beverage> listBev = session.getMyBeverages();
-        listBev.add(new Beverage(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage()));
+        List<MenuItem> listBev = session.getMyBeverages();
+        listBev.add(new MenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
         session.setMyBeverages(listBev);
     }
 
     //rimuove una bevanda dall'ordine
-    public void removeBeverageFromOrder(BeverageBean bev){
-        List<Beverage> listBev = session.getMyBeverages();
-        for(Beverage b: listBev){
+    public void removeItemFromOrder(MenuItemBean bev){
+        List<MenuItem> listBev = session.getMyBeverages();
+        for(MenuItem b: listBev){
             if(b.getName().equals(bev.getName())){
                 System.out.println("rimuovo " + b.getName());
                 listBev.remove(b);
@@ -76,7 +77,7 @@ public class PlaceOrderController {
     }
 
     //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
-    public List<BeverageBean> getAddedBev(){
+    public List<MenuItemBean> getAddedItems(){
 
         BeanUtils beanUtils = new BeanUtils();
         return beanUtils.getBeveragesBeanList(session.getMyBeverages());
@@ -86,8 +87,8 @@ public class PlaceOrderController {
     //ritorna il prezzo totale dell'ordine
     public Double totalPrice(){
         double tot = 0;
-        List<Beverage> bevList = session.getMyBeverages();
-        for(Beverage bev: bevList){
+        List<MenuItem> bevList = session.getMyBeverages();
+        for(MenuItem bev: bevList){
             tot = tot + bev.getPrice();
         }
 
@@ -168,14 +169,14 @@ public class PlaceOrderController {
     }
 
 
-    public void setCustomBev(BeverageBean bev){
+    public void setCustomBev(MenuItemBean bev){
 
-        List<Beverage> bevList = session.getMyCafeteria().getBeverages();
+        List<MenuItem> bevList = session.getMyCafeteria().getBeverages();
 
-        for (Beverage beverage : bevList) {
+        for (MenuItem beverage : bevList) {
             if (bev.getName().equals(beverage.getName())) {
                 //non gli paso direttamente l'istanza ma faccio una copia così da poter modificare la bevanda senza problemi
-                this.session.setCustomBev(new Beverage(beverage.getName(), beverage.getDescription(), beverage.getPrice(), beverage.getCalories(), beverage.getCaffeine(), beverage.getImage()));
+                this.session.setCustomBev(new MenuItem(beverage.getName(), beverage.getDescription(), beverage.getPrice(), beverage.getCalories(), beverage.getCaffeine(), beverage.getImage(),bev.getTypes()));
             }
         }
 
@@ -183,9 +184,52 @@ public class PlaceOrderController {
 
     }
 
-    public BeverageBean getCustomBev(){
-        Beverage bev = this.session.getCustomBev();
-        return new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage());
+    public MenuItemBean getCustomBev(){
+        MenuItem bev = this.session.getCustomBev();
+        return new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType());
     }
 
+    public MenuItemBean customizeMenuItem(CustomOptionsBean bean){
+
+        MenuItemComponent finalItem = this.session.getCustomBev();
+
+        if(bean.getCoffeeShots() > 0){
+            CoffeeShots coffeeShot = new CoffeeShots(finalItem);
+            coffeeShot.setShots(bean.getCoffeeShots());
+            finalItem = coffeeShot;
+
+        }
+
+        if(!bean.getTopping().isEmpty()) {
+            for (int i = 0; i < bean.getTopping().size(); i++) {
+                Toppings topp = new Toppings(finalItem, this.session.getMyCafeteria());
+                topp.applyTopping(bean.getTopping().get(i));
+                finalItem = topp;
+                System.out.println(topp.getName());
+            }
+        }
+
+
+       if(bean.caffeineInfo() > 0){
+           CaffeineProcessingTime caff = new CaffeineProcessingTime(finalItem);
+           caff.setWeight(bean.caffeineInfo());
+           finalItem = caff;
+       }
+
+       if(bean.caloriesInfo() > 0){
+           RunToBurn run = new RunToBurn(finalItem);
+           run.setWeight(bean.caloriesInfo());
+           finalItem = run;
+
+       }
+
+        return new MenuItemBean(finalItem.getName(), finalItem.getDescription(),finalItem.getPrice(),finalItem.getCalories(), finalItem.getCaffeine(), finalItem.getImage(),this.session.getCustomBev().getType());
+
+    }
+
+
+    public List<MenuItemBean> retrieveToppings(){
+        BeanUtils beanUtils = new BeanUtils();
+        return beanUtils.getBeveragesBeanList(this.session.getMyCafeteria().getToppings());
+    }
 }

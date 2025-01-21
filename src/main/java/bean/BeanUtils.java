@@ -1,6 +1,6 @@
 package bean;
 
-import model.item.Beverage;
+import model.MenuItem.MenuItem;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
 
@@ -37,11 +37,11 @@ public class BeanUtils {
             }
 
             //data un lista di bevande torna la corrispettiva lista di bean bevande
-            public List<BeverageBean> getBeveragesBeanList(List<Beverage> beverages){
-                List<BeverageBean> retBeans = new ArrayList<>();
+            public List<MenuItemBean> getBeveragesBeanList(List<MenuItem> beverages){
+                List<MenuItemBean> retBeans = new ArrayList<>();
 
-                for(Beverage bev: beverages){
-                    retBeans.add(new BeverageBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage()));
+                for(MenuItem bev: beverages){
+                    retBeans.add(new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType()));
                 }
 
                 return retBeans;

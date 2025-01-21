@@ -1,6 +1,6 @@
 package model;
 
-import model.item.BeverageDAO;
+import model.MenuItem.MenuItemDAO;
 import model.cafeteria.CafeteriaDAO;
 import model.order.OrderDAO;
 import model.orderrequest.OrderRequestDAO;
@@ -49,5 +49,5 @@ public abstract class DAOfactory {
 
     public abstract OrderRequestDAO createOrderRequestDAO();
 
-    public abstract BeverageDAO createBeverageDAO();
+    public abstract MenuItemDAO createMenuItemDAO();
 }
