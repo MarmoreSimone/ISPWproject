@@ -24,7 +24,10 @@ public class OrderSummaryViewCli extends viewcli.UtilsCli{
         System.out.println("");
 
         for(int i=0;i<order.getBevs().size();i++){
-            System.out.println(order.getBevs().get(i).getName() + "  " + order.getBevs().get(i).getPrice() + "$");
+            String[] parts = order.getBevs().get(i).getName().split("\n", 2);
+            String firstWord = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
+            System.out.println(firstWord + " " + order.getBevs().get(i).getPrice() + "$" + rest);
         }
     }
 }

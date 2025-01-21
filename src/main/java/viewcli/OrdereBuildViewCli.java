@@ -11,11 +11,15 @@ public class OrdereBuildViewCli extends UtilsCli{
         System.out.println("");
     }
 
-    public void drawCurrentBev(List<MenuItemBean> bevList){
+    public void drawCurrentBev(List<MenuItemBean> itemList){
 
         System.out.println("added beverages:");
-        for(MenuItemBean bev : bevList){
-            System.out.println(bev.getName() + " " + bev.getPrice() + "$");
+        for(MenuItemBean item : itemList){
+            String[] parts = item.getName().split("\n", 2);
+            String firstWord = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
+
+            System.out.println(firstWord + " " + item.getPrice() + "$\n" + rest);
         }
         System.out.println("");
     }

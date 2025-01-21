@@ -87,38 +87,71 @@ public class MenuItemDAOdb extends MenuItemDAO {
         return null;
     }
 
-    public void saveItemOrderList(List<MenuItem> beverages, String cafeteria, String orderReq) {
+    public void saveItemOrderList(List<MenuItem> items, String cafeteria, String orderReq) {
+
+        List<MenuItem> products = new ArrayList<>();
+
+        for(int i=0;i<items.size();i++) {
+
+            if(items.get(i).getName().contains("\n")) saveCustomItem(items.get(i), orderReq);
+            else products.add(items.get(i));
+
+        }
 
         Connection conn = DbConnection.getInstance().getConnection();
-        String query = "INSERT INTO itemlist (bev, quantity, cafe, `order`) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO itemlist (item, quantity, cafe, `order`) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(query)) {
 
             ps.setString(3, cafeteria);
             ps.setString(4, orderReq);
             int c;
-            while (!beverages.isEmpty()) {
+            while (!products.isEmpty()) {
 
                 c = 1;
-                MenuItem currBeverage = beverages.get(0);
+                MenuItem currBeverage = products.get(0);
 
-                for (int i = beverages.size() - 1; i > 0; i--) {
-                    if(beverages.get(i).getName().equals(currBeverage.getName())) {
+                for (int i = products.size() - 1; i > 0; i--) {
+                    if(products.get(i).getName().equals(currBeverage.getName())) {
                         c++;
-                        beverages.remove(i);
+                        products.remove(i);
                     }
                 }
-
 
                 ps.setString(1, currBeverage.getName());
                 ps.setInt(2, c);
 
                 ps.addBatch();
 
-                beverages.remove(0);
+                products.remove(0);
 
         }
             ps.executeBatch();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void saveCustomItem(MenuItem bev, String orderReq) {
+
+        String query = "INSERT INTO customitemlist (name, description, price, calories, caffeine, image, type, orderReq) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        Connection conn = DbConnection.getInstance().getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setString(1, bev.getName());
+            ps.setString(2, bev.getDescription());
+            ps.setDouble(3, bev.getPrice());
+            ps.setDouble(4, bev.getCalories());
+            ps.setDouble(5, bev.getCaffeine());
+            ps.setString(6, bev.getImage());
+            ps.setString(7, bev.getType());
+            ps.setString(8, orderReq);
+
+            // Esegui la query
+            ps.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -131,7 +164,8 @@ public class MenuItemDAOdb extends MenuItemDAO {
 
         List<MenuItem> list = new ArrayList<>();
 
-        String query = "SELECT bev,quantity,cafe FROM itemlist WHERE `order` = ?";
+        //prima recupero gli item non modificati
+        String query = "SELECT item,quantity,cafe FROM itemlist WHERE `order` = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -142,7 +176,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                String name = rs.getString("bev");
+                String name = rs.getString("item");
                 String cafe = rs.getString("cafe");
                 int quantity = rs.getInt("quantity");
 
@@ -151,6 +185,33 @@ public class MenuItemDAOdb extends MenuItemDAO {
                 for(int i=0; i<quantity; i++){
                     list.add(bev);
                 }
+
+            }
+
+
+        } catch (SQLException e) {
+            throw new IllegalArgumentException(e);
+        }
+
+
+        query = "SELECT name, description, price, calories, caffeine, image, type FROM customitemlist WHERE orderReq = ?";
+
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setString(1, orderReq);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String descr = rs.getString("description");
+                Double price = rs.getDouble("price");
+                Double calories = rs.getDouble("calories");
+                Double caffeine = rs.getDouble("caffeine");
+                String image = rs.getString("image");
+                String type = rs.getString("type");
+                MenuItem bev = new MenuItem(name, descr, price, calories, caffeine, image, type);
+                list.add(bev);
 
             }
 

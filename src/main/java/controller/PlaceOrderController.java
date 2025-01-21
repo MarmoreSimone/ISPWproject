@@ -205,7 +205,6 @@ public class PlaceOrderController {
                 Toppings topp = new Toppings(finalItem, this.session.getMyCafeteria());
                 topp.applyTopping(bean.getTopping().get(i));
                 finalItem = topp;
-                System.out.println(topp.getName());
             }
         }
 
