@@ -9,17 +9,15 @@ public class CafeteriaBean {
     private String town;
     private String telephoneNumber;
     private String cafeDescription;
-    private List<String> openingHour;
     private String picture;
 
 
-    public CafeteriaBean(String name, String address, String city, String number, String description, List<String> openingHours, String photo) {
+    public CafeteriaBean(String name, String address, String city, String number, String description,  String photo) {
         this.cafeteriaName = name;
         this.streetAddress = address;
         this.town = city;
         this.telephoneNumber = number;
         this.cafeDescription = description;
-        this.openingHour = openingHours;
         this.picture = photo;
     }
 
@@ -43,9 +41,6 @@ public class CafeteriaBean {
         return cafeDescription;
     }
 
-    public List<String> getOpeningHours() {
-        return openingHour;
-    }
 
     public String getPhoto() {
         return picture;

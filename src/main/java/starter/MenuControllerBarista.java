@@ -1,6 +1,6 @@
 package starter;
 
-import graphicalcontrollers.DummyGC;
+import engineering.SessionManager;
 import graphicalcontrollers.login.LoginGUI;
 
 import graphicalcontrollers.processorders.ProcessOrderGUI;
@@ -13,19 +13,21 @@ public class MenuControllerBarista {
 
     @FXML
     private void process() {
+        SessionManager.getInstance().closeAllUserSessions();
         new ProcessOrderGUI().launch();
     }
 
 
     @FXML
     private void logout() {
-            new LoginGUI().launch();
+        SessionManager.getInstance().closeAllUserSessions();
+        new LoginGUI().launch();
     }
 
 
     @FXML
     private void dummy() {
-            new DummyGC().launch();
+
     }
 
 

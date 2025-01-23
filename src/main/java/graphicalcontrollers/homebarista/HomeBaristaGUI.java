@@ -1,10 +1,11 @@
 package graphicalcontrollers.homebarista;
 
+import engineering.SessionManager;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+import model.user.Barista;
 import utils.SwitchPage;
-import utils.UserLogged;
 
 public class HomeBaristaGUI extends GraphicalController {
 
@@ -19,7 +20,8 @@ public class HomeBaristaGUI extends GraphicalController {
     @Override
     public void initialize2() {
 
-        name.setText(UserLogged.getInstance().getUser().getCafeteria());
+        Barista user = SessionManager.getInstance().getUserBaristaLogged();
+        name.setText(user.getCafeteria().getName());
 
     }
 

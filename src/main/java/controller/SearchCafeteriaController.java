@@ -28,7 +28,6 @@ public class SearchCafeteriaController {
 
     }
 
-
     //usata quando non devo passare tutte le informazioni della caffetteria
     public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key) throws NoCafeteriasFoundException {
 
@@ -51,10 +50,10 @@ public class SearchCafeteriaController {
         //caso in cui si vuole cercare per indirizzo o città
         //ricerca con api google maps
 
-        //non cè bisogno di fare il throw new in quanto in caso di problemi vengono lanciati quelli nelle funzioni getCafeteriaByName e getAllcafeterias
         return foundCafes;
     }
 
+    //usata per tornare la bean che contiene tutte le informazioni della caffetteria
     public CafeteriaBean getCafeBeanByName(String name) throws NoCafeteriasFoundException {
 
         Cafeteria tempCafe = getCafeteriaByName(name);
@@ -63,8 +62,8 @@ public class SearchCafeteriaController {
 
     }
 
-    public CafeteriaBean getCafeBean(Cafeteria cafe){
-        return new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getOpeningHours(), cafe.getPhoto());
+    private CafeteriaBean getCafeBean(Cafeteria cafe){
+        return new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getPhoto());
 
     }
 

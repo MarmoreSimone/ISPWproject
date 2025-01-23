@@ -106,9 +106,6 @@ public class OrderBuilderGUI extends GraphicalController {
         new FinalizeOrderGUI().launch(this.session);
     }
 
-
-
-
 }
 
 

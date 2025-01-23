@@ -4,16 +4,12 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
-import engineering.ControllerSessionManager;
+import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import utils.SwitchPage;
 import javafx.fxml.FXML;
@@ -104,7 +100,7 @@ public class OrderSummaryGUI extends GraphicalController {
 
     public void confirmOrder(){
         controllerAppl.sendOrderRequest();
-        ControllerSessionManager.getInstance().delPlaceOrderSession(this.session);
+        SessionManager.getInstance().delPlaceOrderSession(this.session);
         SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
     }
 

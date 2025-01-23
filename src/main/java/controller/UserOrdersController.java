@@ -2,10 +2,9 @@ package controller;
 
 import bean.BeanUtils;
 import bean.OrderRequestBean;
+import engineering.SessionManager;
 import exception.SystemErrorException;
-import model.DAOfactory;
 import model.orderrequest.OrderRequest;
-import utils.UserLogged;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class UserOrdersController {
     public List<OrderRequestBean> getAllMyOrderReq() throws SystemErrorException {
 
         List<OrderRequestBean> retBeans = new ArrayList<>();
-        List<OrderRequest> ordReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(UserLogged.getInstance().getUser().getUsername());
+        List<OrderRequest> ordReq = SessionManager.getInstance().getUserClientLogged().getOrderRequestList();
 
         BeanUtils beanUtils = new BeanUtils();
 

@@ -29,7 +29,6 @@ public class SwitchPage {
     }
 
 
-
     //cambia semplicemente la scena
     public void changePage(String sourcePath){
 
@@ -50,7 +49,7 @@ public class SwitchPage {
         this.stage.show();
     }
 
-
+    //cambia la scena passando la key della sessione
     public void changePage(String sourcePath, String session){
 
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
@@ -63,7 +62,7 @@ public class SwitchPage {
         }
 
         //qui uso il generico GraphicalController dato che non posso sapere a priori il tipo di controller associato all'fxml, in questo modo basta che il controller associato definisca l'operazione
-        //setControllerApplPlaceOrder() e si può impostare il controllore applicativo
+        //setSession e posso passsare la key della sessione
         GraphicalController contr = loader.getController();
         contr.setSession(session);
 

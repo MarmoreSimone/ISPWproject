@@ -1,9 +1,8 @@
 package viewcli;
 
-import engineering.ControllerSessionManager;
+import engineering.SessionManager;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
-import utils.UserLogged;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,8 +41,8 @@ public class UtilsCli {
             }
 
             if(choice == 0){
-                ControllerSessionManager.getInstance().closeAllUserSessions();
-                if(UserLogged.getInstance().getUser().getRole().equals("barista")) new HomeBaristaCLI().launch();
+                SessionManager.getInstance().closeAllUserSessions();
+                if(SessionManager.getInstance().getCurrentUserUserRole().equals("barista")) new HomeBaristaCLI().launch();
                 new HomeClientCLI().launch();
 
             }

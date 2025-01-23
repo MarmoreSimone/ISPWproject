@@ -13,7 +13,7 @@ public class BeanUtils {
             public OrderRequestBean getOrdReqBean(OrderRequest ord){
                 OrderRequestBean bean = new OrderRequestBean();
 
-                bean.setCafe(ord.getCafeteria().getName());
+                if(ord.getCafeteria() != null) bean.setCafe(ord.getCafeteria().getName());
                 bean.setCode(ord.getPickUpCode());
                 bean.setState(ord.getStatus());
                 bean.setOrder(getOrderBean(ord.getOrder()));

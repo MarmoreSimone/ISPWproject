@@ -4,7 +4,7 @@ import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
-import engineering.ControllerSessionManager;
+import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import graphicalcontrollers.orderbuilder.OrderBuilderCLI;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
+public class SearchCafeteriaCLI {
 
     private SearchCafeteriaViewCli view;
     private SearchCafeteriaController controllerAppl;
@@ -99,7 +99,7 @@ public class SearchCafeteriaCLI  implements SearchCafeteriaInterface {
         int input = view.getUserChoice(list);
 
         if(input == 0) {
-            String session = ControllerSessionManager.getInstance().newPlaceOrderSession();
+            String session = SessionManager.getInstance().newPlaceOrderSession();
             PlaceOrderController contr = new PlaceOrderController(session);
 
             try {

@@ -1,12 +1,12 @@
 package model.user;
 
+
 public class User {
 
         String username;
         String password;
         String role;
 
-        String cafeteria;
         public User(){
 
         }
@@ -34,25 +34,15 @@ public class User {
         }
 
         public String getRole() {
-            if(!this.role.equals("client")){
-                return "barista";
-            }
-
-            return "client";
-
+            return this.role;
         }
 
         public void setRole(String role) {
             this.role = role;
         }
 
-        public String getCafeteria() {
-            return this.role;
-        }
 
-        public void setCafeteria(String cafeteria) {
-            this.role = cafeteria;
-        }
+
 
 
 

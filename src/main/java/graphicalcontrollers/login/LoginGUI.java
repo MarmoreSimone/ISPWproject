@@ -2,8 +2,7 @@ package graphicalcontrollers.login;
 
 import bean.CredentialsBean;
 import bean.UserBean;
-import controller.UserAccess;
-import exception.NoCafeteriasFoundException;
+import controller.LoginController;
 import exception.NoUserFoundException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.home.HomeGUI;
@@ -13,7 +12,11 @@ import javafx.scene.control.TextField;
 import model.DAOfactory;
 import model.MenuItem.MenuItem;
 import model.cafeteria.Cafeteria;
+import model.user.Barista;
+import model.user.User;
 import utils.SwitchPage;
+
+import java.util.List;
 
 
 public class LoginGUI extends GraphicalController {
@@ -31,11 +34,11 @@ public class LoginGUI extends GraphicalController {
 
     public void login() {
 
-        UserBean user=null;
+        UserBean user;
         try {
 
             CredentialsBean cred = new CredentialsBean(username.getText(), password.getText());
-            UserAccess contrAppl = new UserAccess();
+            LoginController contrAppl = new LoginController();
             user = contrAppl.login(cred);
 
         }catch(NoUserFoundException e) {
@@ -54,22 +57,20 @@ public class LoginGUI extends GraphicalController {
 
     public void registerNewUser(){
 
-        UserAccess contrAppl = new UserAccess();
+        LoginController contrAppl = new LoginController();
 
         contrAppl.register(new UserBean("sim","1","client"));
         contrAppl.register(new UserBean("sim2","11","client"));
 
 
-        contrAppl.register(new UserBean("pal","2","bar di ingegneria"));
-        contrAppl.register(new UserBean("pal2","22","CafèDaRoccà"));
+        contrAppl.register(new UserBean("pal","2","barista"));
+        contrAppl.register(new UserBean("pal2","22","barista"));
 
-        String orario1 = "08:00 - 16:00";
-        String closed = "closed";
+
         String beverage = "beverage";
         String topping = "toppings";
 
         Cafeteria caf1 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("bar di ingegneria","via del cambridge","Tor vergata","12345677","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/baring.jpg");
-        caf1.setOpeningHours(orario1,orario1,orario1,orario1,orario1,orario1,closed);
         DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf1);
 
             DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("Americano", "real american coffee", 2, 123, 60, "/images/americano.jpg",beverage), caf1);
@@ -87,15 +88,35 @@ public class LoginGUI extends GraphicalController {
             DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("zuccherini", null, 0.1, 30, 0, null,topping), caf1);
 
 
-        Cafeteria caf2 = new Cafeteria("CafèDaRoccà","via casa mia","La rocca","063458741","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/cafe2.jpg");
-        caf2.setOpeningHours(orario1,orario1,orario1,orario1,orario1,orario1,closed);
 
-        DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf2);
+
+
+
+
+
+            Cafeteria caf2 = new Cafeteria("CafèDaRoccà","via casa mia","La rocca","063458741","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/cafe2.jpg");
+
+            DAOfactory.getDAOfactory().createCafeteriaDAO().saveCafeteria(caf2);
 
             DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("cafuuuuu", "siuuum", 3, 123, 60, "/images/americano.jpg",beverage), caf2);
             DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("loooooool", "best cappuccio in town", 1.5, 123, 60, "/images/mocha.jpg",beverage), caf2);
 
 
+        List<User> users = DAOfactory.getDAOfactory().createUserDAO().getAllUserCredentials();
+
+        for(int i=0;i<users.size();i++){
+
+            if(users.get(i).getUsername().equals("pal")){
+                Barista barista = (Barista) users.get(i);
+                barista.setCafeteria(caf1);
+                DAOfactory.getDAOfactory().createUserDAO().changeBaristaCafeteria(barista,caf1);
+            }
+            else if(users.get(i).getUsername().equals("pal2")){
+                Barista barista = (Barista) users.get(i);
+                barista.setCafeteria(caf2);
+                DAOfactory.getDAOfactory().createUserDAO().changeBaristaCafeteria(barista,caf2);
+            }
+        }
 
 
         System.out.println("aggiunti");

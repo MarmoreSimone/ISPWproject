@@ -59,7 +59,7 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <RadioButton fx:id="payNow" layoutX="287.0" layoutY="197.0" mnemonicParsing="false" text="pay now">
+            <RadioButton fx:id="payNow" disable="true" layoutX="287.0" layoutY="197.0" mnemonicParsing="false" text="pay now">
                <font>
                   <Font size="22.0" />
                </font>

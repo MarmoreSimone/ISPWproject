@@ -1,7 +1,7 @@
 package controller;
 
 import bean.*;
-import engineering.ControllerSessionManager;
+import engineering.SessionManager;
 import engineering.PlaceOrderSession;
 import engineering.decorator.*;
 import exception.NoCafeteriasFoundException;
@@ -11,7 +11,7 @@ import model.DAOfactory;
 import model.MenuItem.MenuItem;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
-import utils.UserLogged;
+import model.user.Client;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class PlaceOrderController {
     private PlaceOrderSession session;
 
     public PlaceOrderController(String key) {
-        this.session = ControllerSessionManager.getInstance().getPlaceOrderSession(key);
+        this.session = SessionManager.getInstance().getPlaceOrderSession(key);
         random = new Random();
     }
 
@@ -38,17 +38,16 @@ public class PlaceOrderController {
         }
     }
 
-    // rivedi se passare una bean, anche solo per il nome
     public String getCafeteriaName() {
         return session.getMyCafeteria().getName();
     }
 
-    //ritorna una lista di BeverageBean della caffetteria settata nel contr. appl.
+    //ritorna una lista di MenuItemBean della caffetteria settata nel contr. appl.
     public List<MenuItemBean> getCafeteriaItems() {
 
         List<MenuItemBean> retBeans = new ArrayList<>();
 
-        for(MenuItem bev: session.getMyCafeteria().getBeverages()){
+        for(MenuItem bev: session.getMyCafeteria().getItems()){
             if(!bev.getType().equals("toppings")) retBeans.add(new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType()));
         }
 
@@ -59,7 +58,7 @@ public class PlaceOrderController {
     public void addItemToOrder(MenuItemBean bev){
         //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
         List<MenuItem> listBev = session.getMyBeverages();
-        listBev.add(new MenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
+        listBev.add(DAOfactory.getDAOfactory().createMenuItemDAO().createNewMenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
         session.setMyBeverages(listBev);
     }
 
@@ -68,7 +67,6 @@ public class PlaceOrderController {
         List<MenuItem> listBev = session.getMyBeverages();
         for(MenuItem b: listBev){
             if(b.getName().equals(bev.getName())){
-                System.out.println("rimuovo " + b.getName());
                 listBev.remove(b);
                 session.setMyBeverages(listBev);
                 return;
@@ -76,7 +74,7 @@ public class PlaceOrderController {
         }
     }
 
-    //ritorna una lista di BevBean contenente tutte le bevande aggiunte all'ordine
+    //ritorna una lista di MenuItemBean contenente tutte le bevande aggiunte all'ordine
     public List<MenuItemBean> getAddedItems(){
 
         BeanUtils beanUtils = new BeanUtils();
@@ -147,16 +145,15 @@ public class PlaceOrderController {
 
     public void sendOrderRequest(){
 
-        OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrder();
+        OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrderRequest();
         orderRequest.setStatus("PENDING");
         orderRequest.setCafeteria(session.getMyCafeteria());
         orderRequest.setOrder(session.getOrder());
-        orderRequest.setUser(UserLogged.getInstance().getUser().getUsername());
+        orderRequest.setUser(SessionManager.getInstance().getUserClientLogged().getUsername());
+
+        //creo codice casuale di 5 caratteri
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-
         StringBuilder randomString = new StringBuilder();
-
         for (int i = 0; i < 5; i++) {
             int index = random.nextInt(characters.length());
             randomString.append(characters.charAt(index));
@@ -166,24 +163,29 @@ public class PlaceOrderController {
 
         DAOfactory.getDAOfactory().createOrderRequestDAO().saveOrderRequest(orderRequest);
 
+        //salvo l'istanza dell'order request anche nel client e nella caffetteria così da evitare di dover fare riferimenti per chiave
+        Client client = SessionManager.getInstance().getUserClientLogged();
+        client.getOrderRequestList().add(orderRequest);
+        session.getMyCafeteria().getOrderRequests().add(orderRequest);
+
+
     }
 
-
+    //usata per tenere traccia della bevanda che l'utente vuole modificare
     public void setCustomBev(MenuItemBean bev){
 
-        List<MenuItem> bevList = session.getMyCafeteria().getBeverages();
+        List<MenuItem> bevList = session.getMyCafeteria().getItems();
 
         for (MenuItem beverage : bevList) {
             if (bev.getName().equals(beverage.getName())) {
                 //non gli paso direttamente l'istanza ma faccio una copia così da poter modificare la bevanda senza problemi
-                this.session.setCustomBev(new MenuItem(beverage.getName(), beverage.getDescription(), beverage.getPrice(), beverage.getCalories(), beverage.getCaffeine(), beverage.getImage(),bev.getTypes()));
+                this.session.setCustomBev(DAOfactory.getDAOfactory().createMenuItemDAO().createNewMenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
             }
         }
 
-
-
     }
 
+    //usata per recuperare la bevanda che l'utente vuole modificare
     public MenuItemBean getCustomBev(){
         MenuItem bev = this.session.getCustomBev();
         return new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType());
@@ -226,9 +228,9 @@ public class PlaceOrderController {
 
     }
 
-
     public List<MenuItemBean> retrieveToppings(){
         BeanUtils beanUtils = new BeanUtils();
         return beanUtils.getBeveragesBeanList(this.session.getMyCafeteria().getToppings());
     }
+
 }

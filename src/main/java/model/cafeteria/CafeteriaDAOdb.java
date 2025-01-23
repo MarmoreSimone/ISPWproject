@@ -1,6 +1,7 @@
 package model.cafeteria;
 
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.MenuItem.MenuItem;
 import utils.DbConnection;
@@ -56,16 +57,21 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 cafe = new Cafeteria(name, city, address, number, desc, image);
 
                 items = DAOfactory.getDAOfactory().createMenuItemDAO().getAllItems(cafe);
+                cafe.setOrderRequests(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(name));
+
 
                 for (MenuItem item : items) {
-                    if (item.getType().equals("beverage")) cafe.setBeverages(item);
-                    else cafe.setTopping(item);
-                }
+                        if (item.getType().equals("beverage")) cafe.setItems(item);
+                        else cafe.setTopping(item);
+                    }
 
 
         } catch (SQLException e) {
             e.printStackTrace();
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system",e);
+
+        } catch (SystemErrorException e) {
+            throw new RuntimeException(e);
         }
 
         return cafe;
@@ -92,13 +98,15 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 String desc = rs.getString("description");
                 String image = rs.getString("photo");
                 Cafeteria caf = new Cafeteria(name, city, address, number, desc, image);
+                caf.setOrderRequests(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(name));
 
                 items = DAOfactory.getDAOfactory().createMenuItemDAO().getAllItems(caf);
 
                 for (MenuItem item : items) {
-                    if (item.getType().equals("beverage")) caf.setBeverages(item);
+                    if (item.getType().equals("beverage")) caf.setItems(item);
                     else caf.setTopping(item);
                 }
+
 
                 list.add(caf);
 
@@ -107,6 +115,8 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
 
         } catch (SQLException e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
+        } catch (SystemErrorException e){
+            //todo gestisci
         }
 
         return list;

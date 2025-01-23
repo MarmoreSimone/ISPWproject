@@ -4,7 +4,7 @@ import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
-import engineering.ControllerSessionManager;
+import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
@@ -41,7 +41,7 @@ public class OrderSummaryCLI {
 
         if(choice == 0) {
             contrAppl.sendOrderRequest();
-            ControllerSessionManager.getInstance().delPlaceOrderSession(session);
+            SessionManager.getInstance().delPlaceOrderSession(session);
             new HomeClientCLI().launch();
         }
         else {

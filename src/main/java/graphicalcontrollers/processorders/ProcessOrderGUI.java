@@ -2,7 +2,7 @@ package graphicalcontrollers.processorders;
 
 
 import bean.OrderRequestBean;
-import controller.OrdersRequestController;
+import controller.ProcessOrdersController;
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ public class ProcessOrderGUI extends GraphicalController {
     private VBox requestList;
 
 
-    private OrdersRequestController contrAppl;
+    private ProcessOrdersController contrAppl;
 
     @Override
     public void launch() {
@@ -27,7 +27,7 @@ public class ProcessOrderGUI extends GraphicalController {
 
     @Override
     public void initialize2(){
-        this.contrAppl = new OrdersRequestController();
+        this.contrAppl = new ProcessOrdersController();
         showRequest();
 
 

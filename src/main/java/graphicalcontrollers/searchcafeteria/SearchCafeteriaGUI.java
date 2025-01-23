@@ -4,8 +4,7 @@ import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
-import engineering.ControllerSessionManager;
-import engineering.PlaceOrderSession;
+import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
@@ -23,7 +22,7 @@ import utils.SwitchPage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchCafeteriaGUI extends GraphicalController implements SearchCafeteriaInterface {
+public class SearchCafeteriaGUI extends GraphicalController {
 
     private SearchCafeteriaController controllerAppl;
 
@@ -93,7 +92,6 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         SearchCafeteriaBean bean;
 
         try {
-
 
             switch (searchCafChoiceBox.getValue()) {
                 case "name":
@@ -181,24 +179,14 @@ public class SearchCafeteriaGUI extends GraphicalController implements SearchCaf
         labelDescr.setText(bean.getDescription());
         imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
         openHour.getItems().clear();
-        /*
-        openHour.getItems().addAll(
-                "MONDAY: " + bean.getOpeningHours().get(0),
-                "TUESDAY:   " + bean.getOpeningHours().get(1),
-                "WEDNESDAY: " + bean.getOpeningHours().get(2),
-                "THURSDAY:  " + bean.getOpeningHours().get(3),
-                "FRIDAY:    " + bean.getOpeningHours().get(4),
-                "SATURDAY:  " + bean.getOpeningHours().get(5),
-                "SUNDAY:    " + bean.getOpeningHours().get(6)
-        );
-      */
         paneInfoCard.setVisible(true);
     }
 
     public void continueOrder(){
 
         //creo la sessione del controll appl.
-        String session = ControllerSessionManager.getInstance().newPlaceOrderSession();
+        String session = SessionManager.getInstance().newPlaceOrderSession();
+        //imposto la caffetteria selezionata
         PlaceOrderController contr = new PlaceOrderController(session);
         try {
             contr.setCafeteria(labelName.getText());

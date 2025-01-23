@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class OrderRequestDAO {
 
-    public OrderRequest createNewOrder(){
+    public OrderRequest createNewOrderRequest(){
         return new OrderRequest();
     }
 

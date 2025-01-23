@@ -1,7 +1,7 @@
 package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
-import controller.OrdersRequestController;
+import controller.ProcessOrdersController;
 import exception.SystemErrorException;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import viewcli.ProcessOrdersViewCli;
@@ -14,7 +14,7 @@ public class ProcessOrdersCLI {
 
     public void launch(){
 
-        OrdersRequestController controller = new OrdersRequestController();
+        ProcessOrdersController controller = new ProcessOrdersController();
         ProcessOrdersViewCli view = new ProcessOrdersViewCli();
         int choice;
         int choice2;

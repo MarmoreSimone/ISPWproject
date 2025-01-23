@@ -12,7 +12,6 @@ public abstract class GraphicalController {
 
     }
 
-
     public void setData(Object obj, GraphicalController parent){
 
     }

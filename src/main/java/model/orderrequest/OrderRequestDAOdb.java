@@ -44,18 +44,18 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
         String query = "SELECT * FROM orderrequest WHERE user = ?";
         String user = username;
 
-        return getAllOrderRequestsByQuery(query,user);
+        return getAllOrderRequestsByQuery(query,user,"user");
     }
 
     public List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria) throws SystemErrorException{
         String query = "SELECT * FROM orderrequest WHERE cafeteria = ?";
         String cafe = cafeteria;
 
-        return getAllOrderRequestsByQuery(query,cafe);
+        return getAllOrderRequestsByQuery(query,cafe,"cafe");
 
     }
 
-    private List<OrderRequest> getAllOrderRequestsByQuery(String myQuery, String key) throws SystemErrorException{
+    private List<OrderRequest> getAllOrderRequestsByQuery(String myQuery, String key, String type) throws SystemErrorException{
 
         List<OrderRequest> orderRequests = new ArrayList<OrderRequest>();
 
@@ -79,8 +79,9 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
                 OrderRequest ord;
 
-                ord = new OrderRequest(user, search.getCafeteriaByName(cafe), status, pickupcode);
+                ord = new OrderRequest(user, null, status, pickupcode);
 
+                if(type.equals("user")) ord.setCafeteria(search.getCafeteriaByName(cafe));
 
                 ord.setOrder(DAOfactory.getDAOfactory().createOrderDAO().getOrderByOrderReq(pickupcode,cafe));
 
@@ -102,6 +103,9 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
     }
 
     public void changeStatus(OrderRequest orderReq, String status){
+
+        //per sincronizzare in dati in memoria centrale
+        orderReq.setStatus(status);
 
         String query = "UPDATE orderrequest SET status = ? WHERE pickupcode = ?";
 

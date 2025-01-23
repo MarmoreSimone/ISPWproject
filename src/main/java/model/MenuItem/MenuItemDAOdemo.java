@@ -1,7 +1,5 @@
 package model.MenuItem;
 
-import controller.SearchCafeteriaController;
-import exception.NoCafeteriasFoundException;
 import model.cafeteria.Cafeteria;
 
 import java.util.ArrayList;
@@ -14,14 +12,14 @@ public class MenuItemDAOdemo extends MenuItemDAO {
     public void saveItem(MenuItem item, Cafeteria cafeteria) {
 
         if(item.getType().equals("beverage"))
-            cafeteria.setBeverages(item);
+            cafeteria.setItems(item);
         else
             cafeteria.setTopping(item);
     }
 
     @Override
     public List<MenuItem> getAllItems(Cafeteria cafeteria) {
-            return cafeteria.getBeverages();
+            return cafeteria.getItems();
 
     }
 

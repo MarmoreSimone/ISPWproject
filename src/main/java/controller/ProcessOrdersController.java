@@ -2,44 +2,46 @@ package controller;
 
 import bean.BeanUtils;
 import bean.OrderRequestBean;
+import engineering.SessionManager;
 import exception.SystemErrorException;
 import model.DAOfactory;
 import model.orderrequest.OrderRequest;
-import model.user.User;
-import utils.UserLogged;
+import model.user.Barista;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrdersRequestController{
+public class ProcessOrdersController {
 
-    SearchCafeteriaController searchCafeteriaController;
-    User user;
+    Barista user;
 
-    public OrdersRequestController() {
-        searchCafeteriaController = new SearchCafeteriaController();
-        user = UserLogged.getInstance().getUser();
+    public ProcessOrdersController() {
+
+        user = SessionManager.getInstance().getUserBaristaLogged();
+
     }
 
+    //usato per mostrare tutte le richieste al barista
     public List<OrderRequestBean> getAllRequest() throws SystemErrorException {
         List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
         BeanUtils beanUtils = new BeanUtils();
 
-        orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
+        orderReq = user.getCafeteria().getOrderRequests();
 
-        for(int i = 0; i < orderReq.size(); i++){
-            if(orderReq.get(i).getStatus().equals("PENDING")){
-                retBeans.add(beanUtils.getOrdReqBean(orderReq.get(i)));
+        for (OrderRequest orderRequest : orderReq) {
+            if (orderRequest.getStatus().equals("PENDING")) {
+                retBeans.add(beanUtils.getOrdReqBean(orderRequest));
             }
         }
 
         return retBeans;
     }
 
-    public OrderRequest getOrderReqFromBean(OrderRequestBean bean) throws SystemErrorException{
+    //usato quando il barista seleziona una specifica richiesta
+    public OrderRequest getOrderReqFromBean(OrderRequestBean bean){
 
-        List<OrderRequest> orderReq = DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(user.getCafeteria());
+        List<OrderRequest> orderReq = user.getCafeteria().getOrderRequests();
 
         for (int i = 0; i < orderReq.size(); i++) {
             //il pickUpCode è generato randomicamente, la prob che ci siano più ordini con lo stesso pickUpCode appartenenti alla stessa caffetteria è praticamente zero
@@ -58,7 +60,7 @@ public class OrdersRequestController{
 
     public void rejectRequest(OrderRequestBean bean,String reason) throws SystemErrorException{
         OrderRequest order = getOrderReqFromBean(bean);
-        if(reason == null){
+        if(reason.equals("")){
             DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED");
         }
         else {
