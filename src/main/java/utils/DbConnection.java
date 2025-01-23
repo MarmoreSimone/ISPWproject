@@ -2,6 +2,7 @@ package utils;
 
 
 import exception.SystemErrorException;
+import model.DAOfactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class DbConnection {
     private static DbConnection instance;
     private Connection conn;
 
-    protected DbConnection() {
+    protected DbConnection() throws SystemErrorException {
 
         Properties properties = new Properties();
         try (FileInputStream fis = new FileInputStream("src/main/java/utils/config.properties")) {
@@ -29,14 +30,15 @@ public class DbConnection {
             // Crea la connessione al database
             conn = DriverManager.getConnection(url, user, password);
         } catch (IOException | SQLException e) {
-            e.printStackTrace();
-            new SystemErrorException(e).showException();
+            DAOfactory.setDAOfactory(1);
+            throw new SystemErrorException("db connection error, rollback on demo version");
+
         }
 
 
     }
 
-    public static synchronized DbConnection getInstance() {
+    public static synchronized DbConnection getInstance() throws SystemErrorException {
         if (instance == null) {
             instance = new DbConnection();
         }
