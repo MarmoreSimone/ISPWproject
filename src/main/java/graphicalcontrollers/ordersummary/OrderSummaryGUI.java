@@ -6,6 +6,7 @@ import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
 import javafx.scene.control.Label;
@@ -68,7 +69,7 @@ public class OrderSummaryGUI extends GraphicalController {
         CafeteriaBean cafe = null;
         try {
             cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
-        } catch (NoCafeteriasFoundException e) {
+        } catch (NoCafeteriasFoundException | SystemErrorException e) {
             e.showException();
         }
 
@@ -99,9 +100,16 @@ public class OrderSummaryGUI extends GraphicalController {
     }
 
     public void confirmOrder(){
-        controllerAppl.sendOrderRequest();
-        SessionManager.getInstance().delPlaceOrderSession(this.session);
-        SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
+        try {
+
+            controllerAppl.sendOrderRequest();
+            SessionManager.getInstance().delPlaceOrderSession(this.session);
+            SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
+
+        }catch(SystemErrorException e){
+            e.showException();
+        }
+
     }
 
 

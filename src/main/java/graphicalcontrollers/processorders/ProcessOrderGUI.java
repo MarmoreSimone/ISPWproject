@@ -44,12 +44,20 @@ public class ProcessOrderGUI extends GraphicalController {
     }
 
     public void accept(OrderRequestBean bean){
-        contrAppl.acceptRequest(bean);
+        try {
+            contrAppl.acceptRequest(bean);
+        } catch (SystemErrorException e) {
+            e.showException();
+        }
         showRequest();
     }
 
     public void reject(OrderRequestBean bean, String reason){
-        contrAppl.rejectRequest(bean,reason);
+        try {
+            contrAppl.rejectRequest(bean,reason);
+        } catch (SystemErrorException e) {
+            e.showException();
+        }
         showRequest();
     }
 

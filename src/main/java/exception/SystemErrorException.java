@@ -9,4 +9,8 @@ public class SystemErrorException extends GenericException {
     public SystemErrorException(Throwable cause) {
         super("system error", cause);
     }
+
+    public SystemErrorException(String message) {
+        super("system error: " + message);
+    }
 }

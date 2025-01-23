@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderRequestDAOdb extends OrderRequestDAO{
 
 
-    public void saveOrderRequest(OrderRequest order){
+    public void saveOrderRequest(OrderRequest order) throws SystemErrorException{
 
         String query = "INSERT INTO orderrequest (pickupcode, user, cafeteria, status) VALUES (?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -29,13 +29,13 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         //salvo order
         DAOfactory.getDAOfactory().createOrderDAO().saveOrder(order.getOrder(), order.getPickUpCode(), order.getCafeteria().getName());
 
+        } catch (SQLException | SystemErrorException e) {
+            throw new SystemErrorException("db problems");
+        }
     }
 
 
@@ -93,7 +93,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             throw new IllegalArgumentException(e);
 
         } catch(NoCafeteriasFoundException e) {
-            throw new SystemErrorException(e);
+            throw new SystemErrorException("db problems");
         }
 
         //ordino la lista in base alla data usando funzione offerta da java8
@@ -101,7 +101,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
         return orderRequests;
     }
 
-    public void changeStatus(OrderRequest orderReq, String status){
+    public void changeStatus(OrderRequest orderReq, String status) throws SystemErrorException{
 
         //per sincronizzare in dati in memoria centrale
         orderReq.setStatus(status);
@@ -116,8 +116,8 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new SystemErrorException("db problems");
         }
     }
 }

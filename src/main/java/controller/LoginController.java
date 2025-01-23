@@ -4,6 +4,7 @@ import bean.CredentialsBean;
 import bean.UserBean;
 import engineering.SessionManager;
 import exception.NoUserFoundException;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.user.Barista;
 import model.user.Client;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class LoginController {
 
-        public UserBean login(CredentialsBean cred) throws NoUserFoundException {
+        public UserBean login(CredentialsBean cred) throws NoUserFoundException, SystemErrorException {
             List<User> users = DAOfactory.getDAOfactory().createUserDAO().getAllUserCredentials();
 
             for (User user : users) {
@@ -29,7 +30,7 @@ public class LoginController {
         }
 
 
-        public void register(UserBean user) {
+        public void register(UserBean user) throws SystemErrorException{
             if(user.getRole().equals("barista")){
 
                 Barista barista = DAOfactory.getDAOfactory().createUserDAO().createNewUserBarista(user.getUsername(), user.getPassword(), user.getRole());

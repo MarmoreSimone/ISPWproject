@@ -1,5 +1,6 @@
 package model.menuitem;
 
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
 import utils.DbConnection;
@@ -14,7 +15,7 @@ import java.util.List;
 public class MenuItemDAOdb extends MenuItemDAO {
 
     @Override
-    public void saveItem(MenuItem bev, Cafeteria cafeteria) {
+    public void saveItem(MenuItem bev, Cafeteria cafeteria) throws SystemErrorException {
 
         String query = "INSERT INTO menuitem (name, description, price, calories, caffeine, image, cafeteria,type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -32,14 +33,14 @@ public class MenuItemDAOdb extends MenuItemDAO {
             // Esegui la query
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new SystemErrorException("db problems");
         }
 
 
     }
 
-    public List<MenuItem> getAllItems(Cafeteria cafeteria) {
+    public List<MenuItem> getAllItems(Cafeteria cafeteria) throws SystemErrorException{
         List<MenuItem> list = new ArrayList<>();
         String query = "SELECT name, description, price, calories, caffeine, image, type FROM menuitem WHERE cafeteria = ?";
 
@@ -61,19 +62,17 @@ public class MenuItemDAOdb extends MenuItemDAO {
                 String type = rs.getString("type");
                 MenuItem bev = new MenuItem(name, descr, price, calories, caffeine, image, type);
                 list.add(bev);
-
             }
 
-
         } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
+            throw new SystemErrorException("db problems");
         }
 
         return list;
 
     }
 
-    private MenuItem getItemFromNameAndCafe(String name, String cafeteria) {
+    private MenuItem getItemFromNameAndCafe(String name, String cafeteria) throws SystemErrorException{
 
         Cafeteria cafe = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria(cafeteria,null,null,null,null,null);
         List<MenuItem> list = getAllItems(cafe);
@@ -87,7 +86,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
         return null;
     }
 
-    public void saveItemOrderList(List<MenuItem> items, String cafeteria, String orderReq) {
+    public void saveItemOrderList(List<MenuItem> items, String cafeteria, String orderReq) throws SystemErrorException{
 
         List<MenuItem> products = new ArrayList<>();
 
@@ -129,13 +128,13 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeBatch();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new SystemErrorException("db problems");
         }
 
 
     }
 
-    private void saveCustomItem(MenuItem bev, String orderReq) {
+    private void saveCustomItem(MenuItem bev, String orderReq) throws SystemErrorException{
 
         String query = "INSERT INTO customitemlist (name, description, price, calories, caffeine, image, type, orderReq) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -154,13 +153,12 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new SystemErrorException("db problems");
         }
-
 
     }
 
-    public List<MenuItem> getItemOrderList(String orderReq) {
+    public List<MenuItem> getItemOrderList(String orderReq) throws SystemErrorException{
 
         List<MenuItem> list = new ArrayList<>();
 
@@ -188,9 +186,8 @@ public class MenuItemDAOdb extends MenuItemDAO {
 
             }
 
-
         } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
+            throw new SystemErrorException("db problems");
         }
 
 
@@ -212,12 +209,10 @@ public class MenuItemDAOdb extends MenuItemDAO {
                 String type = rs.getString("type");
                 MenuItem bev = new MenuItem(name, descr, price, calories, caffeine, image, type);
                 list.add(bev);
-
             }
 
-
         } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
+            throw new SystemErrorException("db problems");
         }
 
         return list;

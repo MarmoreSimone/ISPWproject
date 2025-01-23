@@ -3,6 +3,7 @@ package controller;
 import bean.CafeteriaBean;
 import bean.SearchCafeteriaBean;
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class SearchCafeteriaController {
 
-    public List<Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException {
+    public List<Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException, SystemErrorException {
 
         List<Cafeteria> cafeterias ;
 
@@ -21,14 +22,14 @@ public class SearchCafeteriaController {
         return cafeterias;
     }
 
-    public Cafeteria getCafeteriaByName(String name) throws NoCafeteriasFoundException {
+    public Cafeteria getCafeteriaByName(String name) throws NoCafeteriasFoundException, SystemErrorException {
 
          return DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name);
 
     }
 
     //usata quando non devo passare tutte le informazioni della caffetteria
-    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key) throws NoCafeteriasFoundException {
+    public List<SearchCafeteriaBean> searchCafeterias(SearchCafeteriaBean key) throws NoCafeteriasFoundException , SystemErrorException{
 
         //lista di searchCafeteriaBean da tornare
         List<SearchCafeteriaBean> foundCafes = new ArrayList<>();
@@ -53,7 +54,7 @@ public class SearchCafeteriaController {
     }
 
     //usata per tornare la bean che contiene tutte le informazioni della caffetteria
-    public CafeteriaBean getCafeBeanByName(String name) throws NoCafeteriasFoundException {
+    public CafeteriaBean getCafeBeanByName(String name) throws NoCafeteriasFoundException , SystemErrorException{
 
         Cafeteria tempCafe = getCafeteriaByName(name);
 

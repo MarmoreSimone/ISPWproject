@@ -27,7 +27,7 @@
                         <Image url="@../images/profile.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="testButton" accessibleRole="BUTTON" fitHeight="52.0" fitWidth="54.0" onMouseClicked="#onButtonClickDummy" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="testButton" accessibleRole="BUTTON" fitHeight="52.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/test.png" />
                      </image>

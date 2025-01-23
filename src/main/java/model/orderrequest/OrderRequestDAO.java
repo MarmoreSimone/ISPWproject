@@ -10,11 +10,11 @@ public abstract class OrderRequestDAO {
         return new OrderRequest();
     }
 
-    public abstract void saveOrderRequest(OrderRequest order);
+    public abstract void saveOrderRequest(OrderRequest order) throws SystemErrorException;
 
     public abstract List<OrderRequest> getAllOrderRequestsByCafeName(String cafeteria) throws SystemErrorException;
 
     public abstract List<OrderRequest> getAllOrderRequestsByUsername(String user) throws SystemErrorException;
 
-    public abstract void changeStatus(OrderRequest order, String status);
+    public abstract void changeStatus(OrderRequest order, String status) throws SystemErrorException;
 }

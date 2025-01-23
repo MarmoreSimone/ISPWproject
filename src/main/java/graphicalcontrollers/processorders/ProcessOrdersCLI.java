@@ -2,6 +2,8 @@ package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
 import controller.ProcessOrdersController;
+
+import exception.SystemErrorException;
 import viewcli.ProcessOrdersViewCli;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,10 +18,7 @@ public class ProcessOrdersCLI {
         int choice;
         int choice2;
 
-
         view.drawTitle();
-
-
 
             do {
 
@@ -31,15 +30,27 @@ public class ProcessOrdersCLI {
 
                 switch (choice2) {
                     case 0:
-                        controller.acceptRequest(request.get(choice));
+                        try {
+                            controller.acceptRequest(request.get(choice));
+                        } catch (SystemErrorException e) {
+                            e.showException();
+                        }
                         break;
 
                     case 1:
-                        controller.rejectRequest(request.get(choice), null);
+                        try {
+                            controller.rejectRequest(request.get(choice), null);
+                        } catch (SystemErrorException e) {
+                            e.showException();
+                        }
                         break;
 
                     case 2:
-                        controller.rejectRequest(request.get(choice), view.getString());
+                        try {
+                            controller.rejectRequest(request.get(choice), view.getString());
+                        } catch (SystemErrorException e) {
+                            e.showException();
+                        }
                         break;
 
                     default:
@@ -47,9 +58,6 @@ public class ProcessOrdersCLI {
                 }
 
             } while (true);
-
-
-
 
     }
 

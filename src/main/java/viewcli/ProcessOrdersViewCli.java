@@ -21,10 +21,13 @@ public class ProcessOrdersViewCli extends viewcli.UtilsCli{
             String string = order.getUsername() + "\n" + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\n" + "note:\n" + order.getOrder().getNote()+"\n";
 
             for (int i = 0; i < order.getOrder().getBevs().size(); i++) {
-                string = string.concat(order.getOrder().getBevs().get(i).getName() + "  " + order.getOrder().getBevs().get(i).getPrice() + "$\n");
+                String[] parts = order.getOrder().getBevs().get(i).getName().split("\n", 2);
+                String firstWord = parts[0];
+                String rest = parts.length > 1 ? parts[1] : "";
+                string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n" + rest);
             }
 
-            string = string.concat("----------------------");
+            string = string.concat("\n----------------------");
 
             list.add(string);
         }

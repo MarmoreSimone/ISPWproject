@@ -2,6 +2,7 @@ package viewcli;
 
 import bean.MenuItemBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrdereBuildViewCli extends UtilsCli{
@@ -15,13 +16,13 @@ public class OrdereBuildViewCli extends UtilsCli{
 
         System.out.println("added beverages:");
         for(MenuItemBean item : itemList){
+
             String[] parts = item.getName().split("\n", 2);
             String firstWord = parts[0];
             String rest = parts.length > 1 ? parts[1] : "";
-
             System.out.println(firstWord + " " + item.getPrice() + "$\n" + rest);
+
         }
-        System.out.println("");
     }
 
     public int drawAddBev(List<String> bevs){
@@ -35,12 +36,23 @@ public class OrdereBuildViewCli extends UtilsCli{
         System.out.println("===ADD ITEMS TO THE ORDER===");
     }
 
-    public int drawDelBev(List<String> bevs){
+    public int drawDelBev(List<MenuItemBean> bevs){
+
+        List<String> items = new ArrayList<>();
+        items.addFirst("GO BACK");
+
+        for(MenuItemBean item : bevs){
+
+            String[] parts = item.getName().split("\n", 2);
+            String firstWord = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
+            items.add(firstWord + " " + item.getPrice() + "$\n" + rest);
+
+        }
 
         System.out.println("chose a beverage to remove");
-        bevs.addFirst("GO BACK");
-        showChoices(bevs);
-        return getUserChoice(bevs);
+        showChoices(items);
+        return getUserChoice(items);
 
     }
 

@@ -1,5 +1,6 @@
 package model.order;
 
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.menuitem.MenuItem;
 import utils.DbConnection;
@@ -15,7 +16,7 @@ public class OrderDAOdb extends OrderDAO{
 
 
 
-    public Order getOrderByOrderReq(String orderReq, String cafeteria){
+    public Order getOrderByOrderReq(String orderReq, String cafeteria) throws SystemErrorException{
 
         Order order = null;
 
@@ -39,22 +40,20 @@ public class OrderDAOdb extends OrderDAO{
 
             }
 
-
-        } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
-        }
-
         //ora recupero le bevande
         order.setItems(DAOfactory.getDAOfactory().createMenuItemDAO().getItemOrderList(orderReq));
 
 
         return order;
 
+        } catch (SQLException | SystemErrorException e) {
+            throw new SystemErrorException("db problems");
+        }
 
 
     }
 
-    public void saveOrder(Order order, String orderReq, String cafeteria) {
+    public void saveOrder(Order order, String orderReq, String cafeteria) throws SystemErrorException{
 
         String query = "INSERT INTO myorder (orderreq, totprice, `date`, `time`, note, paymeth) VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -70,7 +69,7 @@ public class OrderDAOdb extends OrderDAO{
             ps.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new SystemErrorException("db problems");
         }
 
         //salvo la lista di bevande

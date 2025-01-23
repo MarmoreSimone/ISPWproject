@@ -24,7 +24,7 @@ public class UtilsCli {
     public int getUserChoice(List<String> choices){
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int choice;
+        int choice=0;
         do {
             String input = null;
             try {
@@ -33,12 +33,19 @@ public class UtilsCli {
                 throw new RuntimeException(e);
             }
 
-            choice = Integer.parseInt(input);
+
+            try {
+                choice = Integer.parseInt(input);
+            }catch (NumberFormatException e){
+                choice = -1;
+            }
 
             if(choice < 0 || choice > choices.size()){
                 choice = -1;
                 System.out.println("Please enter a valid choice");
             }
+
+
 
             if(choice == 0){
                 SessionManager.getInstance().closeAllUserSessions();

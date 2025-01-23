@@ -111,7 +111,7 @@ public class SearchCafeteriaGUI extends GraphicalController {
                 default:
             }
 
-        } catch (NoCafeteriasFoundException e){
+        } catch (NoCafeteriasFoundException | SystemErrorException e){
             e.showException();
         }
 
@@ -167,19 +167,21 @@ public class SearchCafeteriaGUI extends GraphicalController {
         CafeteriaBean bean = null;
         //vado a prendere la bean completa della caffetteria
         try {
+
             bean = controllerAppl.getCafeBeanByName(cafe.getName());
+            labelName.setText(bean.getName());
+            labelAddress.setText(bean.getAddress());
+            labelCity.setText(bean.getCity());
+            labelNumber.setText(bean.getNumber());
+            labelDescr.setText(bean.getDescription());
+            imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
+            openHour.getItems().clear();
+            paneInfoCard.setVisible(true);
+
         }
-        catch (NoCafeteriasFoundException e){
+        catch (NoCafeteriasFoundException | SystemErrorException e){
             e.showException();
         }
-        labelName.setText(bean.getName());
-        labelAddress.setText(bean.getAddress());
-        labelCity.setText(bean.getCity());
-        labelNumber.setText(bean.getNumber());
-        labelDescr.setText(bean.getDescription());
-        imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
-        openHour.getItems().clear();
-        paneInfoCard.setVisible(true);
     }
 
     public void continueOrder(){

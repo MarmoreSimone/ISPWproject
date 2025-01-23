@@ -53,8 +53,10 @@ public class SearchCafeteriaCLI {
                 default:
             }
 
-        } catch (NoCafeteriasFoundException e){
+        } catch (NoCafeteriasFoundException | SystemErrorException e){
             e.showException();
+            searchCafe();
+            return null;
         }
 
         return cafeterias;
@@ -85,35 +87,32 @@ public class SearchCafeteriaCLI {
 
     public void showSelectedCafeteria(SearchCafeteriaBean cafe){
         CafeteriaBean bean = null;
-        try {
+
+        try{
             bean = controllerAppl.getCafeBeanByName(cafe.getName());
-        } catch (NoCafeteriasFoundException e) {
-            e.showException();
-        }
-        List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
 
-        view.drawSelectedCafeteria(items);
+            List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
 
-        List<String> list = new ArrayList<>(Arrays.asList("continue order","find new cafeteria"));
-        view.showChoices(list);
-        int input = view.getUserChoice(list);
+            view.drawSelectedCafeteria(items);
 
-        if(input == 0) {
-            String session = SessionManager.getInstance().newPlaceOrderSession();
-            PlaceOrderController contr = new PlaceOrderController(session);
+            List<String> list = new ArrayList<>(Arrays.asList("continue order","find new cafeteria"));
+            view.showChoices(list);
+            int input = view.getUserChoice(list);
 
-            try {
+            if(input == 0) {
+                String session = SessionManager.getInstance().newPlaceOrderSession();
+                PlaceOrderController contr = new PlaceOrderController(session);
+
                 contr.setCafeteria(cafe.getName());
-            } catch (SystemErrorException e) {
-                e.showException();
+                new OrderBuilderCLI().launch(session);
+            }
+            else{
+                launch();
             }
 
-            new OrderBuilderCLI().launch(session);
+        } catch (NoCafeteriasFoundException | SystemErrorException e) {
+            e.showException();
         }
-        else{
-            launch();
-        }
-
     }
 
 

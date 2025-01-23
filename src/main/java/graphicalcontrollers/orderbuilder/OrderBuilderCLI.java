@@ -103,15 +103,11 @@ public class OrderBuilderCLI {
         List<MenuItemBean> bevs = placeOrderController.getAddedItems();
         List<String> list = new ArrayList<>();
 
-        for(MenuItemBean bev : bevs){
-            list.add(bev.getName() + " " + bev.getPrice() + "$");
-        }
-        int choice = view.drawDelBev(list);
+        int choice = view.drawDelBev(bevs);
         if(choice == 0){
             return;
         }
 
-        System.out.println("rimossa");
         placeOrderController.removeItemFromOrder(bevs.get(choice-1));
 
     }

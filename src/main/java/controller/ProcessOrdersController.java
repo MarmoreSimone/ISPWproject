@@ -3,6 +3,7 @@ package controller;
 import bean.BeanUtils;
 import bean.OrderRequestBean;
 import engineering.SessionManager;
+import exception.SystemErrorException;
 import model.DAOfactory;
 import model.orderrequest.OrderRequest;
 import model.user.Barista;
@@ -52,12 +53,12 @@ public class ProcessOrdersController {
         return null;
     }
 
-    public void acceptRequest(OrderRequestBean bean) {
+    public void acceptRequest(OrderRequestBean bean) throws SystemErrorException {
         OrderRequest order = getOrderReqFromBean(bean);
         DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "ACCEPTED");
     }
 
-    public void rejectRequest(OrderRequestBean bean,String reason) {
+    public void rejectRequest(OrderRequestBean bean,String reason) throws SystemErrorException{
         OrderRequest order = getOrderReqFromBean(bean);
         if(reason.equals("")){
             DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED");

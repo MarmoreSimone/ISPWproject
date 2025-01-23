@@ -1,6 +1,7 @@
 package model.menuitem;
 
 
+import exception.SystemErrorException;
 import model.cafeteria.Cafeteria;
 
 import java.util.List;
@@ -11,12 +12,12 @@ public abstract class MenuItemDAO {
                 return new MenuItem(name, description, price, calories, caffeine, image, type);
         }
 
-        public abstract void saveItem(MenuItem bev, Cafeteria cafeteria);
+        public abstract void saveItem(MenuItem bev, Cafeteria cafeteria) throws SystemErrorException;
 
-        public abstract List<MenuItem> getAllItems(Cafeteria cafeteria);
+        public abstract List<MenuItem> getAllItems(Cafeteria cafeteria) throws SystemErrorException;
 
-        public abstract void saveItemOrderList(List<MenuItem> beverages, String cafeteria, String orderReq);
+        public abstract void saveItemOrderList(List<MenuItem> beverages, String cafeteria, String orderReq) throws SystemErrorException;
 
-        public abstract List<MenuItem> getItemOrderList(String orderReq);
+        public abstract List<MenuItem> getItemOrderList(String orderReq) throws SystemErrorException;
 }
 

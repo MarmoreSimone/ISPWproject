@@ -1,6 +1,7 @@
 package model.user;
 
 
+import exception.SystemErrorException;
 import model.cafeteria.Cafeteria;
 
 import java.util.List;
@@ -15,11 +16,11 @@ public abstract class UserDAO {
         return new Barista(name, password,role);
     }
 
-    public abstract void saveBarista(Barista user);
+    public abstract void saveBarista(Barista user) throws SystemErrorException;
 
-    public abstract void saveClient(Client user);
+    public abstract void saveClient(Client user) throws SystemErrorException;
 
-    public abstract List<User> getAllUserCredentials();
+    public abstract List<User> getAllUserCredentials() throws SystemErrorException;
 
-    public abstract void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria);
+    public abstract void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria) throws SystemErrorException;
 }

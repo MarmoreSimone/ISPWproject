@@ -14,6 +14,7 @@ import model.orderrequest.OrderRequest;
 import model.user.Client;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -99,7 +100,12 @@ public class PlaceOrderController {
         LocalDate date;
         LocalDate today;
 
-            date = LocalDate.parse(details.getDate());
+            try {
+                date = LocalDate.parse(details.getDate());
+            }catch (DateTimeParseException e){
+                throw new WrongFormatException(": select a correct format date");
+            }
+
             today = LocalDate.now();
 
             if(details.getDate().isEmpty()){
@@ -143,7 +149,7 @@ public class PlaceOrderController {
 
     }
 
-    public void sendOrderRequest(){
+    public void sendOrderRequest() throws SystemErrorException{
 
         OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrderRequest();
         orderRequest.setStatus("PENDING");
@@ -167,7 +173,6 @@ public class PlaceOrderController {
         Client client = SessionManager.getInstance().getUserClientLogged();
         client.getOrderRequestList().add(orderRequest);
         session.getMyCafeteria().getOrderRequests().add(orderRequest);
-
 
     }
 

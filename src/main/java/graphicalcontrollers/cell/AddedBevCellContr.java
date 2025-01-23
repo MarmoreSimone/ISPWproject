@@ -28,7 +28,6 @@ public class AddedBevCellContr extends GraphicalController {
     }
 
     public void remove(){
-        System.out.println("hai cliccato su: " + beverage.getName());
         parent.removeFromOrder(beverage);
     }
 

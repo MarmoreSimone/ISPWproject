@@ -36,6 +36,7 @@ public class FinalizeOrderCLI {
                     try {
                         contrAppl.buildOrder(bean);
                     } catch (WrongFormatException e) {
+                        e.showException();
                         break;
                     }
                     new OrderSummaryCLI().launch(session);

@@ -22,14 +22,12 @@ public class MyOrdersCLI {
         int choice;
         List<String> choices = new ArrayList<>(Arrays.asList("get all", "accepted", "rejected", "pending", "exit"));
 
-        try {
-            list = controller.getAllMyOrderReq();
-            int i = 0;
-            do {
-
-                view.showChoices(choices);
-                view.drawOrders(list);
-                choice = view.getUserChoice(choices);
+        list = controller.getAllMyOrderReq();
+        int i = 0;
+        do {
+            view.showChoices(choices);
+            view.drawOrders(list);
+            choice = view.getUserChoice(choices);
 
                 switch (choice) {
                     case 0:
@@ -57,12 +55,9 @@ public class MyOrdersCLI {
                         break;
                 }
 
-            } while (i != 1);
+        } while (i != 1);
 
-        }catch (SystemErrorException e){
-            e.printStackTrace();
-            new HomeClientCLI().launch();
-        }
+
 
     }
 }

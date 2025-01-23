@@ -6,6 +6,7 @@ import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
 import exception.NoCafeteriasFoundException;
+import exception.SystemErrorException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
 import viewcli.OrderSummaryViewCli;
@@ -28,10 +29,8 @@ public class OrderSummaryCLI {
         SearchCafeteriaController search = new SearchCafeteriaController();
         CafeteriaBean cafe = null;
         try {
+
             cafe = search.getCafeBeanByName(contrAppl.getCafeteriaName());
-        } catch (NoCafeteriasFoundException e) {
-            e.showException();
-        }
 
         view.drawOrderSummary(order,cafe);
 
@@ -46,6 +45,10 @@ public class OrderSummaryCLI {
         }
         else {
             new FinalizeOrderCLI().launch(session);
+        }
+
+        } catch (NoCafeteriasFoundException | SystemErrorException e) {
+            e.showException();
         }
 
     }

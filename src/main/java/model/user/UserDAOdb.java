@@ -15,7 +15,7 @@ import java.util.List;
 
 public class UserDAOdb extends UserDAO{
 
-    private void saveUser(User user, String cafeteria){
+    private void saveUser(User user, String cafeteria) throws SystemErrorException{
 
         String query = "INSERT INTO user (username, password, role, cafeteria) VALUES (?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -28,23 +28,22 @@ public class UserDAOdb extends UserDAO{
 
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new SystemErrorException("username already taken");
         }
 
     }
 
-    public void saveClient(Client client) {
+    public void saveClient(Client client) throws SystemErrorException{
         saveUser(client,null);
     }
 
-    public void saveBarista(Barista bar) {
-
+    public void saveBarista(Barista bar) throws SystemErrorException{
         if(bar.getCafeteria() == null) saveUser(bar,null);
         else saveUser(bar,bar.getCafeteria().getName());
     }
 
-    private List<Barista> getAllBaristas(){
+    private List<Barista> getAllBaristas() throws SystemErrorException{
 
         List<Barista> baristas = new ArrayList<Barista>();
 
@@ -75,14 +74,14 @@ public class UserDAOdb extends UserDAO{
             }
 
         } catch (SQLException | NoCafeteriasFoundException e){
-            throw new IllegalArgumentException(e);
+            throw new SystemErrorException("db problems");
         }
 
         return baristas;
 
     }
 
-    private List<Client> getAllClients(){
+    private List<Client> getAllClients() throws SystemErrorException{
 
         List<Client> clients = new ArrayList<Client>();
 
@@ -107,14 +106,14 @@ public class UserDAOdb extends UserDAO{
             }
 
         } catch (SQLException | SystemErrorException e) {
-            throw new IllegalArgumentException(e);
+            throw new SystemErrorException("db problems");
         }
 
         return clients;
 
     }
 
-    public List<User> getAllUserCredentials(){
+    public List<User> getAllUserCredentials() throws SystemErrorException{
 
         List<User> users = new ArrayList<>();
 
@@ -126,7 +125,7 @@ public class UserDAOdb extends UserDAO{
 
 
 
-    public void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria){
+    public void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria) throws SystemErrorException{
 
         String query = "UPDATE user SET cafeteria = ? WHERE username = ?";
 
@@ -139,7 +138,7 @@ public class UserDAOdb extends UserDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new SystemErrorException("db problems");
         }
 
 
