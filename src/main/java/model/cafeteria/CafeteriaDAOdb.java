@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CafeteriaDAOdb extends CafeteriaDAO{
 
-    public void saveCafeteria(Cafeteria cafe) {
+    public void saveCafeteria(Cafeteria cafe){
 
         String query = "INSERT INTO cafeteria (name, city, address, number, description, photo) VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = DbConnection.getInstance().getConnection();
@@ -28,8 +28,8 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
             // Esegui la query
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("db error");
         }
 
     }
@@ -59,21 +59,16 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
                 items = DAOfactory.getDAOfactory().createMenuItemDAO().getAllItems(cafe);
                 cafe.setOrderRequests(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByCafeName(name));
 
-
                 for (MenuItem item : items) {
                         if (item.getType().equals("beverage")) cafe.setItems(item);
                         else cafe.setTopping(item);
                     }
 
 
-        } catch (SQLException e) {
+        } catch (SQLException | SystemErrorException e) {
             e.printStackTrace();
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system",e);
-
-        } catch (SystemErrorException e) {
-            throw new RuntimeException(e);
         }
-
         return cafe;
     }
 
@@ -113,10 +108,8 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
             }
 
 
-        } catch (SQLException e) {
+        } catch (SQLException | SystemErrorException e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
-        } catch (SystemErrorException e){
-            //todo gestisci
         }
 
         return list;

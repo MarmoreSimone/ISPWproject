@@ -50,12 +50,7 @@ public class MyOrdersGUI extends GraphicalController {
 
         UserOrdersController controller = new UserOrdersController();
 
-
-        try {
-            ordini = controller.getAllMyOrderReq();
-        } catch (SystemErrorException e) {
-            e.showException();
-        }
+        ordini = controller.getAllMyOrderReq();
 
         loadMyOrders(ordini,"all");
 

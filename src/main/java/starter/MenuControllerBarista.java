@@ -25,10 +25,6 @@ public class MenuControllerBarista {
     }
 
 
-    @FXML
-    private void dummy() {
-
-    }
 
 
 

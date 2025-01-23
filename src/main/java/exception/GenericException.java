@@ -13,19 +13,11 @@ public class GenericException extends Exception{
         }
 
         public void showException(){
-            try {
-                PopupFactory.getPopup().show(this.getMessage());
-            } catch (SystemErrorException e) {
-                System.out.println("system error");
-            }
+            PopupFactory.getPopup().show(this.getMessage());
         }
 
         public void showException(Throwable cause){
-            try {
-                PopupFactory.getPopup().show(this.getMessage() + cause.getMessage());
-            } catch (SystemErrorException e) {
-                System.out.println("system error");
-            }
+            PopupFactory.getPopup().show(this.getMessage() + cause.getMessage());
         }
 
 }

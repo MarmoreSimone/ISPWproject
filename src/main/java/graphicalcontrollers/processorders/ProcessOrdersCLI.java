@@ -2,10 +2,7 @@ package graphicalcontrollers.processorders;
 
 import bean.OrderRequestBean;
 import controller.ProcessOrdersController;
-import exception.SystemErrorException;
-import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import viewcli.ProcessOrdersViewCli;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

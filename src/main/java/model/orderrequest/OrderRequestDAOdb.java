@@ -89,7 +89,6 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
             }
 
-
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
 

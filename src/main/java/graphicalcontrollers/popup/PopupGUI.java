@@ -23,7 +23,7 @@ public class PopupGUI implements Initializable, Popup {
     String message;
     Stage stage;
 
-    public void show(String msg) throws SystemErrorException{
+    public void show(String msg){
 
         this.message = msg;
 
@@ -34,7 +34,7 @@ public class PopupGUI implements Initializable, Popup {
         try {
             scene = new Scene(fxmlLoader.load());
         } catch (IOException e) {
-            throw new SystemErrorException();
+            System.out.println("system error");
         }
 
 

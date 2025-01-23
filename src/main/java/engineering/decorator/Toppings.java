@@ -38,7 +38,7 @@ public class Toppings extends ItemDecorator{
             double price = super.getPrice();
             price = price + selectedTopping.getPrice();
 
-            return Math.round(price*10)/10;
+            return (double) Math.round(price * 10) /10;
         }
 
         @Override

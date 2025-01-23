@@ -22,10 +22,6 @@ public class MenuController {
         new LoginGUI().launch();
     }
 
-    @FXML
-    private void onButtonClickDummy() {
-
-    }
 
     @FXML
     private void onButtonClickGift() {

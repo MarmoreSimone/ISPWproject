@@ -74,10 +74,8 @@ public class UserDAOdb extends UserDAO{
 
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | NoCafeteriasFoundException e){
             throw new IllegalArgumentException(e);
-        } catch (NoCafeteriasFoundException e) {
-            throw new RuntimeException(e);
         }
 
         return baristas;
@@ -108,10 +106,8 @@ public class UserDAOdb extends UserDAO{
 
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | SystemErrorException e) {
             throw new IllegalArgumentException(e);
-        } catch (SystemErrorException e) {
-            throw new RuntimeException(e);
         }
 
         return clients;
@@ -142,7 +138,7 @@ public class UserDAOdb extends UserDAO{
 
             ps.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

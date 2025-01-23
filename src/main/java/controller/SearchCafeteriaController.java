@@ -25,7 +25,6 @@ public class SearchCafeteriaController {
 
          return DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name);
 
-
     }
 
     //usata quando non devo passare tutte le informazioni della caffetteria

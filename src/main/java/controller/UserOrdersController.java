@@ -11,7 +11,7 @@ import java.util.List;
 
 public class UserOrdersController {
 
-    public List<OrderRequestBean> getAllMyOrderReq() throws SystemErrorException {
+    public List<OrderRequestBean> getAllMyOrderReq() {
 
         List<OrderRequestBean> retBeans = new ArrayList<>();
         List<OrderRequest> ordReq = SessionManager.getInstance().getUserClientLogged().getOrderRequestList();
@@ -27,7 +27,7 @@ public class UserOrdersController {
 
     }
 
-    public List<OrderRequestBean> getAllMyOrderReq(String filter) throws SystemErrorException{
+    public List<OrderRequestBean> getAllMyOrderReq(String filter) {
         List<OrderRequestBean> reqBeans = new ArrayList<>(getAllMyOrderReq());
 
         if(filter.charAt(0) == 'R'){
