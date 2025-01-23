@@ -1,6 +1,6 @@
 package model.cafeteria;
 
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import model.orderrequest.OrderRequest;
 
 import java.util.ArrayList;

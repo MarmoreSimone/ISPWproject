@@ -7,7 +7,7 @@ import exception.NoUserFoundException;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 import model.DAOfactory;
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import model.cafeteria.Cafeteria;
 import model.user.Barista;
 import model.user.User;
@@ -74,12 +74,15 @@ public class LoginCLI extends UtilsCli {
     public void register(){
         LoginController contrAppl = new LoginController();
 
-        contrAppl.register(new UserBean("sim","1","client"));
-        contrAppl.register(new UserBean("sim2","11","client"));
+        String clie = "client";
+        String bari = "barista";
+
+        contrAppl.register(new UserBean("sim","1",clie));
+        contrAppl.register(new UserBean("sim2","11",clie));
 
 
-        contrAppl.register(new UserBean("pal","2","barista"));
-        contrAppl.register(new UserBean("pal2","22","barista"));
+        contrAppl.register(new UserBean("pal","2",bari));
+        contrAppl.register(new UserBean("pal2","22",bari));
 
 
         String beverage = "beverage";
@@ -101,12 +104,6 @@ public class LoginCLI extends UtilsCli {
         DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("Smarties", null, 0.5, 50, 0, null,topping), caf1);
         DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("panna", null, 0.4, 40, 0, null,topping), caf1);
         DAOfactory.getDAOfactory().createMenuItemDAO().saveItem(new MenuItem("zuccherini", null, 0.1, 30, 0, null,topping), caf1);
-
-
-
-
-
-
 
 
         Cafeteria caf2 = new Cafeteria("CafèDaRoccà","via casa mia","La rocca","063458741","Un angolo accogliente nel cuore della città, ideale per una pausa rilassante o una chiacchierata tra amici. Offre una selezione di caffè artigianali, dolci fatti in casa e opzioni per ogni gusto.","/images/cafe2.jpg");

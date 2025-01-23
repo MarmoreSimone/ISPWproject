@@ -1,25 +1,25 @@
 package engineering.decorator;
 
 
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import model.cafeteria.Cafeteria;
 
 import java.util.List;
 
 public class Toppings extends ItemDecorator{
 
-        List<MenuItem> toppings;
+        List<MenuItem> cafeteriaToppings;
         MenuItem selectedTopping;
 
         public Toppings(MenuItemComponent item, Cafeteria cafeteria) {
 
             super(item);
-            toppings = cafeteria.getToppings();
+            cafeteriaToppings = cafeteria.getToppings();
 
         }
 
         public void applyTopping(String name){
-            for(MenuItem item : toppings){
+            for(MenuItem item : cafeteriaToppings){
                 if(item.getName().equals(name)){
                     selectedTopping = item;
                 }
@@ -35,7 +35,7 @@ public class Toppings extends ItemDecorator{
 
         @Override
         public double getPrice(){
-            Double price = super.getPrice();
+            double price = super.getPrice();
             price = price + selectedTopping.getPrice();
 
             return Math.round(price*10)/10;

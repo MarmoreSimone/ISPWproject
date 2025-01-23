@@ -3,7 +3,7 @@ package model.cafeteria;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import model.DAOfactory;
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import utils.DbConnection;
 
 import java.sql.*;

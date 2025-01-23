@@ -1,7 +1,6 @@
-package model.MenuItem;
+package model.menuitem;
 
 
-import exception.NoCafeteriasFoundException;
 import model.cafeteria.Cafeteria;
 
 import java.util.List;

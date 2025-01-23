@@ -1,7 +1,7 @@
 package model.order;
 
 import model.DAOfactory;
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import utils.DbConnection;
 
 import java.sql.Connection;

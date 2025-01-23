@@ -15,7 +15,7 @@ public class DbConnection {
     private static DbConnection instance;
     private Connection conn;
 
-    private DbConnection() {
+    protected DbConnection() {
 
         Properties properties = new Properties();
         try (FileInputStream fis = new FileInputStream("src/main/java/utils/config.properties")) {

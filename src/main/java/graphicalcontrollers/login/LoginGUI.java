@@ -10,7 +10,7 @@ import graphicalcontrollers.homebarista.HomeBaristaGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.DAOfactory;
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import model.cafeteria.Cafeteria;
 import model.user.Barista;
 import model.user.User;
@@ -59,12 +59,14 @@ public class LoginGUI extends GraphicalController {
 
         LoginController contrAppl = new LoginController();
 
-        contrAppl.register(new UserBean("sim","1","client"));
-        contrAppl.register(new UserBean("sim2","11","client"));
+        String clie = "client";
+        String bari = "barista";
 
+        contrAppl.register(new UserBean("sim","1",clie));
+        contrAppl.register(new UserBean("sim2","11",clie));
 
-        contrAppl.register(new UserBean("pal","2","barista"));
-        contrAppl.register(new UserBean("pal2","22","barista"));
+        contrAppl.register(new UserBean("pal","2",bari));
+        contrAppl.register(new UserBean("pal2","22",bari));
 
 
         String beverage = "beverage";

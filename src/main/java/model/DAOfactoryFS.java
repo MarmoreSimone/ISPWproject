@@ -1,6 +1,6 @@
 package model;
 
-import model.MenuItem.MenuItemDAO;
+import model.menuitem.MenuItemDAO;
 import model.cafeteria.CafeteriaDAO;
 import model.cafeteria.CafeteriaDAOdemo;
 import model.order.OrderDAO;

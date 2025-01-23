@@ -1,6 +1,6 @@
 package bean;
 
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
 

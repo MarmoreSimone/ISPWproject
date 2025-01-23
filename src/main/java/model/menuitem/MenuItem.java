@@ -1,4 +1,4 @@
-package model.MenuItem;
+package model.menuitem;
 
 import engineering.decorator.MenuItemComponent;
 

@@ -11,6 +11,8 @@ public class CafeteriaDAOdemo extends CafeteriaDAO {
     private List<Cafeteria> memory = new ArrayList<>();
 
 
+    protected CafeteriaDAOdemo() {}
+
     public static synchronized CafeteriaDAOdemo getInstance() {
         if(CafeteriaDAOdemo.instance == null)
             CafeteriaDAOdemo.instance = new CafeteriaDAOdemo();

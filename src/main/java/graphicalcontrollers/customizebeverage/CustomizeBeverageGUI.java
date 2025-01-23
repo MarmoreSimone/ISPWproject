@@ -87,10 +87,10 @@ public class CustomizeBeverageGUI extends GraphicalController {
         toppList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
 
-        setItemInfo(this.menuItem);
+        setItemInfo();
     }
 
-    public void setItemInfo(MenuItemBean item) {
+    public void setItemInfo() {
         name.setText(menuItem.getName());
         caffeine.setText(String.valueOf(menuItem.getCaffeine()) + "mg");
         calories.setText(String.valueOf(menuItem.getCalories())+ "Kcal");
@@ -133,7 +133,7 @@ public class CustomizeBeverageGUI extends GraphicalController {
 
         CustomOptionsBean bean = new CustomOptionsBean(chooseTopp,Integer.parseInt(shots.getText()),caff,cal);
         this.menuItem = controllerAppl.customizeMenuItem(bean);
-        setItemInfo(this.menuItem);
+        setItemInfo();
         toppList.getSelectionModel().clearSelection();
 
     }

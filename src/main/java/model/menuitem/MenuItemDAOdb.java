@@ -1,4 +1,4 @@
-package model.MenuItem;
+package model.menuitem;
 
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;

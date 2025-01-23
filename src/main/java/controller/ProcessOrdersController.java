@@ -22,7 +22,7 @@ public class ProcessOrdersController {
     }
 
     //usato per mostrare tutte le richieste al barista
-    public List<OrderRequestBean> getAllRequest() throws SystemErrorException {
+    public List<OrderRequestBean> getAllRequest() {
         List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
         BeanUtils beanUtils = new BeanUtils();
@@ -53,12 +53,12 @@ public class ProcessOrdersController {
         return null;
     }
 
-    public void acceptRequest(OrderRequestBean bean) throws SystemErrorException{
+    public void acceptRequest(OrderRequestBean bean) {
         OrderRequest order = getOrderReqFromBean(bean);
         DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "ACCEPTED");
     }
 
-    public void rejectRequest(OrderRequestBean bean,String reason) throws SystemErrorException{
+    public void rejectRequest(OrderRequestBean bean,String reason) {
         OrderRequest order = getOrderReqFromBean(bean);
         if(reason.equals("")){
             DAOfactory.getDAOfactory().createOrderRequestDAO().changeStatus(order, "REJECTED");

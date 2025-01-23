@@ -1,7 +1,5 @@
 package bean;
 
-import java.util.List;
-
 public class CafeteriaBean {
 
     private String cafeteriaName;

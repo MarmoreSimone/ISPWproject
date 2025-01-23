@@ -37,35 +37,19 @@ public class ProcessOrderGUI extends GraphicalController {
         List<Object> objectList;
         List<OrderRequestBean> orders = null;
 
-        try {
-            orders = contrAppl.getAllRequest();
-        }
-        catch(SystemErrorException e){
-            e.showException();
-            SwitchPage.getSwitchPageInstance().changePage("/view/homeBarista.fxml");
-            }
+        orders = contrAppl.getAllRequest();
 
         objectList = (List<Object>) (List<?>) orders;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/evaluateOrder.fxml",requestList,this,objectList);
     }
 
     public void accept(OrderRequestBean bean){
-        try {
-            contrAppl.acceptRequest(bean);
-        } catch(SystemErrorException e ){
-            e.showException();
-        }
-
+        contrAppl.acceptRequest(bean);
         showRequest();
     }
 
     public void reject(OrderRequestBean bean, String reason){
-        try {
-            contrAppl.rejectRequest(bean,reason);
-        } catch (SystemErrorException e) {
-            e.showException();
-        }
-
+        contrAppl.rejectRequest(bean,reason);
         showRequest();
     }
 

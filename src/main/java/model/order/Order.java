@@ -1,6 +1,6 @@
 package model.order;
 
-import model.MenuItem.MenuItem;
+import model.menuitem.MenuItem;
 
 import java.util.List;
 

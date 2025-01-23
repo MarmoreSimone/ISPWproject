@@ -22,7 +22,7 @@ public class ProcessOrdersCLI {
 
         view.drawTitle();
 
-        try {
+
 
             do {
 
@@ -51,10 +51,7 @@ public class ProcessOrdersCLI {
 
             } while (true);
 
-        }catch (SystemErrorException e){
-            e.showException();
-            new HomeBaristaCLI().launch();
-        }
+
 
 
     }
