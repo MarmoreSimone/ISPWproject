@@ -28,12 +28,12 @@
             <Font size="27.0" />
          </font>
       </TextField>
-      <Button layoutX="312.0" layoutY="488.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="48.0" prefWidth="462.0" style="-fx-background-color: #7D451B;" text="LOG IN" textFill="WHITE">
+      <Button layoutX="312.0" layoutY="488.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="48.0" prefWidth="462.0" style="-fx-background-color: #7D451B; -fx-background-radius: 10;" text="LOG IN" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Text fill="#7d451b" layoutX="691.0" layoutY="427.0" onMouseClicked="#registerNewUser" strokeType="OUTSIDE" strokeWidth="0.0" text="register">
+      <Text fill="#7d451b" layoutX="691.0" layoutY="427.0" onMouseClicked="#goToRegister" strokeType="OUTSIDE" strokeWidth="0.0" text="register">
          <font>
             <Font size="21.0" />
          </font>

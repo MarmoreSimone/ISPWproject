@@ -1,6 +1,7 @@
 package model.user;
 
 
+import exception.SystemErrorException;
 import model.cafeteria.Cafeteria;
 
 import java.util.ArrayList;
@@ -25,11 +26,21 @@ public class UserDAOdemo extends UserDAO {
 
     }
 
-    public void saveBarista(Barista user){
+    public void saveBarista(Barista user) throws SystemErrorException {
+        for(int i=0;i<baristas.size();i++){
+            if(user.getUsername().equals(baristas.get(i).getUsername())){
+                throw new SystemErrorException("username already taken");
+            }
+        }
         baristas.add(user);
     }
 
-    public void saveClient(Client user){
+    public void saveClient(Client user) throws SystemErrorException {
+        for(int i=0;i<clients.size();i++){
+            if(user.getUsername().equals(clients.get(i).getUsername())){
+                throw new SystemErrorException("username already taken");
+            }
+        }
         clients.add(user);
     }
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.login.LoginGUI">
+   <children>
+      <Text fill="#7d451b" layoutX="343.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account registration">
+         <font>
+            <Font name="System Bold" size="43.0" />
+         </font>
+      </Text>
+      <Text layoutX="318.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="319.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="passReg" layoutX="312.0" layoutY="332.0" prefHeight="48.0" prefWidth="462.0">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <Button layoutX="312.0" layoutY="597.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="48.0" prefWidth="462.0" style="-fx-background-color: #7D451B; -fx-background-radius: 10;" text="REGISTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <TextField fx:id="userReg" layoutX="312.0" layoutY="202.0" prefHeight="48.0" prefWidth="462.0">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <RadioButton disable="true" layoutX="312.0" layoutY="506.0" mnemonicParsing="false" text="Barista">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="312.0" layoutY="423.0" mnemonicParsing="false" text="Client">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </RadioButton>
+      <Button layoutX="925.0" layoutY="597.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="48.0" prefWidth="112.0" style="-fx-background-color: #7D451B; -fx-background-radius: 10;" text="go back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

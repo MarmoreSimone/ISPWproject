@@ -57,7 +57,7 @@
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Button>
-                  <Button focusTraversable="false" mnemonicParsing="false" onMouseClicked="#onButtonClickGift" prefHeight="46.0" prefWidth="151.0" style="-fx-background-color: #7D451B; -fx-background-radius: 15;" text="gift coupon" textFill="WHITE">
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="46.0" prefWidth="151.0" style="-fx-background-color: #7D451B; -fx-background-radius: 15;" text="gift coupon" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>

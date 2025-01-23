@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.DAOfactory;
+import utils.Dummy;
 import utils.SwitchPage;
 
 import java.io.BufferedReader;
@@ -35,19 +36,21 @@ public class Main extends Application {
 
         try {
 
-            System.out.println("persistenza:\n1) demo\n2) db\n3) file system");
+            System.out.println("persistance:\n1) demo\n2) db\n3) file system");
             input = reader.readLine();
 
-            System.out.println("scegli l'interfaccia:\n1) gui\n2) cli\n");
+            System.out.println("interface:\n1) gui\n2) cli\n");
             input2 = reader.readLine();
 
         } catch (IOException e) {
-            System.out.println("Errore durante la lettura dell'input.");
+            System.out.println("error");
         }
 
 
         //imposto la DAOfactory
         DAOfactory.setDAOfactory(Integer.parseInt(input));
+
+        Dummy.dummyRegistration();
 
         if(input2.equals("1")) {
             PopupFactory.setfactory(1);
