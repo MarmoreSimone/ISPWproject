@@ -13,6 +13,11 @@ import java.util.List;
 
 public class Dummy {
 
+        private Dummy(){
+
+        }
+
+
         public static void dummyRegistration(){
         LoginController contrAppl = new LoginController();
 
