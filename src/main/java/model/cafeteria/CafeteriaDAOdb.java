@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CafeteriaDAOdb extends CafeteriaDAO{
 
-    private final String defaultDbProblem = "internal db error";
+    private String defaultDbProblem = "internal db error";
 
     public void saveCafeteria(Cafeteria cafe) throws SystemErrorException {
 

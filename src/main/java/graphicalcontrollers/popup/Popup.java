@@ -1,6 +1,5 @@
 package graphicalcontrollers.popup;
 
-import exception.SystemErrorException;
 
 public interface Popup {
 

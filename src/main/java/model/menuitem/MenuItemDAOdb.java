@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MenuItemDAOdb extends MenuItemDAO {
 
-    private final String defaultDbProblem = "internal db error";
+    private String defaultDbProblem = "internal db error";
 
     @Override
     public void saveItem(MenuItem bev, Cafeteria cafeteria) throws SystemErrorException {

@@ -1,6 +1,7 @@
 package viewcli;
 
 import engineering.SessionManager;
+import exception.SystemErrorException;
 import graphicalcontrollers.home.HomeClientCLI;
 import graphicalcontrollers.homebarista.HomeBaristaCLI;
 
@@ -30,7 +31,8 @@ public class UtilsCli {
             try {
                 input = reader.readLine();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                SystemErrorException se = new SystemErrorException(e.getMessage());
+                se.showException();
             }
 
 
@@ -61,12 +63,16 @@ public class UtilsCli {
     }
 
     public String getString(){
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             return reader.readLine();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            SystemErrorException se = new SystemErrorException(e.getMessage());
+            se.showException();
         }
+
+        return "";
     }
 
     public void showList(List<String> list){

@@ -1,5 +1,6 @@
 package graphicalcontrollers.myorders;
 
+
 import bean.OrderRequestBean;
 import controller.UserOrdersController;
 import graphicalcontrollers.home.HomeClientCLI;
@@ -55,8 +56,6 @@ public class MyOrdersCLI {
                 }
 
         } while (i != 1);
-
-
 
     }
 }

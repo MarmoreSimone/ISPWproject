@@ -15,7 +15,7 @@ import java.util.List;
 
 public class OrderRequestDAOdb extends OrderRequestDAO{
 
-    private final String defaultDbProblem = "internal db error";
+    private String defaultDbProblem = "internal db error";
 
     public void saveOrderRequest(OrderRequest order) throws SystemErrorException{
 

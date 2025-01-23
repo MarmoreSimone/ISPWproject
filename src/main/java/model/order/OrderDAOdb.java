@@ -14,7 +14,7 @@ import java.util.List;
 
 public class OrderDAOdb extends OrderDAO{
 
-    private final String defaultDbProblem = "internal db error";
+    private String defaultDbProblem = "internal db error";
 
 
     public Order getOrderByOrderReq(String orderReq, String cafeteria) throws SystemErrorException{

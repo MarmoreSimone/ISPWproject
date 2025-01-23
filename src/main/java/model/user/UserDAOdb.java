@@ -15,7 +15,7 @@ import java.util.List;
 
 public class UserDAOdb extends UserDAO{
 
-    private final String defaultDbProblem = "internal db error";
+    private String defaultDbProblem = "internal db error";
 
     private void saveUser(User user, String cafeteria) throws SystemErrorException{
 
