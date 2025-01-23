@@ -13,6 +13,7 @@ import model.order.Order;
 import model.orderrequest.OrderRequest;
 import model.user.Client;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class PlaceOrderController {
 
     public PlaceOrderController(String key) {
         this.session = SessionManager.getInstance().getPlaceOrderSession(key);
-        random = new Random();
+        random = new SecureRandom();
     }
 
     //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
