@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import starter.Main;
-import utils.SwitchPage;
 
 import java.io.IOException;
 import java.net.URL;

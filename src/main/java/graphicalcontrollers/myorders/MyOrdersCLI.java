@@ -2,7 +2,6 @@ package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
 import controller.UserOrdersController;
-import exception.SystemErrorException;
 import graphicalcontrollers.home.HomeClientCLI;
 import viewcli.MyOrdersViewCli;
 

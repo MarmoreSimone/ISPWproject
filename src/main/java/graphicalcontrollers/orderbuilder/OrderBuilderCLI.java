@@ -101,7 +101,6 @@ public class OrderBuilderCLI {
     public void delBev(){
 
         List<MenuItemBean> bevs = placeOrderController.getAddedItems();
-        List<String> list = new ArrayList<>();
 
         int choice = view.drawDelBev(bevs);
         if(choice == 0){

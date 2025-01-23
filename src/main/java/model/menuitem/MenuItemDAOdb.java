@@ -14,6 +14,8 @@ import java.util.List;
 
 public class MenuItemDAOdb extends MenuItemDAO {
 
+    private final String defaultDbProblem = "internal db error";
+
     @Override
     public void saveItem(MenuItem bev, Cafeteria cafeteria) throws SystemErrorException {
 
@@ -34,7 +36,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
 
@@ -65,7 +67,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
         return list;
@@ -128,7 +130,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeBatch();
 
         } catch (Exception e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
 
@@ -153,7 +155,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
     }
@@ -187,7 +189,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
 
@@ -212,12 +214,10 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
         return list;
     }
-
-
 
 }

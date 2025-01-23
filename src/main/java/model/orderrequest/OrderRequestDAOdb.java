@@ -15,6 +15,7 @@ import java.util.List;
 
 public class OrderRequestDAOdb extends OrderRequestDAO{
 
+    private final String defaultDbProblem = "internal db error";
 
     public void saveOrderRequest(OrderRequest order) throws SystemErrorException{
 
@@ -34,7 +35,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
         DAOfactory.getDAOfactory().createOrderDAO().saveOrder(order.getOrder(), order.getPickUpCode(), order.getCafeteria().getName());
 
         } catch (SQLException | SystemErrorException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
     }
 
@@ -93,7 +94,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             throw new IllegalArgumentException(e);
 
         } catch(NoCafeteriasFoundException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
         //ordino la lista in base alla data usando funzione offerta da java8
@@ -117,7 +118,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
     }
 }

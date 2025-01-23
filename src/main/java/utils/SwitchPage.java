@@ -1,5 +1,6 @@
 package utils;
 
+import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 
 import javafx.fxml.FXMLLoader;
@@ -30,15 +31,16 @@ public class SwitchPage {
 
 
     //cambia semplicemente la scena
-    public void changePage(String sourcePath){
+    public void changePage(String sourcePath)  {
 
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
-        Scene scene;
+        Scene scene = null;
 
         try {
             scene = new Scene(loader.load());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            SystemErrorException se = new SystemErrorException(e.getMessage());
+            se.showException();
         }
 
 
@@ -53,12 +55,13 @@ public class SwitchPage {
     public void changePage(String sourcePath, String session){
 
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(sourcePath));
-        Scene scene;
+        Scene scene = null;
 
         try {
             scene = new Scene(loader.load());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            SystemErrorException se = new SystemErrorException(e.getMessage());
+            se.showException();
         }
 
         //qui uso il generico GraphicalController dato che non posso sapere a priori il tipo di controller associato all'fxml, in questo modo basta che il controller associato definisca l'operazione
@@ -94,7 +97,8 @@ public class SwitchPage {
                 contr.setData(objects.get(i),controllerParent);
                 vbox.getChildren().add(pane);
             } catch(IOException e){
-                e.printStackTrace();
+                SystemErrorException se = new SystemErrorException(e.getMessage());
+                se.showException();
             }
         }
 

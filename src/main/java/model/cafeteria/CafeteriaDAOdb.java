@@ -12,6 +12,8 @@ import java.util.List;
 
 public class CafeteriaDAOdb extends CafeteriaDAO{
 
+    private final String defaultDbProblem = "internal db error";
+
     public void saveCafeteria(Cafeteria cafe) throws SystemErrorException {
 
         String query = "INSERT INTO cafeteria (name, city, address, number, description, photo) VALUES (?, ?, ?, ?, ?, ?)";
@@ -29,7 +31,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
     }
@@ -67,7 +69,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
         } catch (SQLException  e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system",e);
         } catch (SystemErrorException e) {
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
         return cafe;
@@ -110,7 +112,7 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
         } catch (SQLException e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
         } catch (SystemErrorException e){
-            throw new SystemErrorException("db problems");
+            throw new SystemErrorException(defaultDbProblem);
         }
 
         return list;

@@ -56,7 +56,7 @@ public class SearchCafeteriaCLI {
         } catch (NoCafeteriasFoundException | SystemErrorException e){
             e.showException();
             searchCafe();
-            return null;
+            return cafeterias;
         }
 
         return cafeterias;

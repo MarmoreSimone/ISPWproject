@@ -6,42 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessOrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/SystemErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/SystemErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/cell/AddedBevCellContr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/login/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserOrdersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/myorders/MyOrdersCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/processorders/ProcessOrdersCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/popup/PopupGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/UtilsCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SwitchPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +254,7 @@
       <workItem from="1737371149223" duration="32695000" />
       <workItem from="1737464706043" duration="29974000" />
       <workItem from="1737540829869" duration="44253000" />
-      <workItem from="1737627176461" duration="17521000" />
+      <workItem from="1737627176461" duration="18575000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -617,7 +592,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737631475845</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="exception">
+      <option name="closed" value="true" />
+      <created>1737651991452</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737651991452</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
