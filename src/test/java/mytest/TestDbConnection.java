@@ -7,7 +7,6 @@ import utils.DbConnection;
 
 class TestDbConnection {
 
-
     @Test
     void testConnection() {
 
