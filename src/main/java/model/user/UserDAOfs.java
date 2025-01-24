@@ -156,4 +156,8 @@ public class UserDAOfs extends UserDAO{
 
     }
 
+    public void checkDuplicates(String username) throws SystemErrorException{
+
+    }
+
 }

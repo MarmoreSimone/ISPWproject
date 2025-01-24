@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MenuItemDAOdb extends MenuItemDAO {
 
-    private String defaultDbProblem = "internal db error";
+    private static final String INTERNAL_DB_ERROR = "internal db error";
 
     @Override
     public void saveItem(MenuItem bev, Cafeteria cafeteria) throws SystemErrorException {
@@ -36,7 +36,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
 
@@ -67,7 +67,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
         return list;
@@ -130,7 +130,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeBatch();
 
         } catch (Exception e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
 
@@ -155,7 +155,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
     }
@@ -189,7 +189,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
 
@@ -214,7 +214,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(INTERNAL_DB_ERROR);
         }
 
         return list;

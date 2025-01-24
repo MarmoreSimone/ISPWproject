@@ -15,7 +15,7 @@ import java.util.List;
 
 public class UserDAOdb extends UserDAO{
 
-    private String defaultDbProblem = "internal db error1";
+    private static final String DEFAULT_DB_PROBLEM = "internal db error1";
 
     private void saveUser(User user, String cafeteria) throws SystemErrorException{
 
@@ -76,7 +76,7 @@ public class UserDAOdb extends UserDAO{
             }
 
         } catch (SQLException | NoCafeteriasFoundException e){
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
         return baristas;
@@ -108,7 +108,7 @@ public class UserDAOdb extends UserDAO{
             }
 
         } catch (SQLException | SystemErrorException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
         return clients;
@@ -140,7 +140,7 @@ public class UserDAOdb extends UserDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
     }

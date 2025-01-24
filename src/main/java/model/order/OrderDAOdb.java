@@ -14,7 +14,7 @@ import java.util.List;
 
 public class OrderDAOdb extends OrderDAO{
 
-    private final String defaultDbProblem = "internal db error";
+    private static final String DEFAULT_DB_PROBLEM = "internal db error";
 
 
     public Order getOrderByOrderReq(String orderReq, String cafeteria) throws SystemErrorException{
@@ -48,7 +48,7 @@ public class OrderDAOdb extends OrderDAO{
         return order;
 
         } catch (SQLException | SystemErrorException e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
 
@@ -70,7 +70,7 @@ public class OrderDAOdb extends OrderDAO{
             ps.executeUpdate();
 
         } catch (Exception e) {
-            throw new SystemErrorException(defaultDbProblem);
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
         //salvo la lista di bevande
