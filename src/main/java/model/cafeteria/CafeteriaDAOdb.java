@@ -31,7 +31,6 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -70,7 +69,6 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
         } catch (SQLException  e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system",e);
         } catch (SystemErrorException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -114,7 +112,6 @@ public class CafeteriaDAOdb extends CafeteriaDAO{
         } catch (SQLException e) {
             throw new NoCafeteriasFoundException(": no cafeteria with this name found in the system");
         } catch (SystemErrorException e){
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 

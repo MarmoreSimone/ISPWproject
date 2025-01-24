@@ -36,7 +36,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -58,9 +57,9 @@ public class MenuItemDAOdb extends MenuItemDAO {
             while (rs.next()) {
                 String name = rs.getString("name");
                 String descr = rs.getString("description");
-                Double price = rs.getDouble("price");
-                Double calories = rs.getDouble("calories");
-                Double caffeine = rs.getDouble("caffeine");
+                double price = rs.getDouble("price");
+                double calories = rs.getDouble("calories");
+                double caffeine = rs.getDouble("caffeine");
                 String image = rs.getString("image");
                 String type = rs.getString("type");
                 MenuItem bev = new MenuItem(name, descr, price, calories, caffeine, image, type);
@@ -68,7 +67,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -132,7 +130,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeBatch();
 
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -158,7 +155,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -193,7 +189,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -219,7 +214,6 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
