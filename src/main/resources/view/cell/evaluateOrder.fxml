@@ -51,9 +51,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text fx:id="note" layoutX="203.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, I have a nut allergy. Could you make sure there are no nuts or cross-contamination in my order?" wrappingWidth="242.13671875">
+      <Text fx:id="note" layoutX="203.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, I have a nut allergy. Could you make sure there are no nuts or cross-contamination in my order?" wrappingWidth="298.0">
          <font>
-            <Font size="16.0" />
+            <Font size="19.0" />
          </font>
       </Text>
       <Button fx:id="addToOrderButton" alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="620.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#acceptClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
@@ -76,7 +76,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextArea fx:id="rejReson" layoutX="519.0" layoutY="116.0" prefHeight="127.0" prefWidth="201.0" />
+      <TextArea fx:id="rejReson" layoutX="519.0" layoutY="116.0" prefHeight="127.0" prefWidth="201.0" style="-fx-font-size: 20;" wrapText="true" />
       <ListView fx:id="itemList" layoutX="14.0" layoutY="24.0" prefHeight="209.0" prefWidth="169.0" style="-fx-font-size: 16;" />
    </children>
 </Pane>

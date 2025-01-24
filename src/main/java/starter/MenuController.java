@@ -3,7 +3,6 @@ package starter;
 import engineering.SessionManager;
 import graphicalcontrollers.login.LoginGUI;
 import graphicalcontrollers.myorders.MyOrdersGUI;
-import graphicalcontrollers.processorders.ProcessOrderGUI;
 import graphicalcontrollers.searchcafeteria.SearchCafeteriaGUI;
 import javafx.fxml.FXML;
 
@@ -22,12 +21,6 @@ public class MenuController {
         new LoginGUI().launch();
     }
 
-
-    @FXML
-    private void onButtonClickGift() {
-        SessionManager.getInstance().closeAllUserSessions();
-        new ProcessOrderGUI().launch();
-    }
 
     @FXML
     private void onButtonClickMyOrder() {

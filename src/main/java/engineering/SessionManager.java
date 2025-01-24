@@ -61,11 +61,10 @@ public class SessionManager {
     //in questo caso non posso avere casi d'uso lasciati a metà quindi chiudo direttamente tutte le eventuali sessioni aperte dall'utente
     public void closeAllUserSessions() {
 
-        //prendo tutte le sessioni associate ad un utente
+        //prendo tutte le sessioni associate a un utente
         List<String> sessions = userSessions.get(getCurrentUserUsername());
 
         if(!sessions.isEmpty()) {
-
             //fare attenzione nel caso si aggiungessero casi d'uso che possono essere lasciati a metà e quindi posso avere contemporaneamente più sessioni per lo stesso caso d'uso
             placeOrderSessions.remove(sessions.getFirst());
         }
@@ -75,13 +74,17 @@ public class SessionManager {
 
     public void setUserBarista(Barista barista){
         this.userBarista = barista;
-        userSessions.putIfAbsent(getCurrentUserUsername(), new ArrayList<>());
+        if (!userSessions.containsKey(barista.getUsername())) {
+            userSessions.put(barista.getUsername(), new ArrayList<>());
+        }
         this.userClient = null;
     }
 
     public void setUserClient(Client client){
         this.userClient = client;
-        userSessions.putIfAbsent(getCurrentUserUsername(), new ArrayList<>());
+        if (!userSessions.containsKey(client.getUsername())){
+            userSessions.put(client.getUsername(), new ArrayList<>());
+        }
         this.userBarista = null;
     }
 

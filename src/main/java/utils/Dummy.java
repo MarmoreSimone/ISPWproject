@@ -4,6 +4,7 @@ import bean.UserBean;
 import controller.LoginController;
 import exception.SystemErrorException;
 import model.DAOfactory;
+import model.DAOfactoryDB;
 import model.DAOfactoryFS;
 import model.cafeteria.Cafeteria;
 import model.menuitem.MenuItem;
@@ -20,6 +21,7 @@ public class Dummy {
 
         public static void dummyRegistration(){
 
+        if((DAOfactory.getDAOfactory() instanceof DAOfactoryFS || DAOfactory.getDAOfactory() instanceof DAOfactoryDB)) return;
 
         LoginController contrAppl = new LoginController();
         String clie = "client";

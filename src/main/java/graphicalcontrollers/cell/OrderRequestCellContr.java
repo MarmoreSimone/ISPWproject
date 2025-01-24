@@ -44,7 +44,6 @@ public class OrderRequestCellContr extends GraphicalController {
         time.setText(order.getOrder().getTime());
         date.setText(order.getOrder().getDate());
         note.setText(order.getOrder().getNote());
-        System.out.println(order.getUsername());
         labelName.setText(order.getUsername());
 
 

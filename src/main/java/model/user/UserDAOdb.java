@@ -149,11 +149,11 @@ public class UserDAOdb extends UserDAO{
 
     public User getUserByName(String username) throws SystemErrorException{
 
-        Client user;
+        User retUser;
 
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String query = "SELECT username, password, role FROM user WHERE username = ?";
+        String query = "SELECT username, password, role, cafeteria FROM user WHERE username = ?";
 
 
         try (PreparedStatement ps = connection.prepareStatement(query)) {
@@ -167,16 +167,29 @@ public class UserDAOdb extends UserDAO{
             String usernam = rs.getString(USERNAME);
             String password = rs.getString(PASSWORD);
             String role = rs.getString("role");
+            String cafeteria = rs.getString("cafeteria");
 
-            user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(usernam,password,role);
-            user.setOrderRequestList(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(username));
+            if(role.equals("barista")) {
+                Barista user = DAOfactory.getDAOfactory().createUserDAO().createNewUserBarista(username,password,role);
 
+                //caso in cui il barista non ha ancora impostato una caffetteria
+                if(cafeteria != null) {
+                    user.setCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(cafeteria));
+                }
 
-        } catch (SQLException | SystemErrorException e) {
+                retUser = user;
+            }
+            else {
+                Client user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(usernam, password, role);
+                user.setOrderRequestList(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(username));
+                retUser = user;
+            }
+
+        } catch (SQLException | SystemErrorException | NoCafeteriasFoundException e) {
             throw new SystemErrorException(DEFAULT_DB_PROBLEM);
         }
 
-        return user;
+        return retUser;
     }
 
 }
