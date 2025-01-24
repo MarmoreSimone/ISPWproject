@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" afterDir="false" />
-    </list>
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="login aggiornato" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,15 +258,7 @@
       <workItem from="1737718441013" duration="90000" />
       <workItem from="1737718540427" duration="88000" />
       <workItem from="1737718638826" duration="357000" />
-      <workItem from="1737719005783" duration="7714000" />
-    </task>
-    <task id="LOCAL-00005" summary="aggiunto ricerca caffetteria">
-      <option name="closed" value="true" />
-      <created>1734566501941</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1734566501941</updated>
+      <workItem from="1737719005783" duration="8024000" />
     </task>
     <task id="LOCAL-00006" summary="correzione sonar">
       <option name="closed" value="true" />
@@ -660,7 +644,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737731018648</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="login aggiornato">
+      <option name="closed" value="true" />
+      <created>1737732583218</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1737732583218</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="aggiunto ricerca caffetteria" />
     <MESSAGE value="correzione sonar" />
     <MESSAGE value="migliorie GUI" />
@@ -703,7 +694,8 @@
     <MESSAGE value="registration" />
     <MESSAGE value="csv" />
     <MESSAGE value="sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
+    <MESSAGE value="login aggiornato" />
+    <option name="LAST_COMMIT_MESSAGE" value="login aggiornato" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

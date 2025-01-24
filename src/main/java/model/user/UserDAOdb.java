@@ -16,6 +16,8 @@ import java.util.List;
 public class UserDAOdb extends UserDAO{
 
     private static final String DEFAULT_DB_PROBLEM = "internal db error1";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
 
     private void saveUser(User user, String cafeteria) throws SystemErrorException{
 
@@ -58,8 +60,8 @@ public class UserDAOdb extends UserDAO{
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                String username = rs.getString("username");
-                String password = rs.getString("password");
+                String username = rs.getString(USERNAME);
+                String password = rs.getString(PASSWORD);
                 String role = rs.getString("role");
                 String cafeteria = rs.getString("cafeteria");
 
@@ -97,8 +99,8 @@ public class UserDAOdb extends UserDAO{
 
             while (rs.next()) {
 
-                String username = rs.getString("username");
-                String password = rs.getString("password");
+                String username = rs.getString(USERNAME);
+                String password = rs.getString(PASSWORD);
                 String role = rs.getString("role");
 
                 Client user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(username,password,role);
@@ -162,8 +164,8 @@ public class UserDAOdb extends UserDAO{
 
             if(!rs.next()) return null;
 
-            String usernam = rs.getString("username");
-            String password = rs.getString("password");
+            String usernam = rs.getString(USERNAME);
+            String password = rs.getString(PASSWORD);
             String role = rs.getString("role");
 
             user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(usernam,password,role);
