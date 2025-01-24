@@ -16,12 +16,12 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
 
     private File fd;
 
-    private final int getIndex_name = 0;
-    private final int getIndex_city = 1;
-    private final int getIndex_address = 2;
-    private final int getIndex_number = 3;
-    private final int getIndex_description = 4;
-    private final int getIndex_photo = 5;
+    private static final int getIndexName = 0;
+    private static final int getIndexCity = 1;
+    private static final int getIndexAddress = 2;
+    private static final int getIndexNumber = 3;
+    private static final int getIndexDescription = 4;
+    private static final int getIndexPhoto = 5;
 
     public CafeteriaDAOfs() {
         this.fd = new File(CSV_FILE_NAME);
@@ -34,12 +34,12 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
 
             String[] record = new String[6];
 
-            record[getIndex_name] = cafe.getName();
-            record[getIndex_city] = cafe.getCity();
-            record[getIndex_address] = cafe.getAddress();
-            record[getIndex_number] = cafe.getNumber();
-            record[getIndex_description] = cafe.getDescription();
-            record[getIndex_photo] = cafe.getPhoto();
+            record[getIndexName] = cafe.getName();
+            record[getIndexCity] = cafe.getCity();
+            record[getIndexAddress] = cafe.getAddress();
+            record[getIndexNumber] = cafe.getNumber();
+            record[getIndexDescription] = cafe.getDescription();
+            record[getIndexPhoto] = cafe.getPhoto();
 
             csvWriter.writeNext(record);
             csvWriter.flush();
@@ -59,12 +59,12 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
             String[] record;
 
             while ((record = csvReader.readNext()) != null) {
-                String name = record[getIndex_name];
-                String city = record[getIndex_city];
-                String address = record[getIndex_address];
-                String number = record[getIndex_number];
-                String description = record[getIndex_description];
-                String photo = record[getIndex_photo];
+                String name = record[getIndexName];
+                String city = record[getIndexCity];
+                String address = record[getIndexAddress];
+                String number = record[getIndexNumber];
+                String description = record[getIndexDescription];
+                String photo = record[getIndexPhoto];
 
                 Cafeteria cafe = new Cafeteria(name, city, address, number, description, photo);
                 if(cafe.getName().equals(cafeName)){
@@ -90,12 +90,12 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
 
             while ((record = csvReader.readNext()) != null) {
 
-                String name = record[getIndex_name];
-                String city = record[getIndex_city];
-                String address = record[getIndex_address];
-                String number = record[getIndex_number];
-                String description = record[getIndex_description];
-                String photo = record[getIndex_photo];
+                String name = record[getIndexName];
+                String city = record[getIndexCity];
+                String address = record[getIndexAddress];
+                String number = record[getIndexNumber];
+                String description = record[getIndexDescription];
+                String photo = record[getIndexPhoto];
 
                 Cafeteria cafe = new Cafeteria(name, city, address, number, description, photo);
                 cafes.add(cafe);
