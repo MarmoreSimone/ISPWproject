@@ -13,7 +13,7 @@ public class HomeClientCLI extends viewcli.UtilsCli{
     public void launch(){
 
         System.out.println("====MENU====");
-        List<String> options = new ArrayList<>(Arrays.asList("place order","my orders", "gift coupon","profile","test","logout"));
+        List<String> options = new ArrayList<>(Arrays.asList("place order","my orders", "gift coupon","profile", "mytest","logout"));
         showChoices(options);
         int choice = getUserChoice(options);
 
