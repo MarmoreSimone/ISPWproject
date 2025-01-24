@@ -28,47 +28,25 @@
                   <Font name="System Bold" size="34.0" />
                </font>
             </Label>
-            <HBox layoutX="202.0" layoutY="125.0" prefHeight="159.0" prefWidth="296.0">
+            <HBox layoutX="202.0" layoutY="125.0" prefHeight="159.0" prefWidth="125.0">
                <children>
                   <VBox prefHeight="142.0" prefWidth="133.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="price:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="price:" textAlignment="RIGHT" wrappingWidth="118.8995361328125">
                            <font>
                               <Font size="34.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="calories:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="calories:" wrappingWidth="120.79296875">
                            <font>
                               <Font size="34.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="caffeine:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="caffeine:" wrappingWidth="124.6943359375">
                            <font>
                               <Font size="34.0" />
                            </font>
                         </Text>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="142.0" prefWidth="147.0" spacing="10.0">
-                     <children>
-                        <Label fx:id="price" text="1.5€">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                           <padding>
-                              <Insets top="2.0" />
-                           </padding>
-                        </Label>
-                        <Label fx:id="calories" prefHeight="40.0" prefWidth="146.0" text="30 kcal">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="caffeine" text="60 mg">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
                </children>
@@ -100,7 +78,7 @@
             </Text>
             <Text fx:id="description" layoutX="486.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="best coffee in the town" wrappingWidth="357.2666015625">
                <font>
-                  <Font size="18.0" />
+                  <Font size="22.0" />
                </font>
             </Text>
             <Button alignment="CENTER" cache="true" contentDisplay="TOP" graphicTextGap="1.0" layoutX="785.0" layoutY="639.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addToOrder" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 100; -fx-background-color: #00754a; -fx-text-fill: white;" text="+" textAlignment="CENTER">
@@ -153,6 +131,24 @@
                   <Font size="24.0" />
                </font>
             </Text>
+            <Label fx:id="price" layoutX="332.0" layoutY="131.0" prefHeight="22.0" prefWidth="52.0" text="1.5€">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="calories" layoutX="335.0" layoutY="173.0" prefHeight="48.0" prefWidth="89.0" text="30 Kcal">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="caffeine" layoutX="336.0" layoutY="223.0" prefHeight="36.0" prefWidth="79.0" text="60 mg">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

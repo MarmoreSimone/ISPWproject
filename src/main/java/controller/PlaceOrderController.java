@@ -1,13 +1,14 @@
 package controller;
 
 import bean.*;
-import engineering.SessionManager;
 import engineering.PlaceOrderSession;
+import engineering.SessionManager;
 import engineering.decorator.*;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import exception.WrongFormatException;
 import model.DAOfactory;
+import model.cafeteria.Cafeteria;
 import model.menuitem.MenuItem;
 import model.order.Order;
 import model.orderrequest.OrderRequest;
@@ -25,12 +26,14 @@ public class PlaceOrderController {
     private Random random;
     private PlaceOrderSession session;
 
+    public PlaceOrderController() {}
+
     public PlaceOrderController(String key) {
         this.session = SessionManager.getInstance().getPlaceOrderSession(key);
         random = new SecureRandom();
     }
 
-    //imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
+    //Imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
     public void setCafeteria(String name)  throws SystemErrorException{
         SearchCafeteriaController search = new SearchCafeteriaController();
         try {
@@ -44,7 +47,7 @@ public class PlaceOrderController {
         return session.getMyCafeteria().getName();
     }
 
-    //ritorna una lista di MenuItemBean della caffetteria settata nel contr. appl.
+    //Ritorna una lista di MenuItemBean della caffetteria settata nella sessione
     public List<MenuItemBean> getCafeteriaItems() {
 
         List<MenuItemBean> retBeans = new ArrayList<>();
@@ -59,6 +62,7 @@ public class PlaceOrderController {
     //aggiunge una bevanda all'ordine
     public void addItemToOrder(MenuItemBean bev){
         //ne creo direttamente una nuova così da non avere problemi nel caso di bevande personalizzate
+        //e se la caffetteria dovesse modificare una bevanda
         List<MenuItem> listBev = session.getMyBeverages();
         listBev.add(DAOfactory.getDAOfactory().createMenuItemDAO().createNewMenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
         session.setMyBeverages(listBev);
@@ -95,7 +99,7 @@ public class PlaceOrderController {
         return tot;
     }
 
-    //costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
+    //Costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
     public void buildOrder(OrderDetailBean details) throws WrongFormatException {
 
         LocalDate date;
@@ -182,10 +186,11 @@ public class PlaceOrderController {
 
         List<MenuItem> bevList = session.getMyCafeteria().getItems();
 
+        //recupero la entity dal nome
         for (MenuItem beverage : bevList) {
             if (bev.getName().equals(beverage.getName())) {
                 //non gli paso direttamente l'istanza ma faccio una copia così da poter modificare la bevanda senza problemi
-                this.session.setCustomBev(DAOfactory.getDAOfactory().createMenuItemDAO().createNewMenuItem(bev.getName(),bev.getDescription(),bev.getPrice(),bev.getCalories(),bev.getCaffeine(),bev.getImage(), bev.getTypes()));
+                this.session.setCustomBev(DAOfactory.getDAOfactory().createMenuItemDAO().createNewMenuItem(beverage.getName(),beverage.getDescription(),beverage.getPrice(),beverage.getCalories(),beverage.getCaffeine(),beverage.getImage(), beverage.getType()));
             }
         }
 
@@ -197,9 +202,9 @@ public class PlaceOrderController {
         return new MenuItemBean(bev.getName(), bev.getDescription(), bev.getPrice(), bev.getCalories(), bev.getCaffeine(), bev.getImage(), bev.getType());
     }
 
-    public MenuItemBean customizeMenuItem(CustomOptionsBean bean){
+    public MenuItemBean menuItemDecorator(CustomOptionsBean bean, MenuItem item, Cafeteria cafeteria){
 
-        MenuItemComponent finalItem = this.session.getCustomBev();
+        MenuItemComponent finalItem = item;
 
         if(bean.getCoffeeShots() > 0){
             CoffeeShots coffeeShot = new CoffeeShots(finalItem);
@@ -210,7 +215,7 @@ public class PlaceOrderController {
 
         if(!bean.getTopping().isEmpty()) {
             for (int i = 0; i < bean.getTopping().size(); i++) {
-                Toppings topp = new Toppings(finalItem, this.session.getMyCafeteria());
+                Toppings topp = new Toppings(finalItem, cafeteria);
                 topp.applyTopping(bean.getTopping().get(i));
                 finalItem = topp;
             }
@@ -230,8 +235,12 @@ public class PlaceOrderController {
 
        }
 
-        return new MenuItemBean(finalItem.getName(), finalItem.getDescription(),finalItem.getPrice(),finalItem.getCalories(), finalItem.getCaffeine(), finalItem.getImage(),this.session.getCustomBev().getType());
+        return new MenuItemBean(finalItem.getName(), finalItem.getDescription(),finalItem.getPrice(),finalItem.getCalories(), finalItem.getCaffeine(), finalItem.getImage(), item.getType());
 
+    }
+
+    public MenuItemBean customizeMenuItem(CustomOptionsBean bean){
+        return menuItemDecorator(bean,this.session.getCustomBev(),this.session.getMyCafeteria());
     }
 
     public List<MenuItemBean> retrieveToppings(){

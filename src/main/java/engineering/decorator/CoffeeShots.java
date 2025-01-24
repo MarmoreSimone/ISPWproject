@@ -23,7 +23,7 @@ public class CoffeeShots extends ItemDecorator{
         @Override
         public double getPrice(){
             Double price = super.getPrice();
-            price = price + shots*0.4;
+            price = price + shots*0.3;
             return price;
         }
 
