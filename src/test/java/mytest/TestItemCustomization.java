@@ -25,7 +25,6 @@ public class TestItemCustomization {
     @BeforeAll
     public static void setUp() throws SystemErrorException {
 
-
         //imposto factory DAO
         DAOfactory.setDAOfactory(Integer.parseInt("1"));
         controller = new PlaceOrderController();
@@ -57,12 +56,14 @@ public class TestItemCustomization {
 
         List<String> toppings = new ArrayList<>();
         toppings.add("whipped cream");
-        CustomOptionsBean bean = new CustomOptionsBean(toppings,2,0,0);
+        CustomOptionsBean bean = new CustomOptionsBean(toppings,10,0,0);
         MenuItemBean customItem = controller.menuItemDecorator(bean,originalBeverage,cafeteria);
 
         assertEquals(originalBeverage.getCaffeine() + bean.getCoffeeShots()*50 + topping.getCaffeine(),customItem.getCaffeine());
 
     }
+
+
 
 
 

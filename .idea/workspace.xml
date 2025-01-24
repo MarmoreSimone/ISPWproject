@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="fix SessionManager">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestDbConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestItemCustomization.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="testing">
+      <change afterPath="$PROJECT_DIR$/src/test/java/mytest/TestSearchCafeteria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/engineering/decorator/CoffeeShots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/decorator/CoffeeShots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mytest/TestItemCustomization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mytest/TestItemCustomization.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +77,7 @@
     "Application.test.executor": "Run",
     "JUnit.TestDbConnection.executor": "Run",
     "JUnit.TestItemCustomization.executor": "Run",
+    "JUnit.TestSearchCafeteria.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -268,39 +266,9 @@
       <workItem from="1737718441013" duration="90000" />
       <workItem from="1737718540427" duration="88000" />
       <workItem from="1737718638826" duration="357000" />
-      <workItem from="1737719005783" duration="25292000" />
-    </task>
-    <task id="LOCAL-00008" summary="migliorie GUI">
-      <option name="closed" value="true" />
-      <created>1735313812585</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1735313812585</updated>
-    </task>
-    <task id="LOCAL-00009" summary="sonar">
-      <option name="closed" value="true" />
-      <created>1735332818136</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1735332818136</updated>
-    </task>
-    <task id="LOCAL-00010" summary="sonar">
-      <option name="closed" value="true" />
-      <created>1735408623643</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1735408623643</updated>
-    </task>
-    <task id="LOCAL-00011" summary="&quot;finito ordine&quot; + myorders">
-      <option name="closed" value="true" />
-      <created>1735421215558</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1735421215558</updated>
+      <workItem from="1737719005783" duration="25804000" />
+      <workItem from="1737753041039" duration="30000" />
+      <workItem from="1737760383489" duration="928000" />
     </task>
     <task id="LOCAL-00012" summary="aggiunta prima parte barista">
       <option name="closed" value="true" />
@@ -662,7 +630,39 @@
       <option name="project" value="LOCAL" />
       <updated>1737738704276</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="testing">
+      <option name="closed" value="true" />
+      <created>1737752393703</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1737752393703</updated>
+    </task>
+    <task id="LOCAL-00058" summary="testing">
+      <option name="closed" value="true" />
+      <created>1737752655832</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1737752655832</updated>
+    </task>
+    <task id="LOCAL-00059" summary="testing">
+      <option name="closed" value="true" />
+      <created>1737752718672</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1737752718672</updated>
+    </task>
+    <task id="LOCAL-00060" summary="testing">
+      <option name="closed" value="true" />
+      <created>1737752758382</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1737752758382</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correzione sonar" />
     <MESSAGE value="migliorie GUI" />
     <MESSAGE value="&quot;finito ordine&quot; + myorders" />
     <MESSAGE value="aggiunta prima parte barista" />
@@ -705,7 +704,8 @@
     <MESSAGE value="login aggiornato" />
     <MESSAGE value="sonar" />
     <MESSAGE value="fix SessionManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix SessionManager" />
+    <MESSAGE value="testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
