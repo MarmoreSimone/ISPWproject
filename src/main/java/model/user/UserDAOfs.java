@@ -18,10 +18,10 @@ public class UserDAOfs extends UserDAO{
 
     private File fd;
 
-    private static final int getIndexUsername = 0;
-    private static final int getIndexPassword = 1;
-    private static final int getIndexRole = 2;
-    private static final int getIndexCafeteria = 3;
+    private static final int GET_INDEX_USERNAME = 0;
+    private static final int GET_INDEX_PASSWORD = 1;
+    private static final int GET_INDEX_ROLE = 2;
+    private static final int GET_INDEX_CAFETERIA = 3;
 
     public UserDAOfs() {
         this.fd = new File(CSV_FILE_NAME);
@@ -32,17 +32,17 @@ public class UserDAOfs extends UserDAO{
         try {
             CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd, true)));
 
-            String[] record = new String[4];
+            String[] myRecord = new String[4];
 
-            record[getIndexUsername] = user.getUsername();
-            record[getIndexPassword] = user.getPassword();
-            record[getIndexRole] = user.getRole();
+            myRecord[GET_INDEX_USERNAME] = user.getUsername();
+            myRecord[GET_INDEX_PASSWORD] = user.getPassword();
+            myRecord[GET_INDEX_ROLE] = user.getRole();
             if(cafeteria == null){
                 cafeteria = "";
             }
-            record[getIndexCafeteria] = cafeteria;
+            myRecord[GET_INDEX_CAFETERIA] = cafeteria;
 
-            csvWriter.writeNext(record);
+            csvWriter.writeNext(myRecord);
             csvWriter.flush();
             csvWriter.close();
 
@@ -78,12 +78,12 @@ public class UserDAOfs extends UserDAO{
         try{
 
             CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-            String[] record;
+            String[] myRecord;
 
-            while ((record = csvReader.readNext()) != null) {
-                String username = record[getIndexUsername];
-                String password = record[getIndexPassword];
-                String role = record[getIndexRole];
+            while ((myRecord = csvReader.readNext()) != null) {
+                String username = myRecord[GET_INDEX_USERNAME];
+                String password = myRecord[GET_INDEX_PASSWORD];
+                String role = myRecord[GET_INDEX_ROLE];
 
                 Client user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(username, password, role);
 
@@ -106,12 +106,12 @@ public class UserDAOfs extends UserDAO{
 
         try{
             CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-            String[] record;
-            while ((record = csvReader.readNext()) != null) {
-                String username = record[getIndexUsername];
-                String password = record[getIndexPassword];
-                String role = record[getIndexRole];
-                String cafeteriaName = record[getIndexCafeteria];
+            String[] myRecord;
+            while ((myRecord = csvReader.readNext()) != null) {
+                String username = myRecord[GET_INDEX_USERNAME];
+                String password = myRecord[GET_INDEX_PASSWORD];
+                String role = myRecord[GET_INDEX_ROLE];
+                String cafeteriaName = myRecord[GET_INDEX_CAFETERIA];
 
                 Barista user = DAOfactory.getDAOfactory().createUserDAO().createNewUserBarista(username, password, role);
                 if(user.getRole().equals("barista")) baristas.add(user);
@@ -137,8 +137,8 @@ public class UserDAOfs extends UserDAO{
             records = csvReader.readAll();
 
             for(String[] record : records){
-                if(record[getIndexUsername].equals(barista.getUsername())){
-                    record[getIndexCafeteria] = cafeteria.getName();
+                if(record[GET_INDEX_USERNAME].equals(barista.getUsername())){
+                    record[GET_INDEX_CAFETERIA] = cafeteria.getName();
                 }
             }
 
@@ -151,6 +151,5 @@ public class UserDAOfs extends UserDAO{
         }
 
     }
-
 
 }

@@ -16,12 +16,12 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
 
     private File fd;
 
-    private static final int getIndexName = 0;
-    private static final int getIndexCity = 1;
-    private static final int getIndexAddress = 2;
-    private static final int getIndexNumber = 3;
-    private static final int getIndexDescription = 4;
-    private static final int getIndexPhoto = 5;
+    private static final int GET_INDEX_NAME = 0;
+    private static final int GET_INDEX_CITY = 1;
+    private static final int GET_INDEX_ADDRESS = 2;
+    private static final int GET_INDEX_NUMBER = 3;
+    private static final int GET_INDEX_DESCRIPTION = 4;
+    private static final int GET_INDEX_PHOTO = 5;
 
     public CafeteriaDAOfs() {
         this.fd = new File(CSV_FILE_NAME);
@@ -32,16 +32,16 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
         try {
             CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd, true)));
 
-            String[] record = new String[6];
+            String[] myRecord = new String[6];
 
-            record[getIndexName] = cafe.getName();
-            record[getIndexCity] = cafe.getCity();
-            record[getIndexAddress] = cafe.getAddress();
-            record[getIndexNumber] = cafe.getNumber();
-            record[getIndexDescription] = cafe.getDescription();
-            record[getIndexPhoto] = cafe.getPhoto();
+            myRecord[GET_INDEX_NAME] = cafe.getName();
+            myRecord[GET_INDEX_CITY] = cafe.getCity();
+            myRecord[GET_INDEX_ADDRESS] = cafe.getAddress();
+            myRecord[GET_INDEX_NUMBER] = cafe.getNumber();
+            myRecord[GET_INDEX_DESCRIPTION] = cafe.getDescription();
+            myRecord[GET_INDEX_PHOTO] = cafe.getPhoto();
 
-            csvWriter.writeNext(record);
+            csvWriter.writeNext(myRecord);
             csvWriter.flush();
             csvWriter.close();
 
@@ -51,20 +51,19 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
     }
 
     public Cafeteria getCafeteriaByName(String cafeName) throws NoCafeteriasFoundException,SystemErrorException{
-        List<Cafeteria> cafes = new ArrayList<Cafeteria>();
 
         try{
 
             CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-            String[] record;
+            String[] myRecord;
 
-            while ((record = csvReader.readNext()) != null) {
-                String name = record[getIndexName];
-                String city = record[getIndexCity];
-                String address = record[getIndexAddress];
-                String number = record[getIndexNumber];
-                String description = record[getIndexDescription];
-                String photo = record[getIndexPhoto];
+            while ((myRecord = csvReader.readNext()) != null) {
+                String name = myRecord[GET_INDEX_NAME];
+                String city = myRecord[GET_INDEX_CITY];
+                String address = myRecord[GET_INDEX_ADDRESS];
+                String number = myRecord[GET_INDEX_NUMBER];
+                String description = myRecord[GET_INDEX_DESCRIPTION];
+                String photo = myRecord[GET_INDEX_PHOTO];
 
                 Cafeteria cafe = new Cafeteria(name, city, address, number, description, photo);
                 if(cafe.getName().equals(cafeName)){
@@ -86,16 +85,16 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
         try{
 
             CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-            String[] record;
+            String[] myRecord;
 
-            while ((record = csvReader.readNext()) != null) {
+            while ((myRecord = csvReader.readNext()) != null) {
 
-                String name = record[getIndexName];
-                String city = record[getIndexCity];
-                String address = record[getIndexAddress];
-                String number = record[getIndexNumber];
-                String description = record[getIndexDescription];
-                String photo = record[getIndexPhoto];
+                String name = myRecord[GET_INDEX_NAME];
+                String city = myRecord[GET_INDEX_CITY];
+                String address = myRecord[GET_INDEX_ADDRESS];
+                String number = myRecord[GET_INDEX_NUMBER];
+                String description = myRecord[GET_INDEX_DESCRIPTION];
+                String photo = myRecord[GET_INDEX_PHOTO];
 
                 Cafeteria cafe = new Cafeteria(name, city, address, number, description, photo);
                 cafes.add(cafe);
