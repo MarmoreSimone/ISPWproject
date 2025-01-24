@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="csv">
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,31 +266,7 @@
       <workItem from="1737718441013" duration="90000" />
       <workItem from="1737718540427" duration="88000" />
       <workItem from="1737718638826" duration="357000" />
-      <workItem from="1737719005783" duration="5493000" />
-    </task>
-    <task id="LOCAL-00002" summary="test">
-      <option name="closed" value="true" />
-      <created>1734446476653</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1734446476653</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test">
-      <option name="closed" value="true" />
-      <created>1734469505960</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1734469505960</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test">
-      <option name="closed" value="true" />
-      <created>1734469520705</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1734469520705</updated>
+      <workItem from="1737719005783" duration="7714000" />
     </task>
     <task id="LOCAL-00005" summary="aggiunto ricerca caffetteria">
       <option name="closed" value="true" />
@@ -654,7 +636,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737729814221</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="csv">
+      <option name="closed" value="true" />
+      <created>1737730304438</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1737730304438</updated>
+    </task>
+    <task id="LOCAL-00052" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1737730621954</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1737730621954</updated>
+    </task>
+    <task id="LOCAL-00053" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1737731018648</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1737731018648</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,10 +700,10 @@
     <MESSAGE value="decorator tutto fatto" />
     <MESSAGE value="user separati + tolto riferimenti per chiave" />
     <MESSAGE value="exception" />
-    <MESSAGE value="sonar" />
     <MESSAGE value="registration" />
     <MESSAGE value="csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="csv" />
+    <MESSAGE value="sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

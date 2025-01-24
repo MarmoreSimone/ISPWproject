@@ -63,5 +63,13 @@ public class UserDAOdemo extends UserDAO {
 
     }
 
+    public User getUserByName(String username) throws SystemErrorException{
+        List<User> users = getAllUserCredentials();
+        for(User user : users){
+            if(user.getUsername().equals(username)) return user;
+        }
+        return null;
+    }
+
 
 }

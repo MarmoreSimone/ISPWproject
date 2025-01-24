@@ -145,4 +145,36 @@ public class UserDAOdb extends UserDAO{
 
     }
 
+    public User getUserByName(String username) throws SystemErrorException{
+
+        Client user;
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String query = "SELECT username, password, role FROM user WHERE username = ?";
+
+
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setString(1, username);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(!rs.next()) return null;
+
+            String usernam = rs.getString("username");
+            String password = rs.getString("password");
+            String role = rs.getString("role");
+
+            user = DAOfactory.getDAOfactory().createUserDAO().createNewUserClient(usernam,password,role);
+            user.setOrderRequestList(DAOfactory.getDAOfactory().createOrderRequestDAO().getAllOrderRequestsByUsername(username));
+
+
+        } catch (SQLException | SystemErrorException e) {
+            throw new SystemErrorException(DEFAULT_DB_PROBLEM);
+        }
+
+        return user;
+    }
+
 }

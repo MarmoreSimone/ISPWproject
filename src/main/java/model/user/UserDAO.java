@@ -23,4 +23,7 @@ public abstract class UserDAO {
     public abstract List<User> getAllUserCredentials() throws SystemErrorException;
 
     public abstract void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria) throws SystemErrorException;
+
+    public abstract User getUserByName(String username) throws SystemErrorException;
+
 }

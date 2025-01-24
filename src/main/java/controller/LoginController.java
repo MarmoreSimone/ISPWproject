@@ -10,23 +10,16 @@ import model.user.Barista;
 import model.user.Client;
 import model.user.User;
 
-import java.util.List;
-
 public class LoginController {
 
         public UserBean login(CredentialsBean cred) throws NoUserFoundException, SystemErrorException {
-            List<User> users = DAOfactory.getDAOfactory().createUserDAO().getAllUserCredentials();
 
-            for (User user : users) {
-                if (user.getUsername().equals(cred.getUsername()) && user.getPassword().equals(cred.getPassword())) {
+            User user = DAOfactory.getDAOfactory().createUserDAO().getUserByName(cred.getUsername());
+            if (user == null) throw new NoUserFoundException();
 
-                    if(user.getRole().equals("barista")) SessionManager.getInstance().setUserBarista((Barista) user);
-                    else SessionManager.getInstance().setUserClient((Client) user);
-                    return new UserBean(null,null,user.getRole());
-
-                }
-            }
-            throw new NoUserFoundException();
+            if(user.getRole().equals("barista")) SessionManager.getInstance().setUserBarista((Barista) user);
+            else SessionManager.getInstance().setUserClient((Client) user);
+            return new UserBean(null,null,user.getRole());
         }
 
 

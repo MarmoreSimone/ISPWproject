@@ -133,7 +133,7 @@ public class UserDAOfs extends UserDAO{
 
     public void changeBaristaCafeteria(Barista barista, Cafeteria cafeteria) throws SystemErrorException{
 
-        List<String[]> records = new ArrayList<>();
+        List<String[]> records;
 
         try {
 
@@ -156,8 +156,13 @@ public class UserDAOfs extends UserDAO{
 
     }
 
-    public void checkDuplicates(String username) throws SystemErrorException{
-
+    public User getUserByName(String username) throws SystemErrorException{
+        List<User> users = getAllUserCredentials();
+        for(User user : users){
+            if(user.getUsername().equals(username)) return user;
+        }
+        return null;
     }
+
 
 }
