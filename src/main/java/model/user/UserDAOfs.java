@@ -4,6 +4,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.exceptions.CsvValidationException;
+import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import model.DAOfactory;
 import model.cafeteria.Cafeteria;
@@ -114,13 +115,16 @@ public class UserDAOfs extends UserDAO{
                 String cafeteriaName = myRecord[GET_INDEX_CAFETERIA];
 
                 Barista user = DAOfactory.getDAOfactory().createUserDAO().createNewUserBarista(username, password, role);
-                if(user.getRole().equals("barista")) baristas.add(user);
+                if(user.getRole().equals("barista")){
+                    user.setCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(cafeteriaName));
+                    baristas.add(user);
+                }
 
             }
 
             csvReader.close();
 
-        }catch(IOException | CsvValidationException e){
+        }catch(IOException | CsvValidationException | NoCafeteriasFoundException e){
             throw new SystemErrorException(e.getMessage());
         }
 
@@ -136,9 +140,9 @@ public class UserDAOfs extends UserDAO{
             CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
             records = csvReader.readAll();
 
-            for(String[] record : records){
-                if(record[GET_INDEX_USERNAME].equals(barista.getUsername())){
-                    record[GET_INDEX_CAFETERIA] = cafeteria.getName();
+            for(String[] rec : records){
+                if(rec[GET_INDEX_USERNAME].equals(barista.getUsername())){
+                    rec[GET_INDEX_CAFETERIA] = cafeteria.getName();
                 }
             }
 

@@ -4,46 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="registration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOfs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/cafeteria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f/storage_v2/_src_/schema/progetto.xBFPxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f/storage_v2/_src_/schema/progetto.xBFPxA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/finalizeOrder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/finalizeOrder.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/giftCouponGUI.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/popup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="csv">
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,15 +260,7 @@
       <workItem from="1737718441013" duration="90000" />
       <workItem from="1737718540427" duration="88000" />
       <workItem from="1737718638826" duration="357000" />
-      <workItem from="1737719005783" duration="4100000" />
-    </task>
-    <task id="LOCAL-00001" summary="test">
-      <option name="closed" value="true" />
-      <created>1734446151555</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1734446151555</updated>
+      <workItem from="1737719005783" duration="5493000" />
     </task>
     <task id="LOCAL-00002" summary="test">
       <option name="closed" value="true" />
@@ -676,7 +630,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737656513834</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="csv">
+      <option name="closed" value="true" />
+      <created>1737728930817</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1737728930817</updated>
+    </task>
+    <task id="LOCAL-00049" summary="csv">
+      <option name="closed" value="true" />
+      <created>1737729328173</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1737729328173</updated>
+    </task>
+    <task id="LOCAL-00050" summary="csv">
+      <option name="closed" value="true" />
+      <created>1737729814221</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1737729814221</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +696,8 @@
     <MESSAGE value="exception" />
     <MESSAGE value="sonar" />
     <MESSAGE value="registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration" />
+    <MESSAGE value="csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
