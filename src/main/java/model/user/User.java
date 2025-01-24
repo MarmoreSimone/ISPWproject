@@ -3,9 +3,9 @@ package model.user;
 
 public class User {
 
-        String username;
-        String password;
-        String role;
+        private String username;
+        private String password;
+        private String role;
 
         public User(){
 

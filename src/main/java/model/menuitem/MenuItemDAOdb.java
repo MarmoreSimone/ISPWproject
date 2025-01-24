@@ -36,6 +36,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -67,6 +68,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -130,6 +132,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeBatch();
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -155,6 +158,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -189,6 +193,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -214,6 +219,7 @@ public class MenuItemDAOdb extends MenuItemDAO {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 

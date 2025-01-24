@@ -32,33 +32,33 @@ public class Main extends Application {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = null;
-        String input2 = null;
 
         try {
 
             System.out.println("persistance:\n1) demo\n2) db\n3) file system");
             input = reader.readLine();
 
+            //imposto la DAOfactory
+            DAOfactory.setDAOfactory(Integer.parseInt(input));
+
             System.out.println("interface:\n1) gui\n2) cli\n");
-            input2 = reader.readLine();
+            input = reader.readLine();
+
+            Dummy.dummyRegistration();
+
+            if(input.equals("1")) {
+                PopupFactory.setfactory(1);
+                launch();
+            }
+            else{
+                PopupFactory.setfactory(2);
+                new LoginCLI().launch();
+            }
+
+
 
         } catch (IOException e) {
             System.out.println("error");
-        }
-
-
-        //imposto la DAOfactory
-        DAOfactory.setDAOfactory(Integer.parseInt(input));
-
-        Dummy.dummyRegistration();
-
-        if(input2.equals("1")) {
-            PopupFactory.setfactory(1);
-            launch();
-        }
-        else{
-            PopupFactory.setfactory(2);
-            new LoginCLI().launch();
         }
 
 

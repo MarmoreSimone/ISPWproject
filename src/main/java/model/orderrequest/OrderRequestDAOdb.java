@@ -35,6 +35,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
         DAOfactory.getDAOfactory().createOrderDAO().saveOrder(order.getOrder(), order.getPickUpCode(), order.getCafeteria().getName());
 
         } catch (SQLException | SystemErrorException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
     }
@@ -94,6 +95,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             throw new IllegalArgumentException(e);
 
         } catch(NoCafeteriasFoundException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -118,6 +120,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
             ps.executeUpdate();
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
     }

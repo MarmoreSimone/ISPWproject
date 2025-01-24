@@ -1,30 +1,28 @@
 package model;
 
-import model.menuitem.MenuItemDAO;
 import model.cafeteria.CafeteriaDAO;
-import model.cafeteria.CafeteriaDAOdemo;
+import model.cafeteria.CafeteriaDAOfs;
+import model.menuitem.MenuItemDAO;
 import model.order.OrderDAO;
-import model.order.OrderDAOdemo;
 import model.orderrequest.OrderRequestDAO;
 import model.user.UserDAO;
+import model.user.UserDAOfs;
 
 public class DAOfactoryFS extends DAOfactory{
 
     public CafeteriaDAO createCafeteriaDAO(){
-        System.out.println("siamo in FS");
-        return CafeteriaDAOdemo.getInstance(); //metti fs
+        return new CafeteriaDAOfs();
     }
 
     public OrderDAO createOrderDAO(){
 
-        return OrderDAOdemo.getInstance();
-    }
-
-    public UserDAO createUserDAO(){
         return null;
     }
 
-    @Override
+    public UserDAO createUserDAO(){
+        return new UserDAOfs();
+    }
+
     public OrderRequestDAO createOrderRequestDAO() {
         return null;
     }

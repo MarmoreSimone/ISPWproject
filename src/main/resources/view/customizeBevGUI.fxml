@@ -21,7 +21,7 @@
         <fx:include minHeight="-Infinity" source="menu.fxml" />
     </left>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="name" layoutX="202.0" layoutY="75.0" prefHeight="50.0" prefWidth="262.0" text="Americano" textOverrun="CLIP">
                <font>
@@ -83,7 +83,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button fx:id="goBack" graphicTextGap="1.0" layoutX="635.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="51.0" prefWidth="127.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="go back" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="goBack" graphicTextGap="1.0" layoutX="635.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="51.0" prefWidth="127.0" style="-fx-background-radius: 10; -fx-background-color: grey;" text="go back" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>

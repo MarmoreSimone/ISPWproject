@@ -3,6 +3,7 @@ module com.example.ispwproject {
     requires javafx.fxml;
     requires java.desktop;
     requires java.sql;
+    requires com.opencsv;
 
 
     opens starter to javafx.fxml;

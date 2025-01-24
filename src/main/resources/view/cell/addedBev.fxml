@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane minHeight="33.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.AddedBevCellContr">
+<Pane minHeight="33.0" prefWidth="222.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.AddedBevCellContr">
    <children>
       <Label fx:id="labelName" layoutX="8.0" prefWidth="138.0" text="ssssssssssssssssssssssssssssss" wrapText="true">
          <font>

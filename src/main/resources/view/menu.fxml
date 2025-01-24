@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="ancora" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="187.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="starter.MenuController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="714.0" prefWidth="187.0" style="-fx-border-color: grey; -fx-border-width: 0 3 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="714.0" prefWidth="187.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-border-width: 0 3 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="153.0" fitWidth="154.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>

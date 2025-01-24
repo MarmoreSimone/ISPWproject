@@ -5,12 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="registration">
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DbConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOfs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOfs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/cafeteria.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/user.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f/storage_v2/_src_/schema/progetto.xBFPxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bcf3a4e-b4ec-489c-bd73-7eff97c25b7f/storage_v2/_src_/schema/progetto.xBFPxA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/finalizeorder/FinalizeOrderGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DAOfactoryFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/cafeteria/CafeteriaDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/menuitem/MenuItemDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/order/OrderDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/UserDAOdemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/starter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starter/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/addedBev.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cell/myOrderCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customizeBevGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/finalizeOrder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/finalizeOrder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/giftCouponGUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/homeBarista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/menuBarista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/myOrdersGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderBuilderGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/orderSummary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/processOrders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,7 +81,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/MarmoreSimone/ISPWproject.git&quot;,
-    &quot;accountId&quot;: &quot;6a2b7b44-eda5-4688-8a6e-4410b2cf78a5&quot;
+    &quot;accountId&quot;: &quot;a6c6b00a-be10-46fe-b603-4699dba0fa0e&quot;
   }
 }</component>
   <component name="MavenImportPreferences">
@@ -81,7 +122,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -156,8 +197,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -244,6 +285,20 @@
       <workItem from="1737464706043" duration="29974000" />
       <workItem from="1737540829869" duration="44253000" />
       <workItem from="1737627176461" duration="22322000" />
+      <workItem from="1737658321742" duration="518000" />
+      <workItem from="1737660792069" duration="261000" />
+      <workItem from="1737661362189" duration="4711000" />
+      <workItem from="1737706739041" duration="9004000" />
+      <workItem from="1737715798293" duration="144000" />
+      <workItem from="1737715952361" duration="1881000" />
+      <workItem from="1737717855200" duration="244000" />
+      <workItem from="1737718112887" duration="82000" />
+      <workItem from="1737718205531" duration="97000" />
+      <workItem from="1737718311627" duration="120000" />
+      <workItem from="1737718441013" duration="90000" />
+      <workItem from="1737718540427" duration="88000" />
+      <workItem from="1737718638826" duration="357000" />
+      <workItem from="1737719005783" duration="4100000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />

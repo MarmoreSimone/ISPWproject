@@ -44,7 +44,7 @@ public class UserDAOdemo extends UserDAO {
         clients.add(user);
     }
 
-    //la lista di elementi tornata è tutta di tipo User ma ad ogni elemento è associata una istanza di tipo Client/Barista
+    //la lista di elementi tornata è tutta di tipo User ma a ogni elemento è associata una istanza di tipo Client/Barista
     //cosi poi da essere tranquillamente ricastate al rispettivo tipo senza perdere niente
     public List<User> getAllUserCredentials() {
 

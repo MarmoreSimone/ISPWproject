@@ -48,6 +48,7 @@ public class OrderDAOdb extends OrderDAO{
         return order;
 
         } catch (SQLException | SystemErrorException e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 
@@ -70,6 +71,7 @@ public class OrderDAOdb extends OrderDAO{
             ps.executeUpdate();
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new SystemErrorException(defaultDbProblem);
         }
 

@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import utils.SwitchPage;
 
+import java.time.LocalDate;
+
 public class FinalizeOrderGUI extends GraphicalController {
 
     private PlaceOrderController controllerAppl;
@@ -48,6 +50,7 @@ public class FinalizeOrderGUI extends GraphicalController {
         ToggleGroup tg = new ToggleGroup();
         payNow.setToggleGroup(tg);
         payLater.setToggleGroup(tg);
+        day.setValue(LocalDate.now());
 
     }
 
