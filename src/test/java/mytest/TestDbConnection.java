@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import utils.DbConnection;
 
-public class TestDbConnection {
+class TestDbConnection {
 
 
     @Test
