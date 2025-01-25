@@ -27,10 +27,12 @@ public class MyOrdersViewCli extends viewcli.UtilsCli{
                 String firstWord = parts[0];
                 String rest = parts.length > 1 ? parts[1] : "";
 
-                string = string.concat(firstWord + "  " + order.getOrder().getBevs().get(i).getPrice() + "$\n" + rest+"\n");
-            }
-            string = string.concat("Total: ".toUpperCase()  + order.getOrder().getTotPrice()+"$");
+                if(!rest.equals("")) string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n" + rest);
+                else string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n");
 
+            }
+
+            string = string.concat("\n\nTotal: ".toUpperCase()  + order.getOrder().getTotPrice()+"$");
 
             list.add(string);
         }

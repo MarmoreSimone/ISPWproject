@@ -10,7 +10,6 @@ public class FinalizeOrderViewCli extends viewcli.UtilsCli{
 
     public void drawTitle(){
         System.out.println("==FINALIZE ORDER==");
-
     }
 
     public OrderDetailBean drawGetInfo(){
@@ -22,6 +21,7 @@ public class FinalizeOrderViewCli extends viewcli.UtilsCli{
         bean.setTime(getString());
         System.out.println("message for the barista: ");
         bean.setNote(getString());
+        System.out.println("");
         List<String> choices = new ArrayList<>(Arrays.asList("pay now (NOT AVAILABLE)", "pay at pickup"));
         showChoices(choices);
         int choice = getUserChoice(choices);

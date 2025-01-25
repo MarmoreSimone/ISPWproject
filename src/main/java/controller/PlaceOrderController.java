@@ -96,6 +96,7 @@ public class PlaceOrderController {
             tot = tot + bev.getPrice();
         }
 
+        tot = Math.round(tot * 100.0) / 100.0;
         return tot;
     }
 

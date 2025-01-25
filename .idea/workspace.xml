@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="testing">
-      <change afterPath="$PROJECT_DIR$/src/test/java/mytest/TestSearchCafeteria.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="testing finito">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mytest/TestItemCustomization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mytest/TestItemCustomization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,35 +76,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.test.executor": "Run",
-    "JUnit.TestDbConnection.executor": "Run",
-    "JUnit.TestItemCustomization.executor": "Run",
-    "JUnit.TestSearchCafeteria.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDbConnection.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestItemCustomization.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSearchCafeteria.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ricai/Desktop/ISPWproject/src/main/resources/view&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ricai\Desktop\ISPWproject\src\main\resources\view" />
@@ -268,15 +274,8 @@
       <workItem from="1737718638826" duration="357000" />
       <workItem from="1737719005783" duration="25804000" />
       <workItem from="1737753041039" duration="30000" />
-      <workItem from="1737760383489" duration="928000" />
-    </task>
-    <task id="LOCAL-00012" summary="aggiunta prima parte barista">
-      <option name="closed" value="true" />
-      <created>1735434915098</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1735434915098</updated>
+      <workItem from="1737760383489" duration="1004000" />
+      <workItem from="1737794375792" duration="3438000" />
     </task>
     <task id="LOCAL-00013" summary="aggiunta prima parte barista">
       <option name="closed" value="true" />
@@ -662,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737752758382</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="testing finito">
+      <option name="closed" value="true" />
+      <created>1737761373689</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1737761373689</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +687,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="migliorie GUI" />
     <MESSAGE value="&quot;finito ordine&quot; + myorders" />
     <MESSAGE value="aggiunta prima parte barista" />
     <MESSAGE value="separato il controller per cercare la caffetteria" />
@@ -705,18 +711,8 @@
     <MESSAGE value="sonar" />
     <MESSAGE value="fix SessionManager" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/LoginController.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="testing finito" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing finito" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -27,7 +27,8 @@ public class OrderSummaryViewCli extends viewcli.UtilsCli{
             String[] parts = order.getBevs().get(i).getName().split("\n", 2);
             String firstWord = parts[0];
             String rest = parts.length > 1 ? parts[1] : "";
-            System.out.println(firstWord + " " + order.getBevs().get(i).getPrice() + "$\n" + rest);
+            if(!rest.equals("")) System.out.println(firstWord + " " + order.getBevs().get(i).getPrice() + "$\n" + rest);
+            else System.out.println(firstWord + " " + order.getBevs().get(i).getPrice() + "$");
         }
         System.out.println("");
 

@@ -32,7 +32,7 @@ public class SearchCafeteriaCLI {
 
     public List<SearchCafeteriaBean> getCafeterias(){
 
-        List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city","get all"));
+        List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city(NOT AVAILABLE)","get all"));
         int type = view.drawGetSearchType(searchTypes);
         List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
         SearchCafeteriaBean bean;
@@ -45,6 +45,8 @@ public class SearchCafeteriaCLI {
                     bean = new SearchCafeteriaBean(view.getString(), null);
                     cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
                     break;
+
+                case 1:
 
                 case 2:
                     bean = new SearchCafeteriaBean(null, null);

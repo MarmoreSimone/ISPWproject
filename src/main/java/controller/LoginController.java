@@ -17,6 +17,8 @@ public class LoginController {
             User user = DAOfactory.getDAOfactory().createUserDAO().getUserByName(cred.getUsername());
             if (user == null) throw new NoUserFoundException();
 
+            if(!user.getPassword().equals(cred.getPassword())) throw new SystemErrorException("Wrong password");
+
             if(user.getRole().equals("barista")) SessionManager.getInstance().setUserBarista((Barista) user);
             else SessionManager.getInstance().setUserClient((Client) user);
             return new UserBean(null,null,user.getRole());

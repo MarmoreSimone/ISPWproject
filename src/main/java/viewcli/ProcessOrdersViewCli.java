@@ -20,11 +20,13 @@ public class ProcessOrdersViewCli extends viewcli.UtilsCli{
 
             String string = order.getUsername() + "\n" + order.getOrder().getDate() + " " + order.getOrder().getTime() + "\n" + "note:\n" + order.getOrder().getNote()+"\n";
 
-            for (int i = 0; i < order.getOrder().getBevs().size(); i++) {
+            for (int i = 0; i < order.getOrder().getBevs().size(); i++){
                 String[] parts = order.getOrder().getBevs().get(i).getName().split("\n", 2);
                 String firstWord = parts[0];
                 String rest = parts.length > 1 ? parts[1] : "";
-                string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n" + rest);
+
+                if(!rest.equals("")) string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n" + rest);
+                else string = string.concat(firstWord + " " + order.getOrder().getBevs().get(i).getPrice() + "$\n");
             }
 
             string = string.concat("\n----------------------");

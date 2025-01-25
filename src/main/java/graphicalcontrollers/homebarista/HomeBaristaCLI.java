@@ -12,20 +12,15 @@ public class HomeBaristaCLI extends viewcli.UtilsCli{
     public void launch(){
 
         System.out.println("====MENU====");
-        List<String> options = new ArrayList<>(Arrays.asList("process orders","manage orders", "manage cafeteria","logout"));
+        List<String> options = new ArrayList<>(Arrays.asList("process orders","manage orders(NOT AVAILABLE)", "manage cafeteria(NOT AVAILABLE)","logout"));
         showChoices(options);
         int choice = getUserChoice(options);
 
         switch (choice) {
-            case 0:
+            case 0, 2, 1:
                 new ProcessOrdersCLI().launch();
                 break;
-            case 1:
-                System.out.println("Hai scelto l'opzione 2.");
-                break;
-            case 2:
-                System.out.println("Hai scelto l'opzione 3.");
-                break;
+
             case 3:
                 new LoginCLI().launch();
                 break;

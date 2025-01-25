@@ -20,9 +20,12 @@ public class OrdereBuildViewCli extends UtilsCli{
             String[] parts = item.getName().split("\n", 2);
             String firstWord = parts[0];
             String rest = parts.length > 1 ? parts[1] : "";
-            System.out.println(firstWord + " " + item.getPrice() + "$\n" + rest);
+            if(!rest.equals("")) System.out.println(firstWord + " " + item.getPrice() + "$\n" + rest);
+            else System.out.println(firstWord + " " + item.getPrice() + "$");
 
         }
+
+        System.out.println("");
     }
 
     public int drawAddBev(List<String> bevs){
@@ -46,11 +49,12 @@ public class OrdereBuildViewCli extends UtilsCli{
             String[] parts = item.getName().split("\n", 2);
             String firstWord = parts[0];
             String rest = parts.length > 1 ? parts[1] : "";
-            items.add(firstWord + " " + item.getPrice() + "$\n" + rest);
+            if(!rest.equals("")) items.add(firstWord + " " + item.getPrice() + "$\n" + rest);
+            else items.add(firstWord + " " + item.getPrice() + "$");
 
         }
 
-        System.out.println("chose a beverage to remove");
+        System.out.println("\nchose a beverage to remove:");
         showChoices(items);
         return getUserChoice(items);
 
