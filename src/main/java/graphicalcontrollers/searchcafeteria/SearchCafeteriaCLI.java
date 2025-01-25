@@ -46,9 +46,7 @@ public class SearchCafeteriaCLI {
                     cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
                     break;
 
-                case 1:
-
-                case 2:
+                case 2,1:
                     bean = new SearchCafeteriaBean(null, null);
                     cafeterias = controllerAppl.searchCafeterias(bean);
                     break;

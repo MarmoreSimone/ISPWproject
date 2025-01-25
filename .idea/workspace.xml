@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="testing finito">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/homebarista/HomeBaristaCLI.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="rifinitura cli">
       <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/FinalizeOrderViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/MyOrdersViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrderSummaryViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/OrdereBuildViewCli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewcli/ProcessOrdersViewCli.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,15 +266,7 @@
       <workItem from="1737719005783" duration="25804000" />
       <workItem from="1737753041039" duration="30000" />
       <workItem from="1737760383489" duration="1004000" />
-      <workItem from="1737794375792" duration="3438000" />
-    </task>
-    <task id="LOCAL-00013" summary="aggiunta prima parte barista">
-      <option name="closed" value="true" />
-      <created>1735489759499</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1735489759499</updated>
+      <workItem from="1737794375792" duration="3898000" />
     </task>
     <task id="LOCAL-00014" summary="separato il controller per cercare la caffetteria">
       <option name="closed" value="true" />
@@ -669,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737761373689</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="rifinitura cli">
+      <option name="closed" value="true" />
+      <created>1737798180265</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1737798180266</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&quot;finito ordine&quot; + myorders" />
     <MESSAGE value="aggiunta prima parte barista" />
     <MESSAGE value="separato il controller per cercare la caffetteria" />
     <MESSAGE value="backup prima del login" />
@@ -712,7 +702,8 @@
     <MESSAGE value="fix SessionManager" />
     <MESSAGE value="testing" />
     <MESSAGE value="testing finito" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing finito" />
+    <MESSAGE value="rifinitura cli" />
+    <option name="LAST_COMMIT_MESSAGE" value="rifinitura cli" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
