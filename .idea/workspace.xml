@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="Api maps">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/SearchCafeteriaBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,15 +267,7 @@
       <workItem from="1737753041039" duration="30000" />
       <workItem from="1737760383489" duration="1004000" />
       <workItem from="1737794375792" duration="4059000" />
-      <workItem from="1738103784126" duration="2265000" />
-    </task>
-    <task id="LOCAL-00016" summary="prima bozza login">
-      <option name="closed" value="true" />
-      <created>1735515153446</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1735515153446</updated>
+      <workItem from="1738103784126" duration="2685000" />
     </task>
     <task id="LOCAL-00017" summary="login user fatto">
       <option name="closed" value="true" />
@@ -665,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738105551093</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Api maps">
+      <option name="closed" value="true" />
+      <created>1738106364812</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1738106364812</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

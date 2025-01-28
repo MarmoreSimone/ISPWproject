@@ -5,6 +5,7 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.DistanceMatrix;
 import com.google.maps.model.DistanceMatrixElementStatus;
+import exception.SystemErrorException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.util.Properties;
 
 public class MapsApi {
 
-    public List<Long> getDistances(String fixedAddress, List<String> addressList){
+    public List<Long> getDistances(String fixedAddress, List<String> addressList) throws SystemErrorException {
 
         List<Long> distances = new ArrayList<Long>();
         String[] addresses = new String[addressList.size()];
@@ -57,7 +58,7 @@ public class MapsApi {
             context.shutdown();
 
         } catch(IOException | ApiException | InterruptedException e){
-            System.out.println(e.getMessage());
+            throw new SystemErrorException(e.getMessage());
         }
 
         return distances;
