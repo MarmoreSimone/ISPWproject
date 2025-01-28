@@ -8,6 +8,8 @@ public class CafeteriaBean {
     private String telephoneNumber;
     private String cafeDescription;
     private String picture;
+    private String distance;
+    private Long distanceInMeters;
 
 
     public CafeteriaBean(String name, String address, String city, String number, String description,  String photo) {
@@ -42,6 +44,23 @@ public class CafeteriaBean {
 
     public String getPhoto() {
         return picture;
+    }
+
+    public String getDistance() {
+        if(distance == null) return "";
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
+    public Long getDistanceInMeters() {
+        return distanceInMeters;
+    }
+
+    public void setDistanceInMeters(Long distanceInMeters) {
+        this.distanceInMeters = distanceInMeters;
     }
 
 

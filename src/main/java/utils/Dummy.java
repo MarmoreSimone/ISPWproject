@@ -28,9 +28,9 @@ public class Dummy {
         String bari = "barista";
         String beverage = "beverage";
         String topping = "toppings";
-        Cafeteria caf1 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("bar di ingegneria","via del politecnico, 1","Tor vergata","067259759","The Bar of Engineering at Tor Vergata University offers a variety of drinks, snacks, and quick meals. It's a casual spot where students and staff can relax between classes, grab a coffee, or have a bite to eat","/images/baring.jpg");
-        Cafeteria caf2 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("Central Café","via garibaldi, 4","Rome","067257899","Central Café offers a wide range of drinks, pastries, and light bites. It’s a cozy place where customers can unwind, enjoy a coffee, and grab a quick snack. Perfect for a break during the day","/images/cafe2.jpg");
-        Cafeteria caf3 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("Bean & Brew Café","via tommasi, 22","Rome","067259744","Bean & Brew Café serves freshly brewed coffee, pastries, and light snacks. It’s a welcoming spot to relax, catch up with friends, or enjoy a quiet moment with your favorite drink","/images/cafe3.jpg");
+        Cafeteria caf1 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("bar di ingegneria","via del politecnico, 1","Roma","067259759","The Bar of Engineering at Tor Vergata University offers a variety of drinks, snacks, and quick meals. It's a casual spot where students and staff can relax between classes, grab a coffee, or have a bite to eat","/images/baring.jpg");
+        Cafeteria caf2 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("Central Café","Via della Moscova","Milano","067257899","Central Café offers a wide range of drinks, pastries, and light bites. It’s a cozy place where customers can unwind, enjoy a coffee, and grab a quick snack. Perfect for a break during the day","/images/cafe2.jpg");
+        Cafeteria caf3 = DAOfactory.getDAOfactory().createCafeteriaDAO().createCafeteria("Bean & Brew Café","Via San Gregorio Armeno","Napoli","067259744","Bean & Brew Café serves freshly brewed coffee, pastries, and light snacks. It’s a welcoming spot to relax, catch up with friends, or enjoy a quiet moment with your favorite drink","/images/cafe3.jpg");
 
         try {
 

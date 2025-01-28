@@ -30,7 +30,7 @@ public class OrderSummaryCLI {
         CafeteriaBean cafe = null;
         try {
 
-            cafe = search.getCafeBeanByName(contrAppl.getCafeteriaName());
+            cafe = search.getCafeteriaByName(contrAppl.getCafeteriaName());
 
         view.drawOrderSummary(order,cafe);
 

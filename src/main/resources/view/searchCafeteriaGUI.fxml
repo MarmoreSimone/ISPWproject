@@ -31,7 +31,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <TextField fx:id="choseSearch" layoutX="60.0" layoutY="125.0" prefHeight="30.0" prefWidth="165.0" promptText="search...">
+            <TextField fx:id="choseSearch" layoutX="20.0" layoutY="125.0" prefHeight="30.0" prefWidth="205.0" promptText="search...">
                <font>
                   <Font size="14.0" />
                </font>
@@ -43,7 +43,7 @@
             </Text>
             <ChoiceBox fx:id="searchCafChoiceBox" layoutX="186.0" layoutY="84.0" prefHeight="25.0" prefWidth="118.0" />
             <Button fx:id="searchBtn" layoutX="233.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#searchCafe" prefHeight="27.0" prefWidth="71.0" text="search" />
-            <ListView fx:id="listCafeterias" layoutX="62.0" layoutY="170.0" prefHeight="530.0" prefWidth="247.0" style="-fx-font-size: 24;" />
+            <ListView fx:id="listCafeterias" layoutX="17.0" layoutY="170.0" prefHeight="530.0" prefWidth="311.0" style="-fx-font-size: 24;" />
             <Label fx:id="labelName" alignment="TOP_LEFT" layoutX="339.0" layoutY="69.0" prefHeight="49.0" prefWidth="473.0" textFill="#1b1616">
                <font>
                   <Font name="Eras Bold ITC" size="44.0" />

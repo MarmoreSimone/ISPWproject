@@ -82,7 +82,7 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
 
                 ord = new OrderRequest(user, null, status, pickupcode);
 
-                if(type.equals("user")) ord.setCafeteria(search.getCafeteriaByName(cafe));
+                if(type.equals("user")) ord.setCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(cafe));
 
                 ord.setOrder(DAOfactory.getDAOfactory().createOrderDAO().getOrderByOrderReq(pickupcode,cafe));
 

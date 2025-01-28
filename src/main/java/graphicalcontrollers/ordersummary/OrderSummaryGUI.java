@@ -68,7 +68,7 @@ public class OrderSummaryGUI extends GraphicalController {
 
         CafeteriaBean cafe = null;
         try {
-            cafe = search.getCafeBeanByName(controllerAppl.getCafeteriaName());
+            cafe = search.getCafeteriaByName(controllerAppl.getCafeteriaName());
         } catch (NoCafeteriasFoundException | SystemErrorException e) {
             e.showException();
         }

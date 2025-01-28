@@ -131,7 +131,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Label fx:id="price" layoutX="332.0" layoutY="131.0" prefHeight="22.0" prefWidth="52.0" text="1.5€">
+            <Label fx:id="price" layoutX="332.0" layoutY="131.0" prefHeight="42.0" prefWidth="90.0" text="1.5€">
                <font>
                   <Font size="28.0" />
                </font>
@@ -139,12 +139,12 @@
                   <Insets top="2.0" />
                </padding>
             </Label>
-            <Label fx:id="calories" layoutX="335.0" layoutY="173.0" prefHeight="48.0" prefWidth="89.0" text="30 Kcal">
+            <Label fx:id="calories" layoutX="335.0" layoutY="173.0" prefHeight="48.0" prefWidth="140.0" text="30 Kcal">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label fx:id="caffeine" layoutX="336.0" layoutY="223.0" prefHeight="36.0" prefWidth="79.0" text="60 mg">
+            <Label fx:id="caffeine" layoutX="336.0" layoutY="223.0" prefHeight="40.0" prefWidth="132.0" text="60 mg">
                <font>
                   <Font size="28.0" />
                </font>

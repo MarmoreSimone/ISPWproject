@@ -1,7 +1,6 @@
 package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
-import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
@@ -12,7 +11,6 @@ import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -85,56 +83,23 @@ public class SearchCafeteriaGUI extends GraphicalController {
         SwitchPage.getSwitchPageInstance().changePage("/view/searchCafeteriaGUI.fxml");
     }
 
-
-
-    public List<SearchCafeteriaBean> getCafeterias(){
-        List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
-        SearchCafeteriaBean bean;
-
-        try {
-
-            switch (searchCafChoiceBox.getValue()) {
-                case "name":
-                    //nella bean metto solo il nome
-                    bean = new SearchCafeteriaBean(choseSearch.getText(), null);
-                    //fai il controllo se null
-                    //siccome mi ritorna sempre una lista prendo solo il primo elemento
-                    cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
-                    break;
-
-                //case: caso in cui si vuole cercare per indirizzo/città
-
-                case "get all":
-                    bean = new SearchCafeteriaBean(null, null);
-                    cafeterias = controllerAppl.searchCafeterias(bean);
-                    break;
-                default:
-            }
-
-        } catch (NoCafeteriasFoundException | SystemErrorException e){
-            e.showException();
-        }
-
-        return cafeterias;
-    }
-
     //devo fare attenzione a non sovrapporre i listener a ogni click del bottone
     private ChangeListener<String> listener;
     public void searchCafe() {
 
-        List<SearchCafeteriaBean> cafeterias = getCafeterias();
+        List<CafeteriaBean> cafeterias = getCafeterias();
 
         //caso in cui ho un solo elemento, faccio comparire la infocard appena si preme search
         if(cafeterias.size() == 1){
             orderBtn.setVisible(true);
             showSelectedCafeteria(cafeterias.getFirst());
-            }
+        }
 
         //usata per popolare la listview
         List<String> items = new ArrayList<>();
 
-        for (SearchCafeteriaBean cafeteria : cafeterias) {
-            items.add(cafeteria.getName());
+        for (CafeteriaBean cafeteria : cafeterias) {
+            items.add(cafeteria.getName() + cafeteria.getDistance());
         }
 
         // Aggiorno la vista con i nuovi elementi
@@ -162,26 +127,45 @@ public class SearchCafeteriaGUI extends GraphicalController {
         listCafeterias.getSelectionModel().selectedItemProperty().addListener(listener);
     }
 
-    public void showSelectedCafeteria(SearchCafeteriaBean cafe){
+    public List<CafeteriaBean> getCafeterias(){
+        List<CafeteriaBean> cafeterias = new ArrayList<>();
 
-        CafeteriaBean bean = null;
-        //vado a prendere la bean completa della caffetteria
         try {
 
-            bean = controllerAppl.getCafeBeanByName(cafe.getName());
-            labelName.setText(bean.getName());
-            labelAddress.setText(bean.getAddress());
-            labelCity.setText(bean.getCity());
-            labelNumber.setText(bean.getNumber());
-            labelDescr.setText(bean.getDescription());
-            imageCafe.setImage(new Image(getClass().getResourceAsStream(bean.getPhoto())));
-            openHour.getItems().clear();
-            paneInfoCard.setVisible(true);
+            switch (searchCafChoiceBox.getValue()) {
+                case "name":
+                    cafeterias.add(controllerAppl.getCafeteriaByName(choseSearch.getText()));
+                    break;
 
-        }
-        catch (NoCafeteriasFoundException | SystemErrorException e){
+                case "city or address":
+                    cafeterias = controllerAppl.getCafeByAddress(choseSearch.getText());
+                    break;
+
+                case "get all":
+                    cafeterias = controllerAppl.getAllCafeterias();
+                    break;
+
+                default:
+            }
+
+        } catch (NoCafeteriasFoundException | SystemErrorException e){
             e.showException();
         }
+
+        return cafeterias;
+    }
+
+
+    public void showSelectedCafeteria(CafeteriaBean cafe){
+
+        labelName.setText(cafe.getName());
+        labelAddress.setText(cafe.getAddress());
+        labelCity.setText(cafe.getCity());
+        labelNumber.setText(cafe.getNumber());
+        labelDescr.setText(cafe.getDescription());
+        imageCafe.setImage(new Image(getClass().getResourceAsStream(cafe.getPhoto())));
+        openHour.getItems().clear();
+        paneInfoCard.setVisible(true);
     }
 
     public void continueOrder(){

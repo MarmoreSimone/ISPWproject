@@ -37,7 +37,7 @@ public class PlaceOrderController {
     public void setCafeteria(String name)  throws SystemErrorException{
         SearchCafeteriaController search = new SearchCafeteriaController();
         try {
-            session.setMyCafeteria(search.getCafeteriaByName(name));
+            session.setMyCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name));
         } catch (NoCafeteriasFoundException e) {
             throw new SystemErrorException(e);
         }

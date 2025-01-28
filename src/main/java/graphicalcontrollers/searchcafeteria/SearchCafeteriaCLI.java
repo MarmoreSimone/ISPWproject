@@ -1,7 +1,6 @@
 package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
-import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
@@ -30,26 +29,33 @@ public class SearchCafeteriaCLI {
 
     }
 
-    public List<SearchCafeteriaBean> getCafeterias(){
+    public List<CafeteriaBean> getCafeterias(){
 
-        List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city(NOT AVAILABLE)","get all"));
+        List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city","get all"));
         int type = view.drawGetSearchType(searchTypes);
-        List<SearchCafeteriaBean> cafeterias = new ArrayList<>();
-        SearchCafeteriaBean bean;
+        List<CafeteriaBean> cafeterias = new ArrayList<>();
+        String name;
 
         try {
 
             switch (type) {
                 case 0:
                     System.out.println("insert name: ");
-                    bean = new SearchCafeteriaBean(view.getString(), null);
-                    cafeterias.add(controllerAppl.searchCafeterias(bean).getFirst());
+                    name = view.getString();
+                    cafeterias.add(controllerAppl.getCafeteriaByName(name));
                     break;
 
-                case 2,1:
-                    bean = new SearchCafeteriaBean(null, null);
-                    cafeterias = controllerAppl.searchCafeterias(bean);
+                case 1:
+                    System.out.println("insert address: ");
+                    name = view.getString();
+                    cafeterias = controllerAppl.getCafeByAddress(name);
                     break;
+
+
+                case 2:
+                    cafeterias = controllerAppl.getAllCafeterias();
+                    break;
+
                 default:
             }
 
@@ -64,7 +70,7 @@ public class SearchCafeteriaCLI {
     }
 
     public void searchCafe(){
-        List<SearchCafeteriaBean> cafeterias = getCafeterias();
+        List<CafeteriaBean> cafeterias = getCafeterias();
 
         if(cafeterias.size() == 1){
             //utente ha scelto caffetteria specifica
@@ -74,8 +80,8 @@ public class SearchCafeteriaCLI {
 
         //devo mostrare più caffetterie all'utente
         List<String> cafes = new ArrayList<>();
-        for (SearchCafeteriaBean cafeteria : cafeterias) {
-            cafes.add(cafeteria.getName());
+        for (CafeteriaBean cafeteria : cafeterias) {
+            cafes.add(cafeteria.getName() + cafeteria.getDistance());
         }
 
         System.out.println("cafeterias found: ");
@@ -85,11 +91,9 @@ public class SearchCafeteriaCLI {
         showSelectedCafeteria(cafeterias.get(view.getUserChoice(cafes)));
     }
 
-    public void showSelectedCafeteria(SearchCafeteriaBean cafe){
-        CafeteriaBean bean = null;
+    public void showSelectedCafeteria(CafeteriaBean bean){
 
         try{
-            bean = controllerAppl.getCafeBeanByName(cafe.getName());
 
             List<String> items = new ArrayList<>(Arrays.asList(bean.getName(),bean.getCity(),bean.getAddress(),bean.getNumber(),bean.getDescription()));
 
@@ -103,14 +107,14 @@ public class SearchCafeteriaCLI {
                 String session = SessionManager.getInstance().newPlaceOrderSession();
                 PlaceOrderController contr = new PlaceOrderController(session);
 
-                contr.setCafeteria(cafe.getName());
+                contr.setCafeteria(bean.getName());
                 new OrderBuilderCLI().launch(session);
             }
             else{
                 launch();
             }
 
-        } catch (NoCafeteriasFoundException | SystemErrorException e) {
+        } catch (SystemErrorException e) {
             e.showException();
         }
     }

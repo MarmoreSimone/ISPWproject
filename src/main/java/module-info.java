@@ -4,6 +4,7 @@ module com.example.ispwproject {
     requires java.desktop;
     requires java.sql;
     requires com.opencsv;
+    requires google.maps.services;
 
 
     opens starter to javafx.fxml;
