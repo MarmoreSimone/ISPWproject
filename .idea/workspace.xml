@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="Api maps">
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
       <change beforePath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,15 +267,7 @@
       <workItem from="1737753041039" duration="30000" />
       <workItem from="1737760383489" duration="1004000" />
       <workItem from="1737794375792" duration="4059000" />
-      <workItem from="1738103784126" duration="2685000" />
-    </task>
-    <task id="LOCAL-00017" summary="login user fatto">
-      <option name="closed" value="true" />
-      <created>1735594438734</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1735594438734</updated>
+      <workItem from="1738103784126" duration="3074000" />
     </task>
     <task id="LOCAL-00018" summary="sonar">
       <option name="closed" value="true" />
@@ -661,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738106364812</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1738106590923</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1738106590923</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,14 +697,14 @@
     <MESSAGE value="registration" />
     <MESSAGE value="csv" />
     <MESSAGE value="login aggiornato" />
-    <MESSAGE value="sonar" />
     <MESSAGE value="fix SessionManager" />
     <MESSAGE value="testing" />
     <MESSAGE value="testing finito" />
     <MESSAGE value="rifinitura cli" />
     <MESSAGE value="sonar test" />
     <MESSAGE value="Api maps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Api maps" />
+    <MESSAGE value="sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -57,8 +57,10 @@ public class MapsApi {
 
             context.shutdown();
 
-        } catch(IOException | ApiException | InterruptedException e){
+        } catch(IOException | ApiException e){
             throw new SystemErrorException(e.getMessage());
+        } catch (InterruptedException e){
+            Thread.currentThread().interrupt();
         }
 
         return distances;
