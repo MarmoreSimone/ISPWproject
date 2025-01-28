@@ -1,16 +1,18 @@
 package engineering;
 
-import com.google.maps.*;
+import com.google.maps.DistanceMatrixApi;
+import com.google.maps.GeoApiContext;
+import com.google.maps.errors.ApiException;
 import com.google.maps.model.DistanceMatrix;
 import com.google.maps.model.DistanceMatrixElementStatus;
 
-
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class MapsApi {
-
-    private String apiKey = "AIzaSyDRAkOShcwhDWFFN_DgvLezUaA4QhADM9M";
 
     public List<Long> getDistances(String fixedAddress, List<String> addressList){
 
@@ -18,6 +20,11 @@ public class MapsApi {
         String[] addresses = new String[addressList.size()];
 
         try{
+
+            Properties properties = new Properties();
+            FileInputStream fis = new FileInputStream("src/main/java/utils/config.properties");
+            properties.load(fis);
+            String apiKey = properties.getProperty("api.key");
 
             for (int i = 0; i < addressList.size(); i++) {
                 addresses[i] = addressList.get(i);
@@ -43,13 +50,13 @@ public class MapsApi {
                     distances.add(distanceMeters);
 
                 } else {
-                    System.out.printf("error", addresses[i]);
+                    System.out.println("api error");
                 }
             }
 
             context.shutdown();
 
-        } catch(Exception e){
+        } catch(IOException | ApiException | InterruptedException e){
             System.out.println(e.getMessage());
         }
 

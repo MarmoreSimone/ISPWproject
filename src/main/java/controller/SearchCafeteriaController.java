@@ -54,7 +54,7 @@ public class SearchCafeteriaController {
         for(int i = 0; i<distances.size();i++){
             temp = getCafeBean(cafeterias.get(i));
             temp.setDistanceInMeters(distances.get(i));
-            temp.setDistance(" " + Math.round((distances.get(i)/1000)*100)/100.0 + "Km");
+            temp.setDistance(" " + Math.round(((float) distances.get(i) /1000)*100)/100.0 + "Km");
             returnCafes.add(temp);
         }
 

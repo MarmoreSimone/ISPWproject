@@ -35,7 +35,6 @@ public class PlaceOrderController {
 
     //Imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
     public void setCafeteria(String name)  throws SystemErrorException{
-        SearchCafeteriaController search = new SearchCafeteriaController();
         try {
             session.setMyCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name));
         } catch (NoCafeteriasFoundException e) {

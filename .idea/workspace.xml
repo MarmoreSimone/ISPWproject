@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/CafeteriaBean.java" afterDir="false" />
+    <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="Api maps">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/SearchCafeteriaBean.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/orderrequest/OrderRequestDAOdb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Dummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/csv/cafeteria.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/csv/cafeteria.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/searchCafeteriaGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,15 +271,7 @@
       <workItem from="1737753041039" duration="30000" />
       <workItem from="1737760383489" duration="1004000" />
       <workItem from="1737794375792" duration="4059000" />
-      <workItem from="1738103784126" duration="1349000" />
-    </task>
-    <task id="LOCAL-00015" summary="backup prima del login">
-      <option name="closed" value="true" />
-      <created>1735508180796</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1735508180796</updated>
+      <workItem from="1738103784126" duration="2265000" />
     </task>
     <task id="LOCAL-00016" summary="prima bozza login">
       <option name="closed" value="true" />
@@ -675,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737798407349</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Api maps">
+      <option name="closed" value="true" />
+      <created>1738105551092</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1738105551093</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="separato il controller per cercare la caffetteria" />
     <MESSAGE value="backup prima del login" />
     <MESSAGE value="prima bozza login" />
     <MESSAGE value="login user fatto" />
@@ -718,7 +707,8 @@
     <MESSAGE value="testing finito" />
     <MESSAGE value="rifinitura cli" />
     <MESSAGE value="sonar test" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonar test" />
+    <MESSAGE value="Api maps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api maps" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

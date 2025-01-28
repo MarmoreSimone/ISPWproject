@@ -1,6 +1,5 @@
 package model.orderrequest;
 
-import controller.SearchCafeteriaController;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import model.DAOfactory;
@@ -63,8 +62,6 @@ public class OrderRequestDAOdb extends OrderRequestDAO{
         String query = myQuery;
 
         Connection connection = DbConnection.getInstance().getConnection();
-
-        SearchCafeteriaController search = new SearchCafeteriaController();
 
         try (PreparedStatement ps = connection.prepareStatement(query)) {
 
