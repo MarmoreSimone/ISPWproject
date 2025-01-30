@@ -1,5 +1,6 @@
 package graphicalcontrollers.orderbuilder;
 
+import bean.CafeteriaBean;
 import bean.MenuItemBean;
 import controller.PlaceOrderController;
 import graphicalcontrollers.GraphicalController;
@@ -52,8 +53,9 @@ public class OrderBuilderGUI extends GraphicalController {
 
     @Override
     public void initialize2() {
+        CafeteriaBean cafe = controllerAppl.getSettedCafeteria();
         //imposto il nome della caffetteria
-        cafeName.setText(controllerAppl.getCafeteriaName());
+        cafeName.setText(cafe.getName());
         //imposto le bevande della caffetteria
         beverages = controllerAppl.getCafeteriaItems();
         //funzione per mostrare a schermo le bevande aggiungibili all'ordine

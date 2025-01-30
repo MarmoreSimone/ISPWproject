@@ -3,9 +3,7 @@ package graphicalcontrollers.ordersummary;
 import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
-import controller.SearchCafeteriaController;
 import engineering.SessionManager;
-import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
@@ -24,30 +22,29 @@ public class OrderSummaryCLI {
         this.contrAppl = new PlaceOrderController(session);
         OrderSummaryViewCli view = new OrderSummaryViewCli();
         view.drawTitle();
-
         OrderBean order = contrAppl.getMyOrder();
-        SearchCafeteriaController search = new SearchCafeteriaController();
-        CafeteriaBean cafe = null;
+        CafeteriaBean cafe;
+
         try {
 
-            cafe = search.getCafeteriaByName(contrAppl.getCafeteriaName());
+            cafe = contrAppl.getSettedCafeteria();
 
-        view.drawOrderSummary(order,cafe);
+            view.drawOrderSummary(order,cafe);
 
-        List<String> choices = new ArrayList<>(Arrays.asList("save order","go back"));
-        view.showChoices(choices);
-        int choice = view.getUserChoice(choices);
+            List<String> choices = new ArrayList<>(Arrays.asList("save order","go back"));
+            view.showChoices(choices);
+            int choice = view.getUserChoice(choices);
 
-        if(choice == 0) {
-            contrAppl.sendOrderRequest();
-            SessionManager.getInstance().delPlaceOrderSession(session);
-            new HomeClientCLI().launch();
-        }
-        else {
-            new FinalizeOrderCLI().launch(session);
-        }
+            if(choice == 0) {
+                contrAppl.sendOrderRequest();
+                SessionManager.getInstance().delPlaceOrderSession(session);
+                new HomeClientCLI().launch();
+            }
+            else {
+                new FinalizeOrderCLI().launch(session);
+            }
 
-        } catch (NoCafeteriasFoundException | SystemErrorException e) {
+        } catch (SystemErrorException e) {
             e.showException();
         }
 

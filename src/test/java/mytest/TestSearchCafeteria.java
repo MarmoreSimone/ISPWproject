@@ -1,5 +1,7 @@
 package mytest;
 
+import bean.CafeteriaBean;
+import bean.SearchCafeteriaBean;
 import controller.SearchCafeteriaController;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
@@ -9,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestSearchCafeteria {
 
@@ -27,18 +28,24 @@ public class TestSearchCafeteria {
 
     }
     @Test
-    void testSearchCafeteria() throws SystemErrorException, NoCafeteriasFoundException {
-        Cafeteria cafeteria = controller.getCafeteriaByName("bar di ingegneria");
-        assertNotNull(cafeteria);
+    void testSearchCafeteriaByName() throws SystemErrorException, NoCafeteriasFoundException {
+        SearchCafeteriaBean search = new SearchCafeteriaBean();
+        search.setName("bar di ingegneria");
+
+        CafeteriaBean cafeteria = controller.getCafeteriaByName(search);
+        assertEquals("bar di ingegneria",cafeteria.getName());
     }
 
     @Test
     void testSearchCafeteriaFailed() throws SystemErrorException{
 
+        SearchCafeteriaBean search = new SearchCafeteriaBean();
+        search.setName("bar non esistente");
+
         int value = 0;
 
         try {
-            controller.getCafeteriaByName("qqqqqq");
+            controller.getCafeteriaByName(search);
         } catch (NoCafeteriasFoundException e) {
             value = 1;
         }

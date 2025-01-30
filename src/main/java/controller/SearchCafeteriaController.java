@@ -1,6 +1,8 @@
 package controller;
 
 import bean.CafeteriaBean;
+import bean.MapsAPIBean;
+import bean.SearchCafeteriaBean;
 import engineering.MapsApi;
 import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
@@ -28,15 +30,16 @@ public class SearchCafeteriaController {
         return cafeterias;
     }
 
-    public CafeteriaBean getCafeteriaByName(String name) throws NoCafeteriasFoundException, SystemErrorException {
-        return getCafeBean(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name));
+    public CafeteriaBean getCafeteriaByName(SearchCafeteriaBean name) throws NoCafeteriasFoundException, SystemErrorException {
+        return getCafeBean(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name.getName()));
     }
 
     private CafeteriaBean getCafeBean(Cafeteria cafe){
         return new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getPhoto());
     }
 
-    public List<CafeteriaBean> getCafeByAddress(String address) throws NoCafeteriasFoundException, SystemErrorException {
+    public List<CafeteriaBean> getCafeByAddress(SearchCafeteriaBean searchBean) throws NoCafeteriasFoundException, SystemErrorException {
+
 
         List<CafeteriaBean> returnCafes = new ArrayList<>();
         List<String> addresses = new ArrayList<>();
@@ -49,7 +52,8 @@ public class SearchCafeteriaController {
         }
 
         MapsApi api = new MapsApi();
-        List<Long> distances = api.getDistances(address,addresses);
+        MapsAPIBean bean = new MapsAPIBean(searchBean.getAddress(),addresses);
+        List<Long> distances = api.getDistances(bean);
 
         for(int i = 0; i<distances.size();i++){
             temp = getCafeBean(cafeterias.get(i));

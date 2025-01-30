@@ -1,5 +1,6 @@
 package engineering;
 
+import bean.MapsAPIBean;
 import com.google.maps.DistanceMatrixApi;
 import com.google.maps.GeoApiContext;
 import com.google.maps.errors.ApiException;
@@ -15,13 +16,17 @@ import java.util.Properties;
 
 public class MapsApi {
 
-    public List<Long> getDistances(String fixedAddress, List<String> addressList) throws SystemErrorException {
+    public List<Long> getDistances(MapsAPIBean info) throws SystemErrorException {
+
+        String fixedAddress = info.getFixedAddress();
+        List<String> addressList = info.getAddresses();
 
         List<Long> distances = new ArrayList<Long>();
         String[] addresses = new String[addressList.size()];
 
         try{
 
+            //recupero key API
             Properties properties = new Properties();
             FileInputStream fis = new FileInputStream("src/main/java/utils/config.properties");
             properties.load(fis);
@@ -31,7 +36,6 @@ public class MapsApi {
                 addresses[i] = addressList.get(i);
             }
 
-            // Inizializza il contesto per le API di Google Maps
             GeoApiContext context = new GeoApiContext.Builder()
                     .apiKey(apiKey)
                     .build();

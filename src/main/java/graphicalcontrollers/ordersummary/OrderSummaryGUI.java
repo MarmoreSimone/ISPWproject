@@ -5,15 +5,14 @@ import bean.OrderBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
-import exception.NoCafeteriasFoundException;
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import utils.SwitchPage;
-import javafx.fxml.FXML;
 
 
 public class OrderSummaryGUI extends GraphicalController {
@@ -65,13 +64,7 @@ public class OrderSummaryGUI extends GraphicalController {
 
         OrderBean order = controllerAppl.getMyOrder();
         SearchCafeteriaController search = new SearchCafeteriaController();
-
-        CafeteriaBean cafe = null;
-        try {
-            cafe = search.getCafeteriaByName(controllerAppl.getCafeteriaName());
-        } catch (NoCafeteriasFoundException | SystemErrorException e) {
-            e.showException();
-        }
+        CafeteriaBean cafe = controllerAppl.getSettedCafeteria();
 
         address.setText(cafe.getAddress());
         city.setText(cafe.getCity());

@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00e7682a-7dd6-4bca-a854-f607a82a673d" name="Changes" comment="sonar">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bean/MapsAPIBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bean/SearchCafeteriaBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchCafeteriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engineering/MapsApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/orderbuilder/OrderBuilderGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/ordersummary/OrderSummaryGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphicalcontrollers/searchcafeteria/SearchCafeteriaGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mytest/TestSearchCafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mytest/TestSearchCafeteria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +139,7 @@
       <module name="ISPWproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="starter.*" />
+          <option name="PATTERN" value="graphicalcontrollers.menuGUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -267,15 +278,8 @@
       <workItem from="1737753041039" duration="30000" />
       <workItem from="1737760383489" duration="1004000" />
       <workItem from="1737794375792" duration="4059000" />
-      <workItem from="1738103784126" duration="3074000" />
-    </task>
-    <task id="LOCAL-00018" summary="sonar">
-      <option name="closed" value="true" />
-      <created>1735595720394</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1735595720394</updated>
+      <workItem from="1738103784126" duration="3174000" />
+      <workItem from="1738242395602" duration="3260000" />
     </task>
     <task id="LOCAL-00019" summary="cose mancanti">
       <option name="closed" value="true" />
@@ -661,7 +665,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738106590923</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="sonar">
+      <option name="closed" value="true" />
+      <created>1738106954064</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1738106954064</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

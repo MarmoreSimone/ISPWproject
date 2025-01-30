@@ -1,6 +1,7 @@
 package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
+import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
@@ -34,21 +35,21 @@ public class SearchCafeteriaCLI {
         List<String> searchTypes = new ArrayList<>(Arrays.asList("name","address or city","get all"));
         int type = view.drawGetSearchType(searchTypes);
         List<CafeteriaBean> cafeterias = new ArrayList<>();
-        String name;
+        SearchCafeteriaBean bean = new SearchCafeteriaBean();
 
         try {
 
             switch (type) {
                 case 0:
                     System.out.println("insert name: ");
-                    name = view.getString();
-                    cafeterias.add(controllerAppl.getCafeteriaByName(name));
+                    bean.setName(view.getString());
+                    cafeterias.add(controllerAppl.getCafeteriaByName(bean));
                     break;
 
                 case 1:
                     System.out.println("insert address: ");
-                    name = view.getString();
-                    cafeterias = controllerAppl.getCafeByAddress(name);
+                    bean.setAddress(view.getString());
+                    cafeterias = controllerAppl.getCafeByAddress(bean);
                     break;
 
 

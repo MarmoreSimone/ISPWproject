@@ -1,6 +1,7 @@
 package graphicalcontrollers.searchcafeteria;
 
 import bean.CafeteriaBean;
+import bean.SearchCafeteriaBean;
 import controller.PlaceOrderController;
 import controller.SearchCafeteriaController;
 import engineering.SessionManager;
@@ -129,16 +130,19 @@ public class SearchCafeteriaGUI extends GraphicalController {
 
     public List<CafeteriaBean> getCafeterias(){
         List<CafeteriaBean> cafeterias = new ArrayList<>();
+        SearchCafeteriaBean bean = new SearchCafeteriaBean();
 
         try {
 
             switch (searchCafChoiceBox.getValue()) {
                 case "name":
-                    cafeterias.add(controllerAppl.getCafeteriaByName(choseSearch.getText()));
+                    bean.setName(choseSearch.getText());
+                    cafeterias.add(controllerAppl.getCafeteriaByName(bean));
                     break;
 
                 case "city or address":
-                    cafeterias = controllerAppl.getCafeByAddress(choseSearch.getText());
+                    bean.setAddress(choseSearch.getText());
+                    cafeterias = controllerAppl.getCafeByAddress(bean);
                     break;
 
                 case "get all":
@@ -166,6 +170,7 @@ public class SearchCafeteriaGUI extends GraphicalController {
         imageCafe.setImage(new Image(getClass().getResourceAsStream(cafe.getPhoto())));
         openHour.getItems().clear();
         paneInfoCard.setVisible(true);
+
     }
 
     public void continueOrder(){

@@ -1,4 +1,4 @@
-package starter;
+package graphicalcontrollers.menuGUI;
 
 import engineering.SessionManager;
 import graphicalcontrollers.login.LoginGUI;
