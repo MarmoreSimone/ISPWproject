@@ -65,7 +65,7 @@ module com.example.ispwproject {
     exports engineering;
     exports utils;
     exports model.cafeteria;
-    exports graphicalcontrollers.menuGUI;
-    opens graphicalcontrollers.menuGUI to javafx.fxml;
+    exports graphicalcontrollers.menugui;
+    opens graphicalcontrollers.menugui to javafx.fxml;
 }
 

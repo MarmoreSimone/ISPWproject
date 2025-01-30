@@ -44,8 +44,7 @@ public class PlaceOrderController {
 
     public CafeteriaBean getSettedCafeteria() {
         Cafeteria cafe = session.getMyCafeteria();
-        CafeteriaBean bean = new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getPhoto());
-        return bean;
+        return new CafeteriaBean(cafe.getName(), cafe.getAddress(), cafe.getCity(), cafe.getNumber(), cafe.getDescription(), cafe.getPhoto());
     }
 
     //Ritorna una lista di MenuItemBean della caffetteria settata nella sessione
