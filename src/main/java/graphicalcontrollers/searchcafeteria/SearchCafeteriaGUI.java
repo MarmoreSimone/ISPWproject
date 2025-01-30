@@ -180,12 +180,13 @@ public class SearchCafeteriaGUI extends GraphicalController {
         //imposto la caffetteria selezionata
         PlaceOrderController contr = new PlaceOrderController(session);
         try {
+
             contr.setCafeteria(labelName.getText());
+            new OrderBuilderGUI().launch(session);
+
         } catch (SystemErrorException e) {
             e.showException();
         }
-
-        new OrderBuilderGUI().launch(session);
 
     }
 
