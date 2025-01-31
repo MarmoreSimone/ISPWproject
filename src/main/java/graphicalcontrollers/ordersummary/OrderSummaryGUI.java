@@ -91,7 +91,7 @@ public class OrderSummaryGUI extends GraphicalController {
 
     public void confirmOrder(){
         try {
-
+            //gli passo la sessione così che la chiuda
             controllerAppl.sendOrderRequest(this.session);
             SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
 

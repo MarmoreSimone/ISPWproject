@@ -3,7 +3,6 @@ package graphicalcontrollers.ordersummary;
 import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
-import engineering.SessionManager;
 import exception.SystemErrorException;
 import graphicalcontrollers.finalizeorder.FinalizeOrderCLI;
 import graphicalcontrollers.home.HomeClientCLI;
