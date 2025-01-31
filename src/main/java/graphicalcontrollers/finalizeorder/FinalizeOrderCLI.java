@@ -30,11 +30,10 @@ public class FinalizeOrderCLI {
             List<String> choices = new ArrayList<>(Arrays.asList("continue order", "change details", "go back"));
             view.showChoices(choices);
             choice = view.getUserChoice(choices);
-
             switch (choice) {
                 case 0:
                     try {
-                        contrAppl.buildOrder(bean);
+                        contrAppl.composeOrder(bean);
                     } catch (WrongFormatException e) {
                         e.showException();
                         break;

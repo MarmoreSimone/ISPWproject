@@ -2,14 +2,13 @@ package utils;
 
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
-
+import graphicalcontrollers.GraphicalControllerCell;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-
-import starter.Main;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import starter.Main;
 
 import java.io.IOException;
 import java.util.List;
@@ -76,15 +75,16 @@ public class SwitchPage {
 
 
 
-
-    //usato per quando devo usare le Cell, il primo parametro è la stringa che contiene l'indirizzo dell'fxml della cella
-    //il secondo è la Vbox a cui aggiungere le singole Cell
-    //il terzo è l'istanza corrente del controllore da cui faccio "partire" le Cell e che contiene le operazioni principali richiamate dal mini controllore della Cell
-    //il quarto è una lista generica di oggetti dove ogni oggetto contiente le informazioni per popolare la rispettiva Cell
-    //prima di chiamare ChangeMiniPage() la lista di oggetti va castata a lista generica in questo modo non c'è bisogno di definire
-    //una operazione specifica per ogni tipo di oggetto.
-    //la prima cosa che farà setData() sarà quella di ricastare l'oggetto generico ad un tipo specifico e questo lo può fare
-    //in quanto è a conoscenza del tipo di oggetto che si aspetta
+    /*
+    usato per quando devo usare le Cell, il primo parametro è la stringa che contiene l'indirizzo dell'fxml della cella
+    il secondo è la Vbox a cui aggiungere le singole Cell
+    il terzo è l'istanza corrente del controllore da cui faccio "partire" le Cell e che contiene le operazioni principali richiamate dal mini controllore della Cell
+    il quarto è una lista generica di oggetti dove ogni oggetto contiente le informazioni per popolare la rispettiva Cell
+    prima di chiamare ChangeMiniPage() la lista di oggetti va castata a lista generica in questo modo non c'è bisogno di definire
+    una operazione specifica per ogni tipo di oggetto.
+    la prima cosa che farà setData() sarà quella di ricastare l'oggetto generico a un tipo specifico e questo lo può fare
+    in quanto è a conoscenza del tipo di oggetto che si aspetta
+     */
     public void changeMiniPage(String sourcePathCell, VBox vbox, GraphicalController controllerParent, List<Object> objects){
         vbox.getChildren().clear();
 
@@ -93,7 +93,7 @@ public class SwitchPage {
 
             try{
                 Pane pane = loader.load();
-                GraphicalController contr = loader.getController();
+                GraphicalControllerCell contr = loader.getController();
                 contr.setData(objects.get(i),controllerParent);
                 vbox.getChildren().add(pane);
             } catch(IOException e){

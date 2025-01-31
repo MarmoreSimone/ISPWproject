@@ -62,7 +62,7 @@ public class SearchCafeteriaController {
             returnCafes.add(temp);
         }
 
-
+        //funzionalità offerta da java8
         returnCafes.sort(Comparator.comparingLong(CafeteriaBean::getDistanceInMeters));
 
         return returnCafes;

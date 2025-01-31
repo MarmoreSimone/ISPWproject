@@ -12,10 +12,6 @@ public abstract class GraphicalController {
 
     }
 
-    public void setData(Object obj, GraphicalController parent){
-
-    }
-
     public void setSession(String session){
 
     }

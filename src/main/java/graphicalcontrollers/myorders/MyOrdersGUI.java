@@ -1,9 +1,7 @@
 package graphicalcontrollers.myorders;
 
 import bean.OrderRequestBean;
-import controller.PlaceOrderController;
 import controller.UserOrdersController;
-import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,7 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import utils.SwitchPage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyOrdersGUI extends GraphicalController {
@@ -44,15 +41,16 @@ public class MyOrdersGUI extends GraphicalController {
     }
 
     List<OrderRequestBean> ordini;
+    UserOrdersController contr;
 
     @Override
     public void initialize2(){
 
-        UserOrdersController controller = new UserOrdersController();
+        contr = new UserOrdersController();
 
-        ordini = controller.getAllMyOrderReq();
+        ordini = contr.getAllMyOrderReq();
 
-        loadMyOrders(ordini,"all");
+        loadMyOrders("all");
 
         ToggleGroup tg = new ToggleGroup();
 
@@ -69,46 +67,33 @@ public class MyOrdersGUI extends GraphicalController {
                 if (newValue != null) {
                     RadioButton selectedRadioButton = (RadioButton) newValue;
                     if(selectedRadioButton == accept){
-                        loadMyOrders(ordini,"ACCEPTED");
+                        loadMyOrders("ACCEPTED");
                     }
                     else if(selectedRadioButton == all){
-                        loadMyOrders(ordini,"all");
+                        loadMyOrders("all");
                     }
 
                     else if(selectedRadioButton == pending){
-                        loadMyOrders(ordini,"PENDING");
+                        loadMyOrders("PENDING");
                     }
 
                     else if(selectedRadioButton == reject){
-                        loadMyOrders(ordini,"REJECTED");
-
+                        loadMyOrders("REJECTED");
                     }
-
-
                 }
             }
         });
     }
 
-    public void loadMyOrders(List<OrderRequestBean> orders, String choice){
+    public void loadMyOrders(String choice){
 
-        List<OrderRequestBean> ord = new ArrayList<OrderRequestBean>();
 
-        if(choice.equals("all")){
-            ord = orders;
-        }
-        else {
-            for (OrderRequestBean order : orders) {
-                //evito problemi visto che la response la attacco direttamente alla stringa rejected
-                if (order.getState().charAt(0) == choice.charAt(0)) {
-                    ord.add(order);
-                }
+        if(choice.equals("all")) ordini = contr.getAllMyOrderReq();
+        else ordini = contr.getAllMyOrderReq(choice);
 
-            }
-        }
-
-        List<Object> objectList = (List<Object>) (List<?>) ord;
+        List<Object> objectList = (List<Object>) (List<?>) ordini;
         SwitchPage.getSwitchPageInstance().changeMiniPage("/view/cell/myOrderCell.fxml",ordList,this,objectList);
+
     }
 
 

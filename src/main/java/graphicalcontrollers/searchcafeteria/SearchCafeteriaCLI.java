@@ -19,7 +19,6 @@ public class SearchCafeteriaCLI {
     private SearchCafeteriaViewCli view;
     private SearchCafeteriaController controllerAppl;
 
-
     public void launch(){
 
         view = new SearchCafeteriaViewCli();
@@ -105,13 +104,17 @@ public class SearchCafeteriaCLI {
             int input = view.getUserChoice(list);
 
             if(input == 0) {
+                //utente soddisfatto della scelta
                 String session = SessionManager.getInstance().newPlaceOrderSession();
                 PlaceOrderController contr = new PlaceOrderController(session);
-
-                contr.setCafeteria(bean.getName());
+                SearchCafeteriaBean search = new SearchCafeteriaBean();
+                search.setName(bean.getName());
+                contr.setCafeteria(search);
                 new OrderBuilderCLI().launch(session);
             }
             else{
+
+                //trovare nuova caffetteria
                 launch();
             }
 

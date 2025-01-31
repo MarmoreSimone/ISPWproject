@@ -26,4 +26,5 @@ public abstract class UserDAO {
 
     public abstract User getUserByName(String username) throws SystemErrorException;
 
+
 }

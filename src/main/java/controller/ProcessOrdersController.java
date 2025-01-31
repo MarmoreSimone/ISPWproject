@@ -16,18 +16,14 @@ public class ProcessOrdersController {
     Barista user;
 
     public ProcessOrdersController() {
-
         user = SessionManager.getInstance().getUserBaristaLogged();
-
     }
 
     //usato per mostrare tutte le richieste al barista
     public List<OrderRequestBean> getAllRequest() {
-        List<OrderRequest> orderReq;
         List<OrderRequestBean> retBeans = new ArrayList<>();
         BeanUtils beanUtils = new BeanUtils();
-
-        orderReq = user.getCafeteria().getOrderRequests();
+        List<OrderRequest> orderReq = user.getCafeteria().getOrderRequests();
 
         for (OrderRequest orderRequest : orderReq) {
             if (orderRequest.getStatus().equals("PENDING")) {

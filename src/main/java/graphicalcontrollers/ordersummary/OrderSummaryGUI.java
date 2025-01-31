@@ -3,7 +3,6 @@ package graphicalcontrollers.ordersummary;
 import bean.CafeteriaBean;
 import bean.OrderBean;
 import controller.PlaceOrderController;
-import engineering.SessionManager;
 import exception.SystemErrorException;
 import graphicalcontrollers.GraphicalController;
 import graphicalcontrollers.finalizeorder.FinalizeOrderGUI;
@@ -93,8 +92,7 @@ public class OrderSummaryGUI extends GraphicalController {
     public void confirmOrder(){
         try {
 
-            controllerAppl.sendOrderRequest();
-            SessionManager.getInstance().delPlaceOrderSession(this.session);
+            controllerAppl.sendOrderRequest(this.session);
             SwitchPage.getSwitchPageInstance().changePage("/view/home.fxml");
 
         }catch(SystemErrorException e){

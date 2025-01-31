@@ -36,9 +36,7 @@ public class MapsApi {
                 addresses[i] = addressList.get(i);
             }
 
-            GeoApiContext context = new GeoApiContext.Builder()
-                    .apiKey(apiKey)
-                    .build();
+            GeoApiContext context = new GeoApiContext.Builder().apiKey(apiKey).build();
 
             // Richiesta alla Distance Matrix API
             DistanceMatrix result = DistanceMatrixApi.newRequest(context)

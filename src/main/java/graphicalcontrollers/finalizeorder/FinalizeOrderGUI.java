@@ -66,7 +66,7 @@ public class FinalizeOrderGUI extends GraphicalController {
         else payMeth = payLater.getText();
 
         try {
-            controllerAppl.buildOrder(new OrderDetailBean(payMeth,note.getText(),day.getValue().toString(), time.getText() ));
+            controllerAppl.composeOrder(new OrderDetailBean(payMeth,note.getText(),day.getValue().toString(), time.getText() ));
         }catch (WrongFormatException e){
             e.showException();
             return;

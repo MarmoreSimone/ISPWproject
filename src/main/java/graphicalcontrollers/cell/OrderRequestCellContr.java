@@ -2,6 +2,7 @@ package graphicalcontrollers.cell;
 
 import bean.OrderRequestBean;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.GraphicalControllerCell;
 import graphicalcontrollers.processorders.ProcessOrderGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,7 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
-public class OrderRequestCellContr extends GraphicalController {
+public class OrderRequestCellContr extends GraphicalControllerCell {
 
 
     @FXML

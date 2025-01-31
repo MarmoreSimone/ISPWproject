@@ -2,11 +2,12 @@ package graphicalcontrollers.cell;
 
 import bean.OrderRequestBean;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.GraphicalControllerCell;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 
-public class MyOrderCellContr extends GraphicalController {
+public class MyOrderCellContr extends GraphicalControllerCell {
 
 
     @FXML

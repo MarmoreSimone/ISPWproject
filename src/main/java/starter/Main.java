@@ -22,6 +22,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1100, 720);
         stage.resizableProperty().setValue(Boolean.FALSE);
         stage.setTitle("Hello!");
+        //salvo stage in switchPage
         SwitchPage curr = SwitchPage.getSwitchPageInstance();
         curr.setStage(stage);
         stage.setScene(scene);
@@ -31,7 +32,7 @@ public class Main extends Application {
     public static void main(String[] args){
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String input = null;
+        String input;
 
         try {
 

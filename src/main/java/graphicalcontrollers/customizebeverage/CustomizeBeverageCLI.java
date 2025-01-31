@@ -89,7 +89,7 @@ public class CustomizeBeverageCLI {
                 view.showChoices(choices);
             }
 
-        }while(choice != 1);
+        }while(true);
 
     }
 }

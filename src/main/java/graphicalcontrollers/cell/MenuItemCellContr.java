@@ -1,8 +1,8 @@
 package graphicalcontrollers.cell;
 
 import bean.MenuItemBean;
-
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.GraphicalControllerCell;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
-public class MenuItemCellContr extends GraphicalController {
+public class MenuItemCellContr extends GraphicalControllerCell {
 
     private OrderBuilderGUI parent;
 

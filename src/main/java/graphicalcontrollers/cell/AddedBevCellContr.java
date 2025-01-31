@@ -2,11 +2,12 @@ package graphicalcontrollers.cell;
 
 import bean.MenuItemBean;
 import graphicalcontrollers.GraphicalController;
+import graphicalcontrollers.GraphicalControllerCell;
 import graphicalcontrollers.orderbuilder.OrderBuilderGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class AddedBevCellContr extends GraphicalController {
+public class AddedBevCellContr extends GraphicalControllerCell {
 
     private OrderBuilderGUI parent;
 

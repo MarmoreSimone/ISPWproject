@@ -33,10 +33,10 @@ public class PlaceOrderController {
         random = new SecureRandom();
     }
 
-    //Imposta la caffetteria su cui si sta facendo l'ordine nel contr. appl.
-    public void setCafeteria(String name)  throws SystemErrorException{
+    //Imposta la caffetteria su cui si sta facendo l'ordine nella sessione del controller applicativo
+    public void setCafeteria(SearchCafeteriaBean cafe)  throws SystemErrorException{
         try {
-            session.setMyCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(name));
+            session.setMyCafeteria(DAOfactory.getDAOfactory().createCafeteriaDAO().getCafeteriaByName(cafe.getName()));
         } catch (NoCafeteriasFoundException e) {
             throw new SystemErrorException(e);
         }
@@ -82,10 +82,8 @@ public class PlaceOrderController {
 
     //ritorna una lista di MenuItemBean contenente tutte le bevande aggiunte all'ordine
     public List<MenuItemBean> getAddedItems(){
-
         BeanUtils beanUtils = new BeanUtils();
         return beanUtils.getBeveragesBeanList(session.getMyBeverages());
-
     }
 
     //ritorna il prezzo totale dell'ordine
@@ -101,7 +99,7 @@ public class PlaceOrderController {
     }
 
     //Costruisce la entity ordine partendo dai details passati come parametri e usando gli attributi nel contr. appl
-    public void buildOrder(OrderDetailBean details) throws WrongFormatException {
+    public void composeOrder(OrderDetailBean details) throws WrongFormatException {
 
         LocalDate date;
         LocalDate today;
@@ -155,7 +153,7 @@ public class PlaceOrderController {
 
     }
 
-    public void sendOrderRequest() throws SystemErrorException{
+    public void sendOrderRequest(String closeSession) throws SystemErrorException{
 
         OrderRequest orderRequest = DAOfactory.getDAOfactory().createOrderRequestDAO().createNewOrderRequest();
         orderRequest.setStatus("PENDING");
@@ -179,6 +177,9 @@ public class PlaceOrderController {
         Client client = SessionManager.getInstance().getUserClientLogged();
         client.getOrderRequestList().add(orderRequest);
         session.getMyCafeteria().getOrderRequests().add(orderRequest);
+
+        //chiudo sessione
+        SessionManager.getInstance().delPlaceOrderSession(closeSession);
 
     }
 

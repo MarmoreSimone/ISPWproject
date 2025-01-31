@@ -179,9 +179,12 @@ public class SearchCafeteriaGUI extends GraphicalController {
         String session = SessionManager.getInstance().newPlaceOrderSession();
         //imposto la caffetteria selezionata
         PlaceOrderController contr = new PlaceOrderController(session);
+        SearchCafeteriaBean search = new SearchCafeteriaBean();
+
         try {
 
-            contr.setCafeteria(labelName.getText());
+            search.setName(labelName.getText());
+            contr.setCafeteria(search);
             new OrderBuilderGUI().launch(session);
 
         } catch (SystemErrorException e) {

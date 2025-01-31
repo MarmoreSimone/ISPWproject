@@ -36,8 +36,7 @@ public class OrderSummaryCLI {
             int choice = view.getUserChoice(choices);
 
             if(choice == 0) {
-                contrAppl.sendOrderRequest();
-                SessionManager.getInstance().delPlaceOrderSession(session);
+                contrAppl.sendOrderRequest(session);
                 new HomeClientCLI().launch();
             }
             else {
