@@ -14,8 +14,8 @@ public class CaffeineProcessingTime extends ItemDecorator{
         }
 
         private double calculateMetabolismTime(double caffeineAmount) {
-            // Supponiamo una mezza vita media di 5.7 ore per la caffeina
-            double halfLife = 5.7;
+            // Supponiamo una mezza vita media di 5 ore per la caffeina
+            double halfLife = 5;
 
             // Calcoliamo il fattore di decadimento per ora usando la formula dell'esponenziale
             double decayFactor = Math.pow(0.5, 1 / halfLife);
@@ -27,13 +27,11 @@ public class CaffeineProcessingTime extends ItemDecorator{
             // Continuare fino a quando la caffeina non è praticamente smaltita (ad esempio meno di 50 mg)
             while (remainingCaffeine > 50) {
                 remainingCaffeine *= decayFactor;
-                time += 1; // Incrementa il tempo di 1 ora ad ogni ciclo
+                time += 1; // Incrementa il tempo di 1 ora a ogni ciclo
             }
 
-            // Eseguiamo la divisione per una stima del metabolismo (se vuoi tenerne conto)
-            // Qui possiamo fare una stima del metabolismo che potrebbe basarsi su peso, ma dipende dal modello
-            // Questo è solo un esempio, e il valore esatto potrebbe essere personalizzato in base alla ricerca
-            double metabolismRate = 0.02 * weight;  // Modifica il valore se necessario, ma non dovrebbe alterare troppo il tempo
+            //stima del metabolism rate
+            double metabolismRate = 0.02 * weight;
 
             time = time / metabolismRate;
 

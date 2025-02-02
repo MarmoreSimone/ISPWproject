@@ -79,7 +79,7 @@ public class CafeteriaDAOfs extends CafeteriaDAO {
 
     }
 
-    public List<Cafeteria> getAllCafeterias() throws NoCafeteriasFoundException, SystemErrorException{
+    public List<Cafeteria> getAllCafeterias() throws SystemErrorException{
         List<Cafeteria> cafes = new ArrayList<Cafeteria>();
 
         try{
