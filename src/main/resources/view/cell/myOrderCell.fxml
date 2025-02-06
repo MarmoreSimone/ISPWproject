@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="210.0" prefWidth="741.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.MyOrderCellContr">
+<Pane prefWidth="741.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalcontrollers.cell.MyOrderCellContr">
    <children>
       <ListView fx:id="itemList" layoutX="31.0" layoutY="58.0" prefHeight="128.0" prefWidth="187.0" style="-fx-font-size: 16;" />
       <Text fx:id="cafeName" layoutX="361.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bar di ingegneria" wrappingWidth="201.01953125">
@@ -64,22 +64,18 @@
                   </Text>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="74.0" prefHeight="32.0" prefWidth="241.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="status:" wrappingWidth="85.01953125">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="status" layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pending" wrappingWidth="385.01953125">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
          </children>
       </VBox>
+      <Text fx:id="status" layoutX="338.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pending" wrappingWidth="313.6861572265625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="249.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="status:" wrappingWidth="85.01953125">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
       <Text layoutX="249.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cafeteria:" wrappingWidth="112.01953125">
          <font>
             <Font name="System Bold" size="24.0" />

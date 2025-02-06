@@ -102,7 +102,7 @@
                   </VBox>
                </children>
             </Pane>
-            <Button fx:id="orderBtn" layoutX="339.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#continueOrder" prefHeight="51.0" prefWidth="489.0" style="-fx-background-radius: 10;" text="proceede to order">
+            <Button fx:id="orderBtn" layoutX="339.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#continueOrder" prefHeight="51.0" prefWidth="489.0" style="-fx-background-radius: 10;" text="proceed to order">
                <font>
                   <Font size="24.0" />
                </font>
