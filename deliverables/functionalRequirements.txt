@@ -1,0 +1,21 @@
+1) The system shall provide an order summary at the end of the order showing:
+- added items.
+- pickup time and date.
+- total price.
+- Note.
+- café address.
+
+
+2) The system shall provide a list of cafeterias filtered by name or distance (based on a city or address) and show the selected café information, including:
+- name.
+- image.
+- city.
+- address.
+- opening hours.
+- description.
+
+3) The system shall provide information on caffeine levels in the body, based on the registered consumptions, showing: 
+- The Current caffeine level.
+- The amount consumed in the last 12 hours.
+- The remaining time until ideal caffeine levels for sleep are reached (<50mg).
+

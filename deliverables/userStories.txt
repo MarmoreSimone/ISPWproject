@@ -1,0 +1,7 @@
+1) As a user, I want to order beverages and food from a café by specifying the pickup time, so that I don’t have to waste time standing in line and waiting for the preparation.
+
+2) As a barista, I want to receive orders in advance and have the option to accept or reject them, so that I can prepare the orders more efficiently and ensure only manageable orders are handled.
+
+3) As a user, I want to create coupons* and send them as gifts to my friends, so that I can give them a nice surprise, like offering a coffee at the vending machine.
+
+*Coupons: There are two types of coupons: a discount coupon that applies a discount to the final price, and an item coupon that adds the items listed in the coupon to the order for free.
